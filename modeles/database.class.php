@@ -45,10 +45,11 @@ abstract class database {
       [object] : Objet de type PDO
   *******************************************************/
   private function connexionBDD() {
+    global $conf;
     if (!isset($this->bdd))     // Si la connexion à la BDD n'est pas encore établie
       try {  // Connexion à la base de données et initialisation de la propriété bdd
         $options=array(PDO::MYSQL_ATTR_INIT_COMMAND => "SET NAMES utf8");
-        $this->bdd = new PDO('mysql:host='.DBHOST.';dbname='.DBNAME, DBUSER, DBPWD, $options);
+        $this->bdd = new PDO('mysql:host='.$conf->DBHOST.';dbname='.$conf->DBNAME, $conf->DBUSER, $conf->DBPWD, $options);
       }
       catch(Exception $err) {   // Erreur lors de la connexion à la BDD
         throw new Exception("Connexion à la BDD"); //.$err->getMessage());

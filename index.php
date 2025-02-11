@@ -8,4 +8,3 @@ require_once "controleur/routeur.class.php";
 
 $accesrouteur = new routeur();
 $accesrouteur->routerRequete();
-

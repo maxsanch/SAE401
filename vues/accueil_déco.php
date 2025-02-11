@@ -1,5 +1,10 @@
 <?php 
 
-$style = ""; // mettre le lien vers le style ici
+$styles = ""; // mettre le lien vers le style ici
 
 ?>
+
+
+<div class="test">
+    test
+</div>

@@ -1,6 +1,7 @@
 <?php
 
 require_once "modeles/connexion.class.php";
+require_once "modeles/utilisateurs.class.php";
 require_once "vues/vue.class.php";
 
 class ctlConnexion
@@ -11,17 +12,21 @@ class ctlConnexion
 
     public function __construct()
     {
-        $this->connexion = new Connexion;
+        $this->connexion = new utilisateurs;
         $this->routeur = new ctlPage;
     }
 
-    public function connexion($nom, $mdp)
-    {
-        // Accès à la classe utilisateurs.
-        $nom_user = new utilisateurs();
 
+    public function connexion($erreur)
+    {
+        $vue = new vue("connexion"); // Instancie la vue appropriée
+        $vue->afficher(array("erreur" => $erreur)); // Affiche la liste des clients dans la vue, c'est ca qui est passé en paramètres au niveau de data dans la classe vue
+    }
+
+    public function login($nom, $mdp)
+    {
         // Récupération des informations de l'utilisateur à partir de son mail.
-        $user = $nom_user->GetUser($nom);
+        $user = $this->connexion->GetUser($nom);
 
         // Vérification si un utilisateur correspondant existe.
         if (!empty($user)) {
@@ -29,39 +34,24 @@ class ctlConnexion
             if (password_verify($mdp, $user[0]['MotDePasse'])) {
                 // Si le mot de passe est correct, enregistrer l'email dans la session pour authentification.
                 $_SESSION['acces'] = $user[0]['Mail'];
-
-                // Mise à jour de la dernière connexion de l'utilisateur (fonction personnalisée).
-                updateco($user[0]['Id_utilisateur']);
-
-                // Vérification du statut de l'utilisateur pour rediriger vers la page appropriée.
-                if ($user[0]['Statut'] == 'admin') {
-                    // Si l'utilisateur est administrateur :
-                    testetresetannée();
-                    accueil_admin(); // Appel de la fonction pour afficher la page d'accueil administrateur.
-                } else {
-                    // Si l'utilisateur n'est pas administrateur :
-                    testetresetannée();
-                    accueil_connecté(); // Appel de la fonction pour afficher la page d'accueil utilisateur connecté.
-                }
+                $this->routeur->accueil();
+                
             } else {
                 // Si le mot de passe est incorrect, afficher un message d'erreur.
                 $erreur = '<b>mot de passe incorrecte.</b>';
-                connexion($erreur);
+                $this->connexion($erreur);
             }
         } else {
             // Si aucun utilisateur ne correspond au mail, afficher un message d'erreur.
             $erreur = '<b>Identifiant invalide</b>';
-            connexion($erreur);
+            $this->connexion($erreur);
         }
     }
 
     public function inscription($prenom, $nom, $email, $mdp, $mdp2)
     {
-        // Appel à la classe utiliasteurs.
-        $insc = new utilisateurs();
-
         // Vérification si un utilisateur avec le même email existe déjà dans la base de données.
-        $user = $insc->GetUser($email);
+        $this->connexion->GetUser($email);
 
         // Si aucun utilisateur avec cet email n'est trouvé, on peut continuer l'inscription.
         if (empty($user)) {

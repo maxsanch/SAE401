@@ -1,7 +1,8 @@
 <?php
 
-require_once "controleur/ctlConnexion";
+require_once "controleur/ctlConnexion.php";
 require_once "controleur/ctlPage.php";
+require_once "controleur/ctlUser.php";
 
 class routeur
 {
@@ -23,13 +24,18 @@ class routeur
     public function routerRequete()
     {
         try {
-            if(isset($_GET['page'])){
-                switch($_GET['page']){
+            if (isset($_GET['page'])) {
+                switch ($_GET['page']) {
                     case "connexion":
                         $this->ctlConnexion->connexion();
+                        break;
+                    case "login":
+                        $this->ctlConnexion->login($_POST['email'], $_POST['MDP']);
+                        break;
+                    default:
+                        $this->ctlPage->accueil();
                 }
-            }
-            else{
+            } else {
                 $this->ctlPage->accueil();
             }
         } catch (Exception $e) {  // Page d'erreur

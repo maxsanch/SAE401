@@ -7,5 +7,5 @@ class Config{
      public $DBPWD = "";
 
      public $TITREONGLET = "We escape";
-     public $NOMSITE = "We escape - des escapes games en exterieur en famille !";
+     public $NOMSITE = "KFNJDNJFS C'est le headerrr ouhouuuuu el headerrrrrrr el header de la muerta qui marche mais qui est pas fait kumalaladisbhqdj ";
 }

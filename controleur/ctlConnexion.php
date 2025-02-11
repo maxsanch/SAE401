@@ -2,17 +2,21 @@
 
 require_once "modeles/connexion.class.php";
 require_once "modeles/utilisateurs.class.php";
+require_once "modeles/connexion.class.php";
 require_once "vues/vue.class.php";
 
 class ctlConnexion
 {
 
     private $connexion;
+    private $inscription;
     private $routeur;
 
     public function __construct()
     {
+
         $this->connexion = new utilisateurs;
+        $this->inscription = new inscription;
         $this->routeur = new ctlPage;
     }
 
@@ -35,7 +39,7 @@ class ctlConnexion
                 // Si le mot de passe est correct, enregistrer l'email dans la session pour authentification.
                 $_SESSION['acces'] = $user[0]['Mail'];
                 $this->routeur->accueil();
-                
+
             } else {
                 // Si le mot de passe est incorrect, afficher un message d'erreur.
                 $erreur = '<b>mot de passe incorrecte.</b>';
@@ -48,45 +52,38 @@ class ctlConnexion
         }
     }
 
-    public function inscription($prenom, $nom, $email, $mdp, $mdp2)
+    public function signin($prenom, $nom, $email, $adresse, $mdp)
     {
         // Vérification si un utilisateur avec le même email existe déjà dans la base de données.
         $this->connexion->GetUser($email);
 
         // Si aucun utilisateur avec cet email n'est trouvé, on peut continuer l'inscription.
         if (empty($user)) {
-            if (!empty($prenom) && !empty($nom) && !empty($email) && !empty($mdp) && !empty($mdp2)) {
+            if (!empty($prenom) && !empty($nom) && !empty($email) && !empty($mdp) && !empty($adresse)) {
                 // Vérification si les deux mots de passe saisis sont identiques.
-                if ($mdp == $mdp2) {
-                    // Hashage du mot de passe.
-                    $mdpgood = password_hash($mdp, PASSWORD_DEFAULT);
+                // Hashage du mot de passe.
+                $mdpgood = password_hash($mdp, PASSWORD_DEFAULT);
 
-                    // Appel de la méthode inscrire.
-                    $insc->inscrire($prenom, $nom, $email, $mdpgood);
+                // Appel de la méthode inscrire.
+                $this->inscription->inscrire($prenom, $nom, $email, $adresse, $mdpgood);
 
-                    // Récupération des informations de l'utilisateur nouvellement inscrit.
-                    $user = $insc->GetUser($email);
+                // Récupération des informations de l'utilisateur nouvellement inscrit.
+                $user =  $this->connexion->GetUser($email);
 
-                    // Enregistrement de l'email de l'utilisateur dans la session.
-                    $_SESSION['acces'] = $user[0]['Mail'];
+                
 
-                    testetresetannée();
-                    accueil_connecté();
-
-                } else {
-                    // Si les mots de passe ne correspondent pas, afficher un message d'erreur.
-                    $erreur = "<b>Les mots de passe ne correspondent pas.</b>";
-                    inscription($erreur); // Appel de la fonction "inscription" pour afficher la vue avec le message d'erreur.
-                }
+                // Enregistrement de l'email de l'utilisateur dans la session.
+                $_SESSION['acces'] = $user[0]['mail'];
+                $this->routeur->accueil();
             } else {
-                // Si des champs sont laissés vides, afficher un message d'erreur.
-                $erreur = "<b>Veillez à remplir tout les champs</b>";
-                inscription($erreur);
+                // Si aucun utilisateur ne correspond au mail, afficher un message d'erreur.
+                $erreur = '<b>Identifiant invalide</b>';
+                $this->connexion($erreur);
             }
         } else {
-            // Si un compte avec le même email existe déjà, afficher un message d'erreur.
-            $erreur = "<b>Un compte avec la même adresse e-mail existe déjà.</b>";
-            inscription($erreur);
+            // Si aucun utilisateur ne correspond au mail, afficher un message d'erreur.
+            $erreur = '<b>Identifiant invalide</b>';
+            $this->connexion($erreur);
         }
     }
 

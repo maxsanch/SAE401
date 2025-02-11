@@ -32,6 +32,9 @@ class routeur
                     case "login":
                         $this->ctlConnexion->login($_POST['email'], $_POST['MDP']);
                         break;
+                    case "signin":
+                        $this->ctlConnexion->signin($_POST['prenom'], $_POST['nom'], $_POST['email'], $_POST['adresse'], $_POST['MDP']);
+                        break;
                     default:
                         $this->ctlPage->accueil();
                 }

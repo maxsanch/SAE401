@@ -7,14 +7,13 @@
 </head>
 <body>
   <header>
-    <div><a href="index.php"><h1><?= $header ?></h1></a></div>
-    <div class="menu"><?= $menu ?></div>
+    <?= $header ?>
   </header>
   <main>
     <?= $contenu ?>
   </main>
   <footer>
     <?= $footer ?>
-  </footer>  
+  </footer>
 </body>
 </html>

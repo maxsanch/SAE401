@@ -1,6 +1,6 @@
 <?php
 
-require_once "modeles/connexion.class.php";
+require_once "modeles/inscription.class.php";
 require_once "modeles/utilisateurs.class.php";
 require_once "modeles/connexion.class.php";
 require_once "vues/vue.class.php";
@@ -8,14 +8,13 @@ require_once "vues/vue.class.php";
 class ctlConnexion
 {
 
-    private $connexion;
+    private $user;
     private $inscription;
     private $routeur;
 
     public function __construct()
     {
-
-        $this->connexion = new utilisateurs;
+        $this->user = new utilisateurs;
         $this->inscription = new inscription;
         $this->routeur = new ctlPage;
     }
@@ -30,7 +29,7 @@ class ctlConnexion
     public function login($nom, $mdp)
     {
         // Récupération des informations de l'utilisateur à partir de son mail.
-        $user = $this->connexion->GetUser($nom);
+        $user = $this->user->GetUser($nom);
 
         // Vérification si un utilisateur correspondant existe.
         if (!empty($user)) {
@@ -55,7 +54,7 @@ class ctlConnexion
     public function signin($prenom, $nom, $email, $adresse, $mdp)
     {
         // Vérification si un utilisateur avec le même email existe déjà dans la base de données.
-        $this->connexion->GetUser($email);
+        $this->user->GetUser($email);
 
         // Si aucun utilisateur avec cet email n'est trouvé, on peut continuer l'inscription.
         if (empty($user)) {
@@ -68,12 +67,12 @@ class ctlConnexion
                 $this->inscription->inscrire($prenom, $nom, $email, $adresse, $mdpgood);
 
                 // Récupération des informations de l'utilisateur nouvellement inscrit.
-                $user =  $this->connexion->GetUser($email);
+                $user =  $this->user->GetUser($email);
 
-                
+                $this->inscription->créerPanier($user[0]["id_utilisateur"]);
 
                 // Enregistrement de l'email de l'utilisateur dans la session.
-                $_SESSION['acces'] = $user[0]['mail'];
+                $_SESSION['acces'] = $email;
                 $this->routeur->accueil();
             } else {
                 // Si aucun utilisateur ne correspond au mail, afficher un message d'erreur.

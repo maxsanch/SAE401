@@ -1,5 +1,6 @@
 <?php
 
+var_dump('test');
 require_once "controleur/ctlConnexion.php";
 require_once "controleur/ctlPage.php";
 require_once "controleur/ctlUser.php";
@@ -27,7 +28,8 @@ class routeur
             if (isset($_GET['page'])) {
                 switch ($_GET['page']) {
                     case "connexion":
-                        $this->ctlConnexion->connexion();
+                        $erreur = "";
+                        $this->ctlConnexion->connexion($erreur);
                         break;
                     case "login":
                         $this->ctlConnexion->login($_POST['email'], $_POST['MDP']);

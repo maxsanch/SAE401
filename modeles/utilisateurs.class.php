@@ -3,10 +3,10 @@
 require_once "modeles/database.class.php";
 
 class utilisateurs extends database {
-    public function GetUser($iduser)
+    public function GetUser($mail)
     {
         // Création d'un tableau de données avec l'ID de l'utilisateur
-        $data = array($iduser);
+        $data = array($mail);
 
         // Requête SQL pour sélectionner tous les champs de l'utilisateur avec un email spécifique
         $req = 'SELECT * from utilisateurs WHERE mail = ?';

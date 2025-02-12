@@ -1,9 +1,16 @@
 <?php
 
 require_once "vues/vue.class.php";
+require_once "modeles/utilisateurs.class.php";
 
 class ctlPage
 {
+
+  private $user;
+
+  public function __construct(){
+    $this->user = new utilisateurs;
+  }
 /*******************************************************
 Affichage de la page d'accueil du site
   Entrée : 
@@ -13,8 +20,15 @@ Affichage de la page d'accueil du site
 *******************************************************/
 function accueil()
 {
+  if(isset($_SESSION['acces'])){
+    $utilisateurStatut = $this->user->GetUser($_SESSION['acces']);
+  }
+  else{
+    $utilisateurStatut = "";
+  }
+
   $vue = new vue("accueil_déco"); // Instancie la vue appropriée
-  $vue->afficher(array()); // Affiche la liste des clients dans la vue, c'est ca qui est passé en paramètres au niveau de data dans la classe vue
+  $vue->afficher(array('utilisateurStatut' => $utilisateurStatut)); // Affiche la liste des clients dans la vue, c'est ca qui est passé en paramètres au niveau de data dans la classe vue
 }
 
 /*******************************************************

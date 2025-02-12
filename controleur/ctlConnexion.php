@@ -2,7 +2,6 @@
 
 require_once "modeles/inscription.class.php";
 require_once "modeles/utilisateurs.class.php";
-require_once "modeles/connexion.class.php";
 require_once "vues/vue.class.php";
 
 class ctlConnexion
@@ -34,9 +33,9 @@ class ctlConnexion
         // Vérification si un utilisateur correspondant existe.
         if (!empty($user)) {
             // Vérification du mot de passe entré par rapport au mot de passe hashé stocké.
-            if (password_verify($mdp, $user[0]['MotDePasse'])) {
+            if (password_verify($mdp, $user[0]['mdp'])) {
                 // Si le mot de passe est correct, enregistrer l'email dans la session pour authentification.
-                $_SESSION['acces'] = $user[0]['Mail'];
+                $_SESSION['acces'] = $user[0]['mail'];
                 $this->routeur->accueil();
 
             } else {
@@ -54,10 +53,10 @@ class ctlConnexion
     public function signin($prenom, $nom, $email, $adresse, $mdp)
     {
         // Vérification si un utilisateur avec le même email existe déjà dans la base de données.
-        $this->user->GetUser($email);
+        $check = $this->user->GetUser($email);
 
         // Si aucun utilisateur avec cet email n'est trouvé, on peut continuer l'inscription.
-        if (empty($user)) {
+        if (empty($check)) {
             if (!empty($prenom) && !empty($nom) && !empty($email) && !empty($mdp) && !empty($adresse)) {
                 // Vérification si les deux mots de passe saisis sont identiques.
                 // Hashage du mot de passe.
@@ -67,9 +66,9 @@ class ctlConnexion
                 $this->inscription->inscrire($prenom, $nom, $email, $adresse, $mdpgood);
 
                 // Récupération des informations de l'utilisateur nouvellement inscrit.
-                $user =  $this->user->GetUser($email);
+                $panierUser =  $this->user->GetUser($email);
 
-                $this->inscription->créerPanier($user[0]["id_utilisateur"]);
+                $this->inscription->créerPanier($panierUser[0]["Id_utilisateur"]);
 
                 // Enregistrement de l'email de l'utilisateur dans la session.
                 $_SESSION['acces'] = $email;
@@ -81,7 +80,7 @@ class ctlConnexion
             }
         } else {
             // Si aucun utilisateur ne correspond au mail, afficher un message d'erreur.
-            $erreur = '<b>Identifiant invalide</b>';
+            $erreur = '<b>cet email existe déjà</b>';
             $this->connexion($erreur);
         }
     }

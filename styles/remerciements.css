@@ -65,14 +65,14 @@ span{
 }
 
 .rect{
-    width: 50px;
+    width: 30px;
     position: fixed;
     top: 0;
     right: 200px;
 }
 .rect2{
-    width: 300px;
+    width: 250px;
     position: fixed;
-    bottom: 150px;
+    bottom: 100px;
     left: 0;
 }

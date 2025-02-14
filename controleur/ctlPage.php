@@ -50,4 +50,9 @@ class ctlPage
     $vue = new vue('remerciements');
     $vue->afficher(array());
   }
+
+  public function ajoutjeux(){
+    $vue = new vue('ajoutjeu');
+    $vue->afficher(array());
+  }
 }

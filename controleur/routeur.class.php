@@ -43,6 +43,9 @@ class routeur
         try {
             if (isset($_GET['page'])) {
                 if (isset($_SESSION['acces'])) {
+
+                    $user = $this->ctlUser->users();
+
                     switch ($_GET['page']) {
                         case "remerciements":
                             $this->ctlPage->remerciements();
@@ -73,6 +76,27 @@ class routeur
                             break;
                         case "Panier":
                             $this->ctlUser->objetsshop();
+                            break;
+                        case "checkusers":
+                            if ($user[0]['niveau'] == 'admin') {
+                                $this->ctlJeux->checkusers();
+                            } else {
+                                $this->ctlPage->accueil();
+                            }
+                            break;
+                        case "AjoutJeu":
+                            if ($user[0]['niveau'] == 'admin') {
+                                $this->ctlJeux->ajouterjeu();
+                            } else {
+                                $this->ctlPage->accueil();
+                            }
+                            break;
+                        case "PageAjoutJeu":
+                            if ($user[0]['niveau'] == 'admin') {
+                                $this->ctlPage->ajoutjeux();
+                            } else {
+                                $this->ctlPage->accueil();
+                            }
                             break;
                         default:
                             $this->ctlPage->accueil();

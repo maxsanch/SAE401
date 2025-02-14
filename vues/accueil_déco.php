@@ -15,13 +15,13 @@ if (isset($_SESSION['acces'])) {
 ?>
 
 <div class="CadreDesEngrenages">
-        <div class="engrenage" style="--X:50%; --Y:50%;">
-            <img src="img/roue.svg" alt="un engrenage">
-        </div>
-        <div class="engrenage" style="--X:-50%; --Y:50%;">
-            <img src="img/roue.svg" alt="un engrenage">
-        </div>
+    <div class="engrenage" style="--X:50%; --Y:50%;">
+        <img src="img/roue.svg" alt="un engrenage">
     </div>
+    <div class="engrenage" style="--X:-50%; --Y:50%;">
+        <img src="img/roue.svg" alt="un engrenage">
+    </div>
+</div>
 <div class="MiseEnPage">
     <div class="Accueil">
         <div class="AccueilTexte">
@@ -50,8 +50,9 @@ if (isset($_SESSION['acces'])) {
 
 
         <div class="ContourRuche">
-            <div class="UneRuche"><img class="ImageDeLaRuche" style="height: 250px; object-fit: cover;"
-                    src="img/Rectangle 26.png" alt="Tes ruches">
+            <div class="UneRuche">
+                <div class="ImageDeEscapeGame"><img src="img/Rectangle 26.png"
+                        alt="Tes ruches"></div>
                 <div class="MaRucheTitre">La nuit d'horreur</div>
                 <div class="azert">
                     <div class="InfoRuche">age : 16 ans</div>
@@ -60,10 +61,14 @@ if (isset($_SESSION['acces'])) {
                         <div class="InfoRuche">3 - 8</div>
                     </div>
                 </div>
+                <div class="EscageGameBarreSelecteurGlobal">
+                    <div class="SelecteurBoule"></div>
+                    <div class="SelecteurBarre"></div>
+                </div>
 
                 <div class="BoutonEscapeGame">
-                    <a href="/" class="MaRucheBouton">Voir plus</a>
-                    <a href="/" class="MaRucheBouton">Réserver</a>
+                    <a href="/" class="EscapeGameBouton">Voir plus</a>
+                    <a href="/" class="EscapeGameBouton">Réserver</a>
                 </div>
             </div>
         </div>

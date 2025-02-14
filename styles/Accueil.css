@@ -221,7 +221,6 @@ img {
     display: flex;
     flex-direction: column;
     width: 250px;
-    height: 100%;
 }
 
 .azert{
@@ -232,6 +231,84 @@ img {
 .User{
     width: 20px;
 }
+
+.BoutonEscapeGame{
+    margin-bottom: 12px;
+}
+
+.EscapeGameBouton {
+    padding: 8px 12px;
+    border-radius: 8px;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.EscapeGameBouton:first-of-type {
+    background-image: linear-gradient(45deg, #E6B856, #806630);
+    color: black;
+}
+
+/* Aide de chatgpt pour faire le dégradé en même temps sur le texte et la bordure car j'arrivais à le faire que sur un en même temps sinon */
+.EscapeGameBouton:nth-of-type(2) {
+    position: relative;
+    text-align: center;
+    border-radius: 8px;
+    /* Arrondi OK */
+
+    /* Dégradé pour le texte */
+    background: linear-gradient(45deg, #E6B856, #806630);
+    background-clip: text;
+    color: transparent;
+}
+
+.EscapeGameBouton:nth-of-type(2)::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: 8px;
+    /* Appliquer le border-radius */
+    padding: 1px;
+    /* Épaisseur de la bordure */
+    background: linear-gradient(to left, #E6B856, #806630);
+
+    /* Masquer l'intérieur pour que seul le contour soit visible */
+    mask: linear-gradient(white 0 0) content-box, linear-gradient(white 0 0);
+    mask-composite: exclude;
+}
+
+.InfoRuche:nth-of-type(2){
+    margin-left: 8px;
+}
+
+.EscageGameBarreSelecteurGlobal{
+    width: 90%;
+    margin: auto;
+    position: relative;
+}
+
+.SelecteurBarre{
+    height: 16px;
+    background-color: #323232;
+    border-radius: 16px;
+}
+
+.SelecteurBoule{
+    width: 24px;
+    height: 24px;
+    background-image: linear-gradient(#E6B856, #806630);
+    border-radius: 100%;
+    transform: translateY(-4px);
+    position: absolute;
+}
+
+
+
+
+
+
+
+
+
 
 .engrenage:first-of-type {
     width: 30%;

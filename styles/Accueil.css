@@ -1,0 +1,260 @@
+@font-face {
+    font-family: Montserrat;
+    src: url(../font/Montserrat-Regular.ttf);
+}
+
+@font-face {
+    font-family: Montserrat-black;
+    src: url(../font/Montserrat-Black.ttf);
+}
+
+@font-face {
+    font-family: Montserrat-bold;
+    src: url(../font/Montserrat-Bold.ttf);
+}
+
+body {
+    min-height: 100vh;
+    margin: 0;
+    font-family: Montserrat;
+    background-image: url("../img/fond.png"), linear-gradient(-135deg, #151414, #302C27);
+    color: whitesmoke;
+    position: relative;
+    overflow-x: hidden;
+}
+
+body::before {
+    content: "";
+    background-image: url("../img/Engrenage.png");
+    background-repeat: no-repeat;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    opacity: 20%;
+    /* transform: translateY(-15px); */
+    z-index: -1;
+}
+
+.MiseEnPage {
+    width: 80%;
+    margin: auto;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 16px;
+}
+
+img {
+    width: 100%;
+}
+
+.HeaderCoteDroite {
+    display: flex;
+    gap: 16px;
+    align-items: center;
+}
+
+.HeaderBouton {
+    cursor: pointer;
+}
+
+.HeaderBouton:first-of-type {
+    background-image: linear-gradient(-135deg, #E6B856, #806630);
+    color: transparent;
+    background-clip: text;
+}
+
+.HeaderBouton:nth-of-type(6) {
+    background-image: linear-gradient(-135deg, #E6B856, #806630);
+    padding: 8px;
+    color: black;
+    border-radius: 4px;
+}
+
+.CadreDesEngrenages {
+    width: 100%;
+    height: 100vh;
+    position: absolute;
+}
+
+.Accueil {
+    height: 100vh;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    margin-top: 32px;
+    position: relative;
+}
+
+.AccueilTexte {
+    width: 80%;
+    margin: auto;
+}
+
+.AccueilTitre {
+    font-family: Montserrat-black;
+    font-size: 48px;
+    line-height: 30%;
+}
+
+.AccueilSousTitre {
+    font-family: Montserrat-bold;
+    font-size: 36px;
+    line-height: 70%;
+}
+
+.AccueilBoutonsGlobal {
+    display: flex;
+    gap: 32px;
+    margin-top: 16px;
+}
+
+.AccueilBouton {
+    padding: 12px;
+    border-radius: 8px;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+.AccueilBouton:first-of-type {
+    background-image: linear-gradient(45deg, #E6B856, #806630);
+    color: black;
+}
+
+/* Aide de chatgpt pour faire le dégradé en même temps sur le texte et la bordure car j'arrivais à le faire que sur un en même temps sinon */
+.AccueilBouton:nth-of-type(2) {
+    position: relative;
+    text-align: center;
+    border-radius: 8px;
+    /* Arrondi OK */
+
+    /* Dégradé pour le texte */
+    background: linear-gradient(45deg, #E6B856, #806630);
+    background-clip: text;
+    color: transparent;
+}
+
+.AccueilBouton:nth-of-type(2)::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: 8px;
+    /* Appliquer le border-radius */
+    padding: 1px;
+    /* Épaisseur de la bordure */
+    background: linear-gradient(to left, #E6B856, #806630);
+
+    /* Masquer l'intérieur pour que seul le contour soit visible */
+    mask: linear-gradient(white 0 0) content-box, linear-gradient(white 0 0);
+    mask-composite: exclude;
+}
+
+.AccueilCle {
+    margin: auto;
+}
+
+.EscapeGameTitrePartie {
+    width: fit-content;
+    transform: translateY(50%);
+}
+
+.EscapeGameTitre>h3 {
+    line-height: 0%;
+    font-size: 20px;
+}
+
+.EscapeGameBarreSousTitre {
+    background-color: #E6B856;
+    height: 10px;
+    width: 25%;
+}
+
+.EscapeGameDisponible{
+    background-color: #151414;
+    height: 100vh;
+}
+
+.EscapeGameListe{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+}
+
+.EscapeGameCadre{
+    height: 400px;
+    border: 1px solid #DCAD57;
+    border-radius: 12px;
+    width: fit-content;
+}
+
+.EscapeGameImage{
+    width: 50%;
+}
+
+.EscapeGameInformation{
+    width: 50%;
+}
+
+.EscapeGameBarreMembreMinimum{
+    width: 50%;
+}
+
+.EscapeGameBarreMembreMaximum{
+    width: 50%;
+}
+
+.ContourRuche {
+    border: dashed 1px #B95E06;
+    padding: 8px;
+    border-radius: 16px;
+    border-style: dashed;
+    width: fit-content;
+}
+
+.UneRuche {
+    border: dashed 1px #ae702aad;
+    border-radius: 8px;
+    gap: 16px;
+    display: flex;
+    flex-direction: column;
+    width: 250px;
+    height: 100%;
+}
+
+.azert{
+    display: flex;
+    justify-content: space-between;
+}
+
+.User{
+    width: 20px;
+}
+
+.engrenage:first-of-type {
+    width: 30%;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    animation: Tourner 15s linear infinite;
+}
+
+.engrenage:nth-of-type(2) {
+    width: 10%;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    animation: Tourner 15s linear infinite;
+}
+
+@keyframes Tourner {
+    0% {
+        transform: translate(var(--X), var(--Y)) rotate(0deg);
+    }
+
+    100% {
+        transform: translate(var(--X), var(--Y)) rotate(360deg);
+    }
+}

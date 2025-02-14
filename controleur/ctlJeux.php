@@ -11,4 +11,8 @@ class ctlJeux{
     public function __construct(){
         $this->jeu = new jeux();
     }
+
+    public function ajouterjeu(){
+        
+    }
 }

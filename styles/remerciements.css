@@ -1,0 +1,78 @@
+header {
+    display: none;
+}
+
+footer {
+    display: none;
+}
+
+img{
+    width: 100%;
+}
+
+.home{
+    width: 70px;
+    cursor: pointer;
+}
+
+@font-face {
+    font-family: Montserrat-regular;
+    src: url(../font/Montserrat-Regular.ttf);
+}
+
+@font-face {
+    font-family: Montserrat-bold;
+    src: url(../font/Montserrat-Bold.ttf);
+}
+
+body{
+    font-family: Montserrat-regular;
+    color: white;
+    min-height: 100vh;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-image: linear-gradient(-135deg, #151414, #302c27);
+}
+
+h1{
+    font-family: Montserrat-bold;
+}
+
+span{
+    background-image: linear-gradient(-135deg, #e6b856, #806630);
+    color: transparent;
+    background-clip: text;
+}
+
+/* 151414 302c27*/
+
+.remerciements{
+    display: flex;
+    align-items: center;
+    
+    flex-direction: column;
+}
+
+.link{
+    margin-top: 20px;
+}
+
+.link>a{
+    color: white;
+    font-size: 25px;
+}
+
+.rect{
+    width: 50px;
+    position: fixed;
+    top: 0;
+    right: 200px;
+}
+.rect2{
+    width: 300px;
+    position: fixed;
+    bottom: 150px;
+    left: 0;
+}

@@ -2,6 +2,9 @@
 require_once "controleur/ctlConnexion.php";
 require_once "controleur/ctlPage.php";
 require_once "controleur/ctlUser.php";
+require_once "controleur/ctlPanier.php";
+require_once "controleur/ctlLieux.php";
+require_once "controleur/ctlJeux.php";
 
 class routeur
 {
@@ -64,6 +67,12 @@ class routeur
                             break;
                         case "shop":
                             $this->ctlShop->objetsshop();
+                            break;
+                        case "InformationUser":
+                            $this->ctlUser->objetsshop();
+                            break;
+                        case "Panier":
+                            $this->ctlUser->objetsshop();
                             break;
                         default:
                             $this->ctlPage->accueil();

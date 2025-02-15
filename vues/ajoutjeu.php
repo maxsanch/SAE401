@@ -9,9 +9,9 @@ $styles = "";
     <input type="text" name="titre" placeholder="un titre pour le jeu">
     <input type="email" name="mail" placeholder="entrez le mail pour les informations complémentaires sur ce jeu">
     <input type="text" name="link" placeholder="entrez le lien d'une vidéo youtube">
-    <input type="text" name="min" placeholder="min participants">
-    <input type="text" name="max" placeholder="max participants">
-    <input type="text" name="age" placeholder="age participants">
+    <input type="number" name="min" placeholder="min participants">
+    <input type="number" name="max" placeholder="max participants">
+    <input type="number" name="age" placeholder="age participants">
     <textarea name="description" id="test">Entrez une description du jeu</textarea>
 
     <div class="in">
@@ -20,7 +20,7 @@ $styles = "";
 
     <input type="text" name="ville" placeholder="entrez une ville">
     <input type="text" name="adresse" placeholder="entrez une adresse">
-    <input type="text" name="postale" placeholder="entrez un code postale">
+    <input type="number" name="postale" placeholder="entrez un code postale">
 
     <div class="form_elt">
         <!-- Limite la taille maximale de fichier téléchargé (500Ko ici) -->

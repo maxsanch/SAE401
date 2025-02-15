@@ -5,11 +5,11 @@ require_once "controleur/ctlPage.php";
 
 class jeux extends database {
     
-    public function ajouterBDD($titre, $lieu, $mail, $link, $desc){
+    public function ajouterjeuBDD($titre, $lieu, $mail, $link, $desc, $min, $max, $age, $adresse, $postale){
         // Création d'un tableau de données avec l'ID de l'utilisateur
-        $data = array($lieu, $mail, $link, $desc, $titre);
+        $data = array($lieu, $mail, $link, $desc, $titre, $min, $max, $age, $adresse, $postale);
 
-        $req = "INSERT INTO `jeux` (`ID_jeu`, `ville`, `mail`, `lien_video`, `description`, `Titre`) VALUES (NULL, ?, ?, ?, ?, ?);";
+        $req = "INSERT INTO `jeux` (`ID_jeu`, `ville`, `mail`, `lien_video`, `description`, `Titre`, `nombre_min`, `nombre_max`, `age`, `adresse`, `postale`) VALUES (NULL, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?);";
 
         // Exécution de la requête préparée
         $this->execReqPrep($req, $data);
@@ -101,4 +101,13 @@ class jeux extends database {
             }
         }
     }
+
+    public function getjeux(){
+        $req = "SELECT * FROM jeux";
+
+        $jeux = $this->execReq($req);
+
+        return $jeux;
+    }
+
 }

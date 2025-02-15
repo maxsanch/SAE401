@@ -12,7 +12,8 @@ class ctlJeux{
         $this->jeu = new jeux();
     }
 
-    public function ajouterjeu(){
-        
+    public function ajouterjeu($titre, $lieu, $mail, $link, $desc){
+        $this->jeu->ajouterBDD($titre, $lieu, $mail, $link, $desc);
+        header('Location: index.php');
     }
 }

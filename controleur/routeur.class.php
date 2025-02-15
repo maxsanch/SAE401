@@ -86,7 +86,7 @@ class routeur
                             break;
                         case "AjoutJeu":
                             if ($user[0]['niveau'] == 'admin') {
-                                $this->ctlJeux->ajouterjeu($_POST['titre'], $_POST['lieu'], $);
+                                $this->ctlJeux->ajouterjeu($_POST['titre'], $_POST['lieu'], $_POST['mail'],$_POST['link'], $_POST['description']);
                             } else {
                                 $this->ctlPage->accueil();
                             }

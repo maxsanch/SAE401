@@ -12,6 +12,43 @@ if (isset($_SESSION['acces'])) {
     $test = "test pas co";
 }
 
+$result = "";
+foreach ($jeux as $valeur) {
+    if (file_exists('img/photojeu/' . $valeur['ID_jeu'] . '.jpg')) {
+        $phototest = 'img/photojeu/' . $valeur['ID_jeu'] . '.jpg';
+        // Si l'image existe, l'affiche
+    } else if (file_exists('img/photojeu/' . $valeur['ID_jeu'] . '.png')) {
+        $phototest = 'img/photojeu/' . $valeur['ID_jeu'] . '.png';
+    } else {
+        // Sinon, affiche une image par défaut
+        $phototest = 'img/photojeu/no_image.jpg';
+    }
+
+    $result .= "<div class='ContourRuche'>
+            <div class='UneRuche'>
+                <div class='ImageDeEscapeGame'><img src='".$phototest."'
+                        alt='Tes ruches'></div>
+                <div class='MaRucheTitre'>".$valeur['Titre']."</div>
+                <div class='azert'>
+                    <div class='InfoRuche'>age : ".$valeur['age']." ans</div>
+                    <div class='azert'>
+                        <div class='User'><img src='img/Users.svg' alt='Icon d'utilisateur'></div>
+                        <div class='InfoRuche'>".$valeur['nombre_min']." - ".$valeur['nombre_max']."</div>
+                    </div>
+                </div>
+                <div class='EscageGameBarreSelecteurGlobal'>
+                    <div class='SelecteurBoule'></div>
+                    <div class='SelecteurBarre'></div>
+                </div>
+
+                <div class='BoutonEscapeGame'>
+                    <a href='/' class='EscapeGameBouton'>Voir plus</a>
+                    <a href='/' class='EscapeGameBouton'>Réserver</a>
+                </div>
+            </div>
+        </div>";
+}
+
 ?>
 
 <div class="CadreDesEngrenages">
@@ -47,30 +84,7 @@ if (isset($_SESSION['acces'])) {
 </div>
 <div class="EscapeGameDisponible">
     <div class="MiseEnPage">
-
-
-        <div class="ContourRuche">
-            <div class="UneRuche">
-                <div class="ImageDeEscapeGame"><img src="img/Rectangle 26.png"
-                        alt="Tes ruches"></div>
-                <div class="MaRucheTitre">La nuit d'horreur</div>
-                <div class="azert">
-                    <div class="InfoRuche">age : 16 ans</div>
-                    <div class="azert">
-                        <div class="User"><img src="img/Users.svg" alt="Icon d'utilisateur"></div>
-                        <div class="InfoRuche">3 - 8</div>
-                    </div>
-                </div>
-                <div class="EscageGameBarreSelecteurGlobal">
-                    <div class="SelecteurBoule"></div>
-                    <div class="SelecteurBarre"></div>
-                </div>
-
-                <div class="BoutonEscapeGame">
-                    <a href="/" class="EscapeGameBouton">Voir plus</a>
-                    <a href="/" class="EscapeGameBouton">Réserver</a>
-                </div>
-            </div>
-        </div>
+        <!-- pour modifier le tou, en haut il y a la boucle de ce qui est affiché, dans une variable result -->
+        <?= $result ?>
     </div>
 </div>

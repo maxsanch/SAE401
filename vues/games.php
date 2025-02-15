@@ -1,4 +1,4 @@
-<?
+<?php
 
 $styles = "styles/remerciements.css";
 
@@ -12,13 +12,15 @@ foreach($jeux as $valeur){
         $phototest = 'img/photojeu/' . $valeur['ID_jeu'] . '.png';
     } else {
         // Sinon, affiche une image par défaut
-        $phototest = 'img/photojeu/no-image.jpg';
+        $phototest = 'img/photojeu/no_image.jpg';
     }
 
-    $result.= "<img src='img/".$phototest."'><div class='titre'>".$valeur['Titre']."</div><div class='total'><div class='age'>age : ".$valeur['age']."</div><div class='nbrpart'>".$valeur['nombre_min']." - ".$valeur['nombre_max']."</div></div>";
+    $result.= "<img src='".$phototest."'><div class='titre'>".$valeur['Titre']."</div><div class='total'><div class='age'>age : ".$valeur['age']."</div><div class='nbrpart'>".$valeur['nombre_min']." - ".$valeur['nombre_max']."</div></div>";
 }
 
 ?>
 
 
-<div>test</div>
+<divv class="global">
+    <?= $result ?>
+</divv>

@@ -2,15 +2,17 @@
 
 require_once "vues/vue.class.php";
 require_once "modeles/utilisateurs.class.php";
+require_once "modeles/jeux.class.php";
 
 class ctlPage
 {
 
   private $user;
 
-
+  private $jeu;
   public function __construct()
   {
+    $this->jeu = new jeux;
     $this->user = new utilisateurs;
   }
   /*******************************************************
@@ -28,8 +30,10 @@ class ctlPage
       $utilisateurStatut = "";
     }
 
+    $jeux = $this->jeu->getjeux();
+
     $vue = new vue("accueil_déco"); // Instancie la vue appropriée
-    $vue->afficher(array('utilisateurStatut' => $utilisateurStatut)); // Affiche la liste des clients dans la vue, c'est ca qui est passé en paramètres au niveau de data dans la classe vue
+    $vue->afficher(array('utilisateurStatut' => $utilisateurStatut, 'jeux' => $jeux)); // Affiche la liste des clients dans la vue, c'est ca qui est passé en paramètres au niveau de data dans la classe vue
   }
 
   /*******************************************************

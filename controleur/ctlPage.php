@@ -51,8 +51,8 @@ class ctlPage
     $vue->afficher(array());
   }
 
-  public function ajoutjeux(){
+  public function ajoutjeux($erreur){
     $vue = new vue('ajoutjeu');
-    $vue->afficher(array());
+    $vue->afficher(array('erreur' => $erreur));
   }
 }

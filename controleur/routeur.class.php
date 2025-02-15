@@ -86,14 +86,14 @@ class routeur
                             break;
                         case "AjoutJeu":
                             if ($user[0]['niveau'] == 'admin') {
-                                $this->ctlJeux->ajouterjeu($_POST['titre'], $_POST['lieu'], $_POST['mail'],$_POST['link'], $_POST['description']);
+                                $this->ctlJeux->ajouterjeu($_POST['titre'], $_POST['ville'], $_POST['mail'],$_POST['link'], $_POST['description'], $_POST['min'], $_POST['max'], $_POST['age'], $_POST['adresse'], $_POST['postale']);
                             } else {
                                 $this->ctlPage->accueil();
                             }
                             break;
                         case "PageAjoutJeu":
                             if ($user[0]['niveau'] == 'admin') {
-                                $this->ctlPage->ajoutjeux();
+                                $this->ctlPage->ajoutjeux("");
                             } else {
                                 $this->ctlPage->accueil();
                             }

@@ -5,13 +5,23 @@ $styles = "";
 ?>
 
 
-<form action="<?= $_SERVER['PHP_SELF'] . '?page=AjoutJeu' ?>" method="post" enctype="multipart/form-data">
-    
+<form action="<?= $_SERVER['PHP_SELF'] . '?page=AjoutJeu' ?>" method="post" enctype="multipart/form-data">  
     <input type="text" name="titre" placeholder="un titre pour le jeu">
-    <input type="text" name="lieu" placeholder="entre l'id du lieu">
     <input type="email" name="mail" placeholder="entrez le mail pour les informations complémentaires sur ce jeu">
     <input type="text" name="link" placeholder="entrez le lien d'une vidéo youtube">
+    <input type="text" name="min" placeholder="min participants">
+    <input type="text" name="max" placeholder="max participants">
+    <input type="text" name="age" placeholder="age participants">
     <textarea name="description" id="test">Entrez une description du jeu</textarea>
+
+    <div class="in">
+        infos ville : 
+    </div>
+
+    <input type="text" name="ville" placeholder="entrez une ville">
+    <input type="text" name="adresse" placeholder="entrez une adresse">
+    <input type="text" name="postale" placeholder="entrez un code postale">
+
     <div class="form_elt">
         <!-- Limite la taille maximale de fichier téléchargé (500Ko ici) -->
         <input type="hidden" name="MAX_FILE_SIZE" value="500000">
@@ -25,3 +35,7 @@ $styles = "";
     <!-- Bouton pour valider le formulaire -->
     <input class="boutbout" type="submit" class="valid" name="ok" value="Valider">
 </form>
+
+<div class="err">
+    <?= $erreur ?>
+</div>

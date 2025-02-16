@@ -36,6 +36,9 @@ class ctlConnexion
             if (password_verify($mdp, $user[0]['mdp'])) {
                 // Si le mot de passe est correct, enregistrer l'email dans la session pour authentification.
                 $_SESSION['acces'] = $user[0]['mail'];
+
+                $this->inscription->updatedate($user[0]['Id_utilisateur']);
+
                 $this->routeur->accueil();
 
             } else {

@@ -1,7 +1,7 @@
 <?php
 
 require_once "modeles/database.class.php";
-require_once "controleur/ctlPage.php";
+require_once "controleur/ctlJeux.php";
 
 class jeux extends database {
     
@@ -15,6 +15,14 @@ class jeux extends database {
         $this->execReqPrep($req, $data);
     }
 
+    public function enregModifJeu($id, $titre, $ville, $mail, $link, $description, $min, $max, $age, $adresse, $postale){
+        $data = array($ville, $mail, $link, $description, $titre, $min, $max, $age, $adresse, $postale, $id);
+
+        $req = "UPDATE `jeux` SET `ville` = ?, `mail` = ?, `lien_video` = ?, `description` = ?, `Titre` = ?, `nombre_min` = ?, `nombre_max` = ?, `age` = ?, `adresse` = ?, `postale` = ? WHERE `jeux`.`ID_jeu` = ?;";
+
+        // Exécution de la requête préparée
+        $this->execReqPrep($req, $data);
+    }
 
     public function recupJeu(){
         $req = 'SELECT ID_jeu FROM `jeux` ORDER BY ID_jeu DESC LIMIT 1';
@@ -26,10 +34,10 @@ class jeux extends database {
 
     public function enregjeuphoto($idJeu)
     {
-        $page = new ctlPage();
+        $page = new ctlJeux();
         // Vérification si un fichier photo a été envoyé
         if (isset($_FILES['photoGame'])) {
-            var_dump($idJeu);
+            var_dump('test');
 
             // Vérification si le fichier ne contient pas d'erreur
             if ($_FILES['photoGame']["error"] == 0) {
@@ -110,4 +118,21 @@ class jeux extends database {
         return $jeux;
     }
 
+    public function supprjeu($jeu){
+        $data = array($jeu);
+
+        $req = "DELETE FROM jeux WHERE `jeux`.`ID_jeu` = ?";
+
+        $this->execReqPrep($req, $data);
+    }
+
+    public function getJeuSingle($idjeu){
+        $data = array($idjeu);
+
+        $req = "SELECT * FROM jeux WHERE ID_jeu = ?";
+
+        $jeusolo = $this->execReqPrep($req, $data);
+
+        return $jeusolo[0];
+    }
 }

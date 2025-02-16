@@ -18,5 +18,81 @@ class utilisateurs extends database {
         return $user;
     }
 
-    
+    public function GetUserbyID($mail)
+    {
+        // Création d'un tableau de données avec l'ID de l'utilisateur
+        $data = array($mail);
+
+        // Requête SQL pour sélectionner tous les champs de l'utilisateur avec un email spécifique
+        $req = 'SELECT * from utilisateurs WHERE Id_utilisateur = ?';
+
+        // Exécution de la requête préparée
+        $user = $this->execReqPrep($req, $data);
+
+        // Retourne l'utilisateur trouvé
+        return $user[0];
+    }
+
+    public function getallUser(){
+        $req = "SELECT * FROM utilisateurs";
+
+        return $this->execReq($req);
+    }
+
+
+    public function updateUserPhoto($idArt)
+    {
+        // Vérification si un fichier photo a été envoyé
+        if (isset($_FILES['photoUser'])) {
+            // Vérification si le fichier n'a pas d'erreur
+            if ($_FILES['photoUser']["error"] == 0) {
+                // Vérification si la taille du fichier est inférieure à 20 Mo
+                if ($_FILES['photoUser']["size"] <= 500000) {
+                    // Récupération de l'extension du fichier
+                    $infosfichier = new SplFileInfo($_FILES['photoUser']['name']);
+                    $extension_upload = $infosfichier->getExtension();
+
+                    // Liste des extensions autorisées
+                    $extensions_autorisees = array('jpg', 'png');
+
+                    // Vérification si l'extension du fichier est autorisée
+                    if (in_array($extension_upload, $extensions_autorisees)) {
+
+                        foreach($extensions_autorisees as $test){
+                            $exister = 'img/user/'. $idArt. '.'.$test;
+
+                            if(file_exists($test)){
+                                unlink($test);
+                            }
+                        }
+                        // Vérification si le dossier 'img/user' existe
+                        if (is_dir('img/user')) {
+                            // Déplacement du fichier vers le dossier "img/user" avec un nom basé sur l'ID de l'article
+                            move_uploaded_file(
+                                $_FILES['photoUser']['tmp_name'],
+                                'img/user/' . $idArt . "." . $extension_upload
+                            );
+                            $erreur = "Transfert du fichier : " . ' ' . $_FILES['photoUser']['name'] . ' ' . " effectué !";
+                            return $erreur;
+                        } else {
+                            // Si le dossier n'existe pas, le créer et déplacer le fichier
+                            mkdir('img/user');
+                            move_uploaded_file(
+                                $_FILES['photoUser']['tmp_name'],
+                                'img/user/' . $idArt . "." . $extension_upload
+                            );
+                            $erreur = "Transfert du fichier " . $_FILES['photoUser']['name'] . " effectué !";
+                            return $erreur;
+                        }
+                    } else {
+                        var_dump('error');
+                    }
+                } else {
+                    var_dump('error');
+                }
+            } else {
+                var_dump('error');
+            }
+        }
+    }
 }

@@ -79,21 +79,76 @@ class routeur
                             break;
                         case "checkusers":
                             if ($user[0]['niveau'] == 'admin') {
-                                $this->ctlJeux->checkusers();
+                                $this->ctlUser->checkusers();
                             } else {
                                 $this->ctlPage->accueil();
                             }
                             break;
                         case "AjoutJeu":
                             if ($user[0]['niveau'] == 'admin') {
-                                $this->ctlJeux->ajouterjeu($_POST['titre'], $_POST['ville'], $_POST['mail'],$_POST['link'], $_POST['description'], $_POST['min'], $_POST['max'], $_POST['age'], $_POST['adresse'], $_POST['postale']);
+                                $this->ctlJeux->ajouterjeu($_POST['titre'], $_POST['ville'], $_POST['mail'], $_POST['link'], $_POST['description'], $_POST['min'], $_POST['max'], $_POST['age'], $_POST['adresse'], $_POST['postale']);
                             } else {
                                 $this->ctlPage->accueil();
                             }
                             break;
                         case "PageAjoutJeu":
                             if ($user[0]['niveau'] == 'admin') {
-                                $this->ctlPage->ajoutjeux("");
+                                $this->ctlJeux->ajoutjeux("");
+                            } else {
+                                $this->ctlPage->accueil();
+                            }
+                            break;
+                        case "modifjeu":
+                            if ($user[0]['niveau'] == 'admin') {
+                                if (isset($_GET['idJeu'])) {
+                                    $this->ctlJeux->modifjeu($_GET['idJeu']);
+                                } else {
+                                    $this->ctlPage->accueil();
+                                }
+                            } else {
+                                $this->ctlPage->accueil();
+                            }
+                            break;
+                        case "modifierjeu":
+                            if ($user[0]['niveau'] == 'admin') {
+                                if (isset($_GET['idjeu'])) {
+                                    $this->ctlJeux->enregistrerModif($_GET['idjeu'], $_POST['titre'], $_POST['ville'], $_POST['mail'], $_POST['link'], $_POST['description'], $_POST['min'], $_POST['max'], $_POST['age'], $_POST['adresse'], $_POST['postale']);
+                                } else {
+                                    $this->ctlPage->accueil();
+                                }
+                            } else {
+                                $this->ctlPage->accueil();
+                            }
+                            break;
+                        case "supprJeu":
+                            if ($user[0]['niveau'] == 'admin') {
+                                if (isset($_GET['idJeu'])) {
+                                    $this->ctlJeux->supprimerjeu($_GET['idJeu']);
+                                } else {
+                                    $this->ctlPage->accueil();
+                                }
+                            } else {
+                                $this->ctlPage->accueil();
+                            }
+                            break;
+                        case "informationsUser":
+                            if ($user[0]['niveau'] == 'admin') {
+                                if (isset($_GET['idUser'])) { 
+                                    $this->ctlUser->modifUser($_GET['idUser']);
+                                } else {
+                                    $this->ctlPage->accueil();
+                                }
+                            } else {
+                                $this->ctlPage->accueil();
+                            }
+                            break;
+                        case "enregUserPhoto":
+                            if ($user[0]['niveau'] == 'admin') {
+                                if (isset($_GET['idUser'])) { 
+                                    $this->ctlUser->EnregPhotoUser($_GET['idUser']);
+                                } else {
+                                    $this->ctlPage->accueil();
+                                }
                             } else {
                                 $this->ctlPage->accueil();
                             }

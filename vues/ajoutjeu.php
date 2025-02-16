@@ -2,6 +2,22 @@
 
 $styles = "";
 
+
+$result = "";
+foreach ($jeux as $valeur) {
+    if (file_exists('img/photojeu/' . $valeur['ID_jeu'] . '.jpg')) {
+        $phototest = 'img/photojeu/' . $valeur['ID_jeu'] . '.jpg';
+        // Si l'image existe, l'affiche
+    } else if (file_exists('img/photojeu/' . $valeur['ID_jeu'] . '.png')) {
+        $phototest = 'img/photojeu/' . $valeur['ID_jeu'] . '.png';
+    } else {
+        // Sinon, affiche une image par défaut
+        $phototest = 'img/photojeu/no_image.jpg';
+    }
+
+    $result .= '<div class="case"><a href="index.php?page=modifjeu&idRuche=' . $valeur['ID_jeu'] . '" class="photo"><img src="' . $phototest . '" alt="Jeu choisi" style="height: 200px; object-fit: cover;"></a><b>' . $valeur['Titre'] . '</b><a class="bout" href="index.php?page=infojeusolo&idJeu=' . $valeur['ID_jeu'] . '">Voir le jeu</a><a href="index.php?page=modifjeu&idJeu=' . $valeur['ID_jeu'] . '" class="bout">Modifier</a><a href="index.php?page=supprJeu&idJeu='. $valeur['ID_jeu'] .'" class="bout">Supprimer</a></div>';
+}
+
 ?>
 
 
@@ -38,4 +54,9 @@ $styles = "";
 
 <div class="err">
     <?= $erreur ?>
+</div>
+
+<div class="jeux">
+    <!-- result sera bougé la ou tu voudra afficher dinamiquement tout les jeux, a modifier en conséquence en haut. -->
+    <?= $result ?>
 </div>

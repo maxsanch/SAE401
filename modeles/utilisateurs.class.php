@@ -2,7 +2,8 @@
 
 require_once "modeles/database.class.php";
 
-class utilisateurs extends database {
+class utilisateurs extends database
+{
     public function GetUser($mail)
     {
         // Création d'un tableau de données avec l'ID de l'utilisateur
@@ -33,7 +34,8 @@ class utilisateurs extends database {
         return $user[0];
     }
 
-    public function getallUser(){
+    public function getallUser()
+    {
         $req = "SELECT * FROM utilisateurs";
 
         return $this->execReq($req);
@@ -58,10 +60,10 @@ class utilisateurs extends database {
                     // Vérification si l'extension du fichier est autorisée
                     if (in_array($extension_upload, $extensions_autorisees)) {
 
-                        foreach($extensions_autorisees as $test){
-                            $exister = 'img/user/'. $idArt. '.'.$test;
+                        foreach ($extensions_autorisees as $test) {
+                            $exister = 'img/user/' . $idArt . '.' . $test;
 
-                            if(file_exists($test)){
+                            if (file_exists($test)) {
                                 unlink($test);
                             }
                         }
@@ -94,5 +96,32 @@ class utilisateurs extends database {
                 var_dump('error');
             }
         }
+    }
+
+    public function deletuser($id)
+    {
+        $data = array($id);
+
+        $req = "DELETE FROM utilisateurs WHERE `utilisateurs`.`Id_utilisateur` = ?;";
+
+        $this->execReqPrep($req, $data);
+    }
+
+    public function deletpanier($id)
+    {
+        $data = array($id);
+
+        $req = "DELETE FROM panier WHERE `panier`.`id_utilisateur` = ?;";
+
+        $this->execReqPrep($req, $data);
+    }
+
+    public function changepasswordadmin($id, $mdphash){
+        $data = array($mdphash, $id);
+        // Requête SQL pour mettre à jour le mot de passe d'un utilisateur
+        $req = "UPDATE `utilisateurs` SET `mdp` = ? WHERE `utilisateurs`.`Id_utilisateur` = ?;";
+
+        // Exécution de la requête
+        $this->execReqPrep($req, $data);
     }
 }

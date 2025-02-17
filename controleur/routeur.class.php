@@ -5,6 +5,8 @@ require_once "controleur/ctlUser.php";
 require_once "controleur/ctlPanier.php";
 require_once "controleur/ctlLieux.php";
 require_once "controleur/ctlJeux.php";
+require_once "controleur/ctlShop.php";
+require_once "controleur/ctlEmployes.php";
 
 class routeur
 {
@@ -19,6 +21,8 @@ class routeur
     private $ctlJeux;
 
     private $ctlEmployes;
+
+    private $ctlShop;
 
     private $ctlLieux;
 
@@ -36,6 +40,10 @@ class routeur
         $this->ctlJeux = new ctlJeux;
 
         $this->ctlLieux = new ctlLieux;
+
+        $this->ctlShop = new ctlshop;
+
+        $this->ctlEmployes = new ctlEmploye;
     }
 
     public function routerRequete()
@@ -71,8 +79,14 @@ class routeur
                         case "shop":
                             $this->ctlShop->objetsshop();
                             break;
-                        case "InformationUser":
-                            $this->ctlUser->objetsshop();
+                        case "informationmyuser":
+                            $this->ctlUser->infoperso();
+                            break;
+                        case "changerpdp":
+                            $this->ctlUser->changerpdp();
+                            break;
+                        case "deletMyAccount":
+                            $this->ctlUser->deletMyAccount();
                             break;
                         case "Panier":
                             $this->ctlUser->objetsshop();
@@ -131,10 +145,32 @@ class routeur
                                 $this->ctlPage->accueil();
                             }
                             break;
+                        case "supprimerCompte":
+                            if ($user[0]['niveau'] == 'admin') {
+                                if (isset($_GET['idUser'])) {
+                                    $this->ctlUser->supprimerCompte($_GET['idUser']);
+                                } else {
+                                    $this->ctlPage->accueil();
+                                }
+                            } else {
+                                $this->ctlPage->accueil();
+                            }
+                            break;
+                        case "ModifMdpUser":
+                            if ($user[0]['niveau'] == 'admin') {
+                                if (isset($_GET['idUser'])) {
+                                    $this->ctlUser->modifiermdp($_GET['idUser'], $_POST['mdp'], $_POST['confirmation']);
+                                    } else {
+                                    $this->ctlPage->accueil();
+                                }
+                            } else {
+                                $this->ctlPage->accueil();
+                            }
+                                break;
                         case "informationsUser":
                             if ($user[0]['niveau'] == 'admin') {
                                 if (isset($_GET['idUser'])) { 
-                                    $this->ctlUser->modifUser($_GET['idUser']);
+                                    $this->ctlUser->modifUser($_GET['idUser'], "");
                                 } else {
                                     $this->ctlPage->accueil();
                                 }

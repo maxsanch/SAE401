@@ -35,6 +35,10 @@ if (file_exists('img/user/' . $_GET['idUser'] . '.jpg')) {
             <input class="boutbout" type="submit" class="valid" name="ok" value="modifier">
         </form>
 
+        <div class="informationPopUp">
+            <?= $message ?>
+        </div>
+
         <div class="informations">
             <div class="name">
                 <div class="nom">
@@ -55,7 +59,18 @@ if (file_exists('img/user/' . $_GET['idUser'] . '.jpg')) {
 
 
         <div class="modifmdp">
-            
+            <!-- rendre le bouton clicable pour qu'au clic, la fenetre du formulaire "modifiermdp" s'ouvre. -->
+            Modifier le mot de passe
+        </div>
+        <div class="deletaccount">
+            <a href="index.php?page=supprimerCompte&idUser=<?= $_GET['idUser'] ?>">Supprimer le compte</a>
+        </div>
+        <div class="modifiermdp">
+            <form method="post" action="index.php?page=ModifMdpUser&idUser=<?= $_GET['idUser'] ?>">
+                <input type="password" name="mdp" placeholder="entrez le nouveau mot de passe">
+                <input type="password" name="confirmation"  placeholder="entrez le nouveau mot de passe">
+                <button>Modifier</button>
+            </form>
         </div>
     </div>
     <div class="panier">

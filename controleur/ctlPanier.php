@@ -45,4 +45,13 @@ class ctlPanier
 
         $shop->objetsshop();
     }
+
+    public function EnregReservation($idjeu, $jour, $nombre, $heure){
+        $getUser = $this->user->GetUser($_SESSION['acces']);
+        $getPanier = $this->panier->getPanierUser($getUser[0]['Id_utilisateur']);
+        var_dump($getPanier);
+        $this->panier->Reserver($idjeu, $jour, $nombre, $heure, $getPanier);
+        
+        header('Location: index.php?page=remerciements');
+    }
 }

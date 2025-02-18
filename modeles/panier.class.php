@@ -66,4 +66,12 @@ class panier extends database {
         
         return $this->execReqPrep($req, $data);
     }
+
+    public function Reserver($idjeu, $jour, $nombre, $heure, $idpanier){
+        $data = array($idjeu, $idpanier, $jour, $heure, $nombre);
+
+        $req = "INSERT INTO `réserver` (`ID_jeu`, `id_panier`, `jour_reservation`, `heure_reservation`, `nombre_personnes`) VALUES (?, ?, ?, ?, ?);";
+        
+        return $this->execReqPrep($req, $data);
+    }
 }

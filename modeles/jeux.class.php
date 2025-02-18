@@ -144,4 +144,11 @@ class jeux extends database {
 
         return $this->execReqPrep($req, $data);
     }
+
+
+    public function getReservation(){
+        $req = "SELECT ID_jeu, jour_reservation, heure_reservation FROM réserver";
+
+        return $this->execReq($req);
+    }
 }

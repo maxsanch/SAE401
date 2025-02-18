@@ -96,6 +96,14 @@ class routeur
                         case "Panier":
                             $this->ctlUser->objetsshop();
                             break;
+                        case "réserverJeu":
+                            if(isset($_GET['idjeu']) && isset($_GET['jour'])){
+                                $this->ctlPanier->EnregReservation($_GET['idjeu'], $_GET['jour'], $_POST['nombre'], $_POST['heure']);
+                            }
+                            else{
+                                $this->ctlJeux->alljeux();
+                            }
+                            break;
                         case 'ajouterObjPanier':
                             if(isset($_GET['idobj'])){
                                 $this->ctlPanier->ajouterpanier($_GET['idobj'], $_POST['quantite']);

@@ -20,17 +20,33 @@ if ($jeu[0]['lien_video'] == "") {
 
 $date = new dateTime();
 
-$affichage="";
+$affichage = "";
 
-for($i = 0; $i< 60; $i++){
+for ($i = 0; $i < 10; $i++) {
     $heures = "";
 
-    // for($j == 8; $j<16; $j+2){
-    //     $heures .= "<div>".$j." - ".($j+2)."h</div>";
-    // }
+    for ($j = 8; $j <= 16; $j += 2) {
+        foreach($recup as $valeur){
+            if($valeur['jour_reservation'] == $date->format('Y-m-d') && $valeur['heure_reservation'] == $j."-". ($j + 2)."h" && $valeur['ID_jeu'] == $_GET['idjeu']){
+                $heures .= "<label><input disabled required type='radio' name='heure' value='".$j."-". ($j + 2)."h'>" . $j . " - " . ($j + 2) . "h</label>";
+            }
+            else{
+                $heures .= "<label><input required type='radio' name='heure' value='".$j."-". ($j + 2)."h'>" . $j . " - " . ($j + 2) . "h</label>";
+            }
+        }
+    }
 
-
-    $affichage .= "<div class='total'><div class='parentCalender'>".$date->format('d-m-Y')."</div> <div class='heures'>".$heures."</div></div>";
+    $affichage .= "<div class='total'>
+                    <form action='index.php?page=réserverJeu&idjeu=".$_GET['idjeu']."&jour=".$date->format('Y-m-d')."' method='post'>
+                        <div class='parentCalender'>" . $date->format('d-m-Y') . "</div>
+                        <div class='heures'>" . $heures . "</div>
+                        <label>
+                            Choisissez un nombre de participants.
+                            <input type='number' required max='".$jeu[0]['nombre_max']."' min='".$jeu[0]['nombre_min']."' name='nombre' placeholder='nombre de participants'>
+                        </label>
+                        <button>Valider</button>
+                    </form>
+                    </div>";
     $date->modify('+1 day');
 }
 

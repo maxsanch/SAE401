@@ -50,8 +50,9 @@ class ctlJeux{
 
     public function jeuxsingle($idjeu){
         $jeu = $this->jeu->getjeu($idjeu);
+        $recup = $this->jeu->getReservation();
 
         $vue = new vue('jeusolo');
-        $vue->afficher(array('jeu' => $jeu));
+        $vue->afficher(array('jeu' => $jeu, 'recup' => $recup));
     }
 }

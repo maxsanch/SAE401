@@ -91,6 +91,14 @@ class routeur
                         case "Panier":
                             $this->ctlUser->objetsshop();
                             break;
+                        case 'ajouterObjPanier':
+                            if(isset($_GET['idobj'])){
+                                $this->ctlPanier->ajouterpanier($_GET['idobj'], $_POST['quantite']);
+                            }
+                            else{
+                                $this->ctlShop->objetsshop();
+                            }
+                            break;
                         case "checkusers":
                             if ($user[0]['niveau'] == 'admin') {
                                 $this->ctlUser->checkusers();

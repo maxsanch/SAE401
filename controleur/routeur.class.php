@@ -65,7 +65,12 @@ class routeur
                             $this->ctlPage->propos();
                             break;
                         case "infojeusolo":
-                            $this->ctlJeux->Jeuxsingle();
+                            if(isset($_GET['idjeu'])){
+                                $this->ctlJeux->Jeuxsingle($_GET['idjeu']);
+                            }
+                            else{
+                                $this->ctlJeux->alljeux();
+                            }
                             break;
                         case "carte":
                             $this->ctlLieux->spots();

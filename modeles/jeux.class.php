@@ -135,4 +135,13 @@ class jeux extends database {
 
         return $jeusolo[0];
     }
+
+
+    public function getjeu($id){
+        $data = array($id);
+
+        $req = "SELECT * FROM jeux WHERE ID_jeu = ?";
+
+        return $this->execReqPrep($req, $data);
+    }
 }

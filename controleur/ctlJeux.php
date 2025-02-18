@@ -47,4 +47,11 @@ class ctlJeux{
         $this->jeu->enregjeuphoto($id);
         $this->ajoutjeux("le jeu à bien été modifié.");
     }
+
+    public function jeuxsingle($idjeu){
+        $jeu = $this->jeu->getjeu($idjeu);
+
+        $vue = new vue('jeusolo');
+        $vue->afficher(array('jeu' => $jeu));
+    }
 }

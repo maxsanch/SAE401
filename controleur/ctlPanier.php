@@ -54,4 +54,16 @@ class ctlPanier
         
         header('Location: index.php?page=remerciements');
     }
+
+    public function supprimerSouvenir($idobj, $idpanier){
+        $this->panier->supprimersouv($idobj, $idpanier);
+
+        header('Location: index.php?page=informationmyuser');
+    }
+
+    public function supprimerReservation($idobj, $heure, $jour){
+        $this->panier->supprimerres($idobj, $heure, $jour);
+
+        header('Location: index.php?page=informationmyuser');
+    }
 }

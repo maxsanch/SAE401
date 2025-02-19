@@ -26,6 +26,31 @@ class panier extends database {
         return $panier[0]['id_panier'];
     }
 
+    public function getPaniers($iduser){
+        $data = array($iduser);
+        $req = "SELECT id_panier FROM panier WHERE id_utilisateur = ?;";
+
+
+        $panier = $this->execReqPrep($req, $data);
+        return $panier;
+    }
+
+    public function deletContenir($id){
+        $data = array($id);
+
+        $req = "DELETE FROM contenir WHERE `contenir`.`id_panier` = ?;";
+
+        $this->execReqPrep($req, $data);
+    }
+
+
+    public function deletReserver($id){
+        $data = array($id);
+
+        $req = "DELETE FROM réserver WHERE `réserver`.`id_panier` = ?;";
+
+        $this->execReqPrep($req, $data);
+    }
 
     public function checkexist($idobj, $idpanier){
         $data = array($idobj, $idpanier);
@@ -78,7 +103,31 @@ class panier extends database {
     public function MesRéservations($idUser){
         $data = array($idUser);
 
-        $req = "SELECT panier.id_panier as 'panier', nombre_personnes, jeux.Titre, jeux.prix, jeux.description, réserver.jour_reservation, réserver.heure_reservation FROM panier INNER JOIN réserver ON réserver.id_panier=panier.id_panier INNER JOIN jeux ON jeux.ID_jeu = réserver.ID_jeu WHERE panier.id_utilisateur = ?;";
+        $req = "SELECT réserver.ID_jeu, panier.id_panier as 'panier', nombre_personnes, jeux.Titre, jeux.prix, jeux.description, réserver.jour_reservation, réserver.heure_reservation FROM panier INNER JOIN réserver ON réserver.id_panier=panier.id_panier INNER JOIN jeux ON jeux.ID_jeu = réserver.ID_jeu WHERE panier.id_utilisateur = ? AND panier.statut='en cours';";
+
+        return $this->execReqPrep($req, $data);
+    }
+
+    public function MesSouvenirs($idUser){
+        $data = array($idUser);
+
+        $req = "SELECT contenir.id_panier, contenir.id_objet_shop, nom, description, prix, quantitée FROM panier INNER JOIN contenir ON contenir.id_panier=panier.id_panier INNER JOIN objet_shop ON objet_shop.id_objet_shop = contenir.id_objet_shop WHERE panier.id_utilisateur = ? AND panier.statut='en cours';";
+
+        return $this->execReqPrep($req, $data);
+    }
+
+    public function supprimersouv($idobj, $idpanier){
+        $data = array($idobj, $idpanier);
+
+        $req = "DELETE FROM contenir WHERE `contenir`.`id_objet_shop` = ? AND `contenir`.`id_panier` = ?;";
+
+        return $this->execReqPrep($req, $data);
+    }
+
+    public function supprimerres($idobj, $heure, $jour){
+        $data = array($idobj, $heure, $jour);
+
+        $req = "DELETE FROM réserver WHERE `réserver`.`ID_jeu` = ? AND `réserver`.`heure_reservation` = ? AND `réserver`.`jour_reservation` = ?;";
 
         return $this->execReqPrep($req, $data);
     }

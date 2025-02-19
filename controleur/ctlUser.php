@@ -63,7 +63,17 @@ class ctlUser
     public function supprimerCompte($id)
     {
         $this->users->deletuser($id);
+        $panier = $this->panierUser->getPaniers($id);
+
+        var_dump($panier);
+        // supprimer les liaisons dans les tables contenir et réserver.
+        foreach($panier as $ligne){
+            $this->panierUser->deletContenir($ligne['id_panier']);
+            $this->panierUser->deletReserver($ligne['id_panier']);
+        }
+
         $this->users->deletpanier($id);
+
         $this->checkusers();
     }
 
@@ -93,16 +103,26 @@ class ctlUser
     {
         $infouser = $this->users->GetUser($_SESSION['acces']);
         $panierUtilisateur = $this->panierUser->MesRéservations($infouser[0]['Id_utilisateur']);
+        $SouvenirsUtilisateur = $this->panierUser->MesSouvenirs($infouser[0]['Id_utilisateur']);
 
         $vue = new vue('infos_perso');
 
-        $vue->afficher(array('user' => $infouser[0], 'panier' => $panierUtilisateur));
+        $vue->afficher(array('user' => $infouser[0], 'panier' => $panierUtilisateur, 'souvenirs' => $SouvenirsUtilisateur));
     }
 
     public function deletMyAccount()
     {
         $id = $this->users->GetUser($_SESSION['acces']);
         $this->users->deletuser($id[0]['Id_utilisateur']);
+        $panier = $this->panierUser->getPaniers($id[0]['Id_utilisateur']);
+
+        var_dump($panier);
+        // supprimer les liaisons dans les tables contenir et réserver.
+        foreach($panier as $ligne){
+            $this->panierUser->deletContenir($ligne['id_panier']);
+            $this->panierUser->deletReserver($ligne['id_panier']);
+        }
+
         $this->users->deletpanier($id[0]['Id_utilisateur']);
 
         // suppression de la session et des cookies de ce dernier

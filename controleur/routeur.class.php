@@ -96,6 +96,22 @@ class routeur
                         case "Panier":
                             $this->ctlUser->objetsshop();
                             break;
+                        case "suppressionSouvenirs":
+                            if(isset($_GET['idobj']) && isset($_GET['idpanier'])){
+                                $this->ctlPanier->supprimerSouvenir($_GET['idobj'], $_GET['idpanier']);
+                            }
+                            else{
+                                $this->ctlPage->accueil();
+                            }
+                            break;
+                        case "suppressionReservation":
+                            if(isset($_GET['idJeu']) && isset($_GET['heure']) && isset($_GET['jour'])){
+                                $this->ctlPanier->supprimerReservation($_GET['idJeu'], $_GET['heure'], $_GET['jour']);
+                            }
+                            else{
+                                $this->ctlPage->accueil();
+                            }
+                            break;
                         case "réserverJeu":
                             if(isset($_GET['idjeu']) && isset($_GET['jour'])){
                                 $this->ctlPanier->EnregReservation($_GET['idjeu'], $_GET['jour'], $_POST['nombre'], $_POST['heure']);

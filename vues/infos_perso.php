@@ -14,9 +14,12 @@ if (file_exists('img/user/' . $user['Id_utilisateur'] . '.jpg')) {
 
 $resultpanier = "";
 
-foreach($panier as $valeurs){
-    var_dump($valeurs['nombre_personnes']);
-    $resultpanier .= '<div class="lignepanier"><div class="linetop"><div class="titre">'.$valeurs['Titre'].'</div><div class="personnes">nombre de personnes : '.$valeurs['nombre_personnes'].'</div><div class="prix">prix total : '.($valeurs['nombre_personnes']*$valeurs['prix']).'</div></div><div class="infojour"><div class="jour">'.$valeurs['jour_reservation'].'</div><div class="heure">'.$valeurs['heure_reservation'].'</div></div><div class="description">'.$valeurs['description'].'</div></div>';
+foreach ($panier as $valeurs) {
+    $resultpanier .= '<div class="lignepanier"><div class="linetop"><div class="titre">' . $valeurs['Titre'] . '</div><div class="personnes">nombre de personnes : ' . $valeurs['nombre_personnes'] . '</div><div class="prix">prix total : ' . ($valeurs['nombre_personnes'] * $valeurs['prix']) . '</div></div><div class="infojour"><div class="jour">' . $valeurs['jour_reservation'] . '</div><div class="heure">' . $valeurs['heure_reservation'] . '</div><div class="prixsolo">' . $valeurs['prix'] . '</div></div><div class="description">' . $valeurs['description'] . '</div><a href=index.php?page=suppressionReservation&idJeu='.$valeurs['ID_jeu'].'&heure='.$valeurs['heure_reservation'].'&jour='.$valeurs['jour_reservation'].'><div class="iconepoubelle">Retirer du panier (mettre une icone de poubelle)</div></a></div>';
+}
+
+foreach ($souvenirs as $ligne) {
+    $resultpanier .= '<div class="lignepanier"><div class="linetop"><div class="nom">'.$ligne['nom'].'</div><div class="prixTot">Prix total : '.($ligne['prix']*$ligne['quantitée']).' ('.$ligne['prix'].' x'.$ligne['quantitée'].')</div></div><div class="description">' . $ligne['description'] . '</div><a href=index.php?page=suppressionSouvenirs&idobj='.$ligne['id_objet_shop'].'&idpanier='.$ligne['id_panier'].'><div class="iconepoubelle">Retirer du panier (mettre une icone de poubelle)</div></a></div>';
 }
 
 ?>

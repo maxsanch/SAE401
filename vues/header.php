@@ -1,13 +1,13 @@
 <header>
-            <div><img src="img/Logo.png" alt="Logo de we escape"></div>
-            <div class="HeaderCoteDroite">
-                <div class="HeaderBouton">Accueil</div>
-                <div class="HeaderBouton">A propos</div>
-                <div class="HeaderBouton">Les jeux</div>
-                <div class="HeaderBouton">Nous trouver</div>
-                <div class="HeaderBouton">Contacts</div>
-                <div class="HeaderBouton">Réservation</div>
-                <div class="HeaderBouton"><img src="img/Shopping_bag.png" alt="Sac des réservations"></div>
-                <div class="HeaderBouton"><img src="img/Shopping_cart.png" alt="Caddies des réservations"></div>
-            </div>
-        </header>
+    <div><a href="index.php"><img src="img/Logo.png" alt="Logo de we escape"></a></div>
+    <div class="HeaderCoteDroite">
+        <div class="HeaderBouton"><a href="index.php">Accueil</a></div>
+        <div class="HeaderBouton"><a href="index.php?page=propos"> A propos</a></div>
+        <div class="HeaderBouton"><a href="index.php?page=jeuxAll">Les jeux</a></div>
+        <div class="HeaderBouton"><a href="index.php?page=carte">Nous trouver</a></div>
+        <div class="HeaderBouton"><a href="index.php?page=Contacts">Contacts</a></div>
+        <div class="HeaderBouton"><a href="index.php?page=réservation">Réservation</a></div>
+        <div class="HeaderBouton"><img src="img/Shopping_bag.png" alt="Sac des réservations"></div>
+        <div class="HeaderBouton"><a href="index.php?page=shop"><img src="img/Shopping_cart.png" alt="Caddies des réservations"></a></div>
+    </div>
+</header>

@@ -74,4 +74,12 @@ class panier extends database {
         
         return $this->execReqPrep($req, $data);
     }
+
+    public function MesRéservations($idUser){
+        $data = array($idUser);
+
+        $req = "SELECT panier.id_panier as 'panier', nombre_personnes, jeux.Titre, jeux.prix, jeux.description, réserver.jour_reservation, réserver.heure_reservation FROM panier INNER JOIN réserver ON réserver.id_panier=panier.id_panier INNER JOIN jeux ON jeux.ID_jeu = réserver.ID_jeu WHERE panier.id_utilisateur = ?;";
+
+        return $this->execReqPrep($req, $data);
+    }
 }

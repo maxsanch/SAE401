@@ -33,7 +33,12 @@ class vue {
   public function afficher($data) {
     global $conf;
     $title = $conf->TITREONGLET;
-    $header = $conf->NOMSITE;
+
+    ob_start();
+
+    require "vues/header.php";
+
+    $header = ob_get_clean();
 
     extract($data);   // Extrait les valeurs du tableau associatif $data dans des variables
 

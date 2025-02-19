@@ -12,6 +12,13 @@ if (file_exists('img/user/' . $user['Id_utilisateur'] . '.jpg')) {
     $phototest = 'img/user/no-user-image.jpg';
 }
 
+$resultpanier = "";
+
+foreach($panier as $valeurs){
+    var_dump($valeurs['nombre_personnes']);
+    $resultpanier .= '<div class="lignepanier"><div class="linetop"><div class="titre">'.$valeurs['Titre'].'</div><div class="personnes">nombre de personnes : '.$valeurs['nombre_personnes'].'</div><div class="prix">prix total : '.($valeurs['nombre_personnes']*$valeurs['prix']).'</div></div><div class="infojour"><div class="jour">'.$valeurs['jour_reservation'].'</div><div class="heure">'.$valeurs['heure_reservation'].'</div></div><div class="description">'.$valeurs['description'].'</div></div>';
+}
+
 ?>
 
 
@@ -67,9 +74,12 @@ if (file_exists('img/user/' . $user['Id_utilisateur'] . '.jpg')) {
                 </a>
             </div>
         </div>
+    </div>
+    <div class="paniers">
+        <h2>Votre paniers</h2>
 
-        <div class="paniers">
-
+        <div class="infoproduits">
+            <?= $resultpanier ?>
         </div>
     </div>
 </div>

@@ -92,10 +92,11 @@ class ctlUser
     public function infoperso()
     {
         $infouser = $this->users->GetUser($_SESSION['acces']);
+        $panierUtilisateur = $this->panierUser->MesRéservations($infouser[0]['Id_utilisateur']);
 
         $vue = new vue('infos_perso');
 
-        $vue->afficher(array('user' => $infouser[0]));
+        $vue->afficher(array('user' => $infouser[0], 'panier' => $panierUtilisateur));
     }
 
     public function deletMyAccount()

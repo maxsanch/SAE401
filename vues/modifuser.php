@@ -1,4 +1,6 @@
 <?php
+require_once "modeles/panier.class.php";
+
 $styles = "";
 
 if (file_exists('img/user/' . $_GET['idUser'] . '.jpg')) {
@@ -12,9 +14,70 @@ if (file_exists('img/user/' . $_GET['idUser'] . '.jpg')) {
 }
 
 
+$panierClass = new panier;
+
+$paniervalides = '';
+if (!empty($anciensPaniers)) {
+    foreach ($anciensPaniers as $valeur) {
+        $anciennesReservations = $panierClass->LastReservations($valeur['id_panier']);
+        $anciensSouvenirs = $panierClass->LastSouvenirs($valeur['id_panier']);
+
+        $lignes = "";
+        foreach ($anciennesReservations as $ligne) {
+            $lignes .= '<div class="lignepanier">
+                        <div class="linetop">
+                            <div class="titre">
+                                ' . $ligne['Titre'] . '
+                            </div>
+                            <div class="personnes">
+                                nombre de personnes : ' . $ligne['nombre_personnes'] . '
+                            </div>
+                            <div class="prix">
+                                prix total : ' . ($ligne['nombre_personnes'] * $ligne['prix']) . '
+                            </div>
+                        </div>
+                        <div class="infojour">
+                            <div class="jour">
+                                ' . $ligne['jour_reservation'] . '
+                            </div>
+                            <div class="heure">
+                                ' . $ligne['heure_reservation'] . '
+                            </div>
+                            <div class="prixsolo">
+                                ' . $ligne['prix'] . '
+                            </div>
+                        </div>
+                        <div class="description">
+                            ' . $ligne['description'] . '
+                        </div>
+                    </div>';
+        }
+        foreach ($anciensSouvenirs as $ligne) {
+            $lignes .= '<div class="lignepanier">
+                <div class="linetop">
+                    <div class="nom">' . $ligne['nom'] . '</div>
+                    <div class="prixTot">Prix total : ' . ($ligne['prix'] * $ligne['quantitée']) . ' (' . $ligne['prix'] . '
+                            x' . $ligne['quantitée'] . ')</div>
+                </div>
+                <div class="description">' . $ligne['description'] . '</div>
+            </div>';
+        }
+        $paniervalides .= '<div class="panier">
+                                <h3>Numéro de commande : ' . $valeur['id_panier'] . '</h3>
+                                <div class="accueilPanier">
+                                    ' . $lignes . '
+                                </div>
+                           </div> ';
+    }
+} else {
+    $paniervalides .= "Cet utilisateur n'a passé encore aucune commande.";
+}
+
+
 ?>
 
 <div class="total">
+    <h1>informations sur : <?= $user['prenom'] ?></h1>
     <div class="infosUser">
         <div class="pic">
             <img src="<?= $phototest ?>" alt="Photo de l'utilisateur">
@@ -74,6 +137,7 @@ if (file_exists('img/user/' . $_GET['idUser'] . '.jpg')) {
         </div>
     </div>
     <div class="panier">
-
+        <h2>Commandes effectuées</h2>
+        <?= $paniervalides ?>
     </div>
 </div>

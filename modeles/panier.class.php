@@ -2,22 +2,26 @@
 
 require_once "modeles/database.class.php";
 
-class panier extends database {
+class panier extends database
+{
 
-    public function getallpanier(){
+    public function getallpanier()
+    {
         $req = "SELECT * FROM panier WHERE statut = 'validé'";
 
         return $this->execReq($req);
     }
 
-    public function getValidPanierUser($id){
+    public function getValidPanierUser($id)
+    {
         $data = array($id);
         $req = "SELECT * FROM panier WHERE id_utilisateur = ? AND statut = 'validé';";
 
         return $this->execReqPrep($req, $data);
     }
 
-    public function getPanierUser($iduser){
+    public function getPanierUser($iduser)
+    {
         $data = array($iduser);
         $req = "SELECT id_panier FROM panier WHERE id_utilisateur = ? AND statut = 'en cours';";
 
@@ -26,7 +30,8 @@ class panier extends database {
         return $panier[0]['id_panier'];
     }
 
-    public function getPaniers($iduser){
+    public function getPaniers($iduser)
+    {
         $data = array($iduser);
         $req = "SELECT id_panier FROM panier WHERE id_utilisateur = ?;";
 
@@ -35,7 +40,8 @@ class panier extends database {
         return $panier;
     }
 
-    public function deletContenir($id){
+    public function deletContenir($id)
+    {
         $data = array($id);
 
         $req = "DELETE FROM contenir WHERE `contenir`.`id_panier` = ?;";
@@ -44,7 +50,8 @@ class panier extends database {
     }
 
 
-    public function deletReserver($id){
+    public function deletReserver($id)
+    {
         $data = array($id);
 
         $req = "DELETE FROM réserver WHERE `réserver`.`id_panier` = ?;";
@@ -52,55 +59,62 @@ class panier extends database {
         $this->execReqPrep($req, $data);
     }
 
-    public function checkexist($idobj, $idpanier){
+    public function checkexist($idobj, $idpanier)
+    {
         $data = array($idobj, $idpanier);
 
         $req = "SELECT * FROM contenir WHERE id_objet_shop = ? AND id_panier = ?;";
-        
+
         return $this->execReqPrep($req, $data);
     }
 
-    public function addLineObj($idobjet, $panier, $qtd){
+    public function addLineObj($idobjet, $panier, $qtd)
+    {
         $data = array($idobjet, $panier, $qtd);
 
         $req = "INSERT INTO `contenir` (`id_objet_shop`, `id_panier`, `quantitée`) VALUES (?, ?, ?);";
-        
+
         return $this->execReqPrep($req, $data);
     }
 
-    public function addOne($idobjet, $panier, $nombre){
+    public function addOne($idobjet, $panier, $nombre)
+    {
         $data = array($nombre, $idobjet, $panier);
 
         $req = "UPDATE `contenir` SET `quantitée` = ? WHERE `contenir`.`id_objet_shop` = ? AND `contenir`.`id_panier` = ?;";
-        
+
         return $this->execReqPrep($req, $data);
     }
 
-    public function stockactuel($idobjet){
+    public function stockactuel($idobjet)
+    {
         $data = array($idobjet);
 
         $req = "SELECT stock FROM objet_shop WHERE id_objet_shop = ?";
-        
+
         return $this->execReqPrep($req, $data);
     }
 
-    public function reduce($reduce, $idobj){
+    public function reduce($reduce, $idobj)
+    {
         $data = array($reduce, $idobj);
 
         $req = "UPDATE `objet_shop` SET `stock` = ? WHERE `objet_shop`.`id_objet_shop` = ?";
-        
+
         return $this->execReqPrep($req, $data);
     }
 
-    public function Reserver($idjeu, $jour, $nombre, $heure, $idpanier){
+    public function Reserver($idjeu, $jour, $nombre, $heure, $idpanier)
+    {
         $data = array($idjeu, $idpanier, $jour, $heure, $nombre);
 
         $req = "INSERT INTO `réserver` (`ID_jeu`, `id_panier`, `jour_reservation`, `heure_reservation`, `nombre_personnes`) VALUES (?, ?, ?, ?, ?);";
-        
+
         return $this->execReqPrep($req, $data);
     }
 
-    public function MesRéservations($idUser){
+    public function MesRéservations($idUser)
+    {
         $data = array($idUser);
 
         $req = "SELECT réserver.ID_jeu, panier.id_panier as 'panier', nombre_personnes, jeux.Titre, jeux.prix, jeux.description, réserver.jour_reservation, réserver.heure_reservation FROM panier INNER JOIN réserver ON réserver.id_panier=panier.id_panier INNER JOIN jeux ON jeux.ID_jeu = réserver.ID_jeu WHERE panier.id_utilisateur = ? AND panier.statut='en cours';";
@@ -108,7 +122,8 @@ class panier extends database {
         return $this->execReqPrep($req, $data);
     }
 
-    public function MesSouvenirs($idUser){
+    public function MesSouvenirs($idUser)
+    {
         $data = array($idUser);
 
         $req = "SELECT contenir.id_panier, contenir.id_objet_shop, nom, description, prix, quantitée FROM panier INNER JOIN contenir ON contenir.id_panier=panier.id_panier INNER JOIN objet_shop ON objet_shop.id_objet_shop = contenir.id_objet_shop WHERE panier.id_utilisateur = ? AND panier.statut='en cours';";
@@ -116,7 +131,26 @@ class panier extends database {
         return $this->execReqPrep($req, $data);
     }
 
-    public function supprimersouv($idobj, $idpanier){
+    public function LastReservations($idpanier)
+    {
+        $data = array($idpanier);
+
+        $req = "SELECT réserver.ID_jeu, panier.id_panier as 'panier', nombre_personnes, jeux.Titre, jeux.prix, jeux.description, réserver.jour_reservation, réserver.heure_reservation FROM panier INNER JOIN réserver ON réserver.id_panier=panier.id_panier INNER JOIN jeux ON jeux.ID_jeu = réserver.ID_jeu WHERE panier.id_panier = ?;";
+
+        return $this->execReqPrep($req, $data);
+    }
+
+    public function LastSouvenirs($idPanier)
+    {
+        $data = array($idPanier);
+
+        $req = "SELECT contenir.id_panier, contenir.id_objet_shop, nom, description, prix, quantitée FROM panier INNER JOIN contenir ON contenir.id_panier=panier.id_panier INNER JOIN objet_shop ON objet_shop.id_objet_shop = contenir.id_objet_shop WHERE panier.id_panier = ?;";
+
+        return $this->execReqPrep($req, $data);
+    }
+
+    public function supprimersouv($idobj, $idpanier)
+    {
         $data = array($idobj, $idpanier);
 
         $req = "DELETE FROM contenir WHERE `contenir`.`id_objet_shop` = ? AND `contenir`.`id_panier` = ?;";
@@ -124,7 +158,8 @@ class panier extends database {
         return $this->execReqPrep($req, $data);
     }
 
-    public function supprimerres($idobj, $heure, $jour){
+    public function supprimerres($idobj, $heure, $jour)
+    {
         $data = array($idobj, $heure, $jour);
 
         $req = "DELETE FROM réserver WHERE `réserver`.`ID_jeu` = ? AND `réserver`.`heure_reservation` = ? AND `réserver`.`jour_reservation` = ?;";

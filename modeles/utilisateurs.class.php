@@ -124,4 +124,28 @@ class utilisateurs extends database
         // Exécution de la requête
         $this->execReqPrep($req, $data);
     }
+
+        // Fonction pour modifier les informations d'un utilisateur avec changement de mot de passe
+        public function edituserwithpdw($nom, $prenom, $adresse, $mdpgood, $iduser)
+        {
+            $data = array($prenom, $nom, $adresse, $mdpgood, $iduser);
+            // Requête SQL pour mettre à jour les informations d'un utilisateur
+            $req = "UPDATE `utilisateurs` SET `Prenom` = ?, `Nom` = ?, `adresse` = ?, `mdp` = ? WHERE `utilisateurs`.`Id_utilisateur` = ?;";
+    
+            // Exécution de la requête
+            $this->execReqPrep($req, $data);
+        }
+    
+        // Fonction pour modifier les informations d'un utilisateur sans changer le mot de passe
+        public function editusernopdw($nom, $prenom, $adresse, $iduser)
+        {
+    
+            $data = array($prenom, $nom, $adresse, $iduser);
+            // Requête SQL pour mettre à jour les informations d'un utilisateur
+            $req = "UPDATE `utilisateurs` SET `prenom` = ?, `nom` = ?, `adresse` = ? WHERE `utilisateurs`.`Id_utilisateur` = ?;";
+    
+            // Exécution de la requête
+            $this->execReqPrep($req, $data);
+        }
+    
 }

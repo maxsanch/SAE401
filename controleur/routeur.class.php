@@ -85,7 +85,7 @@ class routeur
                             $this->ctlShop->objetsshop();
                             break;
                         case "informationmyuser":
-                            $this->ctlUser->infoperso();
+                            $this->ctlUser->infoperso("");
                             break;
                         case "changerpdp":
                             $this->ctlUser->changerpdp();
@@ -93,8 +93,8 @@ class routeur
                         case "deletMyAccount":
                             $this->ctlUser->deletMyAccount();
                             break;
-                        case "Panier":
-                            $this->ctlUser->objetsshop();
+                        case "modifprofil":
+                            $this->ctlUser->editprofil($_POST['nom'], $_POST['prenom'],$_POST['adresse'], $_POST['NewPassword'], $_POST['ConfirmationNewPassword'], $_POST['ancienmdp']);
                             break;
                         case "suppressionSouvenirs":
                             if(isset($_GET['idobj']) && isset($_GET['idpanier'])){
@@ -245,7 +245,12 @@ class routeur
                             $this->ctlPage->propos();
                             break;
                         case "infojeusolo":
-                            $this->ctlJeux->Jeuxsingle();
+                            if(isset($_GET['idjeu'])){
+                                $this->ctlJeux->Jeuxsingle($_GET['idjeu']);
+                            }
+                            else{
+                                $this->ctlJeux->alljeux();
+                            }
                             break;
                         case "carte":
                             $this->ctlLieux->spots();

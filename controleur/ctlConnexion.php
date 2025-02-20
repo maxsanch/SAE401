@@ -37,8 +37,9 @@ class ctlConnexion
                 // Si le mot de passe est correct, enregistrer l'email dans la session pour authentification.
                 $_SESSION['acces'] = $user[0]['mail'];
 
+                // Mise à jour de la dernière connexion de l'utilisateur (fonction personnalisée).
                 $this->inscription->updatedate($user[0]['Id_utilisateur']);
-
+                $this->testetresetannée();
                 $this->routeur->accueil();
 
             } else {
@@ -75,6 +76,7 @@ class ctlConnexion
 
                 // Enregistrement de l'email de l'utilisateur dans la session.
                 $_SESSION['acces'] = $email;
+                $this->testetresetannée();
                 $this->routeur->accueil();
             } else {
                 // Si aucun utilisateur ne correspond au mail, afficher un message d'erreur.
@@ -85,6 +87,23 @@ class ctlConnexion
             // Si aucun utilisateur ne correspond au mail, afficher un message d'erreur.
             $erreur = '<b>cet email existe déjà</b>';
             $this->connexion($erreur);
+        }
+    }
+
+    public function testetresetannée(){
+        $currentyear = $this->inscription->getannee(); // Récupération de l'année actuelle depuis la base de données.
+    
+        // Vérifie si l'année actuelle en base est différente de l'année actuelle.
+        if ($currentyear != date('Y')) {
+            $ajouterun = $currentyear + 1; // Incrémente l'année.
+            $this->inscription->maj($ajouterun); // Met à jour l'année dans la base de données.
+            $this->inscription->resetmois(); // Réinitialise les données mensuelles.
+        } else {
+            $mois = date('m'); // Récupère le mois actuel.
+    
+            $currentnombre = $this->inscription->getcountmois($mois); // Récupère le nombre de connexions pour le mois actuel.
+            $nb = (int) $currentnombre + 1; // Incrémente le nombre de connexions.
+            $this->inscription->ajouter($nb, (int) $mois); // Met à jour le nombre de connexions pour le mois actuel.
         }
     }
 

@@ -63,7 +63,6 @@ class ctlPanier
 
     public function supprimerReservation($idobj, $heure, $jour){
         $this->panier->supprimerres($idobj, $heure, $jour);
-
         header('Location: index.php?page=informationmyuser');
     }
 }

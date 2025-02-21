@@ -33,6 +33,19 @@ foreach ($nombreparmois as $cle) {
 }
 $final = join(',', $tableau);
 
+
+if(!empty($meilleurRes) && !empty($meilleurSouv)){
+    if($meilleurRes[0]['total'] >= $meilleurSouv[0]['total']){
+        $meilleur = $meilleurRes[0]['Titre'];
+    }
+    else{
+        $meilleur = $meilleurSouv[0]['nom'];
+    }
+}
+else{
+    $meilleur = "aucun panier n'a encore été validé, il est alros impossible de définir une préférence.";
+}
+
 ?>
 
 
@@ -41,19 +54,25 @@ $final = join(',', $tableau);
         <div class="nombrePanierValide">
             <img src="" alt="une icone">
             <div class="stat">
-                <?= $comptepanier ?>
+                Nombre de paniers validés : <?= $comptepanier ?>
             </div>
         </div>
         <div class="nombreInscrit">
             <img src="" alt="une icone">
             <div class="stat">
-                <?= $compteinscrit ?>
+                Nombre d'inscriptions : <?= $compteinscrit ?>
             </div>
         </div>
         <div class="nombreConnexion">
             <img src="" alt="une icone">
             <div class="stat">
 
+            </div>
+        </div>
+        <div class="nombrePanierValide">
+            <img src="" alt="une icone">
+            <div class="stat">
+                Produit préféré : <?= $meilleur ?>
             </div>
         </div>
     </div>

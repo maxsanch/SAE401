@@ -44,6 +44,12 @@ class vue {
 
     ob_start();
 
+    require "vues/panier.php";
+
+    $globalPanier = ob_get_clean();
+
+    ob_start();
+
     require $this->fichierVue;   // Génère le contenu de la page en fonction de l'action
 
     $contenu = ob_get_clean();

@@ -4,7 +4,6 @@ require_once "modeles/database.class.php";
 
 class panier extends database
 {
-
     public function getallpanier()
     {
         $req = "SELECT * FROM panier WHERE statut = 'validé'";
@@ -165,5 +164,17 @@ class panier extends database
         $req = "DELETE FROM réserver WHERE `réserver`.`ID_jeu` = ? AND `réserver`.`heure_reservation` = ? AND `réserver`.`jour_reservation` = ?;";
 
         return $this->execReqPrep($req, $data);
+    }
+
+    public function getBestRes(){
+        $req = "SELECT jeux.Titre, SUM(réserver.nombre_personnes) AS 'total' FROM réserver INNER JOIN jeux ON réserver.ID_jeu = jeux.ID_jeu INNER JOIN panier ON réserver.id_panier = panier.id_panier WHERE panier.statut = 'valide' GROUP BY jeux.Titre ORDER BY `total` DESC";
+
+        return $this->execReq($req);
+    }
+
+    public function getBestSouv(){
+        $req = "SELECT objet_shop.nom, SUM(contenir.quantitée) AS 'total' FROM contenir INNER JOIN objet_shop ON contenir.id_objet_shop = objet_shop.id_objet_shop INNER JOIN panier ON contenir.id_panier = panier.id_panier WHERE panier.statut = 'valide' GROUP BY objet_shop.nom ORDER BY `total` DESC;";
+
+        return $this->execReq($req);
     }
 }

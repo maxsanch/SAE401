@@ -16,10 +16,19 @@ class ctlPanier
         $this->panier = new panier;
         $this->user = new utilisateurs;
     }
+
+    public function getGlobalPanier(){
+        if(isset($_SESSION['acces'])){
+            $user = $this->user->GetUser($_SESSION['acces']);
+            $panierUtilisateur = $this->panier->MesRéservations($user[0]['Id_utilisateur']);
+            $SouvenirsUtilisateur = $this->panier->MesSouvenirs($user[0]['Id_utilisateur']);
+
+            return array($panierUtilisateur, $SouvenirsUtilisateur);
+        }
+    }
     public function getValidPaniers($id)
     {
         $paniers = $this->panier->getValidPanierUser($id);
-
         return $paniers;
     }
 

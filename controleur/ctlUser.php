@@ -34,11 +34,13 @@ class ctlUser
         // récupérer les paniers validés
         $paniers = $this->panierUser->getallpanier();
         $comptepanier = count($paniers);
-
         $nombreparmois = $this->inscription->getallmois();
 
+        $meilleurRes = $this->panierUser->getBestRes();
+        $meilleurSouv = $this->panierUser->getBestSouv();
+
         $vue = new vue('dashboard');
-        $vue->afficher(array('comptepanier' => $comptepanier, 'compteinscrit' => $compteInscr, 'users' => $Inscr, 'nombreparmois' => $nombreparmois));
+        $vue->afficher(array('comptepanier' => $comptepanier, 'compteinscrit' => $compteInscr, 'users' => $Inscr, 'nombreparmois' => $nombreparmois, 'meilleurRes' => $meilleurRes, 'meilleurSouv' => $meilleurSouv));
     }
 
     public function modifuser($id, $message)

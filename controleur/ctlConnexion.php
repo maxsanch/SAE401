@@ -2,6 +2,7 @@
 
 require_once "modeles/inscription.class.php";
 require_once "modeles/utilisateurs.class.php";
+require_once "modeles/panier.class.php";
 require_once "vues/vue.class.php";
 
 class ctlConnexion
@@ -9,6 +10,7 @@ class ctlConnexion
 
     private $user;
     private $inscription;
+    private $panier;
     private $routeur;
 
     public function __construct()
@@ -16,6 +18,7 @@ class ctlConnexion
         $this->user = new utilisateurs;
         $this->inscription = new inscription;
         $this->routeur = new ctlPage;
+        $this->panier = new panier;
     }
 
 
@@ -27,6 +30,31 @@ class ctlConnexion
 
     public function login($nom, $mdp)
     {
+        $paniersHeures = $this->panier->getheureJourPanier();
+
+        foreach($paniersHeures as $ligne){
+            $dateLimite = (new DateTime($ligne['derniere_modification']))->modify('+1 year');
+            $heureLimite = (new DateTime($ligne['derniere_modification']))->modify('+3 hour');
+            $date = new DateTime();
+            if($ligne['statut'] == "valide"){
+                if($date->format('Y-m-d') >= $dateLimite->format('Y-m-d')){
+                    var_dump("celui la, on le change");
+                }
+                else{
+                    var_dump("pas besoin");
+                }
+            }
+            else{
+                var_dump($date->format('Y-m-d-H-i-s') . " comparer a " . $heureLimite->format('Y-m-d H-i-s'));
+                if($heureLimite->format('Y-m-d-H-i-s') >= $date->format('Y-m-d-H-i-s')){
+                    var_dump('pas encore besoin de changements');
+                }
+                else{
+                    var_dump( "aujourd'hui plsu grand que la limite, a supprimer alors, ou a vider au moins.");
+                }
+            }    
+        }
+
         // Récupération des informations de l'utilisateur à partir de son mail.
         $user = $this->user->GetUser($nom);
 

@@ -58,8 +58,14 @@ class routeur
                         case "remerciements":
                             $this->ctlPage->remerciements();
                             break;
+                        case 'valide':
+                            $this->ctlPanier->validerpanierall();
+                            break;
                         case "quitter":
                             $this->ctlConnexion->quitter();
+                            break;
+                        case 'reglement':
+                            $this->ctlPanier->reglement();
                             break;
                         case "propos":
                             $this->ctlPage->propos();

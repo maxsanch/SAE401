@@ -5,3 +5,49 @@
 .ouvert{
     display: block;
 }
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 16px;
+}
+
+.HeaderCoteDroite {
+    display: flex;
+    gap: 16px;
+    align-items: center;
+}
+
+.HeaderBouton {
+    cursor: pointer;
+}
+
+
+.HeaderBouton:first-of-type {
+    background-image: linear-gradient(-135deg, #E6B856, #806630);
+    color: transparent;
+    background-clip: text;
+}
+
+.HeaderBouton:nth-of-type(6) {
+    background-image: linear-gradient(-135deg, #E6B856, #806630);
+    padding: 8px;
+    color: black;
+    border-radius: 4px;
+}
+
+@font-face {
+    font-family: Montserrat;
+    src: url(../font/Montserrat-Regular.ttf);
+}
+
+@font-face {
+    font-family: Montserrat-black;
+    src: url(../font/Montserrat-Black.ttf);
+}
+
+@font-face {
+    font-family: Montserrat-bold;
+    src: url(../font/Montserrat-Bold.ttf);
+}

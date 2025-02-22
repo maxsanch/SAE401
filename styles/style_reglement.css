@@ -1,0 +1,60 @@
+body{
+    font-family: Montserrat;
+}
+
+img{
+    width: 100%;
+}
+
+.carte_front{
+    background: rgb(241, 241, 241);
+    border: solid 1px rgb(212, 212, 212);
+    border-radius: 10px;
+    padding: 15px;
+}
+
+.flex{
+    display: flex;
+    gap: 10px;
+}
+
+.visa{
+    background: linear-gradient(rgb(13, 13, 59), rgb(17, 16, 36));
+    color: white;
+    border: solid 1px rgb(240, 192, 0);
+}
+
+.mastercard{
+    background: linear-gradient(rgb(21, 21, 21), rgb(13, 13, 13));
+    color: white;
+    border: solid 1px rgb(240, 192, 0);
+}
+
+.logo_cb{
+    width: 70px;
+}
+
+.top{
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+}
+
+label{
+    display: flex;
+}
+
+.gridbottom{
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+}
+
+.logo_cb{
+    display: flex;
+    margin-left: auto;
+}
+
+.inputs>input{
+    width: 100%;
+    box-sizing: border-box;
+}

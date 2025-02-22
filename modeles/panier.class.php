@@ -11,6 +11,12 @@ class panier extends database
         return $this->execReq($req);
     }
 
+    public function getheureJourPanier(){
+        $req = "SELECT * FROM panier";
+
+        return $this->execReq($req);
+    }
+
     public function getValidPanierUser($id)
     {
         $data = array($id);
@@ -176,5 +182,16 @@ class panier extends database
         $req = "SELECT objet_shop.nom, SUM(contenir.quantitée) AS 'total' FROM contenir INNER JOIN objet_shop ON contenir.id_objet_shop = objet_shop.id_objet_shop INNER JOIN panier ON contenir.id_panier = panier.id_panier WHERE panier.statut = 'valide' GROUP BY objet_shop.nom ORDER BY `total` DESC;";
 
         return $this->execReq($req);
+    }
+
+    public function validerPanier($id){
+        $data = array($id);
+        $req = "UPDATE `panier` SET `statut` = 'valide' WHERE `panier`.`id_utilisateur` = ? AND `panier`.`statut` = 'en cours'";
+        $this->execReqPrep($req, $data);
+    }
+    public function creerNewPanier($id){
+        $data = array($id);
+        $req = "INSERT INTO `panier` (`id_panier`, `id_utilisateur`, `statut`) VALUES (NULL, ?, 'en cours');";
+        $this->execReqPrep($req, $data);
     }
 }

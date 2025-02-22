@@ -42,38 +42,8 @@ body::before {
     margin: auto;
 }
 
-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding-top: 16px;
-}
-
 img {
     width: 100%;
-}
-
-.HeaderCoteDroite {
-    display: flex;
-    gap: 16px;
-    align-items: center;
-}
-
-.HeaderBouton {
-    cursor: pointer;
-}
-
-.HeaderBouton:first-of-type {
-    background-image: linear-gradient(-135deg, #E6B856, #806630);
-    color: transparent;
-    background-clip: text;
-}
-
-.HeaderBouton:nth-of-type(6) {
-    background-image: linear-gradient(-135deg, #E6B856, #806630);
-    padding: 8px;
-    color: black;
-    border-radius: 4px;
 }
 
 .CadreDesEngrenages {

@@ -50,10 +50,9 @@ class ctlPage
     $vue->afficher(array("message" => $message)); // Affiche la liste des clients dans la vue, c'est ca qui est passé en paramètres au niveau de data dans la classe vue
   }   // Balise PHP non fermée pour éviter de retourner des caractères "parasites" en fin de traitement
 
-  public function remerciements(){
-    $vue = new vue('remerciements');
-    $vue->afficher(array());
+  public function remerciements()
+  {
+    $vue = new vue("remerciements"); // Instancie la vue appropriée
+    $vue->afficher(array()); // Affiche la liste des clients dans la vue, c'est ca qui est passé en paramètres au niveau de data dans la classe vue
   }
-
-  
 }

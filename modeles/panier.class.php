@@ -202,12 +202,24 @@ class panier extends database
     }
     public function supprimerReservationValide($idpanier){
         $data = array($idpanier);
-        $req = 'DELETE FROM panier WHERE `panier`.`id_panier` = ?;';
+        $req = 'DELETE FROM réserver WHERE `réserver`.`id_panier` = ?;';
         $this->execReqPrep($req, $data);
     }
     public function supprimerSouvenirValide($idpanier){
         $data = array($idpanier);
-        $req = 'DELETE FROM panier WHERE `panier`.`id_panier` = ?;';
+        $req = 'DELETE FROM contenir WHERE `contenir`.`id_panier` = ?;';
         $this->execReqPrep($req, $data);
+    }
+
+    public function getstockCont($idpanier){
+        $data = array($idpanier);
+        $req = 'SELECT quantitée, id_objet_shop FROM contenir WHERE id_panier = ?;';
+        return $this->execReqPrep($req, $data);
+    }
+
+    public function updateHorraire($idpanier, $heure){
+        $data = array($heure, $idpanier);
+        $req = "UPDATE `panier` SET `derniere_modification` = ? WHERE `panier`.`id_panier` = ?";
+        return $this->execReqPrep($req, $data);
     }
 }

@@ -43,19 +43,22 @@ class ctlConnexion
                     $this->panier->supprimerReservationValide($ligne['id_panier']);
                     $this->panier->supprimerSouvenirValide($ligne['id_panier']);
                 }
-                else{
-                    var_dump("pas besoin");
-                }
             }
             else{
-                var_dump($date->format('Y-m-d-H-i-s') . " comparer a " . $heureLimite->format('Y-m-d H-i-s'));
-                if($heureLimite->format('Y-m-d-H-i-s') >= $date->format('Y-m-d-H-i-s')){
-                    var_dump('pas encore besoin de changements');
+                if($heureLimite->format('Y-m-d-H-i-s') <= $date->format('Y-m-d-H-i-s')){
+                    $stock = $this->panier->getstockCont($ligne['id_panier']);
+                    if(!empty($stock)){
+                        $stockActuel = $this->panier->stockactuel($stock[0]['id_objet_shop']);
+                        $newNumber = ($stock[0]['quantitée']+$stockActuel[0]['stock']);
+                        $this->panier->reduce($newNumber, $stock[0]['id_objet_shop']);
+                    }
+                    // penser a changer l'horraire
+                    $heure = $date->format('Y-m-d H-i-s');
+                    $this->panier->updateHorraire($ligne['id_panier'], $heure);
+                    $this->panier->supprimerReservationValide($ligne['id_panier']);
+                    $this->panier->supprimerSouvenirValide($ligne['id_panier']);
                 }
-                else{
-                    var_dump( "aujourd'hui plsu grand que la limite, a vider au moins.");
-                }
-            }    
+            }
         }
 
         // Récupération des informations de l'utilisateur à partir de son mail.

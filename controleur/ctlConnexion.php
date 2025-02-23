@@ -38,7 +38,10 @@ class ctlConnexion
             $date = new DateTime();
             if($ligne['statut'] == "valide"){
                 if($date->format('Y-m-d') >= $dateLimite->format('Y-m-d')){
-                    var_dump("celui la, on le change");
+                    var_dump("celui la, on le suppr");
+                    $this->panier->supprimerPanierValide($ligne['id_panier']);
+                    $this->panier->supprimerReservationValide($ligne['id_panier']);
+                    $this->panier->supprimerSouvenirValide($ligne['id_panier']);
                 }
                 else{
                     var_dump("pas besoin");
@@ -50,7 +53,7 @@ class ctlConnexion
                     var_dump('pas encore besoin de changements');
                 }
                 else{
-                    var_dump( "aujourd'hui plsu grand que la limite, a supprimer alors, ou a vider au moins.");
+                    var_dump( "aujourd'hui plsu grand que la limite, a vider au moins.");
                 }
             }    
         }

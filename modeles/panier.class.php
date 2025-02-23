@@ -194,4 +194,20 @@ class panier extends database
         $req = "INSERT INTO `panier` (`id_panier`, `id_utilisateur`, `statut`) VALUES (NULL, ?, 'en cours');";
         $this->execReqPrep($req, $data);
     }
+
+    public function supprimerPanierValide($idpanier){
+        $data = array($idpanier);
+        $req = 'DELETE FROM panier WHERE `panier`.`id_panier` = ?;';
+        $this->execReqPrep($req, $data);
+    }
+    public function supprimerReservationValide($idpanier){
+        $data = array($idpanier);
+        $req = 'DELETE FROM panier WHERE `panier`.`id_panier` = ?;';
+        $this->execReqPrep($req, $data);
+    }
+    public function supprimerSouvenirValide($idpanier){
+        $data = array($idpanier);
+        $req = 'DELETE FROM panier WHERE `panier`.`id_panier` = ?;';
+        $this->execReqPrep($req, $data);
+    }
 }

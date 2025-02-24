@@ -52,7 +52,7 @@ class ctlConnexion
                         $newNumber = ($stock[0]['quantitée']+$stockActuel[0]['stock']);
                         $this->panier->reduce($newNumber, $stock[0]['id_objet_shop']);
                     }
-                    // penser a changer l'horraire
+                    // metter a jour l'horraire
                     $heure = $date->format('Y-m-d H-i-s');
                     $this->panier->updateHorraire($ligne['id_panier'], $heure);
                     $this->panier->supprimerReservationValide($ligne['id_panier']);

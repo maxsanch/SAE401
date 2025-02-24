@@ -103,8 +103,8 @@ class routeur
                             $this->ctlUser->editprofil($_POST['nom'], $_POST['prenom'],$_POST['adresse'], $_POST['NewPassword'], $_POST['ConfirmationNewPassword'], $_POST['ancienmdp']);
                             break;
                         case "suppressionSouvenirs":
-                            if(isset($_GET['idobj']) && isset($_GET['idpanier'])){
-                                $this->ctlPanier->supprimerSouvenir($_GET['idobj'], $_GET['idpanier']);
+                            if(isset($_GET['idobj']) && isset($_GET['idpanier']) && isset($_POST['nombredelet'])){
+                                $this->ctlPanier->supprimerSouvenir($_GET['idobj'], $_GET['idpanier'], $_POST['nombredelet']);
                             }
                             else{
                                 $this->ctlPage->accueil();

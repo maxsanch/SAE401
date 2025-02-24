@@ -119,10 +119,11 @@ if (empty($panier) && empty($souvenirs)) {
                 <div class="prixTot">Prix total : ' . ($ligne['prix'] * $ligne['quantitée']) . ' (' . $ligne['prix'] . '
                     x' . $ligne['quantitée'] . ')</div>
             </div>
-            <div class="description">' . $ligne['description'] . '</div><a
-                href=index.php?page=suppressionSouvenirs&idobj=' . $ligne['id_objet_shop'] . '&idpanier=' . $ligne['id_panier'] . '>
-                <div class="iconepoubelle">Retirer du panier (mettre une icone de poubelle)</div>
-            </a>
+            <div class="description">' . $ligne['description'] . '</div>
+            <form action=index.php?page=suppressionSouvenirs&idobj=' . $ligne['id_objet_shop'] . '&idpanier=' . $ligne['id_panier'] . ' method=post>
+                <input type=number placeholder="entre un nombre" max=' . $ligne['quantitée'] . ' name="nombredelet">
+                <button class="iconepoubelle">Retirer du panier (mettre une icone de poubelle)</button>
+            </form>
         </div>';
     }
 }

@@ -1,23 +1,19 @@
 <?php
-$styles = "";
+$styles = "styles/style_connexion.css";
 ?>
 
+<div class="total">
 <div class="connexion">
     <div class="left">
         <div class="croix">
-
+            <img src="../img/croix.svg" alt="croix de fermeture">
         </div>
         <div class="titre">
-
+            <h2>Connectez-vous</h2>
         </div>
         <form action="<?= $_SERVER['PHP_SELF'] . '?page=login' ?>" method="post">
             <input type="email" maxlength="50" name="email" required placeholder="Email">
             <input type="password" maxlength="50" name="MDP" class="motdepasse" required placeholder="Mot de passe">
-            <!-- Icône pour afficher/masquer le mot de passe -->
-            <div class="oeil oeilferme">
-                <img id="fermé" src="" alt="icone d'oeil">
-            </div>
-
             <button>Me connecter</button>
         </form>
         <div class="erreur">
@@ -26,20 +22,20 @@ $styles = "";
     </div>
     <div class="right">
         <div class="title">
-            <h1>
-                Vous cherchez une partie?
-            </h1>
+            <h2>
+                <p>Comme on se retrouve !</p> <p>Vous cherchez une partie?</p>
+            </h2>
         </div>
         <div class="subtitle">
             <h2>C'est votre première fois ?</h2>
         </div>
-        <div class="bouton_inscription">
+        <div class="bouton_inscription" id="inscr">
             Inscrivez-vous
         </div>
     </div>
 </div>
 
-<div class="inscription">
+<div class="inscription ferme">
     <div class="left">
         <div class="croix">
 
@@ -75,8 +71,30 @@ $styles = "";
         <div class="subtitle">
             <h2>Vous avez déjà un compte ?</h2>
         </div>
-        <div class="bouton_inscription">
+        <div class="bouton_inscription" id="connex">
             Connectez-vous
         </div>
     </div>
 </div>
+</div>
+
+<div class="rect">
+    <img src="../img/top.svg" alt="rectangle_haut">
+</div>  
+<div class="rect2">
+    <img src="../img/left.svg"  alt="rectangle_gauche">
+</div>
+
+
+<script>
+
+    document.querySelectorAll('.bouton_inscription').forEach(element => {
+        element.addEventListener('click', chanegrInsc);
+    });
+
+
+    function chanegrInsc(){
+        document.querySelector('.inscription').classList.toggle('ferme')
+        document.querySelector('.connexion').classList.toggle('ferme')
+    }
+</script>

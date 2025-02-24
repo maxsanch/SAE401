@@ -8,7 +8,7 @@ if (isset($_SESSION['acces'])) {
 
     $panierglobal = '<h2>Mon panier</h2> ';
 
-    if (!empty($global[0]) && !empty($global[1])) {
+    if (!empty($global[0]) || !empty($global[1])) {
         $reservationsGlobales = '';
         if (!empty($global[0])) {
             foreach ($global[0] as $valeurs) {
@@ -40,13 +40,14 @@ if (isset($_SESSION['acces'])) {
                                                 <div class="prix">
                                                     ' . ($valeurs['quantitée'] * $valeurs['prix']) . ' €
                                                 </div>
-                                                <a href=index.php?page=suppressionSouvenirs&idobj=' . $valeurs['id_objet_shop'] . '&idpanier=' . $valeurs['id_panier'] . '>
-                                                    <div class="iconepoubelle">Retirer du panier (mettre une icone de poubelle)</div>
-                                                </a>
+                                                <form action=index.php?page=suppressionSouvenirs&idobj=' . $valeurs['id_objet_shop'] . '&idpanier=' . $valeurs['id_panier'] . ' method=post>
+                                                    <input type=number placeholder="entre un nombre" max='.$valeurs['quantitée'].' name="nombredelet">
+                                                    <button class="iconepoubelle">Retirer du panier (mettre une icone de poubelle)</button>
+                                                </form>
                                             </div>';
             }
         } else {
-            $souvenirsGlobal = "Vous n'avez effectué aucune réservation";
+            $souvenirsGlobal = "Vous n'avez acheté aucun objet.";
         }
 
         $panierglobal .= '<div class="categorie">

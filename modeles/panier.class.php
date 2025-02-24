@@ -172,6 +172,15 @@ class panier extends database
         return $this->execReqPrep($req, $data);
     }
 
+    public function GetPanierParRes($idobj, $heure, $jour)
+    {
+        $data = array($idobj, $heure, $jour);
+
+        $req = "SELECT id_panier FROM réserver WHERE `réserver`.`ID_jeu` = ? AND `réserver`.`heure_reservation` = ? AND `réserver`.`jour_reservation` = ?;";
+
+        return $this->execReqPrep($req, $data);
+    }
+
     public function getBestRes(){
         $req = "SELECT jeux.Titre, SUM(réserver.nombre_personnes) AS 'total' FROM réserver INNER JOIN jeux ON réserver.ID_jeu = jeux.ID_jeu INNER JOIN panier ON réserver.id_panier = panier.id_panier WHERE panier.statut = 'valide' GROUP BY jeux.Titre ORDER BY `total` DESC";
 
@@ -217,9 +226,21 @@ class panier extends database
         return $this->execReqPrep($req, $data);
     }
 
+    public function getstockContIDobj($idobj, $idpanier){
+        $data = array($idobj, $idpanier);
+        $req = 'SELECT quantitée, id_objet_shop FROM contenir WHERE id_objet_shop = ? AND id_panier = ?;';
+        return $this->execReqPrep($req, $data);
+    }
+
     public function updateHorraire($idpanier, $heure){
         $data = array($heure, $idpanier);
         $req = "UPDATE `panier` SET `derniere_modification` = ? WHERE `panier`.`id_panier` = ?";
         return $this->execReqPrep($req, $data);
+    }
+
+    public function editersouv($idobj, $idpanier, $nombredelet){
+        $data = array($nombredelet, $idpanier, $idobj);
+        $req = "UPDATE `contenir` SET `quantitée` = ? WHERE `contenir`.`id_panier` = ? AND `contenir`.`id_objet_shop` = ?";
+        $this->execReqPrep($req, $data);
     }
 }

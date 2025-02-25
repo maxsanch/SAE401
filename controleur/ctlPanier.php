@@ -141,7 +141,7 @@ class ctlPanier
         $infouser = $this->user->GetUser($_SESSION['acces']);
         $this->panier->validerPanier($infouser[0]['Id_utilisateur']);
         $date = new DateTime();
-        $heure = $date->format();
+        $heure = $date->format('Y-m-d H-i-s');
         $this->panier->creerNewPanier($infouser[0]['Id_utilisateur'], $heure);
 
         header("Location: index.php?page=remerciements");

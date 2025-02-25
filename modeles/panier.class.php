@@ -247,6 +247,6 @@ class panier extends database
     public function checkReservation($idjeu, $jour, $heure){
         $data = array($idjeu, $jour, $heure);
         $req = "SELECT id_panier FROM réserver WHERE ID_jeu = ? AND jour_reservation = ? AND heure_reservation = ?";
-        $this->execReqPrep($req, $data);
+        return $this->execReqPrep($req, $data);
     }
 }

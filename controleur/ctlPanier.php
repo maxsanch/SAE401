@@ -68,7 +68,9 @@ class ctlPanier
     {
         $verifReservation = $this->panier->checkReservation($idjeu, $jour, $heure);
 
-        if(!empty($verifReservation)){
+        var_dump($verifReservation);
+
+        if(empty($verifReservation)){
             $getUser = $this->user->GetUser($_SESSION['acces']);
             $getPanier = $this->panier->getPanierUser($getUser[0]['Id_utilisateur']);
     

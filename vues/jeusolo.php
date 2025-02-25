@@ -1,4 +1,7 @@
 <?php
+
+require_once "modeles/panier.class.php";
+
 $styles = "../styles/style_jeusolo.css";
 
 if (file_exists('img/photojeu/' . $_GET['idjeu'] . '.jpg')) {
@@ -17,22 +20,26 @@ if ($jeu[0]['lien_video'] == "") {
     $video = $jeu[0]['lien_video'];
 }
 
+$paniers = new panier;
 
 $date = new dateTime();
 
 $affichage = "";
 
-for ($i = 0; $i < 10; $i++) {
+var_dump($recup);
+for ($i = 0; $i < 90; $i++) {
     $heures = "";
-
     for ($j = 8; $j <= 16; $j += 2) {
+        $iscool = false;
         if (!empty($recup)) {
             foreach ($recup as $valeur) {
-                if ($valeur['jour_reservation'] == $date->format('Y-m-d') && $valeur['heure_reservation'] == $j . "-" . ($j + 2) . "h" && $valeur['ID_jeu'] == $_GET['idjeu']) {
+                if (($valeur['jour_reservation'] == $date->format('Y-m-d')) && ($valeur['heure_reservation'] == ($j . "-" . ($j + 2) . "h")) && ($valeur['ID_jeu'] == $_GET['idjeu'])) {
                     $heures .= "<label><input disabled required type='radio' name='heure' value='" . $j . "-" . ($j + 2) . "h'>" . $j . " - " . ($j + 2) . "h</label>";
-                } else {
-                    $heures .= "<label><input required type='radio' name='heure' value='" . $j . "-" . ($j + 2) . "h'>" . $j . " - " . ($j + 2) . "h</label>";
+                    $iscool = true;
                 }
+            }
+            if(!$iscool){
+                $heures .= "<label><input required type='radio' name='heure' value='" . $j . "-" . ($j + 2) . "h'>" . $j . " - " . ($j + 2) . "h</label>";
             }
         } else {
             $heures .= "<label><input required type='radio' name='heure' value='" . $j . "-" . ($j + 2) . "h'>" . $j . " - " . ($j + 2) . "h</label>";

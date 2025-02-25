@@ -55,4 +55,10 @@ class ctlPage
     $vue = new vue("remerciements"); // Instancie la vue appropriée
     $vue->afficher(array()); // Affiche la liste des clients dans la vue, c'est ca qui est passé en paramètres au niveau de data dans la classe vue
   }
+
+  public function propos()
+  {
+    $vue = new vue("Apropos"); // Instancie la vue appropriée
+    $vue->afficher(array()); // Affiche la liste des clients dans la vue, c'est ca qui est passé en paramètres au niveau de data dans la classe vue
+  }
 }

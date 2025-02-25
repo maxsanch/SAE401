@@ -1,6 +1,6 @@
 <?php
 
-$styles = "../styles/style_apropos.php";
+$styles = "../styles/style_apropos.css";
 
 ?>
 
@@ -14,7 +14,7 @@ $styles = "../styles/style_apropos.php";
         <div class="double">
             <div class="image">
                 <div class="img">
-                    
+                    <img src="../img/cave.jpg" alt="cave">
                 </div>
             </div>
             <div class="text">
@@ -34,7 +34,7 @@ $styles = "../styles/style_apropos.php";
         <div class="double">
             <div class="text">
                 <div class="titre">
-                    <h2>C'est quoi, un escape game ?</h2>
+                    <h2>Qui sommes nous ?</h2>
                     <div class="rectangleTitre">
                     </div>
                 </div>
@@ -47,7 +47,7 @@ $styles = "../styles/style_apropos.php";
             </div>
             <div class="image">
                 <div class="img">
-
+                    <img src="../img/employés.jpg" alt="cave">
                 </div>
             </div>
         </div>

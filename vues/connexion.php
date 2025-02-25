@@ -28,7 +28,7 @@ $styles = "styles/style_connexion.css";
                 </h2>
             </div>
             <div class="subtitle">
-                <h2>C'est votre première fois ?</h2>
+                <h3>C'est votre première fois ?</h3>
             </div>
             <div class="bouton_inscription" id="inscr">
                 Inscrivez-vous
@@ -60,12 +60,12 @@ $styles = "styles/style_connexion.css";
         </div>
         <div class="right">
             <div class="title">
-                <h1>
+                <h2>
                     Créez un compte pour pouvoir réserver un jeu !
-                </h1>
+                </h2>
             </div>
             <div class="subtitle">
-                <h2>Vous avez déjà un compte ?</h2>
+                <h3>Vous avez déjà un compte ?</h3>
             </div>
             <div class="bouton_inscription" id="connex">
                 Connectez-vous

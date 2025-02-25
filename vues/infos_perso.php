@@ -52,7 +52,7 @@ if (!empty($anciensPaniers)) {
                 <div class="description">' . $ligne['description'] . '</div>
             </div>';
         }
-        $paniervalides .= '<div class="panier">
+        $paniervalides .= '<div class="AciennesCommandes">
                                 <h3>Numéro de commande : ' . $valeur['id_panier'] . '</h3>
                                 <div class="accueilPanier">
                                     ' . $lignes . '
@@ -217,7 +217,7 @@ if (empty($panier) && empty($souvenirs)) {
             </div>
         </div>
     </div>
-    <div class="paniers">
+    <div class="Lastpaniers">
         <h2>Votre paniers</h2>
 
         <div class="infoproduits">

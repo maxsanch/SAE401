@@ -106,7 +106,9 @@ class ctlConnexion
                 // Récupération des informations de l'utilisateur nouvellement inscrit.
                 $panierUser =  $this->user->GetUser($email);
 
-                $this->inscription->créerPanier($panierUser[0]["Id_utilisateur"]);
+                $date = new DateTime();
+                $heure = $date->format('Y-m-d H-i-s');
+                $this->inscription->créerPanier($panierUser[0]["Id_utilisateur"], $heure);
 
                 // Enregistrement de l'email de l'utilisateur dans la session.
                 $_SESSION['acces'] = $email;

@@ -48,8 +48,12 @@ body{
     display: grid;
     grid-template-columns: 2.5fr 1fr;
     background: #00000034;
-    height: 400px;
+    height: 500px;
+    z-index: 5000;
     border-radius: 20px;
+}
+.inscription{
+    height: 550px;
 }
 
 .left{
@@ -57,6 +61,7 @@ body{
     flex-direction: column;
     width: 600px;
     margin: auto;
+    position: relative;
 }
 .right{
     background: url(../img/fondConnexion.png);
@@ -83,20 +88,40 @@ body{
 form{
     display: flex;
     flex-direction: column;
-    gap: 40px;
+    gap: 25px;
 }
 
 .titre>h2{
     font-family: Montserrat-bold;
     color: #e6b856;
+    margin-bottom: 20px;
+}
+
+.split{
+    display: flex;
+    gap: 25px;
+}
+
+.title, .subtitle, .bouton_inscription{
+    width: 85%;
+    margin-inline: auto;
 }
 
 input{
     background: none;
     border: #e6b856 1px solid;
     border-radius: 10px;
+    box-sizing: border-box;
     padding: 10px;
     color: #e6b856;
+    width: 100%;
+}
+
+.erreur{
+    color: #e6b856;
+    position: absolute;
+    bottom: -40px;
+    margin-top: 20px;
 }
 
 input::placeholder{
@@ -120,7 +145,8 @@ button{
 
 .croix{
     width: 30px;
-    transform: translateX(-100%);
+    transform: translate(-200%, -100%);
+    position: absolute;
 }
 
 .bouton_inscription{

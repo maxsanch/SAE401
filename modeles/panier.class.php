@@ -198,9 +198,9 @@ class panier extends database
         $req = "UPDATE `panier` SET `statut` = 'valide' WHERE `panier`.`id_utilisateur` = ? AND `panier`.`statut` = 'en cours'";
         $this->execReqPrep($req, $data);
     }
-    public function creerNewPanier($id){
-        $data = array($id);
-        $req = "INSERT INTO `panier` (`id_panier`, `id_utilisateur`, `statut`) VALUES (NULL, ?, 'en cours');";
+    public function creerNewPanier($id, $heure){
+        $data = array($id, $heure);
+        $req = "INSERT INTO `panier` (`id_panier`, `id_utilisateur`, `statut`, `derniere_modification`) VALUES (NULL, ?, 'en cours', ?);";
         $this->execReqPrep($req, $data);
     }
 

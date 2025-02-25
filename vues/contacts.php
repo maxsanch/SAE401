@@ -1,6 +1,6 @@
 <?php
 
-$styles = '';
+$styles = '../styles/style_contacts.css';
 
 $result = "";
 

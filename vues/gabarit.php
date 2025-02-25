@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <title><?= $title ?></title>
-  <link href="<?= $styles ?>" rel="stylesheet">
   <link rel="stylesheet" href="styles/styleheader.css">
+  <link href="<?= $styles ?>" rel="stylesheet">
 </head>
 <body>
   <header>

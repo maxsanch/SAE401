@@ -84,6 +84,10 @@ foreach ($jeux as $valeur) {
 </div>
 <div class="EscapeGameDisponible">
     <div class="MiseEnPage">
+        <div>
+        <h2 class="TitreEscapeGame">Nos escapes games disponible</h2>
+        <div class="RectangleTitre"></div>
+        </div>
         <div class="ListeDesEscapeGame">
             <!-- pour modifier le tout, en haut il y a la boucle de ce qui est affiché, dans une variable result -->
             <?= $result ?>

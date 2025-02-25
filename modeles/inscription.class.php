@@ -23,10 +23,10 @@ class inscription extends database {
         $this->execReqPrep($req, $data);
     }
 
-    public function créerPanier($id){
-        $data = array($id);
+    public function créerPanier($id, $heure){
+        $data = array($id, $heure);
         // Requête SQL pour insérer un panier lié à un utilisateur dans la base de données
-        $req = "INSERT INTO `panier` (`id_panier`, `id_utilisateur`, `statut`) VALUES (NULL, ?, 'en cours')";
+        $req = "INSERT INTO `panier` (`id_panier`, `id_utilisateur`, `statut`, `derniere_modification`) VALUES (NULL, ?, 'en cours', ?)";
         // Exécution de la requête
         $this->execReqPrep($req, $data);
     }

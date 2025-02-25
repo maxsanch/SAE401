@@ -12,6 +12,8 @@ if (isset($_SESSION['acces'])) {
     $test = "test pas co";
 }
 
+$librairie = "";
+
 $result = "";
 foreach ($jeux as $valeur) {
     if (file_exists('img/photojeu/' . $valeur['ID_jeu'] . '.jpg')) {

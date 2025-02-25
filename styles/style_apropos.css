@@ -1,5 +1,73 @@
 header {
     background: rgb(0, 0, 0);
-    background: linear-gradient(180deg, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 1) 40%, rgba(255, 0, 254, 0) 100%);
+    background: linear-gradient(180deg, rgba(0, 0, 0, 0.705) 0%, rgba(255, 0, 254, 0) 100%);
 }
 
+body {
+    background-image: linear-gradient(-135deg, #151414, #302c27);
+    color: white;
+    font-family: Montserrat;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+.groupementAll {
+    width: 80%;
+    margin: auto;
+}
+
+.double {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 100px;
+}
+
+.topPage{
+    margin-bottom: 100px;
+}
+
+h1{
+    margin-top: 60px;
+    margin-bottom: 60px;
+}
+
+.image>.img>img {
+    border: solid 1px #e6b856;
+    border-radius: 10px;
+    height: 700px;
+    width: 100%;
+    object-fit: cover;
+}
+
+.image>.img {
+    height: 700px;
+}
+
+.text {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.titrePage{
+    position: relative;
+}
+
+.rectangleTitre{
+    width: 50px;
+    height: 5px;
+    background: #e6b856;
+    position: absolute;
+    bottom: -15px;
+}
+
+.titre{
+    position: relative;
+}
+
+.titre>.rectangleTitre{
+    bottom: 5px;
+}

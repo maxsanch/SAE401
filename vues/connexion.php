@@ -1,5 +1,20 @@
 <?php
 $styles = "styles/style_connexion.css";
+
+$librairie = '';
+
+$script = "<script>
+
+    document.querySelectorAll('.bouton_inscription').forEach(element => {
+        element.addEventListener('click', chanegrInsc);
+    });
+
+
+    function chanegrInsc() {
+        document.querySelector('.inscription').classList.toggle('ferme')
+        document.querySelector('.connexion').classList.toggle('ferme')
+    }
+</script>";
 ?>
 
 <div class="total">
@@ -82,15 +97,3 @@ $styles = "styles/style_connexion.css";
 </div>
 
 
-<script>
-
-    document.querySelectorAll('.bouton_inscription').forEach(element => {
-        element.addEventListener('click', chanegrInsc);
-    });
-
-
-    function chanegrInsc() {
-        document.querySelector('.inscription').classList.toggle('ferme')
-        document.querySelector('.connexion').classList.toggle('ferme')
-    }
-</script>

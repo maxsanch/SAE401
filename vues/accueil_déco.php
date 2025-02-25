@@ -49,6 +49,7 @@ foreach ($jeux as $valeur) {
         </div>";
 }
 
+$script = "";
 ?>
 
 <div class="CadreDesEngrenages">

@@ -2,6 +2,9 @@
 
 $styles = "";
 
+$librairie = '';
+
+$script = "";
 
 $result = "";
 foreach($jeux as $valeur){

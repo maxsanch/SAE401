@@ -3,6 +3,8 @@ require_once "modeles/panier.class.php";
 
 $styles = "";
 
+$librairie = '';
+
 if (file_exists('img/user/' . $_GET['idUser'] . '.jpg')) {
     $phototest = 'img/user/' . $_GET['idUser'] . '.jpg';
     // Si l'image existe, l'affiche
@@ -13,6 +15,8 @@ if (file_exists('img/user/' . $_GET['idUser'] . '.jpg')) {
     $phototest = 'img/user/no-user-image.jpg';
 }
 
+
+$script = "";
 
 $panierClass = new panier;
 

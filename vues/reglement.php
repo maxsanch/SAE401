@@ -2,6 +2,9 @@
 
 $styles = "styles/style_reglement.css";
 
+$librairie = '';
+
+$script = "";
 
 $resultpanier = "";
 if (empty($panier) && empty($souvenirs)) {

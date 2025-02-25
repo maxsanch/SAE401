@@ -2,6 +2,10 @@
 
 $styles = "";
 
+$librairie = '';
+
+$script = "";
+
 ?>
 
 <div class="erreur">

@@ -4,6 +4,9 @@ require_once "modeles/panier.class.php";
 
 $styles = "../styles/style_jeusolo.css";
 
+$librairie = '<link rel="stylesheet" href="https://uicdn.toast.com/calendar/latest/toastui-calendar.min.css" />
+<script src="https://uicdn.toast.com/calendar/latest/toastui-calendar.min.js"></script>';
+
 if (file_exists('img/photojeu/' . $_GET['idjeu'] . '.jpg')) {
     $phototest = 'img/photojeu/' . $_GET['idjeu'] . '.jpg';
     // Si l'image existe, l'affiche
@@ -26,8 +29,7 @@ $date = new dateTime();
 
 $affichage = "";
 
-var_dump($recup);
-for ($i = 0; $i < 90; $i++) {
+for ($i = 0; $i < 100; $i++) {
     $heures = "";
     for ($j = 8; $j <= 16; $j += 2) {
         $iscool = false;
@@ -38,7 +40,7 @@ for ($i = 0; $i < 90; $i++) {
                     $iscool = true;
                 }
             }
-            if(!$iscool){
+            if (!$iscool) {
                 $heures .= "<label><input required type='radio' name='heure' value='" . $j . "-" . ($j + 2) . "h'>" . $j . " - " . ($j + 2) . "h</label>";
             }
         } else {
@@ -48,7 +50,7 @@ for ($i = 0; $i < 90; $i++) {
 
     $affichage .= "<div class='total'>
                     <form action='index.php?page=réserverJeu&idjeu=" . $_GET['idjeu'] . "&jour=" . $date->format('Y-m-d') . "' method='post'>
-                        <div class='parentCalender'>" . $date->format('d-m-Y') . "</div>
+                        <div class='parentCalender'>" . $date->format('D: d / m / Y') . "</div>
                         <div class='heures'>" . $heures . "</div>
                         <label>
                             Choisissez un nombre de participants.
@@ -60,8 +62,69 @@ for ($i = 0; $i < 90; $i++) {
     $date->modify('+1 day');
 }
 
+$script = "<script src='https://uicdn.toast.com/calendar /latest/toastui-calendar.min.js'></script>
+<script>
+    const Calendar = tui.Calendar;
 
-?>
+    const container = document.getElementById('calendar');
+    const options = {
+        defaultView: 'week',
+        timezone: {
+            zones: [
+                {
+                    timezoneName: 'Europe/Paris',
+                    displayLabel: 'Paris',
+                        },
+                    ],
+                },
+                calendars: [
+                        {
+                        id: 'cal1',
+                        name: 'Work',
+                        backgroundColor: '#03bd9e',
+                        },
+                    ]
+                };
+
+                const calendar = new Calendar(container, options);
+
+                                calendar.createEvents([
+                        {
+                            id: 'event1',
+                            calendarId: 'cal2',
+                            title: 'Weekly meeting',
+                            start: '2025-02-26T12:00:00',
+                            end: '2025-02-26T18:02:00',
+                        },
+                        {
+                            id: 'event2',
+                            calendarId: 'cal1',
+                            title: 'Lunch appointment',
+                            start: '2025-02-25T17:15:00',
+                            end: '2025-02-25T19:16:45',
+                        },
+                        {
+                            id: 'event3',
+                            calendarId: 'cal2',
+                            title: 'Vacation',
+                            start: '2025-02-25T15:15:00',
+                            end: '2025-02-25T16:10:00',
+                        },
+                ]);
+                
+calendar.setTheme({
+  common: {
+    gridSelection: {
+      backgroundColor: 'rgba(11, 255, 27, 0.05)',
+      border: '1px dottedrgb(0, 0, 0)',
+    },
+  },
+});
+            </script>
+            "
+
+
+    ?>
 
 <div class="jeutop">
     <div class="image">
@@ -87,6 +150,10 @@ for ($i = 0; $i < 90; $i++) {
 <div class="video">
     <?= $video ?>
 </div>
+<div id="calendar" style="height: 600px;">
+</div>
+
+
 <div class="calendrier">
-    <?= $affichage ?>
+<?= $affichage ?>
 </div>

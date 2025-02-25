@@ -2,6 +2,7 @@
 
 $styles = "";
 
+$librairie = '';
 
 $result = "";
 foreach ($jeux as $valeur) {
@@ -17,6 +18,8 @@ foreach ($jeux as $valeur) {
 
     $result .= '<div class="case"><a href="index.php?page=modifjeu&idRuche=' . $valeur['ID_jeu'] . '" class="photo"><img src="' . $phototest . '" alt="Jeu choisi" style="height: 200px; object-fit: cover;"></a><b>' . $valeur['Titre'] . '</b><a class="bout" href="index.php?page=infojeusolo&idJeu=' . $valeur['ID_jeu'] . '">Voir le jeu</a><a href="index.php?page=modifjeu&idJeu=' . $valeur['ID_jeu'] . '" class="bout">Modifier</a><a href="index.php?page=supprJeu&idJeu='. $valeur['ID_jeu'] .'" class="bout">Supprimer</a></div>';
 }
+
+$script = "";
 
 ?>
 

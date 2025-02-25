@@ -5,6 +5,7 @@ require_once "modeles/utilisateurs.class.php";
 require_once "modeles/Objectshop.class.php";
 require_once "controleur/ctlShop.php";
 require_once "controleur/ctlUser.php";
+require_once "controleur/ctlPage.php";
 
 class ctlPanier
 {
@@ -65,14 +66,22 @@ class ctlPanier
 
     public function EnregReservation($idjeu, $jour, $nombre, $heure)
     {
-        $getUser = $this->user->GetUser($_SESSION['acces']);
-        $getPanier = $this->panier->getPanierUser($getUser[0]['Id_utilisateur']);
+        $verifReservation = $this->panier->checkReservation($idjeu, $jour, $heure);
 
-        $this->panier->Reserver($idjeu, $jour, $nombre, $heure, $getPanier);
-        $heure = $this->date->format('Y-m-d H-i-s');
-        $this->panier->updateHorraire($getPanier, $heure);
+        if(!empty($verifReservation)){
+            $getUser = $this->user->GetUser($_SESSION['acces']);
+            $getPanier = $this->panier->getPanierUser($getUser[0]['Id_utilisateur']);
+    
+            $this->panier->Reserver($idjeu, $jour, $nombre, $heure, $getPanier);
+            $heure = $this->date->format('Y-m-d H-i-s');
+            $this->panier->updateHorraire($getPanier, $heure);
+            header('Location: index.php?page=remerciements');
+        }
+        else{
+            $erreur = new ctlPage;
+            $erreur->erreur("Ce jeu à déjà été réservé.");
+        }
 
-        header('Location: index.php?page=remerciements');
     }
 
     public function supprimerSouvenir($idobj, $idpanier, $nombredelet)

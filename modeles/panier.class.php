@@ -243,4 +243,10 @@ class panier extends database
         $req = "UPDATE `contenir` SET `quantitée` = ? WHERE `contenir`.`id_panier` = ? AND `contenir`.`id_objet_shop` = ?";
         $this->execReqPrep($req, $data);
     }
+
+    public function checkReservation($idjeu, $jour, $heure){
+        $data = array($idjeu, $jour, $heure);
+        $req = "SELECT id_panier FROM réserver WHERE ID_jeu = ? AND jour_reservation = ? AND heure_reservation = ?";
+        $this->execReqPrep($req, $data);
+    }
 }

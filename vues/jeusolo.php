@@ -1,5 +1,5 @@
 <?php
-$styles = "";
+$styles = "../styles/style_jeusolo.css";
 
 if (file_exists('img/photojeu/' . $_GET['idjeu'] . '.jpg')) {
     $phototest = 'img/photojeu/' . $_GET['idjeu'] . '.jpg';
@@ -37,7 +37,6 @@ for ($i = 0; $i < 10; $i++) {
         } else {
             $heures .= "<label><input required type='radio' name='heure' value='" . $j . "-" . ($j + 2) . "h'>" . $j . " - " . ($j + 2) . "h</label>";
         }
-
     }
 
     $affichage .= "<div class='total'>

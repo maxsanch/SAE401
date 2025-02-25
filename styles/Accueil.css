@@ -175,16 +175,8 @@ img {
     width: 50%;
 }
 
-.ContourRuche {
-    border: dashed 1px #B95E06;
-    padding: 8px;
-    border-radius: 16px;
-    border-style: dashed;
-    width: fit-content;
-}
-
-.UneRuche {
-    border: dashed 1px #ae702aad;
+.PropositionEscapeGame {
+    border: solid 1px #DCAD57;
     border-radius: 8px;
     gap: 16px;
     display: flex;
@@ -192,7 +184,7 @@ img {
     width: 250px;
 }
 
-.azert{
+.InformationEscapeGame{
     display: flex;
     justify-content: space-between;
 }
@@ -203,6 +195,11 @@ img {
 
 .BoutonEscapeGame{
     margin-bottom: 12px;
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
+    display: flex;
+    gap: 8px;
 }
 
 .EscapeGameBouton {
@@ -215,6 +212,9 @@ img {
 .EscapeGameBouton:first-of-type {
     background-image: linear-gradient(45deg, #E6B856, #806630);
     color: black;
+    display: block;
+    width: 45%;
+    text-align: center;
 }
 
 /* Aide de chatgpt pour faire le dégradé en même temps sur le texte et la bordure car j'arrivais à le faire que sur un en même temps sinon */
@@ -228,6 +228,8 @@ img {
     background: linear-gradient(45deg, #E6B856, #806630);
     background-clip: text;
     color: transparent;
+    display: block;
+    width: 45%;
 }
 
 .EscapeGameBouton:nth-of-type(2)::before {
@@ -245,14 +247,32 @@ img {
     mask-composite: exclude;
 }
 
-.InfoRuche:nth-of-type(2){
+.InfoEG:nth-of-type(2){
     margin-left: 8px;
 }
 
 .EscageGameBarreSelecteurGlobal{
-    width: 90%;
     margin: auto;
     position: relative;
+}
+
+.EscageGameBarreSelecteurGlobal>input{
+    -webkit-appearance: none;
+    appearance: none;
+    background-color: rgb(58, 58, 58);
+    border-radius: 8px;
+    height: 12px;
+}
+
+.EscageGameBarreSelecteurGlobal>input::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 16px;
+    height: 16px;
+    background-image: linear-gradient(45deg, #806630, #E6B856); /* Couleur du curseur */
+    border-radius: 50%;
+    cursor: pointer;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
 }
 
 .SelecteurBarre{
@@ -270,6 +290,13 @@ img {
     position: absolute;
 }
 
+.MiseEnPageEG{
+    width: 90%;
+    margin: auto;
+    gap: 16px;
+    display: flex;
+    flex-direction: column;
+}
 
 
 
@@ -305,9 +332,15 @@ img {
     }
 }
 
-.ListeDesEscapeGame{
+.ListeDesEscapeGame>div{
     display: flex;
     flex-wrap: wrap;
+    gap: 32px;
+    margin: auto;
+}
+
+.ListeDesEscapeGame{
+    display: flex;
 }
 
 .ImageDeEscapeGame{
@@ -317,15 +350,46 @@ img {
 .ImageDeEscapeGame>img{
     height: 100%;
     object-fit: cover;
+    border-radius: 8px 8px 0px 0px;
 }
 
 .TitreEscapeGame{
     font-family: Montserrat-bold;
     width: fit-content;
+    padding-top: 32px;
+    margin-bottom: 0px;
 }
 
 .RectangleTitre{
     width: 50px;
     height: 5px;
     background-image: linear-gradient(45deg, #806630, #E6B856);
+    margin-bottom: 32px;
+}
+
+.Carte{
+    display: flex;
+    justify-content: space-around;
+}
+
+.PresentationGlobal{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 32px;
+    margin-top: 64px;
+}
+
+.PresentationText{
+    margin: auto;
+}
+
+.PresentationImg{
+    display: flex;
+    justify-content: center;
+}
+
+.PresentationImg>img{
+    border: 2px solid #E6B856;
+    border-radius: 10px;
+    width: 80%;
 }

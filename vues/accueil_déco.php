@@ -26,14 +26,14 @@ foreach ($jeux as $valeur) {
 
     $result .= "<div class='ContourRuche'>
             <div class='UneRuche'>
-                <div class='ImageDeEscapeGame'><img src='".$phototest."'
+                <div class='ImageDeEscapeGame'><img src='" . $phototest . "'
                         alt='Tes ruches'></div>
-                <div class='MaRucheTitre'>".$valeur['Titre']."</div>
+                <div class='MaRucheTitre'>" . $valeur['Titre'] . "</div>
                 <div class='azert'>
-                    <div class='InfoRuche'>age : ".$valeur['age']." ans</div>
+                    <div class='InfoRuche'>age : " . $valeur['age'] . " ans</div>
                     <div class='azert'>
                         <div class='User'><img src='img/Users.svg' alt='Icon d'utilisateur'></div>
-                        <div class='InfoRuche'>".$valeur['nombre_min']." - ".$valeur['nombre_max']."</div>
+                        <div class='InfoRuche'>" . $valeur['nombre_min'] . " - " . $valeur['nombre_max'] . "</div>
                     </div>
                 </div>
                 <div class='EscageGameBarreSelecteurGlobal'>
@@ -84,7 +84,9 @@ foreach ($jeux as $valeur) {
 </div>
 <div class="EscapeGameDisponible">
     <div class="MiseEnPage">
-        <!-- pour modifier le tou, en haut il y a la boucle de ce qui est affiché, dans une variable result -->
-        <?= $result ?>
+        <div class="ListeDesEscapeGame">
+            <!-- pour modifier le tout, en haut il y a la boucle de ce qui est affiché, dans une variable result -->
+            <?= $result ?>
+        </div>
     </div>
 </div>

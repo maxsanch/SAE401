@@ -145,7 +145,6 @@ img {
 
 .EscapeGameDisponible{
     background-color: #151414;
-    height: 100vh;
 }
 
 .EscapeGameListe{
@@ -304,4 +303,9 @@ img {
     100% {
         transform: translate(var(--X), var(--Y)) rotate(360deg);
     }
+}
+
+.ListeDesEscapeGame{
+    display: flex;
+    flex-wrap: wrap;
 }

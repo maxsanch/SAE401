@@ -6,7 +6,7 @@
     display: block;
 }
 
-header {
+/* header {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -35,7 +35,7 @@ header {
     padding: 8px;
     color: black;
     border-radius: 4px;
-}
+} */
 
 @font-face {
     font-family: Montserrat;
@@ -50,4 +50,45 @@ header {
 @font-face {
     font-family: Montserrat-bold;
     src: url(../font/Montserrat-Bold.ttf);
+}
+
+a{
+    text-decoration: none;
+    color: white;
+}
+
+header {
+    width: 80%;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 16px;
+}
+
+.HeaderCoteDroite {
+    display: flex;
+    gap: 16px;
+    align-items: center;
+}
+
+.HeaderBouton {
+    cursor: pointer;
+}
+
+.HeaderBouton{
+    color: black;
+}
+
+.HeaderBouton:first-of-type>a {
+    background-image: linear-gradient(-135deg, #E6B856, #806630);
+    color: transparent;
+    background-clip: text;
+}
+
+.HeaderBouton:nth-of-type(6)>a {
+    background-image: linear-gradient(-135deg, #E6B856, #806630);
+    padding: 8px;
+    color: black;
+    border-radius: 4px;
 }

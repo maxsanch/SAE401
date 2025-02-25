@@ -20,14 +20,14 @@ foreach ($employes as $valeur) {
 
 ?>
 
-<h1>L'équipe</h1>
+<h1>L'ÉQUIPE</h1>
 <div class="allemployes">
     <?= $result ?>
 </div>
 <div class="contacts">
     <div class="phone">
         <div class="icone">
-            <img src="imgphoneamettre" alt="">
+            <img src="../img/phone-call_1.svg" alt="">
         </div>
         <div class="info">
             <div class="info1">
@@ -40,7 +40,7 @@ foreach ($employes as $valeur) {
     </div>
     <div class="mail">
         <div class="icone">
-            <img src="imgmailamettre" alt="">
+            <img src="../img/envelope_1.svg" alt="">
         </div>
         <div class="info">
             réservation@we-escape.de

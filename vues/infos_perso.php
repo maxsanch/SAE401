@@ -187,17 +187,11 @@ if (empty($panier) && empty($souvenirs)) {
                     <label>
                         <p>Nouveau mot de passe</p> <input type="password" class="motdepasse" name="NewPassword"
                             placeholder="entrez votre nouveau mot de passe">
-                        <div class="oeil oeilferme">
-                            <img id="fermé" src="../img/oeilfermé.svg" alt="icone d'oeil">
-                        </div>
-                    </label>
+                        </label>
 
                     <label>
                         <p>Confirmez le mot de passe</p><input type="password" class="motdepasse"
                             name="ConfirmationNewPassword" placeholder="confirmez votre mot de passe">
-                        <div class="oeil oeilferme">
-                            <img id="fermé" src="../img/oeilfermé.svg" alt="icone d'oeil">
-                        </div>
                     </label>
                 </div>
                 <div class="validation">
@@ -205,9 +199,6 @@ if (empty($panier) && empty($souvenirs)) {
                         <p>Pour enregistrer les modifications, vous devez entrer votre mot de passe actuelle</p><input
                             type="password" name="ancienmdp" class="motdepasse" required
                             placeholder="entrez votre mot de passe">
-                        <div class="oeil oeilferme">
-                            <img id="fermé" src="../img/oeilfermé.svg" alt="icone d'oeil">
-                        </div>
                     </label>
                 </div>
                 <button>Modifier</button>

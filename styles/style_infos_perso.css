@@ -12,4 +12,16 @@ body{
 .total{
     padding-left: 10%;
     padding-right: 10%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+.infosUser{
+    grid-column: 1;
+    grid-row: 2;
+}
+
+.allpaniers{
+    grid-column: 2;
+    grid-row: 2;
 }

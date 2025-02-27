@@ -162,6 +162,7 @@ h3 {
 
 .RoueFooter>img{
     animation: Tourner 15s linear infinite;
+    width: 100%;
 }
 
 @keyframes Tourner {
@@ -172,4 +173,9 @@ h3 {
     100% {
         transform: rotate(360deg);
     }
+}
+
+footer{
+    color: white;
+    font-family: Montserrat;
 }

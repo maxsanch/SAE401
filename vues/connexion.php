@@ -17,6 +17,12 @@ $script = "<script>
 </script>";
 ?>
 
+<div class="CadreDesEngrenages">
+    <div class="engrenage" style="--X:50%; --Y:50%;">
+        <img src="img/roue_ouvert.svg" alt="un engrenage">
+    </div>
+</div>
+
 <div class="total">
     <div class="connexion">
         <div class="left">

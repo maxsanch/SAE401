@@ -1,0 +1,118 @@
+header{
+    background: linear-gradient(180deg, rgba(0, 0, 0, 0.705) 0%, rgba(255, 0, 254, 0) 100%);
+}
+
+body{
+    background: rgb(21,20,20);
+    background: linear-gradient(26deg, rgba(21,20,20,1) 0%, rgba(94,87,78,1) 100%);
+    font-family: Montserrat;
+}
+
+h1{
+    margin-top: 100px;
+    padding-left: 10%;
+    color: #ffffff;
+}
+
+.cellulAllobjets {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    width: 80%;
+    margin: 0 auto;
+    justify-content: center;
+    align-items: baseline;
+}
+
+.case {
+    justify-self: center;
+    max-width: 60%;
+    margin: 10px;
+    color: #ffffff;
+}
+
+.case img {
+    border-radius: 10px;
+    width: 100%;
+}
+
+.infotop{
+    display: flex;
+    justify-content: space-between;
+    font-weight: bold;
+}
+
+.prix {
+    min-width: 70px;
+    margin-left: 10px;
+}
+
+.description {
+    margin-top: 10px;
+}
+
+.stock {
+    margin-top: 10px;
+}
+
+button {
+    position: relative;
+    text-align: center;
+    border-radius: 8px;
+    /* Arrondi OK */
+
+    /* Dégradé pour le texte */
+    background: linear-gradient(45deg, #E6B856, #806630);
+    background-clip: text;
+    color: transparent;
+}
+
+button::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: 8px;
+    /* Appliquer le border-radius */
+    padding: 1px;
+    /* Épaisseur de la bordure */
+    background: linear-gradient(to left, #E6B856, #806630);
+
+    /* Masquer l'intérieur pour que seul le contour soit visible */
+    mask: linear-gradient(white 0 0) content-box, linear-gradient(white 0 0);
+    mask-composite: exclude;
+}
+
+
+/*  */
+input[type="number"] {
+    position: relative;
+    text-align: center;
+    border-radius: 8px;
+    /* Arrondi OK */
+    padding: 10px;
+    /* Ajoute du padding pour un meilleur aspect */
+    border: none;
+    /* Supprime la bordure par défaut */
+    background: linear-gradient(45deg, #E6B856, #806630);
+    background-clip: text;
+    color: transparent;
+    font-size: 16px;
+    /* Ajuste la taille de la police */
+    margin-right: 10px;
+    /* Espace entre l'input et le bouton */
+    width: 60px;
+    /* Ajustez la largeur selon vos besoins */
+}
+
+input[type="number"]::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: 8px;
+    /* Appliquer le border-radius */
+    padding: 1px;
+    /* Épaisseur de la bordure */
+    background: linear-gradient(to left, #E6B856, #806630);
+    /* Masquer l'intérieur pour que seul le contour soit visible */
+    mask: linear-gradient(white 0 0) content-box, linear-gradient(white 0 0);
+    mask-composite: exclude;
+}

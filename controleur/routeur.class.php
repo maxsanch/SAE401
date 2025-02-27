@@ -3,7 +3,6 @@ require_once "controleur/ctlConnexion.php";
 require_once "controleur/ctlPage.php";
 require_once "controleur/ctlUser.php";
 require_once "controleur/ctlPanier.php";
-require_once "controleur/ctlLieux.php";
 require_once "controleur/ctlJeux.php";
 require_once "controleur/ctlShop.php";
 require_once "controleur/ctlEmployes.php";
@@ -24,9 +23,6 @@ class routeur
 
     private $ctlShop;
 
-    private $ctlLieux;
-
-
     public function __construct()
     {
         $this->ctlPage = new ctlPage;
@@ -38,8 +34,6 @@ class routeur
         $this->ctlConnexion = new ctlConnexion;
 
         $this->ctlJeux = new ctlJeux;
-
-        $this->ctlLieux = new ctlLieux;
 
         $this->ctlShop = new ctlshop;
 

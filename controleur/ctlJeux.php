@@ -1,7 +1,7 @@
 <?php
 
-require_once 'modeles/jeux.class.php';
-require_once 'vues/vue.class.php';
+require_once $_SERVER['DOCUMENT_ROOT'].'/modeles/jeux.class.php';
+require_once $_SERVER['DOCUMENT_ROOT'].'/vues/vue.class.php';
 
 
 class ctlJeux{

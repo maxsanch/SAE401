@@ -62,8 +62,8 @@ class ctlUser
     public function changerpdp()
     {
         $user = $this->users->GetUser($_SESSION['acces']);
-        $this->users->updateUserPhoto($user[0]['Id_utilisateur']);
-        $this->infoperso("photo de profil changée avec succès !");
+        $erreur = $this->users->updateUserPhoto($user[0]['Id_utilisateur']);
+        $this->infoperso($erreur);
     }
 
 
@@ -71,8 +71,6 @@ class ctlUser
     {
         $this->users->deletuser($id);
         $panier = $this->panierUser->getPaniers($id);
-
-        var_dump($panier);
         // supprimer les liaisons dans les tables contenir et réserver.
         foreach($panier as $ligne){
             $this->panierUser->deletContenir($ligne['id_panier']);
@@ -122,8 +120,6 @@ class ctlUser
         $id = $this->users->GetUser($_SESSION['acces']);
         $this->users->deletuser($id[0]['Id_utilisateur']);
         $panier = $this->panierUser->getPaniers($id[0]['Id_utilisateur']);
-
-        var_dump($panier);
         // supprimer les liaisons dans les tables contenir et réserver.
         foreach($panier as $ligne){
             $this->panierUser->deletContenir($ligne['id_panier']);

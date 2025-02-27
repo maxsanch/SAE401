@@ -1,7 +1,7 @@
 <?php
 
-require_once "modeles/database.class.php";
-require_once "controleur/ctlJeux.php";
+require_once $_SERVER['DOCUMENT_ROOT']."/modeles/database.class.php";
+require_once $_SERVER['DOCUMENT_ROOT']."/controleur/ctlJeux.php";
 
 class jeux extends database {
     

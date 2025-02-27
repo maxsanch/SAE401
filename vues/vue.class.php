@@ -54,8 +54,12 @@ class vue {
 
     $contenu = ob_get_clean();
     
-    $footer = "&copy; MMI Mulhouse";
-  
+    ob_start();
+
+    require "partials/footer.php";
+
+    $footer = ob_get_clean();
+
     require "gabarit.php";
   }
 }

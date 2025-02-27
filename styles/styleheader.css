@@ -1,45 +1,16 @@
-.panier{
+/* Style du header */
+
+.panier {
     display: none;
 }
 
-body{
+body {
     margin: 0;
 }
 
-.ouvert{
+.ouvert {
     display: block;
 }
-
-/* header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding-top: 16px;
-}
-
-.HeaderCoteDroite {
-    display: flex;
-    gap: 16px;
-    align-items: center;
-}
-
-.HeaderBouton {
-    cursor: pointer;
-}
-
-
-.HeaderBouton:first-of-type {
-    background-image: linear-gradient(-135deg, #E6B856, #806630);
-    color: transparent;
-    background-clip: text;
-}
-
-.HeaderBouton:nth-of-type(6) {
-    background-image: linear-gradient(-135deg, #E6B856, #806630);
-    padding: 8px;
-    color: black;
-    border-radius: 4px;
-} */
 
 @font-face {
     font-family: Montserrat;
@@ -56,7 +27,7 @@ body{
     src: url(../font/Montserrat-Bold.ttf);
 }
 
-a{
+a {
     text-decoration: none;
     color: white;
 }
@@ -80,7 +51,7 @@ a{
     cursor: pointer;
 }
 
-.HeaderBouton{
+.HeaderBouton {
     color: black;
 }
 
@@ -95,4 +66,102 @@ a{
     padding: 8px;
     color: black;
     border-radius: 4px;
+}
+
+/* Style du footer */
+
+.MiseEnPage {
+    width: 80%;
+    margin: auto;
+}
+
+.MiseEnPageFooter {
+    width: 80%;
+}
+
+.Logo {
+    width: 200px;
+}
+
+.FooterPartiesGlobal {
+    margin-top: 16px;
+    display: grid;
+    grid-template-columns: 2fr repeat(2, 1fr);
+}
+
+h3 {
+    color: #FFAE00;
+}
+
+.NoMargin {
+    margin-top: 0;
+}
+
+.ReseauImg {
+    display: flex;
+    gap: 16px;
+    align-items: center;
+}
+
+.ReseauImg>div {
+    width: 44px;
+}
+
+.ContactGroup:first-of-type {
+    display: flex;
+    gap: 8px;
+}
+
+.ContactGroup:first-of-type {
+    margin-bottom: 8px;
+    padding-bottom: 8px;
+    border-bottom: dashed 1px white;
+    align-items: center;
+}
+
+.ContactMail:first-of-type {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+}
+
+.ContactMail:nth-of-type(2)>div {
+    margin-bottom: 8px;
+    margin-left: 40px;
+}
+
+.Contactimg {
+    width: 32px;
+}
+
+.Information>div {
+    margin-bottom: 8px;
+}
+
+.Realisation {
+    padding: 16px 0px;
+}
+
+.MiseEnPageRoue {
+    position: relative;
+    background-color: #271507;
+    padding-top: 16px;
+}
+
+.RoueFooter {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 25%;
+    /* animation: Tourner 15s linear infinite; */
+}
+
+@keyframes Tourner {
+    0% {
+        transform: translate(var(--X), var(--Y)) rotate(0deg);
+    }
+
+    100% {
+        transform: translate(var(--X), var(--Y)) rotate(360deg);
+    }
 }

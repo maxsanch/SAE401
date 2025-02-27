@@ -119,7 +119,7 @@ class routeur
                             }
                             break;
                         case "réserverJeu":
-                            if(isset($_GET['idjeu']) && isset($_GET['jour'])){
+                            if(isset($_GET['idjeu']) && isset($_GET['jour']) && isset($_POST['heure']) && isset($_POST['nombre'])){
                                 $this->ctlPanier->EnregReservation($_GET['idjeu'], $_GET['jour'], $_POST['nombre'], $_POST['heure']);
                             }
                             else{

@@ -2,7 +2,11 @@
 
 $styles = '../styles/style_contacts.css';
 
+$librairie = '';
+
 $result = "";
+
+$script = "";
 
 foreach ($employes as $valeur) {
     if (file_exists('img/employes/' . $valeur['ID_employé'] . '.jpg')) {

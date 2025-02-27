@@ -2,6 +2,10 @@
 
 $styles = "styles/remerciements.css";
 
+$librairie = '';
+
+$script = "";
+
 ?>
 
 

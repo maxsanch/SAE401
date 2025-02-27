@@ -2,6 +2,10 @@
 
 $styles = "../styles/style_apropos.css";
 
+$librairie = '';
+
+$script = "";
+
 ?>
 
 <div class="groupementAll">

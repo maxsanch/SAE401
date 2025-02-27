@@ -2,7 +2,11 @@
 
 require_once "modeles/panier.class.php";
 
+$librairie = '';
+
 $styles = "";
+
+$script = "";
 
 $panierClass = new panier;
 

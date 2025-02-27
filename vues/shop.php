@@ -4,6 +4,10 @@ $styles = '../styles/style_souvenirs.css';
 
 $result = "";
 
+$script = "";
+
+$librairie = '';
+
 foreach ($objets as $valeur) {
     if (file_exists('img/objets/' . $valeur['id_objet_shop'] . '.jpg')) {
         $phototest = 'img/objets/' . $valeur['id_objet_shop'] . '.jpg';

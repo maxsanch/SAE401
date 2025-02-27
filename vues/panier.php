@@ -19,7 +19,7 @@ if (isset($_SESSION['acces'])) {
                                                 <div class="prix">
                                                     ' . ($valeurs['nombre_personnes'] * $valeurs['prix']) . ' €
                                                 </div>
-                                                <a href=index.php?page=suppressionReservation&idJeu=' . $valeurs['ID_jeu'] . '&heure=' . $valeurs['heure_reservation'] . '&jour=' . $valeurs['jour_reservation'] . '>
+                                                <a href="index.php?page=suppressionReservation&idJeu=' . $valeurs['ID_jeu'] . '&heure=' . $valeurs['heure_reservation'] . '&jour=' . $valeurs['jour_reservation'] . '">
                                                     <div class="iconepoubelle">
                                                         Retirer du panier (mettre une icone de poubelle)
                                                     </div>

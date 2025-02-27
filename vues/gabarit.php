@@ -5,6 +5,7 @@
   <title><?= $title ?></title>
   <link rel="stylesheet" href="styles/styleheader.css">
   <link href="<?= $styles ?>" rel="stylesheet">
+  <?= $librairie ?>
 </head>
 <body>
   <header>
@@ -23,5 +24,6 @@
     <?= $footer ?>
   </footer>
   <script src="js/scriptGlobal.js"></script>
+  <?= $script ?>
 </body>
 </html>

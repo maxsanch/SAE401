@@ -3,8 +3,12 @@ require_once "controleur/ctlPanier.php";
 
 $styles = "";
 
+$librairie = '';
 
 $result = "";
+
+$script = "";
+
 if (count($users)) {
     // Affichage des lignes du tableau
     foreach ($users as $ligne) {

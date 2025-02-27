@@ -2,6 +2,9 @@
 
 $styles = "";
 
+$librairie = '';
+
+$script = "";
 
 $result = "";
 foreach($jeux as $valeur){
@@ -15,12 +18,12 @@ foreach($jeux as $valeur){
         $phototest = 'img/photojeu/no_image.jpg';
     }
 
-    $result.= "<img src='".$phototest."'><div class='titre'>".$valeur['Titre']."</div><div class='total'><div class='age'>age : ".$valeur['age']."</div><div class='nbrpart'>".$valeur['nombre_min']." - ".$valeur['nombre_max']."</div><div class='bouton'><a href='index.php?page=infojeusolo&idjeu=".$valeur['ID_jeu']."'>Voir plus</a><div class='réserver'>Réserver</div></div></div>";
+    $result.= "<div class='total'><img src='".$phototest."'><div class='titre'>".$valeur['Titre']."</div><div class='age'>age : ".$valeur['age']."</div><div class='nbrpart'>".$valeur['nombre_min']." - ".$valeur['nombre_max']."</div><div class='bouton'><a href='index.php?page=infojeusolo&idjeu=".$valeur['ID_jeu']."'>Voir plus</a></div></div>";
 }
 
 ?>
 
 
-<divv class="global">
+<div class="global">
     <?= $result ?>
-</divv>
+</div>

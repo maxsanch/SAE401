@@ -12,6 +12,8 @@ if (file_exists('img/photojeu/' . $_GET['idJeu']  . '.jpg')) {
     $phototest = 'img/photojeu/no_image.jpg';
 }
 
+$script = "";
+
 ?>
 
 <h1>

@@ -70,9 +70,20 @@ $script = ""
             return response.json();
         })
         .then(function (txt) {       // Utilisation de la réponse.
-            console.log(txt)
+            var datas = txt
     });
 
+    var date = new Date();
+    date.setDate(1);
+    //let jour1 = date.getDate(); // 1
+
+
+
+    date.setMonth((date.getMonth() + 1))
+    date.setDate((date.getDate() + 1))
+   // let jourfinal = date.getDate(); //1 aussi
+
+    console.log(date.getDate());
 
     // for (let i = 0; i < 100; i++) {
     //     let heures = "";

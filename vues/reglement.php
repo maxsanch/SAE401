@@ -117,7 +117,7 @@ if (empty($panier) && empty($souvenirs)) {
                 <div class="in">
                     <div class="carte_front">
                         <div class="top">
-                            <div class="titre">
+                            <div class="titrecb">
                                 Carte bancaire
                             </div>
                             <div class="logo_cb">
@@ -126,7 +126,7 @@ if (empty($panier) && empty($souvenirs)) {
                         </div>
                         <div class="line2">
                             <div class="puce">
-                                <img src="" alt="puce en or">
+                                <img src="../img/puce.png" alt="puce en or">
                             </div>
                         </div>
                         <div class="numbers">

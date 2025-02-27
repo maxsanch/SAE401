@@ -10,15 +10,15 @@ img {
 }
 
 .visa {
-    background: linear-gradient(rgb(13, 13, 59), rgb(17, 16, 36));
-    color: white;
-    border: solid 1px rgb(240, 192, 0);
+    background: linear-gradient(rgb(13, 13, 59), rgb(17, 16, 36)) !important;
+    color: white !important;
+    border: solid 1px rgb(240, 192, 0) !important;
 }
 
 .mastercard {
-    background: linear-gradient(rgb(21, 21, 21), rgb(13, 13, 13));
-    color: white;
-    border: solid 1px rgb(240, 192, 0);
+    background: linear-gradient(rgb(21, 21, 21), rgb(13, 13, 13)) !important;
+    color: white !important;
+    border: solid 1px rgb(240, 192, 0) !important;
 }
 
 .logo_cb {
@@ -36,8 +36,9 @@ label {
 }
 
 .gridbottom {
-    display: grid;
-    grid-template-columns: 2fr 1fr;
+    display: flex;
+    flex-direction: space-between;
+    align-items: end;
 }
 
 .logo_cb {
@@ -177,10 +178,14 @@ button {
     border-radius: 10px;
     padding: 15px;
     box-sizing: border-box;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
 
 .carte_back {
-    background: rgb(39, 39, 39);
+    background: linear-gradient(45deg, rgb(207, 207, 207), rgb(255, 255, 255));
     border: solid 1px rgb(212, 212, 212);
     border-radius: 10px;
     padding: 15px;
@@ -210,4 +215,88 @@ button {
 
 .tourne {
     transform: rotateY(180deg);
+}
+
+.titrecb{
+    font-size: 20px;
+}
+
+.inputs{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.numbers>input{
+    width: 100%;
+    box-sizing: border-box;
+}
+
+label{
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+input{
+    background: transparent;
+    padding: 5px;
+    border: solid #302C27 1px;
+}
+
+.visa>.numbers>input{
+    border: white solid 1px;
+    color: white;
+}
+.visa>.gridbottom>.inputs>input{
+    border: white solid 1px;
+    color: white;
+}
+.visa>.gridbottom>.inputs>label>input{
+    border: white solid 1px;
+    color: white;
+}
+
+.visa>label>input{
+    border: white solid 1px;
+    color: white;
+}
+
+
+.mastercard>.numbers>input{
+    border: white solid 1px;
+    color: white;
+}
+.mastercard>.gridbottom>.inputs>input{
+    border: white solid 1px;
+    color: white;
+}
+.mastercard>.gridbottom>.inputs>label>input{
+    border: white solid 1px;
+    color: white;
+}
+
+.mastercard>label>input{
+    border: white solid 1px;
+    color: white;
+}
+.puce{
+    width: 100px;
+}
+
+.ligne{
+    position: absolute;
+    background: #151414;
+    height: 40px;
+    left: 0;
+    right: 0;
+    top: 50px;
+}
+
+.mastercard>.ligne{
+    background: #e6b856;
+}
+
+.carte_back>label{
+    margin-top: 150px;
 }

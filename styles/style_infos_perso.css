@@ -1,0 +1,15 @@
+header{
+    background: linear-gradient(180deg, rgba(0, 0, 0, 0.705) 0%, rgba(255, 0, 254, 0) 100%);
+}
+
+body{
+    background: rgb(21,20,20);
+    background: linear-gradient(26deg, rgba(21,20,20,1) 0%, rgba(94,87,78,1) 100%);
+    font-family: Montserrat;
+    color: #ffffff;
+}
+
+.total{
+    padding-left: 10%;
+    padding-right: 10%;
+}

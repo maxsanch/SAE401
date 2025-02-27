@@ -4,7 +4,7 @@ require_once "modeles/panier.class.php";
 
 $librairie = '';
 
-$styles = "";
+$styles = "../styles/style_infos_perso.css";
 
 $script = "";
 
@@ -153,7 +153,7 @@ if (empty($panier) && empty($souvenirs)) {
                 </label>
             </div>
             <!-- Bouton pour valider le formulaire -->
-            <input class="boutbout" type="submit" class="valid" name="ok" value="modifier">
+            <input class="boutbout" type="submit" class="valid" name="ok" value="enregistrer">
         </form>
         <div class="informations">
             <form action="<?= $_SERVER['PHP_SELF'] . '?page=modifprofil' ?>" method="post">
@@ -202,7 +202,7 @@ if (empty($panier) && empty($souvenirs)) {
                 </div>
                 <div class="validation">
                     <label>
-                        <p>Pour enregistrer les modifications, vous devez entrer votre mot de passe</p><input
+                        <p>Pour enregistrer les modifications, vous devez entrer votre mot de passe actuelle</p><input
                             type="password" name="ancienmdp" class="motdepasse" required
                             placeholder="entrez votre mot de passe">
                         <div class="oeil oeilferme">
@@ -221,6 +221,7 @@ if (empty($panier) && empty($souvenirs)) {
             </div>
         </div>
     </div>
+    <div class="allpaniers">
     <div class="Lastpaniers">
         <h2>Votre paniers</h2>
 
@@ -231,5 +232,6 @@ if (empty($panier) && empty($souvenirs)) {
     <div class="ancienspaniers">
         <h2>Anciennes commandes</h2>
         <?= $paniervalides ?>
+    </div>
     </div>
 </div>

@@ -87,13 +87,22 @@ class utilisateurs extends database
                             return $erreur;
                         }
                     } else {
-                        var_dump('error');
+                        $erreur = "Cette extension n'est pas acceptée.";
+                        return $erreur;
                     }
                 } else {
-                    var_dump('error');
+                    $erreur = "Ce fichier est trop volumineux.";
+                    return $erreur;
                 }
             } else {
-                var_dump('error');
+                if($_FILES['photoUser']["size"] <= 500000){
+                    $erreur = "Ce fichier est trop volumineux.";
+                    return $erreur;
+                }
+                else{
+                    $erreur = "Mauvaise extension de fichier.";
+                    return $erreur;
+                }
             }
         }
     }
@@ -116,7 +125,8 @@ class utilisateurs extends database
         $this->execReqPrep($req, $data);
     }
 
-    public function changepasswordadmin($id, $mdphash){
+    public function changepasswordadmin($id, $mdphash)
+    {
         $data = array($mdphash, $id);
         // Requête SQL pour mettre à jour le mot de passe d'un utilisateur
         $req = "UPDATE `utilisateurs` SET `mdp` = ? WHERE `utilisateurs`.`Id_utilisateur` = ?;";
@@ -125,27 +135,27 @@ class utilisateurs extends database
         $this->execReqPrep($req, $data);
     }
 
-        // Fonction pour modifier les informations d'un utilisateur avec changement de mot de passe
-        public function edituserwithpdw($nom, $prenom, $adresse, $mdpgood, $iduser)
-        {
-            $data = array($prenom, $nom, $adresse, $mdpgood, $iduser);
-            // Requête SQL pour mettre à jour les informations d'un utilisateur
-            $req = "UPDATE `utilisateurs` SET `Prenom` = ?, `Nom` = ?, `adresse` = ?, `mdp` = ? WHERE `utilisateurs`.`Id_utilisateur` = ?;";
-    
-            // Exécution de la requête
-            $this->execReqPrep($req, $data);
-        }
-    
-        // Fonction pour modifier les informations d'un utilisateur sans changer le mot de passe
-        public function editusernopdw($nom, $prenom, $adresse, $iduser)
-        {
-    
-            $data = array($prenom, $nom, $adresse, $iduser);
-            // Requête SQL pour mettre à jour les informations d'un utilisateur
-            $req = "UPDATE `utilisateurs` SET `prenom` = ?, `nom` = ?, `adresse` = ? WHERE `utilisateurs`.`Id_utilisateur` = ?;";
-    
-            // Exécution de la requête
-            $this->execReqPrep($req, $data);
-        }
-    
+    // Fonction pour modifier les informations d'un utilisateur avec changement de mot de passe
+    public function edituserwithpdw($nom, $prenom, $adresse, $mdpgood, $iduser)
+    {
+        $data = array($prenom, $nom, $adresse, $mdpgood, $iduser);
+        // Requête SQL pour mettre à jour les informations d'un utilisateur
+        $req = "UPDATE `utilisateurs` SET `Prenom` = ?, `Nom` = ?, `adresse` = ?, `mdp` = ? WHERE `utilisateurs`.`Id_utilisateur` = ?;";
+
+        // Exécution de la requête
+        $this->execReqPrep($req, $data);
+    }
+
+    // Fonction pour modifier les informations d'un utilisateur sans changer le mot de passe
+    public function editusernopdw($nom, $prenom, $adresse, $iduser)
+    {
+
+        $data = array($prenom, $nom, $adresse, $iduser);
+        // Requête SQL pour mettre à jour les informations d'un utilisateur
+        $req = "UPDATE `utilisateurs` SET `prenom` = ?, `nom` = ?, `adresse` = ? WHERE `utilisateurs`.`Id_utilisateur` = ?;";
+
+        // Exécution de la requête
+        $this->execReqPrep($req, $data);
+    }
+
 }

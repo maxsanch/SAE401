@@ -311,7 +311,7 @@ img {
     position: absolute;
     right: 0;
     bottom: 0;
-    animation: Tourner 15s linear infinite;
+    /* animation: Tourner 15s linear infinite; */
 }
 
 .engrenage:nth-of-type(2) {
@@ -319,7 +319,7 @@ img {
     position: absolute;
     left: 0;
     bottom: 0;
-    animation: Tourner 15s linear infinite;
+    /* animation: Tourner 15s linear infinite; */
 }
 
 @keyframes Tourner {

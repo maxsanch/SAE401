@@ -95,6 +95,6 @@ $script = ""
 
     //     affichage.= "<div class='total'>< form action = 'index.php?page=réserverJeu&idjeu=".$_GET['idjeu']. "&jour=".$date -> format('Y-m-d'). "' method = 'post' ><div class='parentCalender'>".$date -> format('D: d / m / Y'). "</div><div class='heures'>".$heures. "</div><label>Choisissez un nombre de participants.<input type='number' required max='".$jeu[0]['nombre_max']. "' min='".$jeu[0]['nombre_min']. "' name='nombre' placeholder='nombre de participants'></label><button>Valider</button></form ></div > ";
 
-    //     d.setMonth(d.getDay() + 1);
+    //     d.setMonth(d.getMonth() + 1);
     // }
 </script>

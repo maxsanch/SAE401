@@ -7,6 +7,7 @@ $librairie = '';
 $script = "";
 
 $resultpanier = "";
+$total = 0;
 if (empty($panier) && empty($souvenirs)) {
     $resultpanier = "Vous n'avez aucun article dans votre panier.";
 } else {
@@ -43,6 +44,7 @@ if (empty($panier) && empty($souvenirs)) {
                             </div>
                             </a>
                         </div>';
+        $total = ($total + ($valeurs['nombre_personnes'] * $valeurs['prix']));
     }
     foreach ($souvenirs as $ligne) {
         $resultpanier .= '<div class="lignepanier">
@@ -56,25 +58,32 @@ if (empty($panier) && empty($souvenirs)) {
                 <div class="iconepoubelle">Retirer du panier (mettre une icone de poubelle)</div>
             </a>
         </div>';
+        $total = ($total + ($ligne['prix'] * $ligne['quantitée']));
     }
 }
-
-
-
 ?>
 
-<div class="paniers">
-    <h2>Votre paniers</h2>
+<div class="all">
+    <div class="paniers">
+        <div class="titrePage">
+            <h2>Votre panier</h2>
+            <div class="rectangleTitre">
+            </div>
+        </div>
 
-    <div class="infoproduits">
-        <?= $resultpanier ?>
+        <div class="infoproduits">
+            <?= $resultpanier ?>
+        </div>
+        <div class="total">
+            Total : <?= $total ?>
+        </div>
     </div>
-    <div class="total">
-
-    </div>
-</div>
-<div class="infoUser">
-    <form action="index.php?page=valide" method="post">
+    <div class="infoUser">
+        <div class="titrePage">
+            <h2>Votre panier</h2>
+            <div class="rectangleTitre">
+            </div>
+        </div>
         <div class="sousinf">
             <div class="name">
                 <div class="nom">
@@ -103,57 +112,70 @@ if (empty($panier) && empty($souvenirs)) {
                 </div>
             </div>
         </div>
-        <div class="flex">
-            <div class="carte_front">
-                <div class="top">
-                    <div class="titre">
-                        Carte bancaire
-                    </div>
-                    <div class="logo_cb">
-                        <img src="../img/cb.jpg" alt="logo">
-                    </div>
-                </div>
-                <div class="line2">
-                    <div class="puce">
-
-                    </div>
-                </div>
-                <div class="numbers">
-                    <input type="text" name="numéro_carte" maxlength="19" id="num" placeholder="Numéro de carte">
-                </div>
-                <div class="gridbottom">
-                    <div class="inputs">
-                        <label>
-                            <div class="expire">
-                                EXPIRE A FIN
+        <form action="index.php?page=valide" method="post">
+            <div class="carte_flip">
+                <div class="in">
+                    <div class="carte_front">
+                        <div class="top">
+                            <div class="titre">
+                                Carte bancaire
                             </div>
-                            <input type="text" name="expiration" id="expiration" placeholder="date d'expiration">
-                        </label>
-                        <input type="text" name="nomUser" id="nomuser" placeholder="Nom d'utilisateur">
-                    </div>
-                    <div class="logo_cb">
-                        <img src="../img/cb.jpg" id="logo" alt="logo_type_carte">
-                    </div>
-                </div>
-            </div>
-            <div class="carte_front">
-                <div class="ligne">
+                            <div class="logo_cb">
+                                <img src="../img/cb.jpg" alt="logo">
+                            </div>
+                        </div>
+                        <div class="line2">
+                            <div class="puce">
 
+                            </div>
+                        </div>
+                        <div class="numbers">
+                            <input type="text" name="numéro_carte" required maxlength="19" id="num"
+                                placeholder="Numéro de carte">
+                        </div>
+                        <div class="gridbottom">
+                            <div class="inputs">
+                                <label>
+                                    <div class="expire">
+                                        EXPIRE A FIN
+                                    </div>
+                                    <input type="text" required name="expiration" id="expiration"
+                                        placeholder="date d'expiration">
+                                </label>
+                                <input type="text" required name="nomUser" id="nomuser" placeholder="Nom d'utilisateur">
+                            </div>
+                            <div class="logo_cb">
+                                <img src="../img/cb.jpg" id="logo" alt="logo_type_carte">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="carte_back">
+                        <div class="ligne">
+
+                        </div>
+                        <label>
+                            Numéro de sécurité : <input type="number" required id="securite" name="numéro_de_sécurité"
+                                placeholder="Code de securité">
+                        </label>
+                    </div>
                 </div>
-                <label>
-                    Numéro de sécurité : <input type="text" id="securite" name="numéro_de_sécurité"
-                        placeholder="Code de securité">
-                </label>
             </div>
-        </div>
-        <button>Envoyer</button>
-    </form>
+            <div class="flibandvalid">
+                <div class="flipcard">
+                    Tourner la carte
+                </div>
+                <button>Valider la commande</button>
+            </div>
+
+            <?= $erreur ?>
+        </form>
+    </div>
 </div>
 
 
 
-<script>
 
+<script>
     document.querySelector('body').addEventListener('keyup', testInput)
     let num = document.querySelector('#num')
     function testInput(event) {
@@ -161,22 +183,26 @@ if (empty($panier) && empty($souvenirs)) {
         if (num.value == "4") {
             document.querySelector('.carte_front').classList.add('visa')
             document.querySelector('.carte_front').classList.remove('mastercard')
+            document.querySelector('.carte_back').classList.add('visa')
+            document.querySelector('.carte_back').classList.remove('mastercard')
             document.querySelector('#logo').src = '../img/Visa-logo.png'
         }
         if (num.value == "51" || num.value == "55") {
             document.querySelector('.carte_front').classList.add('mastercard')
             document.querySelector('.carte_front').classList.remove('visa')
+            document.querySelector('.carte_back').classList.remove('visa')
+            document.querySelector('.carte_back').classList.add('mastercard')
             document.querySelector('#logo').src = '../img/Mastercard-logo.svg';
         }
         if (num.value == "") {
             document.querySelector('.carte_front').classList.remove('visa')
             document.querySelector('.carte_front').classList.remove('mastercard')
+            document.querySelector('.carte_back').classList.remove('visa')
+            document.querySelector('.carte_back').classList.remove('mastercard')
             document.querySelector('#logo').src = '../img/cb.jpg';
         }
     }
-
     num.addEventListener('keypress', testerEspace)
-
     function testerEspace(event) {
         if (!isNaN(event.key) || event.key == "") {
             console.log('ok')
@@ -185,9 +211,7 @@ if (empty($panier) && empty($souvenirs)) {
             event.preventDefault()
         }
     }
-
     num.addEventListener('change', changementinput)
-
     function changementinput() {
         let test = num.value;
 
@@ -197,38 +221,4 @@ if (empty($panier) && empty($souvenirs)) {
 
         num.value = resultat.replace(/(.{4})/g, "$1 ");
     }
-
-
-    // document.querySelector('button').addEventListener('click', envoyerData)
-
-    // function envoyerData(){
-    //     event.preventDefault();
-    //     fetchphp();
-    // }
-
-    // function fetchphp() {
-    //         var1 = num.values;
-    //         var2 = document.querySelector('#expiration').value
-    //         var3 = document.querySelector('#nomuser').value
-    //         var4 = document.querySelector('#securite').value
-
-    //         fetch('https://www.mmi.uha.fr/exercices/paiement.php?',
-    //             {
-    //                 method: "post",
-    //                 headers: {
-    //                     "Content-type": "application/x-www-form-urlencoded; charset=UTF-8"
-    //                 },
-    //                 body: `num=${var1}&expiration=${var2}&nom=${var3}&securite=${var4}`
-    //             }
-    //         )
-    //         .then(function (rep) {
-    //                 return rep.text();
-    //             })
-    //         .then(function (traiter) {
-    //                 setTimeout(tester, 2000)
-    //                 function tester() {
-    //                     return traiter
-    //                 }
-    //         })
-    // }
 </script>

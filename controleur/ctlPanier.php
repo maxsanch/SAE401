@@ -136,25 +136,33 @@ class ctlPanier
         header('Location: index.php?page=informationmyuser');
     }
 
-    public function reglement()
+    public function reglement($erreur)
     {
         $infouser = $this->user->GetUser($_SESSION['acces']);
         $panierUtilisateur = $this->panier->MesRéservations($infouser[0]['Id_utilisateur']);
         $SouvenirsUtilisateur = $this->panier->MesSouvenirs($infouser[0]['Id_utilisateur']);
 
         $vue = new vue('reglement');
-        $vue->afficher(array('user' => $infouser[0], 'panier' => $panierUtilisateur, 'souvenirs' => $SouvenirsUtilisateur));
+        $vue->afficher(array('user' => $infouser[0], 'panier' => $panierUtilisateur, 'souvenirs' => $SouvenirsUtilisateur, 'erreur' => $erreur));
     }
 
 
     public function validerpanierall()
     {
         $infouser = $this->user->GetUser($_SESSION['acces']);
-        $this->panier->validerPanier($infouser[0]['Id_utilisateur']);
-        $date = new DateTime();
-        $heure = $date->format('Y-m-d H-i-s');
-        $this->panier->creerNewPanier($infouser[0]['Id_utilisateur'], $heure);
+        $panierUtilisateur = $this->panier->MesRéservations($infouser[0]['Id_utilisateur']);
+        $SouvenirsUtilisateur = $this->panier->MesSouvenirs($infouser[0]['Id_utilisateur']);
 
-        header("Location: index.php?page=remerciements");
+        if(!empty($panierUtilisateur) || !empty($SouvenirsUtilisateur)){
+            $this->panier->validerPanier($infouser[0]['Id_utilisateur']);
+            $date = new DateTime();
+            $heure = $date->format('Y-m-d H-i-s');
+            $this->panier->creerNewPanier($infouser[0]['Id_utilisateur'], $heure);
+    
+            header("Location: index.php?page=remerciements");
+        }
+        else{
+            $this->reglement('votre panier est vide.');
+        }
     }
 }

@@ -6,7 +6,7 @@
         <div class="HeaderBouton"><a href="index.php?page=jeuxAll">Les jeux</a></div>
         <div class="HeaderBouton"><a href="index.php?page=carte">Nous trouver</a></div>
         <div class="HeaderBouton"><a href="index.php?page=Contacts">Contacts</a></div>
-        <div class="HeaderBouton"><a href="index.php?page=réservation">Réservation</a></div>
+        <div class="HeaderBouton"><a href="index.php?page=reglement">Réservation</a></div>
         <div class="HeaderBouton" id="panier"><img src="img/Shopping_bag.png" alt="Sac des réservations"></div>
         <div class="HeaderBouton"><a href="index.php?page=shop"><img src="img/Shopping_cart.png"
                     alt="Caddies des réservations"></a></div>

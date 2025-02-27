@@ -65,7 +65,7 @@ class routeur
                             $this->ctlConnexion->quitter();
                             break;
                         case 'reglement':
-                            $this->ctlPanier->reglement();
+                            $this->ctlPanier->reglement("");
                             break;
                         case "propos":
                             $this->ctlPage->propos();

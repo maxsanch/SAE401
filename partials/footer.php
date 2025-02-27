@@ -1,5 +1,5 @@
 <div class="MiseEnPageRoue">
-    <div class="MiseEnPage">
+    <div class="MisePage">
         <div class="Logo"><img src="../img/Logo.svg" alt="Logo de we escape"></div>
         <div class="FooterPartiesGlobal">
             <div class="MiseEnPageFooter">
@@ -50,5 +50,5 @@
         </div>
         <div class="Realisation">Codé par Noah, Maxence et Alexandre | Hébergé par Infomaniak</div>
     </div>
-    <div class="RoueFooter" style="--X:-50%; --Y:-50%;"><img src="../img/roue.svg" alt="Une roue"></div>
+    <div class="RoueFooter" style="--X:-40%; --Y:-40%;"><img src="../img/roue_footer.svg" alt="Une roue"></div>
 </div>

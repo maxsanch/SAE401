@@ -52,14 +52,14 @@ foreach ($jeux as $valeur) {
             </div>";
 }
 
-$script = "";
+$script = "<script src='../js/accueil.js'></script>";
 ?>
 
 <div class="CadreDesEngrenages">
     <div class="engrenage" style="--X:50%; --Y:50%;">
         <img src="img/roue.svg" alt="un engrenage">
     </div>
-    <div class="engrenage" style="--X:-50%; --Y:50%;">
+    <div class="engrenage" style="--X:-50%; --Y:60%;">
         <img src="img/roue.svg" alt="un engrenage">
     </div>
 </div>

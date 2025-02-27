@@ -70,9 +70,11 @@ a {
 
 /* Style du footer */
 
-.MiseEnPage {
+.MisePage {
     width: 80%;
     margin: auto;
+    z-index: 2;
+    position: relative;
 }
 
 .MiseEnPageFooter {
@@ -153,15 +155,21 @@ h3 {
     top: 0;
     left: 0;
     width: 25%;
-    /* animation: Tourner 15s linear infinite; */
+    z-index: 1;
+    transform: translate(var(--X), var(--Y));
+    overflow: hidden;
+}
+
+.RoueFooter>img{
+    animation: Tourner 15s linear infinite;
 }
 
 @keyframes Tourner {
     0% {
-        transform: translate(var(--X), var(--Y)) rotate(0deg);
+        transform: rotate(0deg);
     }
 
     100% {
-        transform: translate(var(--X), var(--Y)) rotate(360deg);
+        transform: rotate(360deg);
     }
 }

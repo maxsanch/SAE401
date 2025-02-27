@@ -6,7 +6,7 @@ footer {
     display: none;
 }
 
-img{
+img {
     width: 100%;
 }
 
@@ -20,7 +20,7 @@ img{
     src: url(../font/Montserrat-Bold.ttf);
 }
 
-body{
+body {
     font-family: Montserrat-regular;
     color: white;
     min-height: 100vh;
@@ -31,20 +31,22 @@ body{
     background-image: linear-gradient(-135deg, #151414, #302c27);
 }
 
-.rect{
+.rect {
     width: 30px;
     position: fixed;
     top: 0;
     right: 200px;
 }
-.rect2{
+
+.rect2 {
     width: 250px;
     position: fixed;
     bottom: 100px;
     left: 0;
 }
 
-.connexion, .inscription{
+.connexion,
+.inscription {
     display: grid;
     grid-template-columns: 2.5fr 1fr;
     background: #00000034;
@@ -52,18 +54,20 @@ body{
     z-index: 5000;
     border-radius: 20px;
 }
-.inscription{
+
+.inscription {
     height: 550px;
 }
 
-.left{
+.left {
     display: flex;
     flex-direction: column;
     width: 600px;
     margin: auto;
     position: relative;
 }
-.right{
+
+.right {
     background: url(../img/fondConnexion.png);
     background-size: cover;
     background-position: 50%;
@@ -74,40 +78,43 @@ body{
     justify-content: center;
 }
 
-.ferme{
+.ferme {
     display: none;
 }
 
-.title{
+.title {
     text-align: center;
 }
 
-.subtitle{
+.subtitle {
     text-align: center;
 }
-form{
+
+form {
     display: flex;
     flex-direction: column;
     gap: 25px;
 }
 
-.titre>h2{
+.titre>h2 {
     font-family: Montserrat-bold;
     color: #e6b856;
     margin-bottom: 20px;
 }
 
-.split{
+.split {
     display: flex;
     gap: 25px;
 }
 
-.title, .subtitle, .bouton_inscription{
+.title,
+.subtitle,
+.bouton_inscription {
     width: 85%;
     margin-inline: auto;
 }
 
-input{
+input {
     background: none;
     border: #e6b856 1px solid;
     border-radius: 10px;
@@ -117,18 +124,18 @@ input{
     width: 100%;
 }
 
-.erreur{
+.erreur {
     color: #e6b856;
     position: absolute;
     bottom: -40px;
     margin-top: 20px;
 }
 
-input::placeholder{
+input::placeholder {
     color: #e6b856;
 }
 
-button{
+button {
     background: linear-gradient(-135deg, #e6b856, #806630);
     border: none;
     padding: 10px;
@@ -137,19 +144,19 @@ button{
     color: #302c27;
 }
 
-.total{
+.total {
     display: flex;
     align-items: center;
     justify-content: center;
 }
 
-.croix{
+.croix {
     width: 30px;
     transform: translate(-200%, -100%);
     position: absolute;
 }
 
-.bouton_inscription{
+.bouton_inscription {
     padding: 10px;
     background: linear-gradient(-135deg, #e6b856, #806630);
     width: 150px;
@@ -158,4 +165,41 @@ button{
     color: #302c27;
     font-family: Montserrat-bold;
     border-radius: 150px;
+}
+
+.CadreDesEngrenages {
+    width: 100%;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    z-index: -1;
+}
+
+.engrenage {
+    /* position: absolute; */
+    right: 0;
+    bottom: 0;
+    top: 0;
+    left: 0;
+    overflow: hidden;
+    transform: translateY(-25%) scale(95%);
+    object-fit: cover;
+
+}
+
+.engrenage>img {
+    animation: Tourner 15s linear infinite;
+    transform: translateY(-25%);
+}
+
+@keyframes Tourner {
+    0% {
+        transform: rotate(0deg) scale(95%);
+    }
+
+    100% {
+        transform: rotate(360deg) scale(95%);
+    }
 }

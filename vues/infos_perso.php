@@ -147,13 +147,16 @@ if (empty($panier) && empty($souvenirs)) {
                 <input type="hidden" name="MAX_FILE_SIZE" value="500000">
                 <!-- Label pour l'input de téléchargement de photo -->
                 <label>
-                    <span class="orange">Modifiez </span> <span> la photo. (max 500ko)</span>
+                    <span class="orange">Cliquez ici pour modifiez la photo. (max 500ko)</span>
                     <!-- Champ pour sélectionner le fichier image (acceptant JPEG et PNG uniquement) -->
                     <input type="file" class="texte" name="photoUser" accept="image/jpeg, image/png" hidden>
                 </label>
             </div>
             <!-- Bouton pour valider le formulaire -->
+            <div class="contrerBoutbout">
             <input class="boutbout" type="submit" class="valid" name="ok" value="enregistrer">
+            <div class="erreur"><?= $erreur ?></div>
+            </div>
         </form>
         <div class="informations">
             <form action="<?= $_SERVER['PHP_SELF'] . '?page=modifprofil' ?>" method="post">
@@ -170,6 +173,7 @@ if (empty($panier) && empty($souvenirs)) {
                             </label>
                         </div>
                     </div>
+                <div class="infoPerso">
                     <div class="mail">
                         <label class="inf">
                             <p>E-mail</p><input type="mail" name="mail" value="<?= $user['mail'] ?>" disabled>
@@ -180,6 +184,7 @@ if (empty($panier) && empty($souvenirs)) {
                             <p>Adresse</p><input type="text" name="adresse" value="<?= $user['adresse'] ?>" required>
                         </label>
                     </div>
+                </div>
                 </div>
                 <div class="mdp">
                     <!-- pour changer le mot de passe de l'utilisteur -->
@@ -201,8 +206,8 @@ if (empty($panier) && empty($souvenirs)) {
                             placeholder="entrez votre mot de passe">
                     </label>
                 </div>
-                <button>Modifier</button>
-                <?= $erreur ?>
+                <div class="bottomCompteModif">
+                <button class="modifCompteButton">Modifier</button>
             </form>
 
             <div class="deletaccount">
@@ -210,6 +215,8 @@ if (empty($panier) && empty($souvenirs)) {
                     Supprimer le compte
                 </a>
             </div>
+            </div>
+            <div class="erreur"><?= $erreur ?></div>
         </div>
     </div>
     <div class="allpaniers">
@@ -217,11 +224,13 @@ if (empty($panier) && empty($souvenirs)) {
         <h2>Votre paniers</h2>
 
         <div class="infoproduits">
+        <div class="rectangleTitre"></div>
             <?= $resultpanier ?>
         </div>
     </div>
     <div class="ancienspaniers">
         <h2>Anciennes commandes</h2>
+        <div class="rectangleTitre"></div>
         <?= $paniervalides ?>
     </div>
     </div>

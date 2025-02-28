@@ -112,7 +112,7 @@ if (empty($panier) && empty($souvenirs)) {
                 </div>
             </div>
         </div>
-        <form action="index.php?page=valide" method="post">
+        <form action="index.php?page=valide" id="carte" method="post">
             <div class="carte_flip">
                 <div class="in">
                     <div class="carte_front">

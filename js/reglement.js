@@ -2,16 +2,32 @@ document.querySelector('body').addEventListener('keyup', testInput)
 let num = document.querySelector('#num')
 
 
-document.querySelector('form').addEventListener('click', attendre)
+document.querySelector('#carte').addEventListener('submit', attendre)
 
-function attendre(event){
-    // event.preventDefault();
-    console.log('dsqdsqdzq')
 
-    // setTimeout(() => {
-    //     event.target.submit();
-    //   }, 2000);
+function attendre(event) {
+    event.preventDefault();
+
+    random = Math.floor(Math.random() * 100)
+
+    if (random <= 10) {
+        setTimeout(() => {
+            document.querySelector('.cache_fond').classList.add('ouvert')
+            document.querySelector('.fixedError').classList.add('ouvert')
+        }, 2000);
+    }
+    else {
+        setTimeout(() => {
+            document.querySelector('.cache_fond').classList.add('ouvert')
+            document.querySelector('.fixedReussite').classList.add('ouvert')
+        }, 2000);
+        setTimeout(() => {
+            event.target.submit();
+        }, 8000);
+    }
 }
+
+
 
 
 function testInput(event) {
@@ -62,7 +78,7 @@ function changementinput() {
 
 document.querySelector('.flipcard').addEventListener('click', flip)
 
-function flip(){
+function flip() {
     document.querySelector('.in').classList.toggle('tourne')
 }
 console.log('ehodkfso')

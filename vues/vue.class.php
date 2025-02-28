@@ -36,7 +36,7 @@ class vue {
 
     ob_start();
 
-    require "partials/header.php";
+    require "partials/header/header_admin.php";
 
     $header = ob_get_clean();
 

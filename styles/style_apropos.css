@@ -23,6 +23,7 @@ img {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 100px;
+    margin-bottom: 64px;
 }
 
 .topPage{

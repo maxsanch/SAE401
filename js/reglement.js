@@ -1,6 +1,13 @@
 document.querySelector('body').addEventListener('keyup', testInput)
 let num = document.querySelector('#num')
 
+document.querySelector('.cache_fond').addEventListener('click', fermer)
+
+function fermer(){
+    document.querySelector('.cache_fond').classList.remove('ouvert')
+    document.querySelector('.fixedError').classList.remove('ouvert')
+    document.querySelector('.fixedReussite').classList.remove('ouvert')
+}
 
 document.querySelector('#carte').addEventListener('submit', attendre)
 

@@ -301,6 +301,31 @@ input{
 
 /* confirmation : */
 
+.fixedReussite, .fixedError{
+    position: fixed;
+    top: 50%;
+    z-index: 3;
+    left: 50%;
+    text-align: center;
+    background: linear-gradient(#151414, #302C27);
+    border: 1px solid #e6b856;
+    padding: 20px;
+    border-radius: 20px;
+    transform: translate(-50%, -50%);
+    display: none;
+}
+
+.cache_fond{
+    background: rgba(0, 0, 0, 0.685);
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    z-index: 2;
+    left: 0;
+    right: 0;
+    display: none;
+}
+
 .ouvert{
     display: block;
 }

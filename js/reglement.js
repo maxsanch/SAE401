@@ -1,5 +1,19 @@
 document.querySelector('body').addEventListener('keyup', testInput)
 let num = document.querySelector('#num')
+
+
+document.querySelector('form').addEventListener('click', attendre)
+
+function attendre(event){
+    // event.preventDefault();
+    console.log('dsqdsqdzq')
+
+    // setTimeout(() => {
+    //     event.target.submit();
+    //   }, 2000);
+}
+
+
 function testInput(event) {
     let touche = event.key;
     if (num.value == "4") {
@@ -51,3 +65,4 @@ document.querySelector('.flipcard').addEventListener('click', flip)
 function flip(){
     document.querySelector('.in').classList.toggle('tourne')
 }
+console.log('ehodkfso')

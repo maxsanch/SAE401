@@ -117,13 +117,6 @@ label {
     color: #e6b856;
 }
 
-.inf {
-    display: flex;
-    gap: 10px;
-    align-items: center;
-
-}
-
 .name {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -167,7 +160,7 @@ button {
 
 .carte_flip {
     background-color: transparent;
-    height: 250px;
+    height: 300px;
     margin-top: 40px;
     margin-bottom: 40px;  
 }
@@ -297,6 +290,10 @@ input{
     background: #e6b856;
 }
 
+.visa>.ligne{
+    background: linear-gradient(225deg, #141414, rgb(44, 44, 44));
+}
 .carte_back>label{
     margin-top: 150px;
 }
+

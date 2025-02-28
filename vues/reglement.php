@@ -154,8 +154,8 @@ if (empty($panier) && empty($souvenirs)) {
 
                         </div>
                         <label>
-                            Numéro de sécurité : <input type="number" required id="securite" name="numéro_de_sécurité"
-                                placeholder="Code de securité">
+                            Numéro de sécurité : <input type="number" max=999 required id="securite"
+                                name="numéro_de_sécurité" placeholder="Code de securité">
                         </label>
                     </div>
                 </div>
@@ -164,9 +164,26 @@ if (empty($panier) && empty($souvenirs)) {
                 <div class="flipcard">
                     Tourner la carte
                 </div>
-                <button>Valider la commande</button>
+                <button type="submit" id="validerCommande">Valider la commande</button>
             </div>
             <?= $erreur ?>
         </form>
+    </div>
+</div>
+<div class="fixedReussite">
+    <div class="svgGood">
+
+    </div>
+    <div class="message">
+        <p>La transaction à été acceptée.</p>
+        <p>Vous allez être redirigé vers la page de confirmation dans quelques instants.</p>
+    </div>
+</div>
+<div class="fixedError">
+    <div class="svgGood">
+        <div class="message">
+            <p>Une erreur est survenue.</p>
+            <p>La communication avec la banque à échouée, veuillez recommencer.</p>
+        </div>
     </div>
 </div>

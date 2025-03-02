@@ -4,8 +4,7 @@ require_once "modeles/panier.class.php";
 
 $styles = "../styles/style_jeusolo.css";
 
-$librairie = '<link rel="stylesheet" href="https://uicdn.toast.com/calendar/latest/toastui-calendar.min.css" />
-<script src="https://uicdn.toast.com/calendar/latest/toastui-calendar.min.js"></script>';
+$librairie = '';
 
 if (file_exists('img/photojeu/' . $_GET['idjeu'] . '.jpg')) {
     $phototest = 'img/photojeu/' . $_GET['idjeu'] . '.jpg';
@@ -25,9 +24,7 @@ if ($jeu[0]['lien_video'] == "") {
 
 $paniers = new panier;
 
-$affichage = "";
-
-$script = ""
+$script = "<script src='../js/script_jeusolo.js'></script>";
     ?>
 
 <div class="jeutop">
@@ -54,65 +51,19 @@ $script = ""
 <div class="video">
     <?= $video ?>
 </div>
-<div id="calendar" style="height: 600px;">
+<div class="fleches">
+    <div class="gauche">
+        gauche
+    </div>
+    <div class="droite">
+        Droite
+    </div>
 </div>
-
-
 <div class="calendrier">
-    <?= $affichage ?>
 </div>
 
-<script>
-    var d = new Date();
-
-    fetch('datas/fetch.php')        // Appel à un fichier.
-    .then(function (response) {  // Prétraitement de la réponse.
-            return response.json();
-    })
-    .then(function (txt) {       // Utilisation de la réponse.
-            var datas = txt
-            console.log(datas)
-    });
-
-
-
-    var date = new Date();
-    date.setDate(1);
-    //let jour1 = date.getDate(); // 1
-
-
-    function FinDuMois() {
-        var temp = new Date(date.getYear(), date.getMonth() + 1, 0);
-        return temp.getDate();
-    }
-
-    FinDuMois();
-
-    date.setMonth((date.getMonth() + 1))
-    date.setDate((date.getDate() + 1))
-
-    for (let i = 0; i <= FinDuMois(); i++) {
-        let heures = "";
-        for (let j = 8; j <= 16; j += 2) {
-            let iscool = false;
-            if (datas.length > 0) {
-    //             foreach(recup as valeur) {
-    //                 if ((valeur['jour_reservation'] == date -> format('Y-m-d')) && (valeur['heure_reservation'] == (j. "-". (j + 2). "h")) && (valeur['ID_jeu'] == _GET['idjeu'])) {
-    //                     heures.= "<label><input disabled required type='radio' name='heure' value='".j. "-". (j + 2). "h'>".j. " - ". (j + 2). "h</label>";
-    //                     iscool = true;
-    //                 }
-    //             }
-    //             if (!iscool) {
-    //                 heures.= "<label><input required type='radio' name='heure' value='".j. "-". (j + 2). "h'>".j. " - ". (j + 2). "h</label>";
-    //             }
-            }
-            else {
-                 heures+= "<label><input required type='radio' name='heure' value='"+j+ "-"+ (j + 2)+ "h'>"+j+ " - "+ (j + 2)+ "h</label>";
-            }
-        }
-
-    //     affichage.= "<div class='total'>< form action = 'index.php?page=réserverJeu&idjeu=".$_GET['idjeu']. "&jour=".$date -> format('Y-m-d'). "' method = 'post' ><div class='parentCalender'>".$date -> format('D: d / m / Y'). "</div><div class='heures'>".$heures. "</div><label>Choisissez un nombre de participants.<input type='number' required max='".$jeu[0]['nombre_max']. "' min='".$jeu[0]['nombre_min']. "' name='nombre' placeholder='nombre de participants'></label><button>Valider</button></form ></div > ";
-
-    //     d.setMonth(d.getMonth() + 1);
-    }
-</script>
+<div class="cache">
+    <!-- div cachée, sert juste à avoir le min et le max en js -->
+     <div class="min" id="<?= $jeu[0]['nombre_min'] ?>"></div>
+     <div class="max" id="<?= $jeu[0]['nombre_max'] ?>"></div>
+</div>

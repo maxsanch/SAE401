@@ -1,3 +1,81 @@
 .calendrier{
     margin-bottom: 200px;
 }
+
+body{
+    color: white;
+    font-family: Montserrat;
+    background: linear-gradient(26deg, rgba(21,20,20,1) 0%, rgba(94,87,78,1) 100%);
+}
+img{
+    width: 100%;
+}
+
+header{
+    background: linear-gradient(180deg, rgba(0, 0, 0, 0.705) 0%, rgba(255, 0, 254, 0) 100%);
+}
+
+.jeutop{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 50px;
+    width: 80%;
+    margin: auto;
+    margin-top: 50px;
+    padding-top: 10px;
+    border-top: #e6b856 solid 1px;
+}
+
+.image{
+    width: auto;
+}
+
+.autre{
+    display: flex;
+    justify-content: space-between;
+}
+
+.titrePage{
+    position: relative;
+}
+
+.rectangleTitre{
+    width: 50px;
+    height: 5px;
+    background: #e6b856;
+    position: absolute;
+    bottom: 0;
+}
+
+h1{
+    margin-bottom: 10px;
+}
+
+.infos{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.calendrier{
+    width: 80%;
+    margin: auto;
+}
+
+.fleches{
+    width: 80%;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+}
+.gauche{
+    width: 30px;
+}
+.droite{
+    width: 30px;
+}
+
+.video{
+    width: 80%;
+    margin: auto;
+}

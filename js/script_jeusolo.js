@@ -38,11 +38,10 @@ async function calendrier() {
         let heures = "";
         for (let j = 8; j <= 16; j += 2) {
             let aujourdhui = new Date();
-            let ajourdhuilevrai = new Date();
-            aujourdhui.setDate(aujourdhui.getDate() - 1);
+            // aujourdhui.setDate(aujourdhui.getDate() - 1);
             let iscool = false;
             if (datas.length > 0) {
-                if (date > aujourdhui && (date == ajourdhuilevrai && j>= aujourdhui.getHours())) {
+                if (date > aujourdhui || (date.toDateString() === aujourdhui.toDateString() && j > aujourdhui.getHours())) {
                     datas.forEach(e => {
                         if ((e['jour_reservation'] == iso) && (e['heure_reservation'] == (j + "-" + (j + 2) + "h")) && (e['ID_jeu'] == idjeu)) {
                             iscool = true;
@@ -69,7 +68,7 @@ async function calendrier() {
             }
         }
 
-        affichage += "<div class='total'><form action='index.php?page=réserverJeu&idjeu=" + idjeu + "&jour=" + iso + "' method='post'><div class='parentCalender'>" + semaine[date.getDay()] + " " + date.getDate() + " " + mois[date.getMonth()] + "</div><div class='heures'>" + heures + "</div><label><div class='nombreclient'><div>Prix : " + prix + " €</div><div>Combien êtes vous ?</div><input type='number' required max=" + max + " min=" + min + " name='nombre' placeholder='nombre de participants'></label><button>Réserver.</button></form></div></div>";
+        affichage += "<div class='total'><form action='index.php?page=réserverJeu&idjeu=" + idjeu + "&jour=" + iso + "' method='post'><div class='parentCalender'>" + semaine[date.getDay()] + " " + date.getDate() +"</div><div class='heures'>" + heures + "</div><label><div class='nombreclient'><div>Prix : " + prix + " €</div><div>Combien êtes vous ?</div><input type='number' required max=" + max + " min=" + min + " name='nombre' placeholder='nombre de participants'></label><button>Réserver.</button></form></div></div>";
         moisActuel = mois[date.getMonth()] + " " + date.getFullYear();
     }
 

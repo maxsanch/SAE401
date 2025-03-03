@@ -36,17 +36,17 @@ class vue {
 
     ob_start();
 
-    require "partials/header/header_admin.php";
+    require "vues/panier.php";
+
+    $globalPanier = ob_get_clean();
+
+    ob_start();
+
+    require "partials/header/header_connectee.php";
 
     $header = ob_get_clean();
 
     extract($data);   // Extrait les valeurs du tableau associatif $data dans des variables
-
-    ob_start();
-
-    require "vues/panier.php";
-
-    $globalPanier = ob_get_clean();
 
     ob_start();
 

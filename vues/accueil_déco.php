@@ -99,7 +99,7 @@ $script = "<script src='../js/accueil.js'></script>";
             </div>
         </div>
         <div>
-            <h2 class="TitreEscapeGame">Où sommes nous ?</h2>
+            <h1 class="TitreEscapeGame">Où sommes nous ?</h1>
             <div class="RectangleTitre"></div>
         </div>
         <div class="Carte">

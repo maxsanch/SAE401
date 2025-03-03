@@ -26,6 +26,10 @@ class ctlUser
         return $userget;
     }
 
+    public function RecupererUser() {
+        return $this->users->GetUser($_SESSION['acces'])[0];
+    }
+
     public function checkusers()
     {
         $Inscr = $this->users->getallUser();

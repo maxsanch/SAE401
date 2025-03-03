@@ -1,18 +1,22 @@
 header {
     background-image: linear-gradient(black, rgba(0, 0, 0, 0));
     margin-bottom: 32px;
+    height: 7vh;
 }
 
 footer{
-    position: absolute;
-    bottom: 0;
+    min-height: 38vh;
 }
+
 
 body {
     background-image: linear-gradient(22.5deg, #151414, #46413A);
     font-family: Montserrat;
     color: white;
-    min-height: 100vh;
+}
+
+main{
+    min-height: 60vh;
 }
 
 .MiseEnPage {

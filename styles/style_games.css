@@ -1,0 +1,159 @@
+header {
+    background-image: linear-gradient(black, rgba(0, 0, 0, 0));
+}
+
+body {
+    background-image: linear-gradient(22.5deg, #151414, #46413A);
+    font-family: Montserrat;
+    min-height: 100vh;
+    color: white;
+}
+
+img{
+    width: 100%;
+}
+
+.PropositionEscapeGame {
+    border: solid 1px #DCAD57;
+    border-radius: 8px;
+    gap: 16px;
+    display: flex;
+    flex-direction: column;
+    width: 250px;
+    background-color: #2a2a2aa2;
+}
+
+.ImageDeEscapeGame{
+    height: 200px;
+}
+
+.ImageDeEscapeGame>img{
+    height: 100%;
+    object-fit: cover;
+    border-radius: 8px 8px 0px 0px;
+}
+
+.MiseEnPageEG{
+    width: 90%;
+    margin: auto;
+    gap: 16px;
+    display: flex;
+    flex-direction: column;
+}
+
+.TitreEscapeGame{
+    font-family: Montserrat-bold;
+    width: fit-content;
+    padding-top: 16px;
+    margin-bottom: 0px;
+}
+
+.InformationEscapeGame{
+    display: flex;
+    justify-content: space-between;
+}
+
+.User{
+    width: 20px;
+}
+
+.InfoEG:nth-of-type(2){
+    margin-left: 8px;
+}
+
+.EscageGameBarreSelecteurGlobal{
+    margin: auto;
+    position: relative;
+}
+
+.EscageGameBarreSelecteurGlobal>input{
+    -webkit-appearance: none;
+    appearance: none;
+    background-color: rgb(58, 58, 58);
+    border-radius: 8px;
+    height: 12px;
+}
+
+.EscageGameBarreSelecteurGlobal>input::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 16px;
+    height: 16px;
+    background-image: linear-gradient(45deg, #806630, #E6B856); /* Couleur du curseur */
+    border-radius: 50%;
+    cursor: pointer;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+}
+
+.BoutonEscapeGame{
+    margin-bottom: 12px;
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
+    display: flex;
+    gap: 8px;
+}
+
+.EscapeGameBouton:first-of-type {
+    background-image: linear-gradient(45deg, #E6B856, #806630);
+    color: black;
+    display: block;
+    width: 45%;
+    text-align: center;
+}
+
+/* Aide de chatgpt pour faire le dégradé en même temps sur le texte et la bordure car j'arrivais à le faire que sur un en même temps sinon */
+.EscapeGameBouton:nth-of-type(2) {
+    position: relative;
+    text-align: center;
+    border-radius: 8px;
+    /* Arrondi OK */
+
+    /* Dégradé pour le texte */
+    background: linear-gradient(45deg, #E6B856, #806630);
+    background-clip: text;
+    color: transparent;
+    display: block;
+    width: 45%;
+}
+
+.EscapeGameBouton:nth-of-type(2)::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: 8px;
+    /* Appliquer le border-radius */
+    padding: 1px;
+    /* Épaisseur de la bordure */
+    background: linear-gradient(to left, #E6B856, #806630);
+
+    /* Masquer l'intérieur pour que seul le contour soit visible */
+    mask: linear-gradient(white 0 0) content-box, linear-gradient(white 0 0);
+    mask-composite: exclude;
+}
+
+.global{
+    display: flex;
+    gap: 32px;
+    padding-top: 32px;
+    margin-bottom: 64px;
+    z-index: 2;
+    position: relative;
+}
+
+.MiseEnPage {
+    width: 80%;
+    margin: auto;
+    flex-wrap: wrap;
+}
+
+.RectangleTitre{
+    width: 50px;
+    height: 5px;
+    background-image: linear-gradient(45deg, #806630, #E6B856);
+    margin-bottom: 32px;
+}
+
+.Titre{
+    margin-top: 32px;
+}

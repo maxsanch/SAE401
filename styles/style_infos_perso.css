@@ -9,6 +9,7 @@ body{
     color: #ffffff;
 }
 
+
 main{
     margin-top: 50px;
     margin-bottom: 100px;
@@ -57,7 +58,7 @@ main{
 }
 
 .boutbout{
-    margin-top: 10px;
+    margin-top: 25px;
     width: 40%;
     text-align: center;
     border-radius: 25px;
@@ -122,6 +123,7 @@ input{
     border: 2px solid #E6B856 ;
     color: #E6B856;
     border-radius: 8px;
+    padding: 5px;
 }
 
 input[type="mail"]{
@@ -129,6 +131,7 @@ input[type="mail"]{
     background: #E6B856;
     color: #000000;
     border-radius: 8px;
+    padding: 5px;
 }
 
 .allpaniers{
@@ -155,6 +158,51 @@ h2{
     position: relative;
     left: 5%;
     bottom: 15px;
+}
+
+.lignepanier{
+    margin-top: 5px;
+}
+
+.lignepanier>form{
+    display: grid;
+    grid-template-columns: auto auto;
+    align-items: center;
+}
+
+input[type="number"]{
+    background: none;
+    border: 2px solid #E6B856 ;
+    color: #E6B856;
+    border-radius: 8px;
+    padding: 5px;
+    min-width: 120px;
+}
+
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+    opacity: 1 !important;
+    filter: invert(62%) sepia(72%) saturate(300%) hue-rotate(5deg);
+}
+
+.iconepoubelle{
+    cursor: pointer;
+    background-color: transparent;
+    border: #E6B856 2px solid;
+    border-radius: 15px;
+    color: #E6B856;
+    margin-left: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.iconepoubelle>img{
+    margin-left: 5px;
+}
+
+.nom{
+    font-weight: bold;
 }
 
 .erreur{

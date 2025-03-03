@@ -61,6 +61,9 @@ if (!empty($anciensPaniers)) {
                                 <div class="accueilPanier">
                                     ' . $lignes . '
                                 </div>
+                                <div class="dateValidation">
+                                    Panier validé le : ' . $valeur['derniere_modification'] . '
+                                </div>
                            </div> ';
     }
 } else {
@@ -154,8 +157,8 @@ if (empty($panier) && empty($souvenirs)) {
             </div>
             <!-- Bouton pour valider le formulaire -->
             <div class="contrerBoutbout">
-            <input class="boutbout" type="submit" class="valid" name="ok" value="enregistrer">
-            <div class="erreur"><?= $erreur ?></div>
+                <input class="boutbout" type="submit" class="valid" name="ok" value="enregistrer">
+                <div class="erreur"><?= $erreur ?></div>
             </div>
         </form>
         <div class="informations">
@@ -173,18 +176,19 @@ if (empty($panier) && empty($souvenirs)) {
                             </label>
                         </div>
                     </div>
-                <div class="infoPerso">
-                    <div class="mail">
-                        <label class="inf">
-                            <p>E-mail</p><input type="mail" name="mail" value="<?= $user['mail'] ?>" disabled>
-                        </label>
+                    <div class="infoPerso">
+                        <div class="mail">
+                            <label class="inf">
+                                <p>E-mail</p><input type="mail" name="mail" value="<?= $user['mail'] ?>" disabled>
+                            </label>
+                        </div>
+                        <div class="adresse">
+                            <label class="inf">
+                                <p>Adresse</p><input type="text" name="adresse" value="<?= $user['adresse'] ?>"
+                                    required>
+                            </label>
+                        </div>
                     </div>
-                    <div class="adresse">
-                        <label class="inf">
-                            <p>Adresse</p><input type="text" name="adresse" value="<?= $user['adresse'] ?>" required>
-                        </label>
-                    </div>
-                </div>
                 </div>
                 <div class="mdp">
                     <!-- pour changer le mot de passe de l'utilisteur -->
@@ -192,7 +196,7 @@ if (empty($panier) && empty($souvenirs)) {
                     <label>
                         <p>Nouveau mot de passe</p> <input type="password" class="motdepasse" name="NewPassword"
                             placeholder="entrez votre nouveau mot de passe">
-                        </label>
+                    </label>
 
                     <label>
                         <p>Confirmez le mot de passe</p><input type="password" class="motdepasse"
@@ -207,7 +211,7 @@ if (empty($panier) && empty($souvenirs)) {
                     </label>
                 </div>
                 <div class="bottomCompteModif">
-                <button class="modifCompteButton">Modifier</button>
+                    <button class="modifCompteButton">Modifier</button>
             </form>
 
             <div class="deletaccount">
@@ -215,23 +219,23 @@ if (empty($panier) && empty($souvenirs)) {
                     Supprimer le compte
                 </a>
             </div>
-            </div>
-            <div class="erreur"><?= $erreur ?></div>
         </div>
+        <div class="erreur"><?= $erreur ?></div>
     </div>
-    <div class="allpaniers">
+</div>
+<div class="allpaniers">
     <div class="Lastpaniers">
         <h2>Votre paniers</h2>
 
         <div class="infoproduits">
-        <div class="rectangleTitre"></div>
-        <div class="cadreproduit"><?= $resultpanier ?></div>
+            <div class="rectangleTitre"></div>
+            <div class="cadreproduit"><?= $resultpanier ?></div>
         </div>
     </div>
-    <div class="ancienspaniers">
-        <h2>Anciennes commandes</h2>
-        <div class="rectangleTitre"></div>
-        <div class="cadreproduit"><?= $paniervalides ?></div>
-    </div>
-    </div>
+</div>
+</div>
+<div class="ancienspaniers">
+    <h2>Anciennes commandes</h2>
+    <div class="rectangleTitre"></div>
+    <div class="cadreproduit"><?= $paniervalides ?></div>
 </div>

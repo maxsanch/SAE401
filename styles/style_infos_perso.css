@@ -209,3 +209,9 @@ input[type="number"]::-webkit-outer-spin-button {
     color: red;
     text-align: center;
 }
+
+.ancienspaniers{
+    width: 80%;
+    margin: auto;
+    margin-bottom: 150px;
+}

@@ -132,12 +132,14 @@ if (!empty($anciensPaniers)) {
                 <!-- rendre le bouton clicable pour qu'au clic, la fenetre du formulaire "modifiermdp" s'ouvre. -->
                 Modifier le mot de passe
             </div>
-            
+
             <div class="modifiermdp">
                 <form method="post" action="index.php?page=ModifMdpUser&idUser=<?= $_GET['idUser'] ?>">
-                    <input type="password" name="mdp" placeholder="entrez le nouveau mot de passe">
-                    <input type="password" name="confirmation" placeholder="entrez le nouveau mot de passe">
-                    <button>Modifier</button>
+                    <input class="modifiermdpInput" type="password" name="mdp" placeholder="entrez le nouveau mot de passe">
+                    <div>
+                        <input class="modifiermdpInput" type="password" name="confirmation" placeholder="entrez le nouveau mot de passe">
+                        <button class="modifiermdpBouton">Modifier</button>
+                    </div>
                 </form>
             </div>
             <div class="deletaccount">

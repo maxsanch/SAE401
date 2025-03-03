@@ -1,0 +1,80 @@
+header {
+    background-image: linear-gradient(black, rgba(0, 0, 0, 0));
+    margin-bottom: 32px;
+}
+
+body {
+    background-image: linear-gradient(22.5deg, #151414, #46413A);
+    font-family: Montserrat;
+    color: white;
+}
+
+.MiseEnPage {
+    width: 80%;
+    margin: auto;
+}
+
+img {
+    width: 100%;
+}
+
+.pic {
+    width: 250px;
+    height: 250px;
+    object-fit: cover;
+    margin-bottom: 16px;
+}
+
+.ChangerPhoto {
+    display: flex;
+    gap: 32px;
+    align-items: center;
+}
+
+.boutbout {
+    background-image: linear-gradient(-90deg, #E6B856, #806630);
+    border: none;
+    padding: 8px 4px;
+    border-radius: 8px;
+}
+
+.ChangerPhoto>div {
+    background-image: linear-gradient(-90deg, #E6B856, #806630);
+    color: transparent;
+    background-clip: text;
+    border: #E6B856 solid 1px;
+    padding: 8px 4px;
+    border-radius: 8px;
+}
+
+.total {
+    display: grid;
+    grid-template-columns: 60% 40%;
+}
+
+.Separation {
+    margin: auto;
+}
+
+.Separation:nth-of-type(2) {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.deletaccount{
+    margin-top: 8px;
+}
+
+.deletaccount>a{
+    background-image: linear-gradient(-90deg, #E6B856, #806630);
+    color: transparent;
+    background-clip: text;
+    border: #E6B856 solid 1px;
+    padding: 12px 6px;
+    border-radius: 8px;
+}
+
+.modifmdp{
+    font-family: Montserrat-bold;
+}

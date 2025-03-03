@@ -19,7 +19,7 @@ foreach ($jeux as $valeur) {
     $result .= '<div class="case"><a href="index.php?page=modifjeu&idRuche=' . $valeur['ID_jeu'] . '" class="photo"><img src="' . $phototest . '" alt="Jeu choisi"></a><div class="contTout"><b>' . $valeur['Titre'] . '</b><div class="parentBout"><a class="bout" href="index.php?page=infojeusolo&idjeu=' . $valeur['ID_jeu'] . '">Voir le jeu</a></div><div class="parentBout"><a href="index.php?page=modifjeu&idJeu=' . $valeur['ID_jeu'] . '" class="bout">Modifier</a></div><div class="parentBout"><a href="index.php?page=supprJeu&idJeu=' . $valeur['ID_jeu'] . '" class="bout">Supprimer</a></div></div></div>';
 }
 
-$script = '<script scr="../js/ajoutJeu.js"></script>';
+$script = '<script src="js/ajoutJeu.js"></script>';
 
 ?>
 
@@ -59,9 +59,9 @@ $script = '<script scr="../js/ajoutJeu.js"></script>';
                 <input type="file" class="texte" name="photoGame" accept="image/jpeg, image/png" hidden>
             </label>
         </div>
-        <input type="hidden" name="Pays">
-        <input type="hidden" name="coordonneesX">
-        <input type="hidden" name="coordonneesY">
+        <input class="paysInput" type="hidden" name="Pays">
+        <input class="xInput" type="hidden" name="coordonneesX">
+        <input class="yInput" type="hidden" name="coordonneesY">
 
         <!-- Bouton pour valider le formulaire -->
         <input class="boutbout" type="submit" class="valid" name="ok" value="ajouter">
@@ -71,10 +71,13 @@ $script = '<script scr="../js/ajoutJeu.js"></script>';
     </form>
     <div class="cartes">
         <div class="Pays" id="France">
-            <div><img src="../img/france.svg" alt="Carte de la france qui montre où sont les escapes games"></div>
+            <img src="../img/france.svg" alt="Carte de la france qui montre où sont les escapes games">
         </div>
         <div class="Pays none" id="Allemagne">
-            <div><img src="../img/germany.svg" alt="Carte de l'allemagne qui montre où sont les escapes games"></div>
+            <img src="../img/germany.svg" alt="Carte de l'allemagne qui montre où sont les escapes games">
+        </div>
+        <div class="point">
+            <img src="../img/map.svg" alt="map point">
         </div>
     </div>
 </div>

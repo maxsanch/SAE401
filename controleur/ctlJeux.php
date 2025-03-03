@@ -12,8 +12,8 @@ class ctlJeux{
         $this->jeu = new jeux;
     }
 
-    public function ajouterjeu($titre, $ville, $mail, $link, $desc, $min, $max, $age, $adresse, $postale, $prix){
-        $this->jeu->ajouterjeuBDD($titre, $ville, $mail, $link, $desc, $min, $max, $age, $adresse, $postale, $prix);
+    public function ajouterjeu($titre, $ville, $link, $desc, $min, $max, $age, $adresse, $postale, $prix, $pays, $coX, $coY){
+        $this->jeu->ajouterjeuBDD($titre, $ville, $link, $desc, $min, $max, $age, $adresse, $postale, $prix, $pays, $coX, $coY);
         $idjeu = $this->jeu->recupJeu();
         $this->jeu->enregjeuphoto($idjeu);
         $this->ajoutjeux("le jeu à bien été ajouté.");

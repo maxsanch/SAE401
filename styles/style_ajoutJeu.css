@@ -67,7 +67,6 @@ textarea{
 label{
     width: 200px;
     padding: 10px;   
-
     border: solid 1px #E6B856;
     color: white;
     cursor: pointer;
@@ -76,6 +75,16 @@ label{
 .nombre{
     display: flex;
     gap: 10px;
+}
+
+.pays{
+    position: relative;
+}
+
+.point{
+    position: absolute;
+    display: none;
+    width: 50px;
 }
 
 .jeux{
@@ -102,6 +111,10 @@ footer{
     gap: 10px;
     border: solid 1px #E6B856;
     border-radius: 8px;
+}
+
+.cartes{
+    position: relative;
 }
 
 .photo>img {

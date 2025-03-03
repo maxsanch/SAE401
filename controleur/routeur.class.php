@@ -65,10 +65,9 @@ class routeur
                             $this->ctlPage->propos();
                             break;
                         case "infojeusolo":
-                            if(isset($_GET['idjeu'])){
+                            if (isset($_GET['idjeu'])) {
                                 $this->ctlJeux->Jeuxsingle($_GET['idjeu']);
-                            }
-                            else{
+                            } else {
                                 $this->ctlJeux->alljeux();
                             }
                             break;
@@ -94,37 +93,34 @@ class routeur
                             $this->ctlUser->deletMyAccount();
                             break;
                         case "modifprofil":
-                            $this->ctlUser->editprofil($_POST['nom'], $_POST['prenom'],$_POST['adresse'], $_POST['NewPassword'], $_POST['ConfirmationNewPassword'], $_POST['ancienmdp']);
+                            $this->ctlUser->editprofil($_POST['nom'], $_POST['prenom'], $_POST['adresse'], $_POST['NewPassword'], $_POST['ConfirmationNewPassword'], $_POST['ancienmdp']);
                             break;
                         case "suppressionSouvenirs":
-                            if(isset($_GET['idobj']) && isset($_GET['idpanier']) && isset($_POST['nombredelet'])){
+                            if (isset($_GET['idobj']) && isset($_GET['idpanier']) && isset($_POST['nombredelet'])) {
                                 $this->ctlPanier->supprimerSouvenir($_GET['idobj'], $_GET['idpanier'], $_POST['nombredelet']);
-                            }
-                            else{
+                            } else {
                                 $this->ctlPage->accueil();
                             }
                             break;
                         case "suppressionReservation":
-                            if(isset($_GET['idJeu']) && isset($_GET['heure']) && isset($_GET['jour'])){
+                            if (isset($_GET['idJeu']) && isset($_GET['heure']) && isset($_GET['jour'])) {
                                 $this->ctlPanier->supprimerReservation($_GET['idJeu'], $_GET['heure'], $_GET['jour']);
-                            }
-                            else{
+                            } else {
                                 $this->ctlPage->accueil();
                             }
                             break;
                         case "réserverJeu":
-                            if(isset($_GET['idjeu']) && isset($_GET['jour']) && isset($_POST['heure']) && isset($_POST['nombre'])){
+                            if (isset($_GET['idjeu']) && isset($_GET['jour']) && isset($_POST['heure']) && isset($_POST['nombre'])) {
+
                                 $this->ctlPanier->EnregReservation($_GET['idjeu'], $_GET['jour'], $_POST['nombre'], $_POST['heure']);
-                            }
-                            else{
+                            } else {
                                 $this->ctlJeux->alljeux();
                             }
                             break;
                         case 'ajouterObjPanier':
-                            if(isset($_GET['idobj'])){
+                            if (isset($_GET['idobj'])) {
                                 $this->ctlPanier->ajouterpanier($_GET['idobj'], $_POST['quantite']);
-                            }
-                            else{
+                            } else {
                                 $this->ctlShop->objetsshop();
                             }
                             break;
@@ -137,8 +133,28 @@ class routeur
                             break;
                         case "AjoutJeu":
                             if ($user[0]['niveau'] == 'admin') {
-                                if(isset($_POST['titre']) && isset($_POST['ville']) && isset($_POST['mail']) && isset($_POST['link']) && isset($_POST['description']) && isset($_POST['min']) && isset($_POST['max']) && isset($_POST['age']) && isset($_POST['adresse']) && isset($_POST['postale']) && isset($_POST['prix']))
-                                $this->ctlJeux->ajouterjeu($_POST['titre'], $_POST['ville'], $_POST['mail'], $_POST['link'], $_POST['description'], $_POST['min'], $_POST['max'], $_POST['age'], $_POST['adresse'], $_POST['postale'], $_POST['prix']);
+                                if (isset($_POST['titre']) && isset($_POST['ville']) && isset($_POST['link']) && isset($_POST['description']) && isset($_POST['min']) && isset($_POST['max']) && isset($_POST['age']) && isset($_POST['adresse']) && isset($_POST['postale']) && isset($_POST['prix'])) {
+                                    if (empty($_POST['Pays'])) {
+                                        $pays = 'aucun';
+                                        $coX = 0;
+                                        $coY = 0;
+                                    } else {
+                                        if(is_numeric($_POST['coordonneesX']) && is_numeric($_POST['coordonneesY'])){
+                                            $pays = $_POST['Pays'];
+                                            $coX = $_POST['coordonneesX'];
+                                            $coY = $_POST['coordonneesY'];
+                                        }
+                                        else{
+                                            $pays = 'aucun';
+                                            $coX = 0;
+                                            $coY = 0;
+                                        }
+                                    }
+                                    $this->ctlJeux->ajouterjeu($_POST['titre'], $_POST['ville'], $_POST['link'], $_POST['description'], $_POST['min'], $_POST['max'], $_POST['age'], $_POST['adresse'], $_POST['postale'], $_POST['prix'], $pays, $coX, $coY);
+                                } else {
+                                    var_dump('je sais pas');
+                                    $this->ctlPage->accueil();
+                                }
                             } else {
                                 $this->ctlPage->accueil();
                             }
@@ -198,16 +214,16 @@ class routeur
                             if ($user[0]['niveau'] == 'admin') {
                                 if (isset($_GET['idUser'])) {
                                     $this->ctlUser->modifiermdp($_GET['idUser'], $_POST['mdp'], $_POST['confirmation']);
-                                    } else {
+                                } else {
                                     $this->ctlPage->accueil();
                                 }
                             } else {
                                 $this->ctlPage->accueil();
                             }
-                                break;
+                            break;
                         case "informationsUser":
                             if ($user[0]['niveau'] == 'admin') {
-                                if (isset($_GET['idUser'])) { 
+                                if (isset($_GET['idUser'])) {
                                     $this->ctlUser->modifUser($_GET['idUser'], "");
                                 } else {
                                     $this->ctlPage->accueil();
@@ -218,7 +234,7 @@ class routeur
                             break;
                         case "enregUserPhoto":
                             if ($user[0]['niveau'] == 'admin') {
-                                if (isset($_GET['idUser'])) { 
+                                if (isset($_GET['idUser'])) {
                                     $this->ctlUser->EnregPhotoUser($_GET['idUser']);
                                 } else {
                                     $this->ctlPage->accueil();
@@ -246,10 +262,9 @@ class routeur
                             $this->ctlPage->propos();
                             break;
                         case "infojeusolo":
-                            if(isset($_GET['idjeu'])){
+                            if (isset($_GET['idjeu'])) {
                                 $this->ctlJeux->Jeuxsingle($_GET['idjeu']);
-                            }
-                            else{
+                            } else {
                                 $this->ctlJeux->alljeux();
                             }
                             break;

@@ -16,10 +16,10 @@ foreach ($jeux as $valeur) {
         $phototest = 'img/photojeu/no_image.jpg';
     }
 
-    $result .= '<div class="case"><a href="index.php?page=modifjeu&idRuche=' . $valeur['ID_jeu'] . '" class="photo"><img src="' . $phototest . '" alt="Jeu choisi" style="height: 200px; object-fit: cover;"></a><b>' . $valeur['Titre'] . '</b><a class="bout" href="index.php?page=infojeusolo&idJeu=' . $valeur['ID_jeu'] . '">Voir le jeu</a><a href="index.php?page=modifjeu&idJeu=' . $valeur['ID_jeu'] . '" class="bout">Modifier</a><a href="index.php?page=supprJeu&idJeu=' . $valeur['ID_jeu'] . '" class="bout">Supprimer</a></div>';
+    $result .= '<div class="case"><a href="index.php?page=modifjeu&idRuche=' . $valeur['ID_jeu'] . '" class="photo"><img src="' . $phototest . '" alt="Jeu choisi"></a><div class="contTout"><b>' . $valeur['Titre'] . '</b><div class="parentBout"><a class="bout" href="index.php?page=infojeusolo&idjeu=' . $valeur['ID_jeu'] . '">Voir le jeu</a></div><div class="parentBout"><a href="index.php?page=modifjeu&idJeu=' . $valeur['ID_jeu'] . '" class="bout">Modifier</a></div><div class="parentBout"><a href="index.php?page=supprJeu&idJeu=' . $valeur['ID_jeu'] . '" class="bout">Supprimer</a></div></div></div>';
 }
 
-$script = "";
+$script = '<script scr="../js/ajoutJeu.js"></script>';
 
 ?>
 
@@ -27,7 +27,8 @@ $script = "";
 <div class="gridTop">
     <form action="<?= $_SERVER['PHP_SELF'] . '?page=AjoutJeu' ?>" method="post" enctype="multipart/form-data">
         <input type="text" name="titre" placeholder="un titre pour le jeu">
-        <input type="text" name="link" placeholder="entrez le lien d'une vidéo youtube">
+        <input type="text" name="link"
+            placeholder="entrez le lien d'une vidéo youtube (partager, puis enlever : https://youtu.be/)">
         <div class="nombre">
             <input type="number" name="min" placeholder="min participants">
             <input type="number" name="max" placeholder="max participants">
@@ -38,12 +39,16 @@ $script = "";
         </div>
         <textarea name="description" id="test">Entrez une description du jeu</textarea>
         <div class="in">
-            infos ville :
+            infos ville : Cliquez sur la carte pour ajouter l'emplacement.
         </div>
-        <input type="text" name="ville" placeholder="entrez une ville">
-        <input type="text" name="adresse" placeholder="entrez une adresse">
-        <input type="number" name="postale" placeholder="entrez un code postale">
-
+        <div class="nombre">
+            <input type="text" name="ville" placeholder="entrez une ville">
+            <input type="text" name="region" placeholder="renseignez la région">
+        </div>
+        <div class="nombre">
+            <input type="text" name="adresse" placeholder="entrez une adresse">
+            <input type="number" name="postale" placeholder="entrez un code postale">
+        </div>
         <div class="form_elt">
             <!-- Limite la taille maximale de fichier téléchargé (500Ko ici) -->
             <input type="hidden" name="MAX_FILE_SIZE" value="500000">
@@ -54,8 +59,15 @@ $script = "";
                 <input type="file" class="texte" name="photoGame" accept="image/jpeg, image/png" hidden>
             </label>
         </div>
+        <input type="hidden" name="Pays">
+        <input type="hidden" name="coordonneesX">
+        <input type="hidden" name="coordonneesY">
+
         <!-- Bouton pour valider le formulaire -->
-        <input class="boutbout" type="submit" class="valid" name="ok" value="Valider">
+        <input class="boutbout" type="submit" class="valid" name="ok" value="ajouter">
+        <div class="err">
+            <?= $erreur ?>
+        </div>
     </form>
     <div class="cartes">
         <div class="Pays" id="France">
@@ -66,11 +78,6 @@ $script = "";
         </div>
     </div>
 </div>
-
-<div class="err">
-    <?= $erreur ?>
-</div>
-
 <div class="jeux">
     <!-- result sera bougé la ou tu voudra afficher dinamiquement tout les jeux, a modifier en conséquence en haut. -->
     <?= $result ?>

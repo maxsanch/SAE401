@@ -14,6 +14,8 @@ if (file_exists('img/photojeu/' . $_GET['idJeu']  . '.jpg')) {
 
 $script = "";
 
+$librairie = "";
+
 ?>
 
 <h1>

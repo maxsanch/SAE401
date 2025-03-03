@@ -19,7 +19,7 @@ if (file_exists('img/photojeu/' . $_GET['idjeu'] . '.jpg')) {
 if ($jeu[0]['lien_video'] == "") {
     $video = "";
 } else {
-    $video = '<iframe width="560" height="315" src="'.$jeu[0]['lien_video'].'" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>';
+    $video = '<iframe width="1200" height="500" src="https://www.youtube.com/embed/' . $jeu[0]['lien_video'] . '"YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>';
 }
 
 $paniers = new panier;
@@ -30,7 +30,9 @@ $script = "<script src='../js/script_jeusolo.js'></script>";
 
 <div class="jeutop">
     <div class="image">
-        <img src="<?= $phototest ?>" alt="photo_de_l'escape-game">
+        <div class="img">
+            <img src="../<?= $phototest ?>" alt="cave">
+        </div>
     </div>
     <div class="infos">
         <div class="titrePage">
@@ -51,23 +53,26 @@ $script = "<script src='../js/script_jeusolo.js'></script>";
         </div>
     </div>
 </div>
-<div class="video">
-    <?= $video ?>
-</div>
 <div class="fleches">
     <div class="gauche">
         <img src="../img/LeftArrow.svg" alt="fleche gauche">
+    </div>
+    <div class="moisActuel">
+        <h2></h2>
     </div>
     <div class="droite">
         <img src="../img/RightArrow.svg" alt="fleche gauche">
     </div>
 </div>
 <div class="calendrier">
-    
+</div>
+<div class="video">
+    <?= $video ?>
 </div>
 
 <div class="cache">
     <!-- div cachée, sert juste à avoir le min et le max en js -->
     <div class="min" id="<?= $jeu[0]['nombre_min'] ?>"></div>
     <div class="max" id="<?= $jeu[0]['nombre_max'] ?>"></div>
+    <div class="prixJeu" id="<?= $jeu[0]['prix'] ?>"></div>
 </div>

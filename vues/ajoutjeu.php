@@ -31,6 +31,7 @@ $script = "";
     <input type="number" name="min" placeholder="min participants">
     <input type="number" name="max" placeholder="max participants">
     <input type="number" name="age" placeholder="age participants">
+    <input type="number" name="prix" placeholder="prix">
     <textarea name="description" id="test">Entrez une description du jeu</textarea>
 
     <div class="in">

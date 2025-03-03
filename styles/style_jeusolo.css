@@ -1,21 +1,23 @@
-.calendrier{
+.calendrier {
     margin-bottom: 200px;
 }
 
-body{
+body {
     color: white;
     font-family: Montserrat;
-    background: linear-gradient(26deg, rgba(21,20,20,1) 0%, rgba(94,87,78,1) 100%);
-}
-img{
-    width: 100%;
+    background: linear-gradient(26deg, rgba(21, 20, 20, 1) 0%, rgba(94, 87, 78, 1) 100%);
 }
 
-header{
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+header {
     background: linear-gradient(180deg, rgba(0, 0, 0, 0.705) 0%, rgba(255, 0, 254, 0) 100%);
 }
 
-.jeutop{
+.jeutop {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 50px;
@@ -26,20 +28,16 @@ header{
     border-top: #e6b856 solid 1px;
 }
 
-.image{
-    width: auto;
-}
-
-.autre{
+.autre {
     display: flex;
     justify-content: space-between;
 }
 
-.titrePage{
+.titrePage {
     position: relative;
 }
 
-.rectangleTitre{
+.rectangleTitre {
     width: 50px;
     height: 5px;
     background: #e6b856;
@@ -47,35 +45,120 @@ header{
     bottom: 0;
 }
 
-h1{
+h1 {
     margin-bottom: 10px;
 }
 
-.infos{
+.infos {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
 }
 
-.calendrier{
+.calendrier {
     width: 80%;
     margin: auto;
+    margin-top: 20px;
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 5px;
 }
 
-.fleches{
+.total{
+    background: linear-gradient(-135deg, #151414, #302c27);
+    margin-bottom: 5px;
+}
+
+.heures {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    text-align: center;
+}
+
+.heures>label{
+    background: linear-gradient(45deg, #DDB052, #775F2C);
+    padding: 10px;
+    color: rgb(41, 41, 41);
+    cursor: pointer;
+}
+
+.heures>label>input{
+    opacity: 0;
+    position: absolute;
+    pointer-events: none;
+}
+
+.parentCalender{
+    text-align: center;
+    padding: 5px;
+}
+
+.nombreclient{
+    display: flex;
+    flex-direction: column;
+    margin-top: 5px;
+}
+
+.nombreclient>input{
+    background: transparent;
+    border: #e6b856 1px solid;
+    color: #e6b856;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    padding: 5px;
+}
+
+.nombreclient>input::placeholder{
+    color: #e6b856;
+}
+
+.nombreclient>button{
+    padding: 5px;
+    background: linear-gradient(-135deg, #e6b856, #806630);
+    border: none;
+}
+
+.fleches {
     width: 80%;
     margin: auto;
+    margin-top: 40px;
     display: flex;
     justify-content: space-between;
+    align-items: center;
 }
-.gauche{
-    width: 30px;
-}
-.droite{
+
+.gauche {
     width: 30px;
 }
 
-.video{
+.droite {
+    width: 30px;
+}
+
+.nombreclient>div{
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+.video {
     width: 80%;
     margin: auto;
+    margin-top: 50px;
+    margin-bottom: 150px;
+}
+
+.image>.img>img {
+    height: 400px;
+    width: 100%;
+    object-fit: cover;
+}
+
+.image>.img {
+    height: 400px;
+}
+
+.selected{
+    background: linear-gradient(135deg, #ffb52b, #e6b856) !important;
+    color: white !important;
 }

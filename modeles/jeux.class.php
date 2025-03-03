@@ -5,11 +5,11 @@ require_once $_SERVER['DOCUMENT_ROOT']."/controleur/ctlJeux.php";
 
 class jeux extends database {
     
-    public function ajouterjeuBDD($titre, $lieu, $mail, $link, $desc, $min, $max, $age, $adresse, $postale){
+    public function ajouterjeuBDD($titre, $lieu, $mail, $link, $desc, $min, $max, $age, $adresse, $postale, $prix){
         // Création d'un tableau de données avec l'ID de l'utilisateur
-        $data = array($lieu, $mail, $link, $desc, $titre, $min, $max, $age, $adresse, $postale);
+        $data = array($lieu, $mail, $link, $desc, $titre, $min, $max, $age, $adresse, $postale, $prix);
 
-        $req = "INSERT INTO `jeux` (`ID_jeu`, `ville`, `mail`, `lien_video`, `description`, `Titre`, `nombre_min`, `nombre_max`, `age`, `adresse`, `postale`) VALUES (NULL, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?);";
+        $req = "INSERT INTO `jeux` (`ID_jeu`, `ville`, `mail`, `lien_video`, `description`, `Titre`, `nombre_min`, `nombre_max`, `age`, `adresse`, `postale`, `prix`) VALUES (NULL, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?);";
 
         // Exécution de la requête préparée
         $this->execReqPrep($req, $data);

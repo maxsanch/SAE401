@@ -19,6 +19,7 @@ main{
     padding-right: 10%;
     display: grid;
     grid-template-columns: 40% 60%;
+    grid-template-rows: auto auto;
 }
 
 .infosUser{
@@ -116,40 +117,44 @@ main{
     padding: 5px;
 }
 
-input[type="text"]{
+input{
     background: none;
     border: 2px solid #E6B856 ;
     color: #E6B856;
-}
-
-input[type="password"]{
-    background: none;
-    border: 2px solid #E6B856 ;
-    color: #E6B856;
+    border-radius: 8px;
 }
 
 input[type="mail"]{
     border: 2px solid #000000;
     background: #E6B856;
     color: #000000;
-}
+    border-radius: 8px;
+} */
 
 .allpaniers{
     grid-column: 2;
     grid-row: 2;
+    margin-left: 5%;
 }
 
 h2{
     margin-left: 5%;
 }
 
+.cadreproduit{
+    border-top: #E6B856 1px solid;
+    padding-top: 10px;
+    border-bottom: #E6B856 1px solid;
+    padding-bottom: 10px;
+}
+
 .rectangleTitre{ /* marche pas encore */
     width: 50px;
     height: 5px;
     background: #e6b856;
-    position: absolute;
-    left: 10%;
-    bottom: -1px;
+    position: relative;
+    left: 5%;
+    bottom: 15px;
 }
 
 .erreur{

@@ -225,13 +225,13 @@ if (empty($panier) && empty($souvenirs)) {
 
         <div class="infoproduits">
         <div class="rectangleTitre"></div>
-            <?= $resultpanier ?>
+        <div class="cadreproduit"><?= $resultpanier ?></div>
         </div>
     </div>
     <div class="ancienspaniers">
         <h2>Anciennes commandes</h2>
         <div class="rectangleTitre"></div>
-        <?= $paniervalides ?>
+        <div class="cadreproduit"><?= $paniervalides ?></div>
     </div>
     </div>
 </div>

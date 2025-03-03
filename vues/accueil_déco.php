@@ -82,7 +82,7 @@ $script = "<script src='../js/accueil.js'></script>";
             </div>
         </div>
         <div class="AccueilCle">
-            <div><img src="img/cle.png" alt="Une clé"></div>
+            <div><video autoplay muted loop><source src="../img/cle_qui_tourne.webm" alt="Une clé en 3D qui tourne"></video></div>
         </div>
     </div>
 </div>

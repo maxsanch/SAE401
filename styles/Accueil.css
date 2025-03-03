@@ -133,6 +133,10 @@ header{
     margin: auto;
 }
 
+video{
+    width: 100%;
+}
+
 .EscapeGameTitrePartie {
     width: fit-content;
     transform: translateY(50%);

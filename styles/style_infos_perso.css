@@ -146,9 +146,7 @@ h2{
 
 .cadreproduit{
     border-top: #E6B856 1px solid;
-    padding-top: 10px;
     border-bottom: #E6B856 1px solid;
-    padding-bottom: 10px;
 }
 
 .rectangleTitre{ /* marche pas encore */
@@ -214,4 +212,17 @@ input[type="number"]::-webkit-outer-spin-button {
     width: 80%;
     margin: auto;
     margin-bottom: 150px;
+}
+
+.AciennesCommandes{
+    border-top: #E6B856 1px solid;
+    padding: 10px;
+}
+
+.AciennesCommandes:nth-child(even){
+    background: rgba(0, 0, 0, 0.2);
+}
+
+.AciennesCommandes:nth-child(1){
+    border: none;
 }

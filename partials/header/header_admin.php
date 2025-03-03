@@ -8,7 +8,7 @@
         <div class="HeaderBouton"><a href="index.php?page=Contacts">Contacts</a></div>
         <div class="HeaderBouton"><a href="index.php?page=connexion">Réservation</a></div>
         <div class="HeaderBouton"><a href="index.php?page=checkusers">Utilisateurs</a></div>
-        <div class="HeaderBouton"><a href="index.php?page=AjoutJeu">Ajouter un escape game</a></div>
+        <div class="HeaderBouton"><a href="index.php?page=PageAjoutJeu">Ajouter un escape game</a></div>
         <div class="HeaderBouton" id="panier"><img src="img/Shopping_bag.png" alt="Sac des réservations"></div>
         <div class="HeaderBouton"><a href="index.php?page=shop"><img src="img/Shopping_cart.png"
                     alt="Caddies des réservations"></a></div>

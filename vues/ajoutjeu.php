@@ -1,6 +1,6 @@
 <?php
 
-$styles = "";
+$styles = "../styles/style_ajoutJeu.css";
 
 $librairie = '';
 
@@ -27,18 +27,19 @@ $script = "";
 <div class="gridTop">
     <form action="<?= $_SERVER['PHP_SELF'] . '?page=AjoutJeu' ?>" method="post" enctype="multipart/form-data">
         <input type="text" name="titre" placeholder="un titre pour le jeu">
-        <input type="email" name="mail" placeholder="entrez le mail pour les informations complémentaires sur ce jeu">
         <input type="text" name="link" placeholder="entrez le lien d'une vidéo youtube">
-        <input type="number" name="min" placeholder="min participants">
-        <input type="number" name="max" placeholder="max participants">
-        <input type="number" name="age" placeholder="age participants">
-        <input type="number" name="prix" placeholder="prix">
+        <div class="nombre">
+            <input type="number" name="min" placeholder="min participants">
+            <input type="number" name="max" placeholder="max participants">
+        </div>
+        <div class="nombre">
+            <input type="number" name="age" placeholder="age participants">
+            <input type="number" name="prix" placeholder="prix">
+        </div>
         <textarea name="description" id="test">Entrez une description du jeu</textarea>
-
         <div class="in">
             infos ville :
         </div>
-
         <input type="text" name="ville" placeholder="entrez une ville">
         <input type="text" name="adresse" placeholder="entrez une adresse">
         <input type="number" name="postale" placeholder="entrez un code postale">
@@ -56,7 +57,14 @@ $script = "";
         <!-- Bouton pour valider le formulaire -->
         <input class="boutbout" type="submit" class="valid" name="ok" value="Valider">
     </form>
-    .
+    <div class="cartes">
+        <div class="Pays" id="France">
+            <div><img src="../img/france.svg" alt="Carte de la france qui montre où sont les escapes games"></div>
+        </div>
+        <div class="Pays none" id="Allemagne">
+            <div><img src="../img/germany.svg" alt="Carte de l'allemagne qui montre où sont les escapes games"></div>
+        </div>
+    </div>
 </div>
 
 <div class="err">

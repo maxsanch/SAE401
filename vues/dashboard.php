@@ -24,7 +24,7 @@ if (count($users)) {
 
         $acces = new ctlpanier;
         $paniervalid = $acces->getValidPaniers($ligne['Id_utilisateur']);
-        $result .= "<div class='GrandeCase'><div class='PetiteCase'><a href='index.php?page=PhotoUser&idUser=" . $ligne['Id_utilisateur'] . "'><img class='photo' style='height: 250px; object-fit: cover;'' src='../" . $phototest . "' alt='photo'></a><b>" . $ligne['prenom'] . "</b><div>Dernière connexion : " . $ligne['connexion'] . "</div><div>paniers validés : " . count($paniervalid) . "</div><a class='Information' href='index.php?page=informationsUser&idUser=" . $ligne['Id_utilisateur'] . "'>Information</a></div></div>";
+        $result .= "<div class='PetiteCase'><a class='PhotoDeProfil' href='index.php?page=PhotoUser&idUser=" . $ligne['Id_utilisateur'] . "'><img class='photo' style='height: 250px; object-fit: cover;'' src='../" . $phototest . "' alt='photo'></a><div class='MiseEnPageUser'><div class='MiseEnPageUser2'><div class='Nom'>" . $ligne['prenom'] . "</div><div class='InfoDansCase'>Dernière connexion : " . $ligne['connexion'] . "</div><div class='InfoDansCase'>paniers validés : " . count($paniervalid) . "</div><div class='CadreInfo'><a class='InformationDashbord' href='index.php?page=informationsUser&idUser=" . $ligne['Id_utilisateur'] . "'>Information</a></div></div></div></div>";
     }
 } else {
     $result .= "<div class='reponse'>Aucun Utilisateur n'est enregistré</div>";
@@ -60,7 +60,7 @@ if (!empty($meilleurRes) && !empty($meilleurSouv)) {
                 </div>
             </div>
             <div class="nombreInscrit">
-                <img src="../img/Users.svg" alt="une icone">
+                <img src="../img/User2.svg" alt="une icone">
                 <div class="stat">
                     Nombre d'inscriptions : <?= $compteinscrit ?>
                 </div>
@@ -84,8 +84,10 @@ if (!empty($meilleurRes) && !empty($meilleurSouv)) {
             </div>
         </div>
     </div>
-    <div class="usersAll">
-        <?= $result ?>
+    <div class="MiseEnPage">
+        <div class="usersAll">
+            <?= $result ?>
+        </div>
     </div>
 </div>
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
@@ -102,7 +104,7 @@ if (!empty($meilleurRes) && !empty($meilleurSouv)) {
                 data: [<?= $final ?>],
                 borderWidth: 1,
                 backgroundColor: [
-                    '#B95E06'
+                    '#BC9032'
                 ]
             }]
         },

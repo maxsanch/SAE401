@@ -137,7 +137,8 @@ class routeur
                             break;
                         case "AjoutJeu":
                             if ($user[0]['niveau'] == 'admin') {
-                                $this->ctlJeux->ajouterjeu($_POST['titre'], $_POST['ville'], $_POST['mail'], $_POST['link'], $_POST['description'], $_POST['min'], $_POST['max'], $_POST['age'], $_POST['adresse'], $_POST['postale']);
+                                if(isset($_POST['titre']) && isset($_POST['ville']) && isset($_POST['mail']) && isset($_POST['link']) && isset($_POST['description']) && isset($_POST['min']) && isset($_POST['max']) && isset($_POST['age']) && isset($_POST['adresse']) && isset($_POST['postale']) && isset($_POST['prix']))
+                                $this->ctlJeux->ajouterjeu($_POST['titre'], $_POST['ville'], $_POST['mail'], $_POST['link'], $_POST['description'], $_POST['min'], $_POST['max'], $_POST['age'], $_POST['adresse'], $_POST['postale'], $_POST['prix']);
                             } else {
                                 $this->ctlPage->accueil();
                             }

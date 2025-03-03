@@ -13,22 +13,22 @@
     src: url(../font/Montserrat-Bold.ttf);
 }
 
-header{
+header {
     background-image: linear-gradient(black, rgba(0, 0, 0, 0));
 }
 
-body{
-    background-image: linear-gradient(22.5deg ,#151414, #46413A);
+body {
+    background-image: linear-gradient(22.5deg, #151414, #46413A);
     font-family: Montserrat;
 }
 
-.nombre>div{
+.nombre>div {
     display: flex;
     gap: 8px;
     align-items: center;
 }
 
-.nombre>div>img{
+.nombre>div>img {
     width: 32px;
 }
 
@@ -37,14 +37,84 @@ body{
     margin: auto;
 }
 
-.nombre{
+.nombre {
     display: grid;
     grid-template-columns: 1fr 1fr;
     grid-template-rows: 1fr 1fr;
     gap: 64px;
+    margin-top: 32px;
+    margin-bottom: 32px;
+    margin-left: auto;
+    margin-right: auto;
+    color: white;
+}
+
+.nombre>div {
     margin: auto;
 }
 
-.nombre>div:nth-child(3){
-    grid-column: 1 / 2;
+.nombre>div:nth-child(3) {
+    grid-column: 1 / span 2;
+}
+
+img {
+    width: 100%;
+}
+
+.PhotoDeProfil {
+    width: 250px;
+    display: flex;
+}
+
+.photo {
+    border-radius: 8px 8px 0px 0px;
+}
+
+.PetiteCase {
+    width: fit-content;
+    border: 2px #E6B856 solid;
+    border-radius: 8px;
+}
+
+.MiseEnPageUser {
+    width: 250px;
+    margin: auto;
+}
+
+.MiseEnPageUser2 {
+    width: 90%;
+    margin: auto;
+    color: white;
+}
+
+.Nom {
+    font-family: Montserrat-bold;
+    color: transparent;
+    background-image: linear-gradient(-90deg, #E6B856, #806630);
+    background-clip: text;
+    margin: 8px 0px;
+}
+
+.InformationDashbord {
+    background-image: linear-gradient(-90deg, #E6B856, #806630);
+    padding: 4px 8px;
+    border-radius: 4px;
+}
+
+.CadreInfo {
+    display: flex;
+    justify-content: center;
+    margin: 8px;
+}
+
+.InfoDansCase{
+    margin-bottom: 8px;
+}
+
+.usersAll{
+    display: flex;
+    gap: 32px;
+    margin-top: 16px;
+    margin-bottom: 64px;
+    justify-content: center;
 }

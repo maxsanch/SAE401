@@ -3,10 +3,16 @@ header {
     margin-bottom: 32px;
 }
 
+footer{
+    position: absolute;
+    bottom: 0;
+}
+
 body {
     background-image: linear-gradient(22.5deg, #151414, #46413A);
     font-family: Montserrat;
     color: white;
+    min-height: 100vh;
 }
 
 .MiseEnPage {
@@ -34,7 +40,7 @@ img {
 .boutbout {
     background-image: linear-gradient(-90deg, #E6B856, #806630);
     border: none;
-    padding: 8px 4px;
+    padding: 8px 8px;
     border-radius: 8px;
 }
 
@@ -67,14 +73,39 @@ img {
 }
 
 .deletaccount>a{
-    background-image: linear-gradient(-90deg, #E6B856, #806630);
+    background-image: linear-gradient(-90deg, #e65656, #803030);
     color: transparent;
     background-clip: text;
-    border: #E6B856 solid 1px;
+    border: #e65656 solid 1px;
     padding: 12px 6px;
     border-radius: 8px;
 }
 
 .modifmdp{
     font-family: Montserrat-bold;
+    margin-top: 16px;
+}
+
+.modifiermdp>form{
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.modifiermdpInput{
+    background-color: rgb(172, 172, 172);
+    border: #151414 1px solid;
+    border-radius: 8px;
+    padding: 8px 4px;
+    width: 250px;
+}
+
+.modifiermdpBouton{
+    border-radius: 8px;
+    background-image: linear-gradient(-90deg, #E6B856, #806630);
+    color: transparent; 
+    background-clip: text;
+    border: 1px solid #BC9032;
+    width: fit-content;
+    padding: 8px 8px;
 }

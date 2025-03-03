@@ -226,3 +226,7 @@ input[type="number"]::-webkit-outer-spin-button {
 .AciennesCommandes:nth-child(1){
     border: none;
 }
+
+.dateValidation{
+    padding-bottom: 20px;
+}

@@ -7,7 +7,7 @@ $librairie = '';
 $script = "";
 
 $result = "";
-foreach($jeux as $valeur){
+foreach ($jeux as $valeur) {
     if (file_exists('img/photojeu/' . $valeur['ID_jeu'] . '.jpg')) {
         $phototest = 'img/photojeu/' . $valeur['ID_jeu'] . '.jpg';
         // Si l'image existe, l'affiche
@@ -41,11 +41,17 @@ foreach($jeux as $valeur){
             <a href='/' class='EscapeGameBouton'>Réserver</a>
         </div>
     </div>
-</div>";}
+</div>";
+}
 
 ?>
 
-
-<div class="global">
-    <?= $result ?>
+<div class="MiseEnPage">
+    <div class="Titre">
+        <h2 class="TitreEscapeGame">Nos escapes games disponibles</h2>
+        <div class="RectangleTitre"></div>
+    </div>
+    <div class="global">
+        <?= $result ?>
+    </div>
 </div>

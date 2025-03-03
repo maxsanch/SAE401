@@ -55,4 +55,9 @@ class ctlJeux{
         $vue = new vue('jeusolo');
         $vue->afficher(array('jeu' => $jeu, 'recup' => $recup));
     }
+
+    public function spots(){
+        $vue = new vue('carte');
+        $vue->afficher(array());
+    }
 }

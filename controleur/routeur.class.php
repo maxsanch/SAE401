@@ -73,7 +73,7 @@ class routeur
                             }
                             break;
                         case "carte":
-                            $this->ctlLieux->spots();
+                            $this->ctlJeux->spots();
                             break;
                         case "jeuxAll":
                             $this->ctlJeux->alljeux();

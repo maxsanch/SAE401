@@ -1,0 +1,8 @@
+<?php
+
+$styles="";
+$librairie="";
+$script  = "";
+
+?>
+

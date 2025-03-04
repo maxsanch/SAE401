@@ -42,7 +42,12 @@ class vue {
 
     ob_start();
 
-    require "partials/header/header_connectee.php";
+    if(isset($_SESSION['acces'])){
+      require "partials/header/header_connectee.php";
+    }
+    else{
+      require "partials/header/header_deconnectee.php";
+    }
 
     $header = ob_get_clean();
 

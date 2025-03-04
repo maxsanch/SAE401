@@ -385,7 +385,9 @@ video{
 
 .Carte{
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
+    width: 1200px;
+    margin: auto;
 }
 
 .PresentationGlobal{
@@ -414,4 +416,19 @@ video{
 .PresentationPave{
     z-index: 2;
     position: relative;
+}
+
+.pays{
+    position: relative;
+    width: 600px;
+}
+
+.pays:nth-child(2){
+    width: 450px;
+}
+
+.point{
+    position: absolute;
+    width: 50px;
+    transform: translate(-50%, -100%);
 }

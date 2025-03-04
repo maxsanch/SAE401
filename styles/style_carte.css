@@ -15,3 +15,19 @@ body{
     display: grid;
     grid-template-columns: 50% 50%;
 }
+
+.france{
+    width: 600px;
+    position: relative;
+}
+
+.germany{
+    width: 450px;
+    position: relative;
+}
+
+.point{
+    position: absolute;
+    width: 50px;
+    transform: translate(-50%, -100%);
+}

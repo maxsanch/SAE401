@@ -57,7 +57,9 @@ class ctlJeux{
     }
 
     public function spots(){
+        $jeux = $this->jeu->getjeux();
+
         $vue = new vue('carte');
-        $vue->afficher(array());
+        $vue->afficher(array('jeux' => $jeux));
     }
 }

@@ -4,6 +4,24 @@ $styles="../styles/style_carte.css";
 $librairie="";
 $script  = "";
 
+$pointFrancais = "";
+$pointAllemagne = "";
+
+foreach ($jeux as $valeur) {
+    switch ($valeur['pays']) {
+        case "France":
+            $pointFrancais .= '<a href="index.php?page=infojeusolo&idjeu='.$valeur['ID_jeu'].'" class="point" style="top: ' . $valeur['coY'] . 'px; left: ' . $valeur['coX'] . 'px;">
+                                    <img src="../img/map.svg" alt="map point">
+                                </a>';
+            break;
+        case 'Allemagne':
+            $pointAllemagne = '<a href="index.php?page=infojeusolo&idjeu='.$valeur['ID_jeu'].'" class="point" style="top: ' . $valeur['coY'] . 'px; left: ' . $valeur['coX'] . 'px;">
+                                    <img src="../img/map.svg" alt="map point">
+                                </a>';
+            break;
+    }
+}
+
 ?>
 
 <div class="lesCartes">
@@ -12,9 +30,11 @@ $script  = "";
     <div class="lesCartes">
         <div class="france">
             <img src="../img/france.svg" alt="">
+            <?= $pointFrancais ?>
         </div>
         <div class="germany">
             <img src="../img/germany.svg" alt="">
+            <?= $pointAllemagne ?>
         </div>
     </div>
 </div>

@@ -114,12 +114,15 @@ footer{
     border-radius: 8px;
 }
 
+
+.conteneur{
+    display: flex;
+}
 .cartes{
     position: relative;
     display: flex;
     flex-direction: column;
     align-items: end;
-    width: 600px;
 }
 
 .photo>img {
@@ -163,4 +166,16 @@ footer{
 .flag{
     width: 50px;
     cursor: pointer;
+}
+
+.pays:nth-child(2){
+    width: 450px;
+}
+
+#france{
+    width: 600px;
+}
+
+#Allemagne{
+    width: 450px;
 }

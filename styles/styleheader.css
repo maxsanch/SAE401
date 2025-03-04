@@ -53,6 +53,7 @@ a {
 
 .HeaderBouton {
     cursor: pointer;
+    position: relative;
 }
 
 .HeaderBouton {
@@ -190,4 +191,20 @@ h3 {
 footer{
     color: white;
     font-family: Montserrat;
+}
+
+.HeaderBouton::before {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    background: #E6B856;
+    z-index: -1;
+    width: 0;
+    height: 1px;
+    transition: 0.5s;
+    border-radius: 5px;
+}
+/* ouverture */
+.HeaderBouton:hover::before {
+    width: 100%;
 }

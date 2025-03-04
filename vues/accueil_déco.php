@@ -31,14 +31,14 @@ foreach ($jeux as $valeur) {
 
     switch ($valeur['pays']) {
         case "France":
-            $pointFrancais .= '<div class="point">
-                                    <img src="../img/map.svg" style="top: ' . $valeur['coX'] . 'px; left: ' . $valeur['coY'] . 'px;" alt="map point">
-                                </div>';
+            $pointFrancais .= '<a href="index.php?page=infojeusolo&idjeu='.$valeur['ID_jeu'].'" class="point" style="top: ' . $valeur['coY'] . 'px; left: ' . $valeur['coX'] . 'px;">
+                                    <img src="../img/map.svg" alt="map point">
+                                </a>';
             break;
         case 'Allemagne':
-            $pointAllemagne = '<div class="point">
-                                    <img src="../img/map.svg" style="" alt="map point">
-                                </div>';
+            $pointAllemagne = '<a href="index.php?page=infojeusolo&idjeu='.$valeur['ID_jeu'].'" class="point" style="top: ' . $valeur['coY'] . 'px; left: ' . $valeur['coX'] . 'px;">
+                                    <img src="../img/map.svg" alt="map point">
+                                </a>';
             break;
     }
 
@@ -61,7 +61,7 @@ foreach ($jeux as $valeur) {
                     </div>
 
                     <div class='BoutonEscapeGame'>
-                        <a href='/' class='EscapeGameBouton'>Voir plus</a>
+                        <a href='index.php?page=infojeusolo&idjeu=".$valeur['ID_jeu']."' class='EscapeGameBouton'>Voir plus</a>
                         <a href='/' class='EscapeGameBouton'>Réserver</a>
                     </div>
                 </div>

@@ -4,7 +4,7 @@ $styles = "../styles/style_games.css";
 
 $librairie = '';
 
-$script = "";
+$script = "<script src='../js/accueil.js'></script>";
 
 $result = "";
 foreach ($jeux as $valeur) {
@@ -31,8 +31,8 @@ foreach ($jeux as $valeur) {
             </div>
         </div>
         <div class='EscageGameBarreSelecteurGlobal'>
-            <input type='range' id='volume' name='volume' min='" . $valeur['nombre_min'] - 1 . "' 
-            max='" . $valeur['nombre_max'] . "' value='" . $valeur['nombre_min'] - 1 . "' />
+            <input type='range' id='volume' name='volume' min='" . $valeur['nombre_min'] . "' 
+            max='" . $valeur['nombre_max'] . "' value='" . $valeur['nombre_min'] . "' />
             <label>AFFICHER LA VALUE EN DIRECT !!!</label>
         </div>
 

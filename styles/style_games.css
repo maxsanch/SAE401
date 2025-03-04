@@ -100,6 +100,8 @@ img{
     display: block;
     width: 45%;
     text-align: center;
+    padding: 4px 2px;
+    border-radius: 8px;
 }
 
 /* Aide de chatgpt pour faire le dégradé en même temps sur le texte et la bordure car j'arrivais à le faire que sur un en même temps sinon */
@@ -107,6 +109,7 @@ img{
     position: relative;
     text-align: center;
     border-radius: 8px;
+    padding: 4px 2px;
     /* Arrondi OK */
 
     /* Dégradé pour le texte */

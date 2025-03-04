@@ -81,10 +81,11 @@ label{
     position: relative;
 }
 
-.point{
+.point {
     position: absolute;
-    display: none;
     width: 50px;
+    transform: translate(-50%, -100%);
+    display: none;
 }
 
 .jeux{
@@ -115,6 +116,10 @@ footer{
 
 .cartes{
     position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: end;
+    width: 600px;
 }
 
 .photo>img {
@@ -147,4 +152,15 @@ footer{
 
 .err{
     margin-top: 10px;
+}
+
+.boutons{
+    display: flex;
+    gap: 50px;
+    align-items: end;
+}
+
+.flag{
+    width: 50px;
+    cursor: pointer;
 }

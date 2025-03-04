@@ -19,7 +19,7 @@ function updateInputFrance(event) {
 
     coox.value = x;
     cooy.value = y;
-    point.style = "top: " + (y - 50) + "px; left: " + (x - 25) + "px; display: block;"
+    point.style = "top: " + y + "px; left: " + x + "px; display: block;"
 }
 
 function updateInputAllemagne(event) {
@@ -29,5 +29,5 @@ function updateInputAllemagne(event) {
     paysInput.value = "Allemagne";
     coox.value = x;
     cooy.value = y;
-    console.log(x + ' ' + y)
+    point.style = "top: " + y + "px; left: " + x + "px; display: block;"
 }

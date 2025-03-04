@@ -72,12 +72,23 @@ $script = '<script src="js/ajoutJeu.js"></script>';
     <div class="cartes">
         <div class="Pays" id="France">
             <img src="../img/france.svg" alt="Carte de la france qui montre où sont les escapes games">
+            <div class="point">
+            <img src="../img/map.svg" alt="map point">
+        </div>
         </div>
         <div class="Pays none" id="Allemagne">
             <img src="../img/germany.svg" alt="Carte de l'allemagne qui montre où sont les escapes games">
+            <div class="point">
+                <img src="../img/map.svg" alt="map point">
+            </div>
         </div>
-        <div class="point">
-            <img src="../img/map.svg" alt="map point">
+        <div class="boutons">
+            <div class="flag" id="flagFrance">
+                <img src="../img/france.png" alt="drapeau de la france">
+            </div>
+            <div class="flag" id="flagAllemagne">
+                <img src="../img/allemagne.png" alt="drapeau de l'allemagne'">
+            </div>
         </div>
     </div>
 </div>

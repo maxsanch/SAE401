@@ -59,7 +59,7 @@ async function calendrier() {
                 }
             }
             else {
-                if (date >= aujourdhui) {
+                if (date > aujourdhui || (date.toDateString() === aujourdhui.toDateString() && j > aujourdhui.getHours())) {
                     heures += "<label><input class='radio' required type='radio' name='heure' value='" + j + "-" + (j + 2) + "h'>" + j + " - " + (j + 2) + "h</label>";
                 }
                 else {

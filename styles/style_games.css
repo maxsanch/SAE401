@@ -142,6 +142,7 @@ img{
     margin-bottom: 64px;
     z-index: 2;
     position: relative;
+    flex-wrap: wrap;
 }
 
 .MiseEnPage {

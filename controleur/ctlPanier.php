@@ -6,6 +6,7 @@ require_once "modeles/Objectshop.class.php";
 require_once "controleur/ctlShop.php";
 require_once "controleur/ctlUser.php";
 require_once "controleur/ctlPage.php";
+require_once "controleur/ctlJeux.php";
 
 class ctlPanier
 {
@@ -14,12 +15,14 @@ class ctlPanier
     private $user;
 
     private $date;
+    private $jeux;
 
     public function __construct()
     {
         $this->panier = new panier;
         $this->user = new utilisateurs;
         $this->date = new DateTime();
+        $this->jeux = new ctlJeux();
     }
 
     public function getGlobalPanier()
@@ -68,8 +71,6 @@ class ctlPanier
     {
         $verifReservation = $this->panier->checkReservation($idjeu, $jour, $heure);
 
-        var_dump($verifReservation);
-
         if(empty($verifReservation)){
             $getUser = $this->user->GetUser($_SESSION['acces']);
             $getPanier = $this->panier->getPanierUser($getUser[0]['Id_utilisateur']);
@@ -77,7 +78,7 @@ class ctlPanier
             $this->panier->Reserver($idjeu, $jour, $nombre, $heure, $getPanier);
             $heure = $this->date->format('Y-m-d H-i-s');
             $this->panier->updateHorraire($getPanier, $heure);
-            header('Location: index.php?page=remerciements');
+            $this->jeux->alljeux('La réservation a été ajoutée à votre panier.');
         }
         else{
             $erreur = new ctlPage;

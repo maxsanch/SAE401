@@ -19,10 +19,10 @@ class ctlJeux{
         $this->ajoutjeux("le jeu à bien été ajouté.");
     }
 
-    public function alljeux(): void{
+    public function alljeux($erreur = ""): void{
         $jeux = $this->jeu->getjeux();
         $vue = new vue('games');
-        $vue->afficher(array("jeux" => $jeux));
+        $vue->afficher(array("jeux" => $jeux, "erreur" => $erreur));
     }
 
     public function ajoutjeux($erreur){

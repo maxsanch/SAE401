@@ -62,7 +62,7 @@ foreach ($jeux as $valeur) {
 
                     <div class='BoutonEscapeGame'>
                         <a href='index.php?page=infojeusolo&idjeu=".$valeur['ID_jeu']."' class='EscapeGameBouton'>Voir plus</a>
-                        <a href='/' class='EscapeGameBouton'>Réserver</a>
+                        <a class='number' href='index.php?page=infojeusolo&idjeu=".$valeur['ID_jeu']."&nombre=0#calender' class='EscapeGameBouton'>Réserver</a>
                     </div>
                 </div>
             </div>";
@@ -93,8 +93,8 @@ $script = "<script src='../js/accueil.js'></script>";
                     sur votre parcors afin de <b>vous échapper !</b></div>
             </div>
             <div class="AccueilBoutonsGlobal">
-                <div class="AccueilBouton">Je réserve !</div>
-                <div class="AccueilBouton">A propos</div>
+                <a href="index.php?page=reglement" class="AccueilBouton">Je réserve !</a>
+                <a href="index.php?page=propos" class="AccueilBouton">A propos</a>
             </div>
         </div>
         <div class="AccueilCle">

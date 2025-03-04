@@ -152,7 +152,6 @@ class routeur
                                     }
                                     $this->ctlJeux->ajouterjeu($_POST['titre'], $_POST['ville'], $_POST['link'], $_POST['description'], $_POST['min'], $_POST['max'], $_POST['age'], $_POST['adresse'], $_POST['postale'], $_POST['prix'], $pays, $coX, $coY);
                                 } else {
-                                    var_dump('je sais pas');
                                     $this->ctlPage->accueil();
                                 }
                             } else {

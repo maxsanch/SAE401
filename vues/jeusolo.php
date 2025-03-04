@@ -64,7 +64,7 @@ $script = "<script src='../js/script_jeusolo.js'></script>";
         <img src="../img/RightArrow.svg" alt="fleche gauche">
     </div>
 </div>
-<div class="calendrier">
+<div class="calendrier" id="calender">
 </div>
 <div class="video">
     <?= $video ?>

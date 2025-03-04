@@ -44,8 +44,21 @@ foreach ($jeux as $valeur) {
 </div>";
 }
 
+$erreurAffiche = "";
+if(!empty($erreur)){
+    $erreurAffiche = '
+    <div class="error">
+        '.$erreur.'
+    </div>
+    ';
+}
+else{
+    $erreurAffiche = "";
+}
+
 ?>
 
+<?= $erreurAffiche ?>
 <div class="MiseEnPage">
     <div class="Titre">
         <h2 class="TitreEscapeGame">Nos escapes games disponibles</h2>

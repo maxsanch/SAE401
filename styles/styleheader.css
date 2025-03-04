@@ -12,6 +12,17 @@ img{
     width: 100%;
 }
 
+.cache_fond{
+    background: rgba(0, 0, 0, 0.685);
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    z-index: 5;
+    left: 0;
+    right: 0;
+    display: none;
+}
+
 .ouvert {
     display: block;
 }

@@ -1,11 +1,13 @@
 <?php
 
-require_once $_SERVER['DOCUMENT_ROOT']."/modeles/database.class.php";
-require_once $_SERVER['DOCUMENT_ROOT']."/controleur/ctlJeux.php";
+require_once $_SERVER['DOCUMENT_ROOT'] . "/modeles/database.class.php";
+require_once $_SERVER['DOCUMENT_ROOT'] . "/controleur/ctlJeux.php";
 
-class jeux extends database {
-    
-    public function ajouterjeuBDD($titre, $lieu, $link, $desc, $min, $max, $age, $adresse, $postale, $prix, $pays, $coX, $coY){
+class jeux extends database
+{
+
+    public function ajouterjeuBDD($titre, $lieu, $link, $desc, $min, $max, $age, $adresse, $postale, $prix, $pays, $coX, $coY)
+    {
         // Création d'un tableau de données avec l'ID de l'utilisateur
         $data = array($lieu, $link, $desc, $titre, $min, $max, $age, $adresse, $postale, $prix, $pays, $coX, $coY);
 
@@ -15,7 +17,8 @@ class jeux extends database {
         $this->execReqPrep($req, $data);
     }
 
-    public function enregModifJeu($id, $titre, $ville, $mail, $link, $description, $min, $max, $age, $adresse, $postale){
+    public function enregModifJeu($id, $titre, $ville, $mail, $link, $description, $min, $max, $age, $adresse, $postale)
+    {
         $data = array($ville, $mail, $link, $description, $titre, $min, $max, $age, $adresse, $postale, $id);
 
         $req = "UPDATE `jeux` SET `ville` = ?, `mail` = ?, `lien_video` = ?, `description` = ?, `Titre` = ?, `nombre_min` = ?, `nombre_max` = ?, `age` = ?, `adresse` = ?, `postale` = ? WHERE `jeux`.`ID_jeu` = ?;";
@@ -24,7 +27,8 @@ class jeux extends database {
         $this->execReqPrep($req, $data);
     }
 
-    public function recupJeu(){
+    public function recupJeu()
+    {
         $req = 'SELECT ID_jeu FROM `jeux` ORDER BY ID_jeu DESC LIMIT 1';
 
         $result = $this->execReq($req);
@@ -53,10 +57,10 @@ class jeux extends database {
                     // Vérification si l'extension du fichier est autorisée
                     if (in_array($extension_upload, $extensions_autorisees)) {
 
-                        foreach($extensions_autorisees as $test){
-                            $exister = 'img/photojeu/'. $idJeu. '.'.$test;
+                        foreach ($extensions_autorisees as $test) {
+                            $exister = 'img/photojeu/' . $idJeu . '.' . $test;
 
-                            if(file_exists($exister)){
+                            if (file_exists($exister)) {
                                 unlink($exister);
                             }
                         }
@@ -95,26 +99,35 @@ class jeux extends database {
                     $page->ajoutjeux($erreur2);
                 }
             } else {
-                if ($_FILES['photoGame']["size"] <= 500000) {
+                if ($_FILES['photoGame']["size"] >= 500000) {
+                    var_dump('ici');
                     // Si le transfert a échoué avec un code d'erreur
                     $erreur1 = "Fichier trop volumineux.";
                     $page->ajoutjeux($erreur1);
                 } else {
-                    // Si le transfert a échoué avec un code d'erreur
-                    $erreur1 = "Une erreur est survenue";
-                    $page->ajoutjeux($erreur1);
+                    if ($_FILES['photoGame']["error"] == 4) {
+                        // Si le transfert a échoué avec un code d'erreur
+                        $erreur1 = "Le jeu a été ajouté, sans images d'illustration.";
+                        $page->ajoutjeux($erreur1);
+                    } else {
+                        // Si le transfert a échoué avec un code d'erreur
+                        $erreur1 = "Une erreur est survenue";
+                        $page->ajoutjeux($erreur1);
+                    }
                 }
             }
         }
     }
 
-    public function getjeux(){
+    public function getjeux()
+    {
         $req = "SELECT * FROM jeux";
         $jeux = $this->execReq($req);
         return $jeux;
     }
 
-    public function supprjeu($jeu){
+    public function supprjeu($jeu)
+    {
         $data = array($jeu);
 
         $req = "DELETE FROM jeux WHERE `jeux`.`ID_jeu` = ?";
@@ -122,7 +135,8 @@ class jeux extends database {
         $this->execReqPrep($req, $data);
     }
 
-    public function getJeuSingle($idjeu){
+    public function getJeuSingle($idjeu)
+    {
         $data = array($idjeu);
 
         $req = "SELECT * FROM jeux WHERE ID_jeu = ?";
@@ -133,7 +147,8 @@ class jeux extends database {
     }
 
 
-    public function getjeu($id){
+    public function getjeu($id)
+    {
         $data = array($id);
 
         $req = "SELECT * FROM jeux WHERE ID_jeu = ?";
@@ -142,7 +157,8 @@ class jeux extends database {
     }
 
 
-    public function getReservation(){
+    public function getReservation()
+    {
         $req = "SELECT ID_jeu, jour_reservation, heure_reservation FROM réserver";
 
         return $this->execReq($req);

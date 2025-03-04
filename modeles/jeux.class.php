@@ -110,9 +110,7 @@ class jeux extends database {
 
     public function getjeux(){
         $req = "SELECT * FROM jeux";
-
         $jeux = $this->execReq($req);
-
         return $jeux;
     }
 

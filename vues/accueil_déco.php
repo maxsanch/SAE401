@@ -15,6 +15,9 @@ if (isset($_SESSION['acces'])) {
 $librairie = "";
 
 $result = "";
+$pointFrancais = "";
+$pointAllemagne = "";
+
 foreach ($jeux as $valeur) {
     if (file_exists('img/photojeu/' . $valeur['ID_jeu'] . '.jpg')) {
         $phototest = 'img/photojeu/' . $valeur['ID_jeu'] . '.jpg';
@@ -24,6 +27,19 @@ foreach ($jeux as $valeur) {
     } else {
         // Sinon, affiche une image par défaut
         $phototest = 'img/photojeu/no_image.jpg';
+    }
+
+    switch ($valeur['pays']) {
+        case "France":
+            $pointFrancais .= '<div class="point">
+                                    <img src="../img/map.svg" style="top: ' . $valeur['coX'] . 'px; left: ' . $valeur['coY'] . 'px;" alt="map point">
+                                </div>';
+            break;
+        case 'Allemagne':
+            $pointAllemagne = '<div class="point">
+                                    <img src="../img/map.svg" style="" alt="map point">
+                                </div>';
+            break;
     }
 
     $result .= "<div class='PropositionEscapeGame'>
@@ -82,7 +98,9 @@ $script = "<script src='../js/accueil.js'></script>";
             </div>
         </div>
         <div class="AccueilCle">
-            <div><video autoplay muted loop><source src="../img/cle_qui_tourne.webm" alt="Une clé en 3D qui tourne"></video></div>
+            <div><video autoplay muted loop>
+                    <source src="../img/cle_qui_tourne.webm" alt="Une clé en 3D qui tourne">
+                </video></div>
         </div>
     </div>
 </div>
@@ -103,8 +121,14 @@ $script = "<script src='../js/accueil.js'></script>";
             <div class="RectangleTitre"></div>
         </div>
         <div class="Carte">
-            <div><img src="../img/france.svg" alt="Carte de la france qui montre où sont les escapes games"></div>
-            <div><img src="../img/germany.svg" alt="Carte de l'allemagne qui montre où sont les escapes games"></div>
+            <div class="pays">
+                <img src="../img/france.svg" alt="Carte de la france qui montre où sont les escapes games">
+                <?= $pointFrancais ?>
+            </div>
+            <div class="pays">
+                <img src="../img/germany.svg" alt="Carte de l'allemagne qui montre où sont les escapes games">
+                <?= $pointAllemagne ?>
+            </div>
         </div>
         <div class="PresentationGlobal">
             <div class="PresentationText">

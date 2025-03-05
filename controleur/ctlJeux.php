@@ -42,9 +42,13 @@ class ctlJeux{
         $vue->afficher(array("jeu" => $jeu));
     }
 
-    public function enregistrerModif($id, $titre, $ville, $mail, $link, $description, $min, $max, $age, $adresse, $postale){
-        $this->jeu->enregModifJeu($id, $titre, $ville, $mail, $link, $description, $min, $max, $age, $adresse, $postale);
-        $this->jeu->enregjeuphoto($id);
+    public function enregistrerModif($id, $titre, $link, $min, $max, $age, $prix, $description, $ville, $region, $adresse, $postale, $pays, $coX, $coy){
+        $this->jeu->enregModifJeu($id, $titre, $link, $min, $max, $age, $prix, $description, $ville, $region, $adresse, $postale, $pays, $coX, $coy);
+        if (isset($_FILES['photoGame'])) {
+            if ($_FILES['photoGame']["error"] != 4) {
+                $this->jeu->enregjeuphoto($id);
+            }
+        }
         $this->ajoutjeux("le jeu à bien été modifié.");
     }
 

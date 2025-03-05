@@ -179,3 +179,22 @@ footer{
 #Allemagne{
     width: 450px;
 }
+
+h2{
+    margin: auto;
+    margin-top: 30px;
+    width: 80%;
+}
+
+.ima{
+    margin: auto;
+    margin-top: 30px;
+    width: 80%;
+    margin-bottom: 100px;
+}
+
+.back{
+    margin-top: 200px;
+    margin: auto;
+    width: 80%;
+}

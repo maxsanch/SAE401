@@ -1,6 +1,6 @@
 <?php
 
-$styles = "";
+$styles = "../styles/style_ajoutJeu.css";
 
 if (file_exists('img/photojeu/' . $_GET['idJeu']  . '.jpg')) {
     $phototest = 'img/photojeu/' . $_GET['idJeu']  . '.jpg';
@@ -12,54 +12,82 @@ if (file_exists('img/photojeu/' . $_GET['idJeu']  . '.jpg')) {
     $phototest = 'img/photojeu/no_image.jpg';
 }
 
-$script = "";
+$script = '<script src="js/ajoutJeu.js"></script>';
 
 $librairie = "";
 
 ?>
 
-<h1>
+<h2>
     modifier les informations de : <?= $jeu['Titre'] ?>, jeu numéro <?= $jeu['ID_jeu'] ?>
-</h1>
-<div class="informationmodif">
+</h2>
+<div class="back">
+    <a href="index.php?page=PageAjoutJeu">Page précédente.</a>
+</div>
+<div class="gridTop">
     <form action="<?= $_SERVER['PHP_SELF'] . '?page=modifierjeu&idjeu=' . $_GET['idJeu'] . '' ?>" method="post" enctype="multipart/form-data">
-        <input type="text" name="titre" value="<?= $jeu['Titre'] ?>" placeholder="Modifiez le titre du jeu">
-        <input type="email" name="mail" value="<?= $jeu['mail'] ?>"
-            placeholder="entrez le mail pour les informations complémentaires sur ce jeu">
-        <input type="text" name="link" value="<?= $jeu['lien_video'] ?>"
-            placeholder="entrez le lien d'une vidéo youtube">
-        <input type="number" name="min" value="<?= $jeu['nombre_min'] ?>" placeholder="min participants">
-        <input type="number" name="max" value="<?= $jeu['nombre_max'] ?>" placeholder="max participants">
-        <input type="number" name="age" value="<?= $jeu['age'] ?>" placeholder="age participants">
-        <textarea name="description" id="test"><?= $jeu['description'] ?></textarea>
-
-        <div class="in">
-            infos ville :
+        <input type="text" name="titre" placeholder="un titre pour le jeu">
+        <input type="text" name="link"
+            placeholder="entrez le lien d'une vidéo youtube (partager, puis enlever : https://youtu.be/)">
+        <div class="nombre">
+            <input type="number" name="min" placeholder="min participants">
+            <input type="number" name="max" placeholder="max participants">
         </div>
-
-        <input type="text" name="ville" value="<?= $jeu['ville'] ?>" placeholder="entrez une ville">
-        <input type="text" name="adresse" value="<?= $jeu['adresse'] ?>" placeholder="entrez une adresse">
-        <input type="number" name="postale" value="<?= $jeu['postale'] ?>" placeholder="entrez un code postale">
-
+        <div class="nombre">
+            <input type="number" name="age" placeholder="age participants">
+            <input type="number" name="prix" placeholder="prix">
+        </div>
+        <textarea name="description" id="test">Entrez une description du jeu</textarea>
+        <div class="in">
+            infos ville : Cliquez sur la carte pour ajouter l'emplacement.
+        </div>
+        <div class="nombre">
+            <input type="text" name="ville" placeholder="entrez une ville">
+            <input type="text" name="region" placeholder="renseignez la région">
+        </div>
+        <div class="nombre">
+            <input type="text" name="adresse" placeholder="entrez une adresse">
+            <input type="number" name="postale" placeholder="entrez un code postale">
+        </div>
         <div class="form_elt">
             <!-- Limite la taille maximale de fichier téléchargé (500Ko ici) -->
             <input type="hidden" name="MAX_FILE_SIZE" value="500000">
             <!-- Label pour l'input de téléchargement de photo -->
             <label>
-                <span class="orange">Ajoutez </span> <span> Une photo. (max 500ko)</span>
-                <!-- Champ pour sélectionner le fichier image (acceptant JPEG et PNG uniquement) -->
+                <span class="orange">Modifiez </span> <span> la photo. (max 500ko)</span>
                 <input type="file" class="texte" name="photoGame" accept="image/jpeg, image/png" hidden>
             </label>
         </div>
+        <input class="paysInput" type="hidden" name="Pays">
+        <input class="xInput" type="hidden" name="coordonneesX">
+        <input class="yInput" type="hidden" name="coordonneesY">
 
         <!-- Bouton pour valider le formulaire -->
-        <input class="boutbout" type="submit" class="valid" name="ok" value="modifier">
+        <input class="boutbout" type="submit" class="valid" name="ok" value="ajouter">
     </form>
+    <div class="conteneur">
+        <div class="cartes">
+            <div class="Pays" id="France">
+                <img src="../img/france.svg" alt="Carte de la france qui montre où sont les escapes games">
+                <div class="point">
+                    <img src="../img/map.svg" alt="map point">
+                </div>
+            </div>
+            <div class="Pays none" id="Allemagne">
+                <img src="../img/germany.svg" alt="Carte de l'allemagne qui montre où sont les escapes games">
+                <div class="point">
+                    <img src="../img/map.svg" alt="map point">
+                </div>
+            </div>
+            <div class="boutons">
+                <div class="flag" id="FranceFlag">
+                    <img src="../img/allemagne.png" alt="drapeau de la france">
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
 
 <div class="ima">
     <img src="<?= $phototest ?>" alt="image_jeu">
-</div>
-<div class="back">
-    <a href="index.php?page=PageAjoutJeu">Page précédente.</a>
 </div>

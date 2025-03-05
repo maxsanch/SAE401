@@ -39,78 +39,49 @@ class jeux extends database
     public function enregjeuphoto($idJeu)
     {
         $page = new ctlJeux();
-        // Vérification si un fichier photo a été envoyé
-        if (isset($_FILES['photoGame'])) {
-            // Vérification si le fichier ne contient pas d'erreur
-            if ($_FILES['photoGame']["error"] == 0) {
+        // Récupération de l'extension du fichier
+        $infosfichier = new SplFileInfo($_FILES['photoGame']['name']);
+        $extension_upload = $infosfichier->getExtension();
 
-                // Vérification si la taille du fichier est inférieure à 500 Ko
-                if ($_FILES['photoGame']["size"] <= 500000) {
+        // Liste des extensions autorisées
+        $extensions_autorisees = array('jpg', 'png');
 
-                    // Récupération de l'extension du fichier
-                    $infosfichier = new SplFileInfo($_FILES['photoGame']['name']);
-                    $extension_upload = $infosfichier->getExtension();
+        // Vérification si l'extension du fichier est autorisée
+        if (in_array($extension_upload, $extensions_autorisees)) {
+            foreach ($extensions_autorisees as $test) {
+                $exister = 'img/photojeu/' . $idJeu . '.' . $test;
 
-                    // Liste des extensions autorisées
-                    $extensions_autorisees = array('jpg', 'png');
-
-                    // Vérification si l'extension du fichier est autorisée
-                    if (in_array($extension_upload, $extensions_autorisees)) {
-
-                        foreach ($extensions_autorisees as $test) {
-                            $exister = 'img/photojeu/' . $idJeu . '.' . $test;
-
-                            if (file_exists($exister)) {
-                                unlink($exister);
-                            }
-                        }
-
-                        // Vérification si le dossier 'img/photojeu' existe
-                        if (is_dir('img/photojeu')) {
-
-                            // Déplacement du fichier vers le dossier "img/photojeu" avec un nom basé sur l'ID de l'article
-                            move_uploaded_file(
-                                $_FILES['photoGame']['tmp_name'],
-                                'img/photojeu/' . $idJeu . "." . $extension_upload
-                            );
-                            $erreur = "Transfert du fichier <b> " . $_FILES['photoGame']['name'] . " </b> effectué !";
-                            return $erreur;
-
-                        } else {
-                            // Si le dossier n'existe pas, on le crée et on déplace le fichier
-                            mkdir('img/photojeu');
-                            move_uploaded_file(
-                                $_FILES['photoGame']['tmp_name'],
-                                'img/photojeu/' . $idJeu . "." . $extension_upload
-                            );
-                            $erreur = "Transfert du fichier <b> " . $_FILES['photoGame']['name'] . " </b> effectué !";
-                            return $erreur;
-                        }
-
-                    } else {
-                        // Si l'extension du fichier n'est pas autorisée
-                        $erreur2 = "Fichier non autorisé";
-                        $page->ajoutjeux($erreur2);
-                    }
-
-                } else {
-                    // Si le fichier est trop volumineux
-                    $erreur2 = "Fichier trop volumineux";
-                    $page->ajoutjeux($erreur2);
+                if (file_exists($exister)) {
+                    unlink($exister);
                 }
-            } else {
-                if ($_FILES['photoGame']["size"] >= 500000) {
-                    // Si le transfert a échoué avec un code d'erreur
-                    $erreur1 = "Fichier trop volumineux.";
-                    $page->ajoutjeux($erreur1);
-                } else {
-                    // Si le transfert a échoué avec un code d'erreur
-                    $erreur1 = "Une erreur est survenue";
-                    $page->ajoutjeux($erreur1);
-                }
-
-                //throw new Exception("Une erreur est survenue lors de l'envoie, code d'erreur : {$_FILES['photoGame']['error']}");
             }
+
+            // Vérification si le dossier 'img/photojeu' existe
+            if (is_dir('img/photojeu')) {
+
+                // Déplacement du fichier vers le dossier "img/photojeu" avec un nom basé sur l'ID de l'article
+                move_uploaded_file(
+                    $_FILES['photoGame']['tmp_name'],
+                    'img/photojeu/' . $idJeu . "." . $extension_upload
+                );
+                // $erreur = "Transfert du fichier <b> " . $_FILES['photoGame']['name'] . " </b> effectué !";
+                // return $erreur;
+
+            } else {
+                // Si le dossier n'existe pas, on le crée et on déplace le fichier
+                mkdir('img/photojeu');
+                move_uploaded_file(
+                    $_FILES['photoGame']['tmp_name'],
+                    'img/photojeu/' . $idJeu . "." . $extension_upload
+                );
+                // $erreur = "Transfert du fichier <b> " . $_FILES['photoGame']['name'] . " </b> effectué !";
+                // return $erreur;
+            }
+
+        }
+        else {
+            // Si l'extension du fichier n'est pas autorisée
+            return "Fichier non autorisé";
         }
     }
 

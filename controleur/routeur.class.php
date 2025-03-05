@@ -179,7 +179,7 @@ class routeur
                         case "modifierjeu":
                             if ($user[0]['niveau'] == 'admin') {
                                 if (isset($_GET['idjeu'])) {
-                                    $this->ctlJeux->enregistrerModif($_GET['idjeu'], $_POST['titre'], $_POST['ville'], $_POST['mail'], $_POST['link'], $_POST['description'], $_POST['min'], $_POST['max'], $_POST['age'], $_POST['adresse'], $_POST['postale']);
+                                    $this->ctlJeux->enregistrerModif($_GET['idjeu'], $_POST['titre'], $_POST['link'], $_POST['min'], $_POST['max'], $_POST['age'], $_POST['prix'], $_POST['description'], $_POST['ville'], $_POST['region'], $_POST['adresse'], $_POST['postale'], $_POST['Pays'], $_POST['coordonneesX'], $_POST['coordonneesY']);
                                 } else {
                                     $this->ctlPage->accueil();
                                 }

@@ -17,11 +17,11 @@ class jeux extends database
         $this->execReqPrep($req, $data);
     }
 
-    public function enregModifJeu($id, $titre, $ville, $mail, $link, $description, $min, $max, $age, $adresse, $postale)
+    public function enregModifJeu($id, $titre, $link, $min, $max, $age, $prix, $description, $ville, $region, $adresse, $postale, $pays, $coX, $coy)
     {
-        $data = array($ville, $mail, $link, $description, $titre, $min, $max, $age, $adresse, $postale, $id);
+        $data = array($titre, $link, $min, $max, $age, $prix, $description, $ville, $region, $adresse, $postale, $pays, $coX, $coy, $id);
 
-        $req = "UPDATE `jeux` SET `ville` = ?, `mail` = ?, `lien_video` = ?, `description` = ?, `Titre` = ?, `nombre_min` = ?, `nombre_max` = ?, `age` = ?, `adresse` = ?, `postale` = ? WHERE `jeux`.`ID_jeu` = ?;";
+        $req = "UPDATE `jeux` SET `Titre` = ?, `lien_video` = ?, `nombre_min` = ?, `nombre_max` = ?, `age` = ?, `prix` = ?, `description` = ?, `ville` = ?, `region` = ?, `adresse` = ?, `postale` = ?, `pays` = ?, `coX` = ?, `coY` = ? WHERE `jeux`.`ID_jeu` = ?;";
 
         // Exécution de la requête préparée
         $this->execReqPrep($req, $data);

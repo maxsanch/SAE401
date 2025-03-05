@@ -61,7 +61,12 @@ class vue {
     
     ob_start();
 
-    require "partials/footer.php";
+    if(isset($_SESSION['acces'])){
+      require "partials/footer/footer_connectee.php";
+    }
+    else{
+      require "partials/footer/footer_deconnectee.php";
+    }
 
     $footer = ob_get_clean();
 

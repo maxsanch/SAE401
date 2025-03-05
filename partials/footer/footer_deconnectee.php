@@ -14,9 +14,12 @@
                 </div>
                 <h3>Nos réseaux</h3>
                 <div class="ReseauImg">
-                    <div><a href="https://www.facebook.com/weescapegmbh"><img src="../img/facebook.svg" alt="icon de facebook"></a></div>
-                    <div><a href="https://www.instagram.com/we_escape_abenteuer/"><img src="../img/instagram.svg" alt="icon de instagram"></a></div>
-                    <div><a href="https://www.youtube.com/@We-Escape"><img src="../img/youtube.svg" alt="icon de youtube"></a></div>
+                    <div><a href="https://www.facebook.com/weescapegmbh"><img src="../img/facebook.svg"
+                                alt="icon de facebook"></a></div>
+                    <div><a href="https://www.instagram.com/we_escape_abenteuer/"><img src="../img/instagram.svg"
+                                alt="icon de instagram"></a></div>
+                    <div><a href="https://www.youtube.com/@We-Escape"><img src="../img/youtube.svg"
+                                alt="icon de youtube"></a></div>
                 </div>
             </div>
             <div class="MiseEnPageFooter">
@@ -33,17 +36,22 @@
                     <div class="ContactMail">
                         <div><a href="mailto:noah.goguet@uha.fr">noah.goguet@uha.fr</a></div>
                         <div><a href="mailto:alexandre.spitzer@uha.fr">alexandre.spitzer@uha.fr</a></div>
-                        <div><a href="mailto:maxence.sanchez-varas-leclercq@uha.fr">maxence.sanchez-varas-leclercq@uha.fr</a></div>
+                        <div><a
+                                href="mailto:maxence.sanchez-varas-leclercq@uha.fr">maxence.sanchez-varas-leclercq@uha.fr</a>
+                        </div>
                     </div>
                 </div>
             </div>
             <div class="MiseEnPageFooter">
                 <h3 class="NoMargin">Information</h3>
                 <div class="Information">
-                    <div><a href="index.php?page=jeuxAll">Nos jeux</a></div>
+                    <div><a href="index.php?page=connexion">Se connecter</a></div>
+                    <div><a href="index.php">Accueil</a></div>
+                    <div><a href="index.php?page=propos">A propos</a></div>
+                    <div><a href="index.php?page=jeuxAll">Les jeux</a></div>
                     <div><a href="index.php?page=carte">Nous trouver</a></div>
-                    <div><a href="index.php?page=reglement">Réservation</a></div>
-                    <div><a href="index.php?page=Contacts">Contact</a></div>
+                    <div><a href="index.php?page=Contacts">Contacts</a></div>
+                    <div><a href="index.php?page=shop">Boutique souvenir</a></div>
                 </div>
             </div>
         </div>

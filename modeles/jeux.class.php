@@ -11,7 +11,7 @@ class jeux extends database
         // Création d'un tableau de données avec l'ID de l'utilisateur
         $data = array($lieu, $link, $desc, $titre, $min, $max, $age, $adresse, $postale, $prix, $pays, $coX, $coY, $region);
 
-        $req = "INSERT INTO `jeux` (`ID_jeu`, `ville`, `lien_video`, `description`, `Titre`, `nombre_min`, `nombre_max`, `age`, `adresse`, `postale`, `prix`, `pays`, `coX`, `coY`, `region`) VALUES (NULL, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?);";
+        $req = "INSERT INTO `jeux` (`ID_jeu`, `ville`, `lien_video`, `description`, `Titre`, `nombre_min`, `nombre_max`, `age`, `adresse`, `postale`, `prix`, `pays`, `coX`, `coY`, `region`, `Titre_anglais`, `Description_anglais`) VALUES (NULL, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, 'test', 'test');";
 
         // Exécution de la requête préparée
         $this->execReqPrep($req, $data);
@@ -21,7 +21,7 @@ class jeux extends database
     {
         $data = array($titre, $link, $min, $max, $age, $prix, $description, $ville, $region, $adresse, $postale, $pays, $coX, $coy, $id);
 
-        $req = "UPDATE `jeux` SET `Titre` = ?, `lien_video` = ?, `nombre_min` = ?, `nombre_max` = ?, `age` = ?, `prix` = ?, `description` = ?, `ville` = ?, `region` = ?, `adresse` = ?, `postale` = ?, `pays` = ?, `coX` = ?, `coY` = ? WHERE `jeux`.`ID_jeu` = ?;";
+        $req = "UPDATE `jeux` SET `Titre` = ?, `lien_video` = ?, `nombre_min` = ?, `nombre_max` = ?, `age` = ?, `prix` = ?, `description` = ?, `ville` = ?, `region` = ?, `adresse` = ?, `postale` = ?, `pays` = ?, `coX` = ?, `coY` = ?, `Titre_anglais` = '', `Description_anglais` = '' WHERE `jeux`.`ID_jeu` = ?;";
 
         // Exécution de la requête préparée
         $this->execReqPrep($req, $data);
@@ -100,21 +100,16 @@ class jeux extends database
                 }
             } else {
                 if ($_FILES['photoGame']["size"] >= 500000) {
-                    var_dump('ici');
                     // Si le transfert a échoué avec un code d'erreur
                     $erreur1 = "Fichier trop volumineux.";
                     $page->ajoutjeux($erreur1);
                 } else {
-                    if ($_FILES['photoGame']["error"] == 4) {
-                        // Si le transfert a échoué avec un code d'erreur
-                        $erreur1 = "Le jeu a été ajouté, sans images d'illustration.";
-                        $page->ajoutjeux($erreur1);
-                    } else {
-                        // Si le transfert a échoué avec un code d'erreur
-                        $erreur1 = "Une erreur est survenue";
-                        $page->ajoutjeux($erreur1);
-                    }
+                    // Si le transfert a échoué avec un code d'erreur
+                    $erreur1 = "Une erreur est survenue";
+                    $page->ajoutjeux($erreur1);
                 }
+
+                //throw new Exception("Une erreur est survenue lors de l'envoie, code d'erreur : {$_FILES['photoGame']['error']}");
             }
         }
     }

@@ -15,8 +15,19 @@ class ctlJeux{
     public function ajouterjeu($titre, $ville, $link, $desc, $min, $max, $age, $adresse, $postale, $prix, $pays, $coX, $coY, $region){
         $this->jeu->ajouterjeuBDD($titre, $ville, $link, $desc, $min, $max, $age, $adresse, $postale, $prix, $pays, $coX, $coY, $region);
         $idjeu = $this->jeu->recupJeu();
-        $this->jeu->enregjeuphoto($idjeu);
-        $this->ajoutjeux("le jeu à bien été ajouté.");
+        if(isset($_FILES['photoGame'])){
+            if ($_FILES['photoGame']["error"] == 4) {
+                // Si le transfert a  réussi sasn image.
+                $this->ajoutjeux("le jeu à bien été ajouté, sans image d'illustration.");
+            } else {
+                // Si le transfert a réussi avec une image transférée
+                $erreur = $this->jeu->enregjeuphoto($idjeu);
+                $this->ajoutjeux("le jeu à bien été ajouté.");
+            }
+        }
+        else{
+            $this->ajoutjeux("le jeu à bien été ajouté, sans image d'illustration.");
+        }
     }
 
     public function alljeux($erreur = ""): void{

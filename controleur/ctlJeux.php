@@ -14,9 +14,9 @@ class ctlJeux
         $this->jeu = new jeux;
     }
 
-    public function ajouterjeu($titre, $ville, $link, $desc, $min, $max, $age, $adresse, $postale, $prix, $pays, $coX, $coY, $region)
+    public function ajouterjeu($titre, $ville, $link, $desc, $min, $max, $age, $adresse, $postale, $prix, $pays, $coX, $coY, $region, $titreanglais, $descriptionanglais)
     {
-        $this->jeu->ajouterjeuBDD($titre, $ville, $link, $desc, $min, $max, $age, $adresse, $postale, $prix, $pays, $coX, $coY, $region);
+        $this->jeu->ajouterjeuBDD($titre, $ville, $link, $desc, $min, $max, $age, $adresse, $postale, $prix, $pays, $coX, $coY, $region, $titreanglais, $descriptionanglais);
         $idjeu = $this->jeu->recupJeu();
         if (isset($_FILES['photoGame'])) {
             // Vérification si le fichier ne contient pas d'erreur
@@ -35,13 +35,13 @@ class ctlJeux
                 // Si le transfert a  réussi sasn image.
                 $this->ajoutjeux("le jeu à bien été ajouté, sans image d'illustration.");
             } else {
-                if ($_FILES['photoGame']["size"] >= 500000) {
+                if ($_FILES['photoGame']["size"] <= 500000) {
                     // Si le transfert a échoué avec un code d'erreur
-                    $erreur1 = "Fichier trop volumineux.";
+                    $erreur1 = "Fichier trop volumineux pour enregistrer l'image, jeu ajouté.";
                     $this->ajoutjeux($erreur1);
                 } else {
                     // Si le transfert a échoué avec un code d'erreur
-                    $erreur1 = "Une erreur est survenue";
+                    $erreur1 = "Une erreur est survenue pour l'image, jeu ajouté.";
                     $this->ajoutjeux($erreur1);
                 }
             }
@@ -77,16 +77,39 @@ class ctlJeux
         $vue->afficher(array("jeu" => $jeu));
     }
 
-    public function enregistrerModif($id, $titre, $link, $min, $max, $age, $prix, $description, $ville, $region, $adresse, $postale, $pays, $coX, $coy)
+    public function enregistrerModif($id, $titre, $link, $min, $max, $age, $prix, $description, $ville, $region, $adresse, $postale, $pays, $coX, $coy, $titreanglais, $descriptionanglais)
     {
-        $this->jeu->enregModifJeu($id, $titre, $link, $min, $max, $age, $prix, $description, $ville, $region, $adresse, $postale, $pays, $coX, $coy);
-
+        $this->jeu->enregModifJeu($id, $titre, $link, $min, $max, $age, $prix, $description, $ville, $region, $adresse, $postale, $pays, $coX, $coy, $titreanglais, $descriptionanglais);
         if (isset($_FILES['photoGame'])) {
-            if ($_FILES['photoGame']["error"] != 4) {
-                $this->jeu->enregjeuphoto($id);
+            // Vérification si le fichier ne contient pas d'erreur
+            if ($_FILES['photoGame']["error"] == 0) {
+                // Si le transfert a réussi avec une image transférée
+                $erreur = $this->jeu->enregjeuphoto($id);
+                if(empty($erreur)){
+                    $this->ajoutjeux('le jeu a bien été modifié');
+                }
+                else{
+                    $this->ajoutjeux($erreur);
+                }
+
+                $this->ajoutjeux("le jeu à bien été ajouté.");
+            } else if ($_FILES['photoGame']["error"] == 4) {
+                // Si le transfert a  réussi sasn image.
+                $this->ajoutjeux("le jeu à bien été modifié.");
+            } else {
+                if ($_FILES['photoGame']["size"] <= 500000) {
+                    // Si le transfert a échoué avec un code d'erreur
+                    $erreur1 = "Fichier trop volumineux pour enregistrer l'image, jeu modifié.";
+                    $this->ajoutjeux($erreur1);
+                } else {
+                    // Si le transfert a échoué avec un code d'erreur
+                    $erreur1 = "Une erreur est survenue pour l'image, jeu modifié.";
+                    $this->ajoutjeux($erreur1);
+                }
             }
+        } else {
+            $this->ajoutjeux("le jeu à bien été modifié.");
         }
-        $this->ajoutjeux("le jeu à bien été modifié.");
     }
 
     public function jeuxsingle($idjeu)

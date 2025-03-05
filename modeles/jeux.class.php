@@ -6,22 +6,22 @@ require_once $_SERVER['DOCUMENT_ROOT'] . "/controleur/ctlJeux.php";
 class jeux extends database
 {
 
-    public function ajouterjeuBDD($titre, $lieu, $link, $desc, $min, $max, $age, $adresse, $postale, $prix, $pays, $coX, $coY, $region)
+    public function ajouterjeuBDD($titre, $lieu, $link, $desc, $min, $max, $age, $adresse, $postale, $prix, $pays, $coX, $coY, $region, $titreanglais, $descriptionanglais)
     {
         // Création d'un tableau de données avec l'ID de l'utilisateur
-        $data = array($lieu, $link, $desc, $titre, $min, $max, $age, $adresse, $postale, $prix, $pays, $coX, $coY, $region);
+        $data = array($lieu, $link, $desc, $titre, $min, $max, $age, $adresse, $postale, $prix, $pays, $coX, $coY, $region, $titreanglais, $descriptionanglais);
 
-        $req = "INSERT INTO `jeux` (`ID_jeu`, `ville`, `lien_video`, `description`, `Titre`, `nombre_min`, `nombre_max`, `age`, `adresse`, `postale`, `prix`, `pays`, `coX`, `coY`, `region`, `Titre_anglais`, `Description_anglais`) VALUES (NULL, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, 'test', 'test');";
+        $req = "INSERT INTO `jeux` (`ID_jeu`, `ville`, `lien_video`, `description`, `Titre`, `nombre_min`, `nombre_max`, `age`, `adresse`, `postale`, `prix`, `pays`, `coX`, `coY`, `region`, `Titre_anglais`, `Description_anglais`) VALUES (NULL, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?);";
 
         // Exécution de la requête préparée
         $this->execReqPrep($req, $data);
     }
 
-    public function enregModifJeu($id, $titre, $link, $min, $max, $age, $prix, $description, $ville, $region, $adresse, $postale, $pays, $coX, $coy)
+    public function enregModifJeu($id, $titre, $link, $min, $max, $age, $prix, $description, $ville, $region, $adresse, $postale, $pays, $coX, $coy, $titreanglais, $descriptionanglais)
     {
-        $data = array($titre, $link, $min, $max, $age, $prix, $description, $ville, $region, $adresse, $postale, $pays, $coX, $coy, $id);
+        $data = array($titre, $link, $min, $max, $age, $prix, $description, $ville, $region, $adresse, $postale, $pays, $coX, $coy, $titreanglais, $descriptionanglais, $id);
 
-        $req = "UPDATE `jeux` SET `Titre` = ?, `lien_video` = ?, `nombre_min` = ?, `nombre_max` = ?, `age` = ?, `prix` = ?, `description` = ?, `ville` = ?, `region` = ?, `adresse` = ?, `postale` = ?, `pays` = ?, `coX` = ?, `coY` = ?, `Titre_anglais` = '', `Description_anglais` = '' WHERE `jeux`.`ID_jeu` = ?;";
+        $req = "UPDATE `jeux` SET `Titre` = ?, `lien_video` = ?, `nombre_min` = ?, `nombre_max` = ?, `age` = ?, `prix` = ?, `description` = ?, `ville` = ?, `region` = ?, `adresse` = ?, `postale` = ?, `pays` = ?, `coX` = ?, `coY` = ?, `Titre_anglais` = ?, `Description_anglais` = ? WHERE `jeux`.`ID_jeu` = ?;";
 
         // Exécution de la requête préparée
         $this->execReqPrep($req, $data);

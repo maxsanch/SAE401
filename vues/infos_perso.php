@@ -3,7 +3,7 @@
 require_once "modeles/panier.class.php";
 
 $librairie = '';
-
+$styles_telephone = "";
 $styles = "../styles/style_infos_perso.css";
 
 $script = "";

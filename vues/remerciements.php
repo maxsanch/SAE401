@@ -1,7 +1,7 @@
 <?php
 
 $styles = "styles/remerciements.css";
-
+$styles_telephone = "";
 $librairie = '';
 
 $script = "";

@@ -133,7 +133,7 @@ class routeur
                             break;
                         case "AjoutJeu":
                             if ($user[0]['niveau'] == 'admin') {
-                                if (isset($_POST['titre']) && isset($_POST['ville']) && isset($_POST['link']) && isset($_POST['description']) && isset($_POST['min']) && isset($_POST['max']) && isset($_POST['age']) && isset($_POST['adresse']) && isset($_POST['postale']) && isset($_POST['prix']) && isset($_POST['region'])) {
+                                if (isset($_POST['titre']) && isset($_POST['ville']) && isset($_POST['link']) && isset($_POST['description']) && isset($_POST['min']) && isset($_POST['max']) && isset($_POST['age']) && isset($_POST['adresse']) && isset($_POST['postale']) && isset($_POST['prix']) && isset($_POST['region']) && isset($_POST['Titre_anglais']) && isset($_POST['Description_anglais'])) {
                                     if (empty($_POST['Pays'])) {
                                         $pays = 'aucun';
                                         $coX = 0;
@@ -150,7 +150,7 @@ class routeur
                                             $coY = 0;
                                         }
                                     }
-                                    $this->ctlJeux->ajouterjeu($_POST['titre'], $_POST['ville'], $_POST['link'], $_POST['description'], $_POST['min'], $_POST['max'], $_POST['age'], $_POST['adresse'], $_POST['postale'], $_POST['prix'], $pays, $coX, $coY, $_POST['region']);
+                                    $this->ctlJeux->ajouterjeu($_POST['titre'], $_POST['ville'], $_POST['link'], $_POST['description'], $_POST['min'], $_POST['max'], $_POST['age'], $_POST['adresse'], $_POST['postale'], $_POST['prix'], $pays, $coX, $coY, $_POST['region'], $_POST['Titre_anglais'], $_POST['Description_anglais']);
                                 } else {
                                     $this->ctlJeux->ajoutjeux("");
                                 }
@@ -179,7 +179,7 @@ class routeur
                         case "modifierjeu":
                             if ($user[0]['niveau'] == 'admin') {
                                 if (isset($_GET['idjeu'])) {
-                                    $this->ctlJeux->enregistrerModif($_GET['idjeu'], $_POST['titre'], $_POST['link'], $_POST['min'], $_POST['max'], $_POST['age'], $_POST['prix'], $_POST['description'], $_POST['ville'], $_POST['region'], $_POST['adresse'], $_POST['postale'], $_POST['Pays'], $_POST['coordonneesX'], $_POST['coordonneesY']);
+                                    $this->ctlJeux->enregistrerModif($_GET['idjeu'], $_POST['titre'], $_POST['link'], $_POST['min'], $_POST['max'], $_POST['age'], $_POST['prix'], $_POST['description'], $_POST['ville'], $_POST['region'], $_POST['adresse'], $_POST['postale'], $_POST['Pays'], $_POST['coordonneesX'], $_POST['coordonneesY'], $_POST['Titre_anglais'], $_POST['Description_anglais']);
                                 } else {
                                     $this->ctlPage->accueil();
                                 }

@@ -1,5 +1,5 @@
 <?php
-
+$styles_telephone = "";
 $styles = "../styles/style_ajoutJeu.css";
 
 if (file_exists('img/photojeu/' . $_GET['idJeu']  . '.jpg')) {
@@ -26,7 +26,10 @@ $librairie = "";
 </div>
 <div class="gridTop">
     <form action="<?= $_SERVER['PHP_SELF'] . '?page=modifierjeu&idjeu=' . $_GET['idJeu'] . '' ?>" method="post" enctype="multipart/form-data">
-        <input type="text" name="titre" placeholder="un titre pour le jeu"  value="<?= $jeu['Titre'] ?>">
+        <div class="nombre">
+            <input type="text" name="titre" placeholder="un titre pour le jeu"  value="<?= $jeu['Titre'] ?>">
+            <input type="text" name="Titre_anglais" placeholder="un titre pour le jeu"  value="<?= $jeu['Titre_anglais'] ?>">
+        </div>
         <input type="text" name="link" value="<?= $jeu['lien_video'] ?>"
             placeholder="entrez le lien d'une vidéo youtube (partager, puis enlever : https://youtu.be/)">
         <div class="nombre">
@@ -37,7 +40,10 @@ $librairie = "";
             <input type="number" value="<?= $jeu['age'] ?>" name="age" placeholder="age participants">
             <input type="number" value="<?= $jeu['prix'] ?>" name="prix" placeholder="prix">
         </div>
-        <textarea name="description" id="test"><?= $jeu['description'] ?></textarea>
+        <div class="nombre">
+            <textarea required name="description" id="test"><?= $jeu['description'] ?></textarea>
+            <textarea required name="Description_anglais" id="test"><?= $jeu['Description_anglais'] ?></textarea>
+        </div>
         <div class="in">
             infos ville : Cliquez sur la carte pour ajouter l'emplacement.
         </div>

@@ -2,7 +2,7 @@
 require_once "modeles/panier.class.php";
 
 $styles = "../styles/style_modifuser.css";
-
+$styles_telephone = "";
 $librairie = '';
 
 if (file_exists('img/user/' . $_GET['idUser'] . '.jpg')) {

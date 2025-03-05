@@ -5,7 +5,7 @@ $styles = "";
 $librairie = '';
 
 $script = "";
-
+$styles_telephone = "";
 ?>
 
 <div class="erreur">

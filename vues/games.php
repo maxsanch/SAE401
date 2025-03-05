@@ -38,7 +38,7 @@ foreach ($jeux as $valeur) {
 
         <div class='BoutonEscapeGame'>
             <a href='index.php?page=infojeusolo&idjeu=".$valeur['ID_jeu']."' class='EscapeGameBouton'>Voir plus</a>
-            <a href='/' class='EscapeGameBouton'>Réserver</a>
+            <a  class='number' href='index.php?page=infojeusolo&idjeu=".$valeur['ID_jeu']."&nombre=0#calender' class='EscapeGameBouton'>Réserver</a>
         </div>
     </div>
 </div>";

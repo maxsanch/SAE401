@@ -14,37 +14,36 @@
                 </div>
                 <h3>Nos réseaux</h3>
                 <div class="ReseauImg">
-                    <div><img src="../img/facebook.svg" alt="icon de facebook"></div>
-                    <div><img src="../img/instagram.svg" alt="icon de instagram"></div>
-                    <div><img src="../img/youtube.svg" alt="icon de youtube"></div>
+                    <div><a href="https://www.facebook.com/weescapegmbh"><img src="../img/facebook.svg" alt="icon de facebook"></a></div>
+                    <div><a href="https://www.instagram.com/we_escape_abenteuer/"><img src="../img/instagram.svg" alt="icon de instagram"></a></div>
+                    <div><a href="https://www.youtube.com/@We-Escape"><img src="../img/youtube.svg" alt="icon de youtube"></a></div>
                 </div>
             </div>
             <div class="MiseEnPageFooter">
                 <h3 class="NoMargin">Contact</h3>
                 <div class="ContactGroup">
                     <div class="Contactimg"><img src="../img/telephone.svg" alt="Icon de téléphone"></div>
-                    <div>07668 996660</div>
+                    <div><a href="tel:+33766899666">07668 99666</a></div>
                 </div>
                 <div class="ContactGroup">
                     <div class="ContactMail">
                         <div class="Contactimg"><img src="../img/mail.svg" alt="Icon de mail"></div>
-                        <div>booking@we-escape.de</div>
+                        <div><a href="mailto:booking@we-escape.de">booking@we-escape.de</a></div>
                     </div>
                     <div class="ContactMail">
-                        <div>noah.goguet@uha.fr</div>
-                        <div>alexandre.spitzer@uha.fr</div>
-                        <div>maxence.sanchez-varas-leclercq@uha.fr</div>
+                        <div><a href="mailto:noah.goguet@uha.fr">noah.goguet@uha.fr</a></div>
+                        <div><a href="mailto:alexandre.spitzer@uha.fr">alexandre.spitzer@uha.fr</a></div>
+                        <div><a href="mailto:maxence.sanchez-varas-leclercq@uha.fr">maxence.sanchez-varas-leclercq@uha.fr</a></div>
                     </div>
                 </div>
             </div>
             <div class="MiseEnPageFooter">
                 <h3 class="NoMargin">Information</h3>
                 <div class="Information">
-                    <div>Nos jeux</div>
-                    <div>Nous trouver</div>
-                    <div>Réservation</div>
-                    <div>Blog / FAQ</div>
-                    <div>Contact</div>
+                    <div><a href="index.php?page=jeuxAll">Nos jeux</a></div>
+                    <div><a href="index.php?page=carte">Nous trouver</a></div>
+                    <div><a href="index.php?page=reglement">Réservation</a></div>
+                    <div><a href="index.php?page=Contacts">Contact</a></div>
                 </div>
             </div>
         </div>

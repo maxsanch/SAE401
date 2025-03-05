@@ -149,6 +149,6 @@ class ctlConnexion
         session_destroy();
         setcookie(session_name(), '', time() - 1, "/");
         // retour à l'accueil
-        $this->routeur->accueil();
+        header("Location: index.php");
     }
 }

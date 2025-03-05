@@ -12,8 +12,8 @@ class ctlJeux{
         $this->jeu = new jeux;
     }
 
-    public function ajouterjeu($titre, $ville, $link, $desc, $min, $max, $age, $adresse, $postale, $prix, $pays, $coX, $coY){
-        $this->jeu->ajouterjeuBDD($titre, $ville, $link, $desc, $min, $max, $age, $adresse, $postale, $prix, $pays, $coX, $coY);
+    public function ajouterjeu($titre, $ville, $link, $desc, $min, $max, $age, $adresse, $postale, $prix, $pays, $coX, $coY, $region){
+        $this->jeu->ajouterjeuBDD($titre, $ville, $link, $desc, $min, $max, $age, $adresse, $postale, $prix, $pays, $coX, $coY, $region);
         $idjeu = $this->jeu->recupJeu();
         $this->jeu->enregjeuphoto($idjeu);
         $this->ajoutjeux("le jeu à bien été ajouté.");
@@ -44,6 +44,7 @@ class ctlJeux{
 
     public function enregistrerModif($id, $titre, $link, $min, $max, $age, $prix, $description, $ville, $region, $adresse, $postale, $pays, $coX, $coy){
         $this->jeu->enregModifJeu($id, $titre, $link, $min, $max, $age, $prix, $description, $ville, $region, $adresse, $postale, $pays, $coX, $coy);
+
         if (isset($_FILES['photoGame'])) {
             if ($_FILES['photoGame']["error"] != 4) {
                 $this->jeu->enregjeuphoto($id);

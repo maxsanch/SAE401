@@ -24,9 +24,10 @@ foreach ($jeux as $valeur) {
 
 ?>
 
+<div class="content">
+<h1>We-escape maintenant en france !</h1>
+<div class="rectangleTitre"></div>
 <div class="lesCartes">
-    <h1>We-escape maintenant en france !</h1>
-    <div class="rectangleTitre"></div>
     <div class="lesCartes">
         <div class="france">
             <img src="../img/france.svg" alt="">
@@ -38,16 +39,19 @@ foreach ($jeux as $valeur) {
         </div>
     </div>
 </div>
-<div class="lesVilles">
+
 <h2>Retrouvez nous dans ces villes !</h2>
-    <div class="rectangleTitre"></div>
+<div class="rectangleTitre"></div>
+<div class="lesVilles">
     <div class="DivVilles">
         <div class="grandeVilles">Région grand est</div>
+        <div class="rectangleVille"></div>
         <div class="petiteVille">Mulhouse</div>
         <div class="petiteVille">Strasbourg</div>
     </div>
     <div class="DivVilles">
         <div class="grandeVilles">Lorraine</div>
+        <div class="rectangleVille"></div>
         <div class="petiteVille">Ville</div>
         <div class="petiteVille">Ville</div>
         <div class="petiteVille">Ville</div>
@@ -55,6 +59,7 @@ foreach ($jeux as $valeur) {
     </div>
     <div class="DivVilles">
         <div class="grandeVilles">Lorraine</div>
+        <div class="rectangleVille"></div>
         <div class="petiteVille">Ville</div>
         <div class="petiteVille">Ville</div>
         <div class="petiteVille">Ville</div>
@@ -62,13 +67,16 @@ foreach ($jeux as $valeur) {
     </div>
     <div class="DivVilles">
         <div class="grandeVilles">Lorraine</div>
+        <div class="rectangleVille"></div>
         <div class="petiteVille">Ville</div>
         <div class="petiteVille">Ville</div>
     </div>
     <div class="DivVilles">
         <div class="grandeVilles">Lorraine</div>
+        <div class="rectangleVille"></div>
         <div class="petiteVille">Ville</div>
         <div class="petiteVille">Ville</div>
         <div class="petiteVille">Ville</div>
     </div>
+</div>
 </div>

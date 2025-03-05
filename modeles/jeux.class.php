@@ -6,12 +6,12 @@ require_once $_SERVER['DOCUMENT_ROOT'] . "/controleur/ctlJeux.php";
 class jeux extends database
 {
 
-    public function ajouterjeuBDD($titre, $lieu, $link, $desc, $min, $max, $age, $adresse, $postale, $prix, $pays, $coX, $coY)
+    public function ajouterjeuBDD($titre, $lieu, $link, $desc, $min, $max, $age, $adresse, $postale, $prix, $pays, $coX, $coY, $region)
     {
         // Création d'un tableau de données avec l'ID de l'utilisateur
-        $data = array($lieu, $link, $desc, $titre, $min, $max, $age, $adresse, $postale, $prix, $pays, $coX, $coY);
+        $data = array($lieu, $link, $desc, $titre, $min, $max, $age, $adresse, $postale, $prix, $pays, $coX, $coY, $region);
 
-        $req = "INSERT INTO `jeux` (`ID_jeu`, `ville`, `lien_video`, `description`, `Titre`, `nombre_min`, `nombre_max`, `age`, `adresse`, `postale`, `prix`, `pays`, `coX`, `coY`) VALUES (NULL, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?);";
+        $req = "INSERT INTO `jeux` (`ID_jeu`, `ville`, `lien_video`, `description`, `Titre`, `nombre_min`, `nombre_max`, `age`, `adresse`, `postale`, `prix`, `pays`, `coX`, `coY`, `region`) VALUES (NULL, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?);";
 
         // Exécution de la requête préparée
         $this->execReqPrep($req, $data);

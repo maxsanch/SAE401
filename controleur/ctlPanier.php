@@ -154,6 +154,8 @@ class ctlPanier
         $panierUtilisateur = $this->panier->MesRéservations($infouser[0]['Id_utilisateur']);
         $SouvenirsUtilisateur = $this->panier->MesSouvenirs($infouser[0]['Id_utilisateur']);
 
+        
+
         if(!empty($panierUtilisateur) || !empty($SouvenirsUtilisateur)){
             $this->panier->validerPanier($infouser[0]['Id_utilisateur']);
             $date = new DateTime();

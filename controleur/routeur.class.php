@@ -139,12 +139,11 @@ class routeur
                                         $coX = 0;
                                         $coY = 0;
                                     } else {
-                                        if(is_numeric($_POST['coordonneesX']) && is_numeric($_POST['coordonneesY'])){
+                                        if (is_numeric($_POST['coordonneesX']) && is_numeric($_POST['coordonneesY'])) {
                                             $pays = $_POST['Pays'];
                                             $coX = $_POST['coordonneesX'];
                                             $coY = $_POST['coordonneesY'];
-                                        }
-                                        else{
+                                        } else {
                                             $pays = 'aucun';
                                             $coX = 0;
                                             $coY = 0;
@@ -251,9 +250,16 @@ class routeur
                             $erreur = "";
                             $this->ctlConnexion->connexion($erreur);
                             break;
+                        case "réserverJeu":
+                            $this->ctlConnexion->connexion("Vous devez être connecté pour commander.");
+                            break;
+                        case 'ajouterObjPanier':
+                            $this->ctlConnexion->connexion("Vous devez être connecté pour commander.");
+                            break;
                         case "login":
                             $this->ctlConnexion->login($_POST['email'], $_POST['MDP']);
                             break;
+
                         case "signin":
                             $this->ctlConnexion->signin($_POST['prenom'], $_POST['nom'], $_POST['email'], $_POST['adresse'], $_POST['MDP']);
                             break;

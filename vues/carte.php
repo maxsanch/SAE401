@@ -30,11 +30,11 @@ foreach ($jeux as $valeur) {
 <div class="lesCartes">
     <div class="lesCartes">
         <div class="france">
-            <img src="../img/france.svg" alt="">
+            <img src="../img/france.svg" alt="Carte de la France">
             <?= $pointFrancais ?>
         </div>
         <div class="germany">
-            <img src="../img/germany.svg" alt="">
+            <img src="../img/germany.svg" alt="Carte de l'allemagne">
             <?= $pointAllemagne ?>
         </div>
     </div>

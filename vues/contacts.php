@@ -31,7 +31,7 @@ foreach ($employes as $valeur) {
 <div class="contacts">
     <div class="phone">
         <div class="icone">
-            <img src="../img/phone-call_1.svg" alt="">
+            <img src="../img/phone-call_1.svg" alt="icone de téléphone">
         </div>
         <div class="info">
             <div class="info1">
@@ -44,7 +44,7 @@ foreach ($employes as $valeur) {
     </div>
     <div class="mail">
         <div class="icone">
-            <img src="../img/envelope_1.svg" alt="">
+            <img src="../img/envelope_1.svg" alt="icone de mail">
         </div>
         <div class="info">
             réservation@we-escape.de

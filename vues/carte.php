@@ -1,8 +1,8 @@
 <?php
 
-$styles="../styles/style_carte.css";
-$librairie="";
-$script  = "";
+$styles = "../styles/style_carte.css";
+$librairie = "";
+$script = "";
 $styles_telephone = "";
 $pointFrancais = "";
 $pointAllemagne = "";
@@ -10,73 +10,56 @@ $pointAllemagne = "";
 foreach ($jeux as $valeur) {
     switch ($valeur['pays']) {
         case "France":
-            $pointFrancais .= '<a href="index.php?page=infojeusolo&idjeu='.$valeur['ID_jeu'].'" class="point" style="top: ' . $valeur['coY'] . 'px; left: ' . $valeur['coX'] . 'px;">
+            $pointFrancais .= '<a href="index.php?page=infojeusolo&idjeu=' . $valeur['ID_jeu'] . '" class="point" style="top: ' . $valeur['coY'] . 'px; left: ' . $valeur['coX'] . 'px;">
                                     <img src="../img/map.svg" alt="map point">
                                 </a>';
             break;
         case 'Allemagne':
-            $pointAllemagne = '<a href="index.php?page=infojeusolo&idjeu='.$valeur['ID_jeu'].'" class="point" style="top: ' . $valeur['coY'] . 'px; left: ' . $valeur['coX'] . 'px;">
+            $pointAllemagne = '<a href="index.php?page=infojeusolo&idjeu=' . $valeur['ID_jeu'] . '" class="point" style="top: ' . $valeur['coY'] . 'px; left: ' . $valeur['coX'] . 'px;">
                                     <img src="../img/map.svg" alt="map point">
                                 </a>';
             break;
     }
 }
 
+
+$regionstot = '';
+
+foreach ($regions as $content) {
+    $villesolo = "";
+    foreach ($jeux as $valeur) {
+        if($content['region'] == $valeur['region']){
+            $villesolo .= '<div class="petiteVille">'.$valeur['ville'].'</div>';
+        }
+    }
+    $regionstot .= '<div class="DivVilles">
+        <div class="grandeVilles">' . $content['region'] . '</div>
+        <div class="rectangleVille"></div>
+        '.$villesolo.'
+    </div>';
+}
+
 ?>
 
 <div class="content">
-<h1>We-escape maintenant en france !</h1>
-<div class="rectangleTitre"></div>
-<div class="lesCartes">
+    <h1>We-escape maintenant en france !</h1>
+    <div class="rectangleTitre"></div>
     <div class="lesCartes">
-        <div class="france">
-            <img src="../img/france.svg" alt="Carte de la France">
-            <?= $pointFrancais ?>
-        </div>
-        <div class="germany">
-            <img src="../img/germany.svg" alt="Carte de l'allemagne">
-            <?= $pointAllemagne ?>
+        <div class="lesCartes">
+            <div class="france">
+                <img src="../img/france.svg" alt="Carte de la France">
+                <?= $pointFrancais ?>
+            </div>
+            <div class="germany">
+                <img src="../img/germany.svg" alt="Carte de l'allemagne">
+                <?= $pointAllemagne ?>
+            </div>
         </div>
     </div>
-</div>
 
-<h2>Retrouvez nous dans ces villes !</h2>
-<div class="rectangleTitre"></div>
-<div class="lesVilles">
-    <div class="DivVilles">
-        <div class="grandeVilles">Région grand est</div>
-        <div class="rectangleVille"></div>
-        <div class="petiteVille">Mulhouse</div>
-        <div class="petiteVille">Strasbourg</div>
+    <h2>Retrouvez nous dans ces villes !</h2>
+    <div class="rectangleTitre"></div>
+    <div class="lesVilles">
+        <?= $regionstot ?>
     </div>
-    <div class="DivVilles">
-        <div class="grandeVilles">Lorraine</div>
-        <div class="rectangleVille"></div>
-        <div class="petiteVille">Ville</div>
-        <div class="petiteVille">Ville</div>
-        <div class="petiteVille">Ville</div>
-        <div class="petiteVille">Ville</div>
-    </div>
-    <div class="DivVilles">
-        <div class="grandeVilles">Lorraine</div>
-        <div class="rectangleVille"></div>
-        <div class="petiteVille">Ville</div>
-        <div class="petiteVille">Ville</div>
-        <div class="petiteVille">Ville</div>
-        <div class="petiteVille">Ville</div>
-    </div>
-    <div class="DivVilles">
-        <div class="grandeVilles">Lorraine</div>
-        <div class="rectangleVille"></div>
-        <div class="petiteVille">Ville</div>
-        <div class="petiteVille">Ville</div>
-    </div>
-    <div class="DivVilles">
-        <div class="grandeVilles">Lorraine</div>
-        <div class="rectangleVille"></div>
-        <div class="petiteVille">Ville</div>
-        <div class="petiteVille">Ville</div>
-        <div class="petiteVille">Ville</div>
-    </div>
-</div>
 </div>

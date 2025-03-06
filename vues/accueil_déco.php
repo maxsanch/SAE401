@@ -9,8 +9,12 @@ if (isset($_SESSION['acces'])) {
     } else {
         $test = "test user";
     }
+    $connecteoupas = 'Découvrir !';
+    $link = "index.php?page=jeuxAll";
 } else {
     $test = "test pas co";
+    $connecteoupas = 'Se connecter !';
+    $link = "index.php?page=connexion";
 }
 
 $librairie = "";
@@ -94,7 +98,7 @@ $script = "<script src='../js/accueil.js'></script>";
                     sur votre parcors afin de <b>vous échapper !</b></div>
             </div>
             <div class="AccueilBoutonsGlobal">
-                <a href="index.php?page=reglement" class="AccueilBouton">Je réserve !</a>
+                <a href="<?= $link ?>" class="AccueilBouton"><?= $connecteoupas ?></a>
                 <a href="index.php?page=propos" class="AccueilBouton">A propos</a>
             </div>
         </div>

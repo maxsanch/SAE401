@@ -124,8 +124,9 @@ class ctlJeux
     public function spots()
     {
         $jeux = $this->jeu->getjeux();
+        $regions = $this->jeu->getVilles();
 
         $vue = new vue('carte');
-        $vue->afficher(array('jeux' => $jeux));
+        $vue->afficher(array('jeux' => $jeux, 'regions' => $regions));
     }
 }

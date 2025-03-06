@@ -129,4 +129,10 @@ class jeux extends database
 
         return $this->execReq($req);
     }
+
+    public function getVilles(){
+        $req = "SELECT region FROM `jeux` GROUP BY region";
+
+        return $this->execReq($req);
+    }
 }

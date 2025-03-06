@@ -1,7 +1,7 @@
 <?php
 
 $styles = "../styles/style_apropos.css";
-
+$styles_telephone = "";
 $librairie = '';
 
 $script = "";

@@ -5,6 +5,7 @@
   <title><?= $title ?></title>
   <link rel="stylesheet" href="styles/styleheader.css">
   <link href="<?= $styles ?>" rel="stylesheet">
+  <link rel="stylesheet" media="screen(max-width: 620px)" href="<?= $styles_telephone ?>">
   <?= $librairie ?>
 </head>
 <body>

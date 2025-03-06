@@ -1,6 +1,7 @@
 <?php
 
 $styles = "styles/accueil.css"; // mettre le lien vers le style ici
+$styles_telephone = "";
 
 if (isset($_SESSION['acces'])) {
     if ($utilisateurStatut[0]['niveau'] == "admin") {

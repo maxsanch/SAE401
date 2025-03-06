@@ -1,7 +1,7 @@
 <?php
 
 $styles = '../styles/style_souvenirs.css';
-
+$styles_telephone = "";
 $result = "";
 
 $script = "";

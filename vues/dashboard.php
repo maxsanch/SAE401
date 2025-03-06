@@ -2,7 +2,7 @@
 require_once "controleur/ctlPanier.php";
 
 $styles = "../styles/style_dashboard.css";
-
+$styles_telephone = "";
 $librairie = '';
 
 $result = "";

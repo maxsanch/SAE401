@@ -33,7 +33,7 @@ foreach ($jeux as $valeur) {
         <div class='EscageGameBarreSelecteurGlobal'>
             <input type='range' id='volume' name='volume' min='" . $valeur['nombre_min'] . "' 
             max='" . $valeur['nombre_max'] . "' value='" . $valeur['nombre_min'] . "' />
-            <label>AFFICHER LA VALUE EN DIRECT !!!</label>
+            <label></label>
         </div>
 
         <div class='BoutonEscapeGame'>

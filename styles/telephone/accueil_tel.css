@@ -1,0 +1,63 @@
+header {
+    display: none;
+    background-color: red;
+}
+
+footer {
+    display: none;
+}
+
+.Carte {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+
+.pays {
+    transform: scale(75%);
+}
+
+.pays:first-of-type {
+    width: 400px; 
+    /* La taille est divisée par 1.5 pour la france */
+}
+
+.pays:nth-of-type(2) {
+    width: 300px; 
+    /* La taille est divisée par 1.5 pour l'allemagne aussi */
+}
+
+.Accueil{
+    grid-template-columns: 1fr;
+}
+
+.AccueilTitre{
+    line-height: 100%;
+}
+
+.AccueilBouton{
+    padding: 8px;
+    font-size: 16px;
+    font-family: Montserrat-bold;
+}
+
+.AccueilCle{
+    width: 90%;
+}
+
+.ListeDesEscapeGame>div{
+    justify-content: center;
+}
+
+.TitreEscapeGame{
+    padding-top: 8px;
+}
+
+.PresentationGlobal{
+    grid-template-columns: 1fr;
+}
+
+.PresentationGlobal{
+    padding: 0px;
+}

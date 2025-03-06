@@ -2,13 +2,15 @@
 <html lang="fr">
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title><?= $title ?></title>
   <link rel="stylesheet" href="styles/styleheader.css">
   <link href="<?= $styles ?>" rel="stylesheet">
-  <link rel="stylesheet" media="screen(max-width: 620px)" href="<?= $styles_telephone ?>">
+  <link rel="stylesheet" media="(width < 640px)" href="<?= $styles_telephone ?>">
   <?= $librairie ?>
 </head>
 <body>
+
   <header>
     <?= $header ?>
   </header>

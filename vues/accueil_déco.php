@@ -1,7 +1,7 @@
 <?php
 
 $styles = "styles/accueil.css"; // mettre le lien vers le style ici
-$styles_telephone = "";
+$styles_telephone = "styles/telephone/accueil_tel.css";
 
 if (isset($_SESSION['acces'])) {
     if ($utilisateurStatut[0]['niveau'] == "admin") {
@@ -67,7 +67,7 @@ foreach ($jeux as $valeur) {
 
                     <div class='BoutonEscapeGame'>
                         <a href='index.php?page=infojeusolo&idjeu=".$valeur['ID_jeu']."' class='EscapeGameBouton'>Voir plus</a>
-                        <a class='number' href='index.php?page=infojeusolo&idjeu=".$valeur['ID_jeu']."&nombre=0#calender' class='EscapeGameBouton'>Réserver</a>
+                        <a class='EscapeGameBouton number' href='index.php?page=infojeusolo&idjeu=".$valeur['ID_jeu']."&nombre=0#calender'>Réserver</a>
                     </div>
                 </div>
             </div>";

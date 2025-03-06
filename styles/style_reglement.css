@@ -314,3 +314,48 @@ input{
     transform: translate(-50%, -50%);
     display: none;
 }
+
+
+.loader{
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(#151414, #302C27);
+    z-index: 100;
+}
+
+.engre{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 150px;
+}
+
+.engrenage{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 150px;
+    animation: infinite linear 2s tourner;
+}
+
+@keyframes tourner{
+    from{
+        transform: translate(-50%, -50%) rotate(0);
+    }
+    to{
+        transform: translate(-50%, -50%) rotate(360deg);
+    }
+}
+
+.cadenas{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 40px;
+}

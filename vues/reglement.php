@@ -8,6 +8,32 @@ $script = "<script src='js/reglement.js'></script>";
 
 $resultpanier = "";
 $total = 0;
+
+
+if (isset($_POST['numéro_carte'])) {
+    $carte = $_POST['numéro_carte'];
+} else {
+    $carte = "";
+}
+
+
+if (isset($_POST['expiration'])) {
+    $exp = $_POST['expiration'];
+} else {
+    $exp = "";
+}
+if (isset($_POST['nomUser'])) {
+    $username = $_POST['nomUser'];
+} else {
+    $username = "";
+}
+if (isset($_POST['numéro_de_sécurité'])) {
+    $secure = $_POST['numéro_de_sécurité'];
+} else {
+    $secure = "";
+}
+
+
 if (empty($panier) && empty($souvenirs)) {
     $resultpanier = "Vous n'avez aucun article dans votre panier.";
 } else {
@@ -62,6 +88,17 @@ if (empty($panier) && empty($souvenirs)) {
     }
 }
 ?>
+
+<div class="loader">
+    <div class="engre">
+        <div class="engrenage">
+            <img src="../img/engre.svg" alt="Engrenage">
+        </div>
+        <div class="cadenas">
+            <img src="../img/cadenas.svg" alt="Engrenage">
+        </div>
+    </div>
+</div>
 
 <div class="all">
     <div class="paniers">
@@ -130,8 +167,8 @@ if (empty($panier) && empty($souvenirs)) {
                             </div>
                         </div>
                         <div class="numbers">
-                            <input type="text" name="numéro_carte" required maxlength="19" id="num"
-                                placeholder="Numéro de carte">
+                            <input type="text" name="numéro_carte" value="<?= $carte ?>" required minlength="19"
+                                maxlength="19" id="num" placeholder="Numéro de carte">
                         </div>
                         <div class="gridbottom">
                             <div class="inputs">
@@ -139,10 +176,11 @@ if (empty($panier) && empty($souvenirs)) {
                                     <div class="expire">
                                         EXPIRE A FIN
                                     </div>
-                                    <input type="text" required name="expiration" id="expiration"
+                                    <input type="text" required name="expiration" value="<?= $exp ?>" id="expiration"
                                         placeholder="date d'expiration">
                                 </label>
-                                <input type="text" required name="nomUser" id="nomuser" placeholder="Nom d'utilisateur">
+                                <input type="text" required name="nomUser" id="nomuser" value="<?= $username ?>"
+                                    placeholder="Nom d'utilisateur">
                             </div>
                             <div class="logo_cb">
                                 <img src="../img/cb.jpg" id="logo" alt="logo_type_carte">
@@ -154,8 +192,8 @@ if (empty($panier) && empty($souvenirs)) {
 
                         </div>
                         <label>
-                            Numéro de sécurité : <input type="number" max=999 required id="securite"
-                                name="numéro_de_sécurité" placeholder="Code de securité">
+                            Numéro de sécurité : <input type="number" value="<?= $secure ?>" max=999 required
+                                id="securite" name="numéro_de_sécurité" placeholder="Code de securité">
                         </label>
                     </div>
                 </div>

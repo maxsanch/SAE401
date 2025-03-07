@@ -2,7 +2,7 @@
 $styles = "styles/style_connexion.css";
 
 $librairie = '';
-$styles_telephone = "";
+$styles_telephone = "styles/telephone/connexion_tel.css";
 $script = "<script>
 
     document.querySelectorAll('.bouton_inscription').forEach(element => {

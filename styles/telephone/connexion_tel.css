@@ -1,0 +1,9 @@
+.connexion{
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.left{
+    width: 100%;
+}

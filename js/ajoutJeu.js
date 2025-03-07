@@ -13,14 +13,14 @@ console.log('eho')
 
 function updateInputFrance(event) {
     console.log('eho')
-    let x = event.offsetX
-    let y = event.offsetY
+    let x = ((event.offsetX*100) / document.querySelector('#France').clientWidth)
+    let y = ((event.offsetY*100) / document.querySelector('#France').clientHeight)
 
     paysInput.value = "France";
 
     coox.value = x;
     cooy.value = y;
-    point.style = "top: " + y + "px; left: " + x + "px; display: block;"
+    point.style = "top: " + y + "%; left: " + x + "%; display: block;"
 }
 
 function updateInputAllemagne(event) {

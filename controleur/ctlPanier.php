@@ -155,7 +155,7 @@ class ctlPanier
 
         $nombre_num = strlen($numéro_carte);
 
-        if ($nombre_num <= 20 && $nombre_num >= 19 && preg_match("/^(0[1-9]|1[0-2])\/(0[1-9]|1[0-2])$/", $expiration) && !empty($nomUser) && $numéro_de_sécurité >= 111 && $numéro_de_sécurité <= 999) {
+        if ($nombre_num <= 20 && $nombre_num >= 19 && preg_match("/^(0[1-9]|1[0-2])\/\d{2}$/", $expiration) && !empty($nomUser) && $numéro_de_sécurité >= 111 && $numéro_de_sécurité <= 999) {
 
             $random = random_int(1, 100);
 
@@ -165,15 +165,15 @@ class ctlPanier
                     $date = new DateTime();
                     $heure = $date->format('Y-m-d H-i-s');
                     $this->panier->creerNewPanier($infouser[0]['Id_utilisateur'], $heure);
-                    header("Location: index.php?page=remerciements");
+                    $this->reglement('<div class="fixedError">Ca marche.</div>');
                 } else {
-                    $this->reglement('une erreur est survenue.');
+                    $this->reglement('<div class="fixedError">Une erreur est survenue.</div>');
                 }
             } else {
-                $this->reglement('votre panier est vide.');
+                $this->reglement('<div class="fixedError">Votre panier est vide.</div>');
             }
         } else {
-            $this->reglement('Vos informations ne sont pas correctes.');
+            $this->reglement('<div class="fixedError">Vos informations ne sont pas correctes.</div>');
         }
     }
 }

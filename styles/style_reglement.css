@@ -301,10 +301,10 @@ input{
 
 /* confirmation : */
 
-.fixedReussite, .fixedError{
+.fixedError{
     position: fixed;
     top: 50%;
-    z-index: 3;
+    z-index: 6;
     left: 50%;
     text-align: center;
     background: linear-gradient(#151414, #302C27);
@@ -312,7 +312,7 @@ input{
     padding: 20px;
     border-radius: 20px;
     transform: translate(-50%, -50%);
-    display: none;
+    display: block;
 }
 
 
@@ -324,6 +324,7 @@ input{
     bottom: 0;
     background: linear-gradient(#151414, #302C27);
     z-index: 100;
+    display: none;
 }
 
 .engre{
@@ -332,6 +333,7 @@ input{
     left: 50%;
     transform: translate(-50%, -50%);
     width: 150px;
+    z-index: 101;
 }
 
 .engrenage{
@@ -358,4 +360,21 @@ input{
     left: 50%;
     transform: translate(-50%, -50%);
     width: 40px;
+}
+
+.smoke{
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    opacity: 0.3;
+}
+.background{
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    opacity: 0.2;
 }

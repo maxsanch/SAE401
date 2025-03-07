@@ -61,7 +61,7 @@ $script = "<script src='../js/script_jeusolo.js'></script>";
         <h2></h2>
     </div>
     <div class="droite">
-        <img src="../img/RightArrow.svg" alt="fleche gauche">
+        <img src="../img/RightArrow.svg" alt="fleche droite">
     </div>
 </div>
 <div class="calendrier" id="calender">

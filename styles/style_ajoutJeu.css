@@ -84,7 +84,7 @@ label{
 
 .point {
     position: absolute;
-    width: 50px;
+    width: 30px;
     transform: translate(-50%, -100%);
     display: none;
 }
@@ -167,14 +167,6 @@ footer{
 .flag{
     width: 50px;
     cursor: pointer;
-}
-
-.pays:nth-child(2){
-    width: 450px;
-}
-
-#France{
-    width: 600px;
 }
 
 #Allemagne{

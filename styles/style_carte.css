@@ -53,17 +53,15 @@ h2{
 }
 
 .france{
-    width: 600px;
     position: relative;
 }
 
 .germany{
-    width: 450px;
     position: relative;
 }
 
 .point{
     position: absolute;
-    width: 50px;
+    width: 30px;
     transform: translate(-50%, -100%);
 }

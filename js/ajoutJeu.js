@@ -24,8 +24,8 @@ function updateInputFrance(event) {
 }
 
 function updateInputAllemagne(event) {
-    let x = event.offsetX
-    let y = event.offsetY
+    let x = ((event.offsetX*100) / document.querySelector('#France').clientWidth)
+    let y = ((event.offsetY*100) / document.querySelector('#France').clientHeight)
 
     let largeur = document.querySelector('#Allemagne').offsetX;
 
@@ -34,7 +34,7 @@ function updateInputAllemagne(event) {
     paysInput.value = "Allemagne";
     coox.value = x;
     cooy.value = y;
-    point2.style = "top: " + y + "px; left: " + x     + "px; display: block;"
+    point2.style = "top: " + y + "%; left: " + x + "%; display: block;"
 }
 
 document.querySelector('.flag').addEventListener('click', changerfr)

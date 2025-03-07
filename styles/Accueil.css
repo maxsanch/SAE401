@@ -420,15 +420,13 @@ video{
 
 .pays{
     position: relative;
-    width: 600px;
 }
 
 .pays:nth-child(2){
-    width: 450px;
 }
 
 .point{
     position: absolute;
-    width: 50px;
+    width: 30px;
     transform: translate(-50%, -100%);
 }

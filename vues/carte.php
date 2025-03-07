@@ -10,12 +10,12 @@ $pointAllemagne = "";
 foreach ($jeux as $valeur) {
     switch ($valeur['pays']) {
         case "France":
-            $pointFrancais .= '<a href="index.php?page=infojeusolo&idjeu=' . $valeur['ID_jeu'] . '" class="point" style="top: ' . $valeur['coY'] . 'px; left: ' . $valeur['coX'] . 'px;">
+            $pointFrancais .= '<a href="index.php?page=infojeusolo&idjeu=' . $valeur['ID_jeu'] . '" class="point" style="top: ' . $valeur['coY'] . '%; left: ' . $valeur['coX'] . '%;">
                                     <img src="../img/map.svg" alt="map point">
                                 </a>';
             break;
         case 'Allemagne':
-            $pointAllemagne = '<a href="index.php?page=infojeusolo&idjeu=' . $valeur['ID_jeu'] . '" class="point" style="top: ' . $valeur['coY'] . 'px; left: ' . $valeur['coX'] . 'px;">
+            $pointAllemagne = '<a href="index.php?page=infojeusolo&idjeu=' . $valeur['ID_jeu'] . '" class="point" style="top: ' . $valeur['coY'] . '%; left: ' . $valeur['coX'] . '%;">
                                     <img src="../img/map.svg" alt="map point">
                                 </a>';
             break;

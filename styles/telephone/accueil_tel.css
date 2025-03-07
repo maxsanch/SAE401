@@ -1,12 +1,3 @@
-header {
-    display: none;
-    background-color: red;
-}
-
-footer {
-    display: none;
-}
-
 .Carte {
     display: flex;
     flex-direction: column;
@@ -19,45 +10,61 @@ footer {
 }
 
 .pays:first-of-type {
-    width: 400px; 
+    width: 400px;
     /* La taille est divisée par 1.5 pour la france */
 }
 
 .pays:nth-of-type(2) {
-    width: 300px; 
+    width: 300px;
     /* La taille est divisée par 1.5 pour l'allemagne aussi */
 }
 
-.Accueil{
+.Accueil {
     grid-template-columns: 1fr;
 }
 
-.AccueilTitre{
+.AccueilTitre {
     line-height: 100%;
 }
 
-.AccueilBouton{
+.AccueilSousTitre {
+    line-height: 100%;
+}
+
+.AccueilBouton {
     padding: 8px;
     font-size: 16px;
     font-family: Montserrat-bold;
 }
 
-.AccueilCle{
+.AccueilCle {
     width: 90%;
 }
 
-.ListeDesEscapeGame>div{
+.ListeDesEscapeGame>div {
     justify-content: center;
 }
 
-.TitreEscapeGame{
+.TitreEscapeGame {
     padding-top: 8px;
 }
 
-.PresentationGlobal{
+.PresentationGlobal {
     grid-template-columns: 1fr;
 }
 
-.PresentationGlobal{
+.PresentationGlobal {
     padding: 0px;
+}
+
+.engrenage:first-of-type {
+    transform: translate(var(--Xtel), var(--Ytel));
+}
+
+.engrenage:nth-of-type(2) {
+    transform: translate(var(--Xtel), var(--Ytel));
+}
+
+.PresentationImg{
+    margin-bottom: 32px;
 }

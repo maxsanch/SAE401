@@ -77,10 +77,10 @@ $script = "<script src='../js/accueil.js'></script>";
 ?>
 
 <div class="CadreDesEngrenages">
-    <div class="engrenage" style="--X:50%; --Y:50%;">
+    <div class="engrenage" style="--X:50%; --Y:50%; --Xtel:50%; --Ytel:85%;">
         <img src="img/roue.svg" alt="un engrenage">
     </div>
-    <div class="engrenage" style="--X:-50%; --Y:60%;">
+    <div class="engrenage" style="--X:-50%; --Y:60%; --Xtel:-50%; --Ytel:150%">
         <img src="img/roue.svg" alt="un engrenage">
     </div>
 </div>

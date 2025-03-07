@@ -7,6 +7,7 @@
   <link rel="stylesheet" href="styles/styleheader.css">
   <link href="<?= $styles ?>" rel="stylesheet">
   <link rel="stylesheet" media="(width < 640px)" href="<?= $styles_telephone ?>">
+  <link rel="stylesheet" media="(width < 640px)" href="styles/telephone/header_tel.css">
   <?= $librairie ?>
 </head>
 <body>
@@ -27,6 +28,7 @@
     <?= $footer ?>
   </footer>
   <script src="js/scriptGlobal.js"></script>
+  <script src="js/header.js"></script>
   <?= $script ?>
 </body>
 </html>

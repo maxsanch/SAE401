@@ -226,3 +226,23 @@ footer{
 .HeaderBouton:hover::before {
     width: 100%;
 }
+
+.tribarres {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.barresingle {
+    width: 40px;
+    height: 4px;
+    background: #B95E06;
+}
+
+.HeaderMobile>.ouvertmenu {
+    transform: scaleY(1);
+}
+
+.HeaderMobile{
+    display: none;
+}

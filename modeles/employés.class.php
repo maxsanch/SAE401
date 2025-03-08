@@ -1,6 +1,6 @@
 <?php
 
-require_once "modeles/database.class.php";
+require_once $_SERVER['DOCUMENT_ROOT']."/modeles/database.class.php";
 
 class employes extends database{
 

@@ -5,7 +5,6 @@ require_once $_SERVER['DOCUMENT_ROOT'] . "/controleur/ctlJeux.php";
 
 class jeux extends database
 {
-
     public function ajouterjeuBDD($titre, $lieu, $link, $desc, $min, $max, $age, $adresse, $postale, $prix, $pays, $coX, $coY, $region, $titreanglais, $descriptionanglais)
     {
         // Création d'un tableau de données avec l'ID de l'utilisateur
@@ -26,7 +25,6 @@ class jeux extends database
         // Exécution de la requête préparée
         $this->execReqPrep($req, $data);
     }
-
     public function recupJeu()
     {
         $req = 'SELECT ID_jeu FROM `jeux` ORDER BY ID_jeu DESC LIMIT 1';
@@ -35,7 +33,6 @@ class jeux extends database
 
         return $result[0]['ID_jeu'];
     }
-
     public function enregjeuphoto($idJeu)
     {
         $page = new ctlJeux();
@@ -84,14 +81,12 @@ class jeux extends database
             return "Fichier non autorisé";
         }
     }
-
     public function getjeux()
     {
         $req = "SELECT * FROM jeux";
         $jeux = $this->execReq($req);
         return $jeux;
     }
-
     public function supprjeu($jeu)
     {
         $data = array($jeu);

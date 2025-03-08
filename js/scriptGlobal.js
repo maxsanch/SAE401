@@ -41,21 +41,91 @@ function changerLangue() {
     setLangueBDD();
 }
 
-async function setLangueBDD() {
+let Jeux=[];
+let employes = [];
+let objets = [];
 
+async function recupBDD() {
     Jeux = await fetchJeux();
     employes = await fetchEmployés();
     objets = await fetchObjets()
 
-    Jeux.forEach(e => {
-        console.log(e['Titre_'+langue])
-        let titreJeu = document.querySelector('#TitreJeu'+e['ID_jeu'])
-
-        // if(titreJeu){
-        //     titreJeu.innerText = ;
-        // }
-    });
+    setLangueBDD();
 }
 
+recupBDD();
 
-setLangueBDD();
+async function setLangueBDD() {
+    Jeux.forEach(e => {
+        let titreJeu = document.querySelectorAll('#TitreJeu' + e['ID_jeu'])
+        let descriptionJeu = document.querySelectorAll('#DescriptionJeu' + e['ID_jeu'])
+        if (langue == 'francais') {
+            if (titreJeu) {
+                titreJeu.forEach(element =>{
+                    element.innerText = e['Titre'];
+                })
+            }
+            if (descriptionJeu) {
+                descriptionJeu.forEach(element =>{
+                    element.innerText = e['description'];
+                })
+            }
+        }
+        else {
+            if (titreJeu) {
+                titreJeu.forEach(element =>{
+                    element.innerText = e['Titre_'+langue];
+                })
+            }
+            if (descriptionJeu) {
+                descriptionJeu.forEach(element =>{
+                    element.innerText = e['Description_'+langue];
+                })
+            }
+        }
+    });
+
+    objets.forEach(e => {
+        let Titreobj = document.querySelectorAll('#TitreObjet' + e['id_objet_shop'])
+        let descobj = document.querySelectorAll('#descriptionObjet' + e['id_objet_shop'])
+        if (langue == 'francais') {
+            if (Titreobj) {
+                Titreobj.forEach(element =>{
+                    element.innerText = e['nom'];
+                })
+            }
+            if (descobj) {
+                descobj.forEach(element =>{
+                    element.innerText = e['description'];
+                })
+            }
+        }
+        else {
+            if (Titreobj) {
+                Titreobj.forEach(element =>{
+                    element.innerText = e['nom_'+langue];
+                })
+            }
+            if (descobj) {
+                descobj.forEach(element =>{
+                    element.innerText = e['description_'+langue];
+                })
+            }
+        }
+    });
+
+
+    employes.forEach(e => {
+        let domaine = document.querySelector('#metier' + e['ID_employé'])
+        if (langue == 'francais') {
+            if (domaine) {
+                domaine.innerText = e['metier'];
+            }
+        }
+        else {
+            if (domaine) {
+                domaine.innerText = e['metier_' + langue];
+            }
+        }
+    });
+}

@@ -16,7 +16,7 @@ foreach ($jeux as $valeur) {
         $phototest = 'img/photojeu/no_image.jpg';
     }
 
-    $result .= '<div class="case"><a href="index.php?page=modifjeu&idJeu=' . $valeur['ID_jeu'] . '" class="photo"><img src="' . $phototest . '" alt="Jeu choisi"></a><div class="contTout"><b>' . $valeur['Titre'] . '</b><div class="parentBout"><a class="bout" href="index.php?page=infojeusolo&idjeu=' . $valeur['ID_jeu'] . '">Voir le jeu</a></div><div class="parentBout"><a href="index.php?page=modifjeu&idJeu=' . $valeur['ID_jeu'] . '" class="bout">Modifier</a></div><div class="parentBout"><a href="index.php?page=supprJeu&idJeu=' . $valeur['ID_jeu'] . '" class="bout">Supprimer</a></div></div></div>';
+    $result .= '<div class="case"><a href="index.php?page=modifjeu&idJeu=' . $valeur['ID_jeu'] . '" class="photo"><img src="' . $phototest . '" alt="Jeu choisi"></a><div class="contTout"><b id="TitreJeu'.$valeur['ID_jeu'].'">' . $valeur['Titre'] . '</b><div class="parentBout"><a class="bout" href="index.php?page=infojeusolo&idjeu=' . $valeur['ID_jeu'] . '">Voir le jeu</a></div><div class="parentBout"><a href="index.php?page=modifjeu&idJeu=' . $valeur['ID_jeu'] . '" class="bout">Modifier</a></div><div class="parentBout"><a href="index.php?page=supprJeu&idJeu=' . $valeur['ID_jeu'] . '" class="bout">Supprimer</a></div></div></div>';
 }
 
 $script = '<script src="js/ajoutJeu.js"></script>';

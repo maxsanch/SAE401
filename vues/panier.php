@@ -14,7 +14,7 @@ if (isset($_SESSION['acces'])) {
             foreach ($global[0] as $valeurs) {
                 $reservationsGlobales .= '<div class="ligne">
                                                 <div class="titreetnombre">
-                                                    ' . $valeurs['Titre'] . ' x' . $valeurs['nombre_personnes'] . '
+                                                    <span id="TitreJeu'.$valeurs['ID_jeu'].'">' . $valeurs['Titre'] . '</span> x' . $valeurs['nombre_personnes'] . '
                                                 </div>
                                                 <div class="prix">
                                                     ' . ($valeurs['nombre_personnes'] * $valeurs['prix']) . ' €

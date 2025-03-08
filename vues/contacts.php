@@ -19,7 +19,7 @@ foreach ($employes as $valeur) {
         $phototest = 'img/objets/no_image.jpg';
     }
 
-    $result .= "<div class='case'><img src='" . $phototest . "'><div class='nom'>" . $valeur['prenom'] . "</div><div class='statut'>" . $valeur['metier'] . "</div></div>";
+    $result .= "<div class='case'><img src='" . $phototest . "'><div class='nom'>" . $valeur['prenom'] . "</div><div class='statut' id='metier".$valeur['ID_employé']."'>" . $valeur['metier'] . "</div></div>";
 }
 
 ?>

@@ -22,7 +22,7 @@ foreach ($jeux as $valeur) {
     <div class='ImageDeEscapeGame'><img src='" . $phototest . "'
             alt='Images de présentation des escapes games'></div>
     <div class='MiseEnPageEG'>
-        <div class='TitreEscapeGame'>" . $valeur['Titre'] . "</div>
+        <div class='TitreEscapeGame' id='TitreJeu".$valeur['ID_jeu']."'>" . $valeur['Titre'] . "</div>
         <div class='InformationEscapeGame'>
             <div class='InfoRuche'>age : " . $valeur['age'] . " ans</div>
             <div class='InformationEscapeGame'>
@@ -38,7 +38,7 @@ foreach ($jeux as $valeur) {
 
         <div class='BoutonEscapeGame'>
             <a href='index.php?page=infojeusolo&idjeu=".$valeur['ID_jeu']."' class='EscapeGameBouton'>Voir plus</a>
-            <a  class='number' href='index.php?page=infojeusolo&idjeu=".$valeur['ID_jeu']."&nombre=0#calender' class='EscapeGameBouton'>Réserver</a>
+            <a  class='EscapeGameBouton number' href='index.php?page=infojeusolo&idjeu=".$valeur['ID_jeu']."&nombre=0#calender' class='EscapeGameBouton'>Réserver</a>
         </div>
     </div>
 </div>";

@@ -255,6 +255,7 @@ footer{
     display: flex;
     gap: 20px;
     align-items: end;
+    z-index: 100;
 }
 
 .languechoose{

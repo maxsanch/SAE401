@@ -36,11 +36,11 @@ $script = "<script src='../js/script_jeusolo.js'></script>";
     </div>
     <div class="infos">
         <div class="titrePage">
-            <h1><?= $jeu[0]['Titre'] ?></h1>
+            <h1 id="TitreJeu<?= $jeu[0]['ID_jeu'] ?>"><?= $jeu[0]['Titre'] ?></h1>
             <div class="rectangleTitre">
             </div>
         </div>
-        <div class="description">
+        <div class="description" id="DescriptionJeu<?= $jeu[0]['ID_jeu'] ?>">
             <?= $jeu[0]['description'] ?>
         </div>
         <div class="autre">

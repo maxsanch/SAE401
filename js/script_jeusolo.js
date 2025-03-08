@@ -2,6 +2,8 @@ const url = new URLSearchParams(window.location.search);
 
 const idjeu = url.get('idjeu');
 
+const nombreInv = url.get('nombre');
+
 var d = new Date();
 
 var semaine = ["Dimanche", "Lundi", "Mardi", "Mercredi", "Jeudi", "Vendredi", "Samedi"];
@@ -68,7 +70,12 @@ async function calendrier() {
             }
         }
 
-        affichage += "<div class='total'><form action='index.php?page=réserverJeu&idjeu=" + idjeu + "&jour=" + iso + "' method='post'><div class='parentCalender'>" + semaine[date.getDay()] + " " + date.getDate() +"</div><div class='heures'>" + heures + "</div><label><div class='nombreclient'><div>Prix : " + prix + " €</div><div>Combien êtes vous ?</div><input type='number' required max=" + max + " min=" + min + " name='nombre' placeholder='nombre de participants'></label><button>Réserver.</button></form></div></div>";
+        if (nombreInv) {
+            affichage += "<div class='total'><form action='index.php?page=réserverJeu&idjeu=" + idjeu + "&jour=" + iso + "' method='post'><div class='parentCalender'>" + semaine[date.getDay()] + " " + date.getDate() + "</div><div class='heures'>" + heures + "</div><label><div class='nombreclient'><div>Prix : " + prix + " €</div><div>Combien êtes vous ?</div><input type='number' class='nombreuser' required max=" + max + " min=" + min + " name='nombre' value="+nombreInv+" placeholder='nombre de participants'></label><button>Réserver.</button></form></div></div>";
+        }
+        else{
+            affichage += "<div class='total'><form action='index.php?page=réserverJeu&idjeu=" + idjeu + "&jour=" + iso + "' method='post'><div class='parentCalender'>" + semaine[date.getDay()] + " " + date.getDate() + "</div><div class='heures'>" + heures + "</div><label><div class='nombreclient'><div>Prix : " + prix + " €</div><div>Combien êtes vous ?</div><input type='number' class='nombreuser' required max=" + max + " min=" + min + " name='nombre' placeholder='nombre de participants'></label><button>Réserver.</button></form></div></div>";
+        }
         moisActuel = mois[date.getMonth()] + " " + date.getFullYear();
     }
 

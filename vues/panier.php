@@ -69,4 +69,8 @@ if (isset($_SESSION['acces'])) {
     $panierglobal = '';
 }
 
-echo $panierglobal;
+?>
+
+<div class="lepaniercomplet">
+    <?= $panierglobal ?>
+</div>

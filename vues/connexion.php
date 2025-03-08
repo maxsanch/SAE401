@@ -15,6 +15,42 @@ $script = "<script>
         document.querySelector('.connexion').classList.toggle('ferme')
     }
 </script>";
+
+if(isset($_POST['email'])){
+    $mail = $_POST['email'];
+}
+else{
+    $mail = '';
+}
+
+if(isset($_POST['password'])){
+    $pwd = $_POST['password'];
+}
+else{
+    $pwd="";
+}
+
+if(isset($_POST['prenom'])){
+    $prenom = $_POST['prenom'];
+}
+else{
+    $prenom = '';
+}
+
+if(isset($_POST['nom'])){
+    $nom = $_POST['nom'];
+}
+else{
+    $nom = '';
+}
+
+if(isset($_POST['adresse'])){
+    $adresse = $_POST['adresse'];
+}
+else{
+    $adresse = "";
+}
+
 ?>
 
 <div class="CadreDesEngrenages">
@@ -33,8 +69,8 @@ $script = "<script>
                 <h2>Connectez-vous</h2>
             </div>
             <form action="<?= $_SERVER['PHP_SELF'] . '?page=login' ?>" method="post">
-                <input type="email" maxlength="50" name="email" required placeholder="Email">
-                <input type="password" maxlength="50" name="MDP" class="motdepasse" required placeholder="Mot de passe">
+                <input type="email" maxlength="50" name="email" required value="<?= $mail ?>" placeholder="Email">
+                <input type="password" maxlength="50" name="MDP" value="<?= $pwd ?>" class="motdepasse" required placeholder="Mot de passe">
                 <button>Me connecter</button>
             </form>
             <div class="erreur">
@@ -67,12 +103,12 @@ $script = "<script>
             </div>
             <form action="<?= $_SERVER['PHP_SELF'] . '?page=signin' ?>" method="post">
                 <div class="split">
-                    <input type="text" maxlength="50" name="prenom" required placeholder="prenom">
-                    <input type="text" maxlength="50" name="nom" required placeholder="nom">
+                    <input type="text" maxlength="50" value="<?= $prenom ?>" name="prenom" required placeholder="prenom">
+                    <input type="text" maxlength="50" value="<?= $nom ?>" name="nom" required placeholder="nom">
                 </div>
-                <input type="email" maxlength="50" name="email" required placeholder="Email">
-                <input type="text" maxlength="50" name="adresse" required placeholder="adresse">
-                <input type="password" maxlength="50" name="MDP" class="motdepasse" required placeholder="Mot de passe">
+                <input type="email" value="<?= $mail ?>" maxlength="50" name="email" required placeholder="Email">
+                <input type="text" value="<?= $adresse ?>" maxlength="50" name="adresse" required placeholder="adresse">
+                <input type="password" value="<?= $pwd ?>" maxlength="50" name="MDP" class="motdepasse" required placeholder="Mot de passe">
                 <button>Créer mon compte</button>
             </form>
             <div class="erreur">

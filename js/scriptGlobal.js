@@ -29,7 +29,7 @@ async function fetchObjets() {
 
 // utilisation des données et traitement du changement de langue
 
-let langue = "francais";
+let langue = localStorage.getItem('langue') || "francais";
 
 document.querySelectorAll('.languechoose').forEach(element => {
     element.addEventListener('click', changerLangue)
@@ -37,6 +37,8 @@ document.querySelectorAll('.languechoose').forEach(element => {
 
 function changerLangue() {
     langue = this.id;
+
+    localStorage.setItem('langue', langue)
 
     setLangueBDD();
 }

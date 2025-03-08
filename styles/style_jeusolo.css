@@ -142,8 +142,8 @@ h1 {
 }
 
 .video {
-    width: 80%;
-    margin: auto;
+    display: flex;
+    justify-content: center;
     margin-top: 50px;
     margin-bottom: 150px;
 }
@@ -162,3 +162,4 @@ h1 {
     background: linear-gradient(135deg, #ffb52b, #e6b856) !important;
     color: white !important;
 }
+

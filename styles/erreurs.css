@@ -1,0 +1,24 @@
+main{
+
+    display: flex;
+    min-height: 90vh;
+}
+
+.erreur{
+    display: flex;
+    margin: auto;
+    margin-top: 50px;
+    font-family: Montserrat-bold;
+    color: #151414;
+    background: rgb(235, 120, 120);
+    padding: 10px;
+    border-radius: 5px;
+}
+
+body{
+    font-family: Montserrat;
+    color: white;
+
+    margin: 0;
+    background-image: linear-gradient(-135deg, #151414, #302c27);
+}

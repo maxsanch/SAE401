@@ -4,9 +4,26 @@ if (variable) {
     variable.addEventListener('click', ouvrirPanier)
 
     function ouvrirPanier() {
-        document.querySelector('.panier').classList.add('ouvert');
+        document.querySelector('.panier-tot').classList.add('ouvert');
+        document.querySelector('.cache_fond').classList.add('ouvert');
+        document.querySelector('main').classList.add('flou');
+        document.querySelector('header').classList.add('flou');
+        document.querySelector('footer').classList.add('flou');
+    }
+
+    document.querySelector('.cache_fond').addEventListener('click', fermerpanier)
+    document.querySelector('.croix').addEventListener('click', fermerpanier)
+
+    function fermerpanier(){
+        document.querySelector('.panier-tot').classList.remove('ouvert');
+        document.querySelector('.cache_fond').classList.remove('ouvert');
+        document.querySelector('main').classList.remove('flou');
+        document.querySelector('header').classList.remove('flou');
+        document.querySelector('footer').classList.remove('flou');
     }
 }
+
+
 
 // récuperer les datas depuis la BDD
 

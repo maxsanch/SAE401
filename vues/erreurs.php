@@ -1,6 +1,6 @@
 <?php
 
-$styles = "";
+$styles = "../styles/erreurs.css";
 
 $librairie = '';
 

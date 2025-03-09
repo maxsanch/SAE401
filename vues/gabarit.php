@@ -17,7 +17,7 @@
   <header>
     <?= $header ?>
   </header>
-  <div class="panier">
+  <div class="panier-tot">
     <?= $globalPanier ?>
   </div>
   <div class="cache_fond">

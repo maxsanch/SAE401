@@ -1,6 +1,6 @@
 /* Style du header */
 
-.panier {
+.panier-tot {
     display: none;
 }
 
@@ -8,11 +8,20 @@ body {
     margin: 0;
 }
 
-img{
+img {
     width: 100%;
 }
 
-.cache_fond{
+.flou{
+    filter: blur(5px);
+}
+
+.croix{
+    width: 30px;
+    cursor: pointer;
+}
+
+.cache_fond {
     background: rgba(0, 0, 0, 0.685);
     position: fixed;
     top: 0;
@@ -84,7 +93,7 @@ a {
     border-radius: 4px;
 }
 
-.PhotoDeProfilHeader>a>img{
+.PhotoDeProfilHeader>a>img {
     width: 40px;
     height: 40px;
     border-radius: 100%;
@@ -164,7 +173,7 @@ h3 {
     margin-bottom: 8px;
 }
 
-.InformationAdmin{
+.InformationAdmin {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 8px;
@@ -191,7 +200,7 @@ h3 {
     overflow: hidden;
 }
 
-.RoueFooter>img{
+.RoueFooter>img {
     animation: Tourner 15s linear infinite;
     width: 100%;
 }
@@ -206,7 +215,7 @@ h3 {
     }
 }
 
-footer{
+footer {
     color: white;
     font-family: Montserrat;
 }
@@ -222,6 +231,7 @@ footer{
     transition: 0.5s;
     border-radius: 5px;
 }
+
 /* ouverture */
 .HeaderBouton:hover::before {
     width: 100%;
@@ -243,12 +253,12 @@ footer{
     transform: scaleY(1);
 }
 
-.HeaderMobile{
+.HeaderMobile {
     display: none;
 }
 
 
-.boutonlangues{
+.boutonlangues {
     position: fixed;
     bottom: 20px;
     right: 20px;
@@ -258,7 +268,81 @@ footer{
     z-index: 100;
 }
 
-.languechoose{
+.languechoose {
     width: 50px;
     cursor: pointer;
+}
+
+.lepaniercomplet {
+    position: fixed;
+    top: 70px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: linear-gradient(-135deg, #151414, #302C27);
+    border: solid 1px #E6B856;
+    border-radius: 20px;
+    padding: 20px;
+    color: white;
+    width: 700px;
+    z-index: 100;
+}
+
+.parent-panier {
+    height: 300px;
+    overflow-y: scroll;
+    scrollbar-width: thin;
+    scrollbar-color: #E6B856 transparent;
+}
+
+.titre-panier {
+    color: #E6B856;
+    border-bottom: solid 1px #E6B856;
+    padding: 10px;
+    margin: 10px;
+}
+
+.info-panier {
+    margin: 10px;
+}
+
+.ligne-panier {
+    display: flex;
+    align-items: center;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    justify-content: space-between;
+    border-bottom: solid 1px #E6B856;
+}
+
+.ligne-panier>form {
+    display: flex;
+}
+
+.ligne-panier>form>input {
+    border: solid 1px #E6B856;
+    padding-right: 5px;
+    text-align: center;
+    border-radius: 5px;
+    font-weight: bold;
+    background: transparent;
+    color: #E6B856;
+}
+
+.ligne-panier>form>button {
+    border: none;
+    background: transparent;
+
+}
+
+
+.total-panier {
+    padding: 10px;
+    margin-top: 20px;
+    font-family: Montserrat-bold;
+}
+
+.top-panier{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }

@@ -114,7 +114,7 @@ if (empty($panier) && empty($souvenirs)) {
                             </div>
                             <a href=index.php?page=suppressionReservation&idJeu=' . $valeurs['ID_jeu'] . '&heure=' . $valeurs['heure_reservation'] . '&jour=' . $valeurs['jour_reservation'] . '>
                             <div class="iconepoubelle">
-                                Retirer du panier <img src="../img/trash.svg" alt="une poubelle"/>
+                                <img src="../img/trash.svg" alt="une poubelle"/>
                             </div>
                             </a>
                         </div>';
@@ -129,7 +129,7 @@ if (empty($panier) && empty($souvenirs)) {
             <div class="description">' . $ligne['description'] . '</div>
             <form action=index.php?page=suppressionSouvenirs&idobj=' . $ligne['id_objet_shop'] . '&idpanier=' . $ligne['id_panier'] . ' method=post>
                 <input type=number placeholder="entre un nombre à retirer de la commande" min=0 max=' . $ligne['quantitée'] . ' name="nombredelet">
-                <button class="iconepoubelle">Retirer du panier <img src="../img/trash.svg" alt="une poubelle"/></button>
+                <button class="iconepoubelle"><img src="../img/trash.svg" alt="une poubelle"/></button>
             </form>
         </div>';
     }

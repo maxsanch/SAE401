@@ -80,6 +80,10 @@ a {
     color: black;
 }
 
+#panier{
+    cursor: pointer;
+}
+
 .HeaderBouton:first-of-type>a {
     background-image: linear-gradient(-135deg, #E6B856, #806630);
     color: transparent;
@@ -331,7 +335,6 @@ footer {
 .ligne-panier>form>button {
     border: none;
     background: transparent;
-
 }
 
 

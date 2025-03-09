@@ -103,14 +103,10 @@ h1 {
 .nombreclient>input{
     background: transparent;
     border: #e6b856 1px solid;
-    color: #e6b856;
+    color: white;
     margin-top: 5px;
     margin-bottom: 5px;
     padding: 5px;
-}
-
-.nombreclient>input::placeholder{
-    color: #e6b856;
 }
 
 .nombreclient>button{
@@ -163,3 +159,31 @@ h1 {
     color: white !important;
 }
 
+#premiere{
+    height: 10px;
+    width: 100%;
+    background: #e6b856;
+    grid-column: 1/span 7;
+    grid-row: 2;
+}
+#seconde{
+    height: 10px;
+    width: 100%;
+    background: #e6b856;
+    grid-column: 1/span 7;
+    grid-row: 4;
+}
+#trois{
+    height: 10px;
+    width: 100%;
+    background: #e6b856;
+    grid-column: 1/span 7;
+    grid-row: 6;
+}
+#quatre{
+    height: 10px;
+    width: 100%;
+    background: #e6b856;
+    grid-column: 1/span 7;
+    grid-row: 8;
+}

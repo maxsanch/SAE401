@@ -71,15 +71,15 @@ async function calendrier() {
         }
 
         if (nombreInv) {
-            affichage += "<div class='total'><form action='index.php?page=réserverJeu&idjeu=" + idjeu + "&jour=" + iso + "' method='post'><div class='parentCalender'>" + semaine[date.getDay()] + " " + date.getDate() + "</div><div class='heures'>" + heures + "</div><label><div class='nombreclient'><div>Prix : " + prix + " €</div><div>Combien êtes vous ?</div><input type='number' class='nombreuser' required max=" + max + " min=" + min + " name='nombre' value="+nombreInv+" placeholder='nombre de participants'></label><button>Réserver.</button></form></div></div>";
+            affichage += "<div class='total'><form action='index.php?page=réserverJeu&idjeu=" + idjeu + "&jour=" + iso + "' method='post'><div class='parentCalender'>" + semaine[date.getDay()] + " " + date.getDate() + "</div><div class='heures'>" + heures + "</div><label><div class='nombreclient'><input type='number' class='nombreuser' required max=" + max + " min=" + min + " name='nombre' value="+nombreInv+" placeholder='nombre de participants'></label><button>Réserver.</button></form></div></div>";
         }
         else{
-            affichage += "<div class='total'><form action='index.php?page=réserverJeu&idjeu=" + idjeu + "&jour=" + iso + "' method='post'><div class='parentCalender'>" + semaine[date.getDay()] + " " + date.getDate() + "</div><div class='heures'>" + heures + "</div><label><div class='nombreclient'><div>Prix : " + prix + " €</div><div>Combien êtes vous ?</div><input type='number' class='nombreuser' required max=" + max + " min=" + min + " name='nombre' placeholder='nombre de participants'></label><button>Réserver.</button></form></div></div>";
+            affichage += "<div class='total'><form action='index.php?page=réserverJeu&idjeu=" + idjeu + "&jour=" + iso + "' method='post'><div class='parentCalender'>" + semaine[date.getDay()] + " " + date.getDate() + "</div><div class='heures'>" + heures + "</div><label><div class='nombreclient'><input type='number' class='nombreuser' required max=" + max + " min=" + min + " name='nombre' placeholder='nombre de participants'></label><button>Réserver.</button></form></div></div>";
         }
         moisActuel = mois[date.getMonth()] + " " + date.getFullYear();
     }
 
-    document.querySelector('.calendrier').innerHTML = affichage
+    document.querySelector('.calendrier').innerHTML =  "<div class='barres' id='premiere'></div><div id='seconde' class='barres'></div><div  id='trois' class='barres'></div><div  id='quatre' class='barres'></div>"+affichage
     document.querySelector('.moisActuel>h2').innerHTML = moisActuel
 }
 calendrier();

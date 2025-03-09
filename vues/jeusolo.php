@@ -47,6 +47,9 @@ $script = "<script src='../js/script_jeusolo.js'></script>";
             <div class="age">
                 <p>Age minimum : <?= $jeu[0]['age'] ?></p>
             </div>
+            <div class="prix">
+                <p>Prix pour 1 personne : <?= $jeu[0]['prix'] ?> €</p>
+            </div>
             <div class="nombre">
                 <p>De <?= $jeu[0]['nombre_min'] ?> à <?= $jeu[0]['nombre_max'] ?> participants.es</p>
             </div>
@@ -65,6 +68,7 @@ $script = "<script src='../js/script_jeusolo.js'></script>";
     </div>
 </div>
 <div class="calendrier" id="calender">
+
 </div>
 <div class="video">
     <?= $video ?>

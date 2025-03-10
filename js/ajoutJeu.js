@@ -19,21 +19,17 @@ function updateInputFrance(event) {
     paysInput.value = "France";
 
     coox.value = x;
-    cooy.value = y;
+    cooy.value = y+2;
     point.style = "top: " + y + "%; left: " + x + "%; display: block;"
 }
 
 function updateInputAllemagne(event) {
-    let x = ((event.offsetX*100) / document.querySelector('#France').clientWidth)
-    let y = ((event.offsetY*100) / document.querySelector('#France').clientHeight)
-
-    let largeur = document.querySelector('#Allemagne').offsetX;
-
-    console.log(largeur);
+    let x = ((event.offsetX*100) / document.querySelector('#Allemagne').clientWidth)
+    let y = ((event.offsetY*100) / document.querySelector('#Allemagne').clientHeight)
 
     paysInput.value = "Allemagne";
     coox.value = x;
-    cooy.value = y;
+    cooy.value = y+2;
     point2.style = "top: " + y + "%; left: " + x + "%; display: block;"
 }
 

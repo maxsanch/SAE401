@@ -14,7 +14,7 @@ console.log('eho')
 function updateInputFrance(event) {
     console.log('eho')
     let x = ((event.offsetX*100) / document.querySelector('#France').clientWidth)
-    let y = ((event.offsetY*100) / document.querySelector('#France').clientHeight)
+    let y = ((event.offsetY*100) / (document.querySelector('#France').clientHeight))
 
     paysInput.value = "France";
 
@@ -24,12 +24,8 @@ function updateInputFrance(event) {
 }
 
 function updateInputAllemagne(event) {
-    let x = ((event.offsetX*100) / document.querySelector('#France').clientWidth)
-    let y = ((event.offsetY*100) / document.querySelector('#France').clientHeight)
-
-    let largeur = document.querySelector('#Allemagne').offsetX;
-
-    console.log(largeur);
+    let x = ((event.offsetX*100) / document.querySelector('#Allemagne').clientWidth)
+    let y = ((event.offsetY*100) / (document.querySelector('#Allemagne').clientHeight))
 
     paysInput.value = "Allemagne";
     coox.value = x;

@@ -15,7 +15,7 @@ foreach ($jeux as $valeur) {
                                 </a>';
             break;
         case 'Allemagne':
-            $pointAllemagne = '<a href="index.php?page=infojeusolo&idjeu=' . $valeur['ID_jeu'] . '" class="point" style="top: ' . $valeur['coY'] . '%; left: ' . $valeur['coX'] . '%;">
+            $pointAllemagne .= '<a href="index.php?page=infojeusolo&idjeu=' . $valeur['ID_jeu'] . '" class="point" style="top: ' . $valeur['coY'] . '%; left: ' . $valeur['coX'] . '%;">
                                     <img src="../img/map.svg" alt="map point">
                                 </a>';
             break;
@@ -29,7 +29,7 @@ foreach ($regions as $content) {
     $villesolo = "";
     foreach ($jeux as $valeur) {
         if($content['region'] == $valeur['region']){
-            $villesolo .= '<div class="petiteVille">'.$valeur['ville'].'</div>';
+            $villesolo .= '<div class="petiteVille">'.$valeur['ville'].' '.$valeur['postale'].'</div>';
         }
     }
     $regionstot .= '<div class="DivVilles">

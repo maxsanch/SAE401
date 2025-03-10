@@ -43,6 +43,9 @@ $script = "<script src='../js/script_jeusolo.js'></script>";
         <div class="description" id="DescriptionJeu<?= $jeu[0]['ID_jeu'] ?>">
             <?= $jeu[0]['description'] ?>
         </div>
+        <div class="adresse">
+            Adresse : <?= $jeu[0]['adresse'] ?>
+        </div>
         <div class="autre">
             <div class="age">
                 <p>Age minimum : <?= $jeu[0]['age'] ?></p>

@@ -31,10 +31,6 @@
         "anglais": "who are we ?",
         "francais": "Qui sommes nous ?"
     },
-    "#socials-media": {
-        "anglais": "who are we ?",
-        "francais": "Qui sommes nous ?"
-    },
     "#Presentation": {
         "anglais": "<p>At we-escape, you can rediscover the concept of escape games. You can have no experience or be a passionate, you won't be at the end of your surprises with our outdoor escape game concept.</p><p>In fact, we offer to you immersives scenaries in cities, in forests or even in montains ! Your team will follow the indices, resolves misteries and challenges to progress. Each roads became a part of the game, Each détails can be the key that will lead you to the victory.</p><p>Whether you're a fan of intellectual challenges or simply looking for a fun activity to enjoy with friends, Our outdoor escape games immerse you into avantures where observation and team coordination will be your best allies.</p>",
         "francais": "<p>Chez we-escape, vous pourrez redécouvrir le concept d’escape games. Que vous soyez innexperimentés ou passionnés, vous ne serez pas au bout de vos surprises avec notre concept d’escape games en plein air.</p><p>En effet, nous proposons des scénarios grandeur nature en ville, en foret ou même en montagne ! Votre équipe devra suivre des indices, résoudre des mystères et relever des défis pour progresser dans l’histoire. Chaque rue devient un élément du jeu, chaque détail peut être la clé qui vous rapproche de la victoire.</p><p>Que vous soyez amateurs de défis intellectuels ou simplement en quête d’une activité ludique entre amis, notre escape games en extérieur vous plonge dans une aventure immersive où l’observation et l’esprit d’équipe seront vos meilleurs alliés.</p>"
@@ -56,7 +52,7 @@
         "francais": "Ajouter un jeu"
     },
     ".about": {
-        "anglais": "about us",
+        "anglais": "About us",
         "francais": "A propos"
     },
     ".games-header": {
@@ -91,9 +87,17 @@
         "anglais": "Coded by par Noah, Maxence et Alexandre | Hosted at the IUT of mulhouse",
         "francais": "Codé par Noah, Maxence et Alexandre | Hébergé à l'IUT de mulhouse"
     },
+    "#GlobalgamePresentation": {
+        "anglais": "<p>An escape game, or evasion game, is an immersive and fun activity where the players must resolve some puzzles and accomplish missions in a limited time, generally 60 minutes. The game is generally in teams (usually between 2 ans 6 players) they need to be coordinate, with reflexion and observation mind.</p><p>Our particularity ? Outdoors escape games !</p><p>The players discovers the game ine a real place (city, park, forest) and follow a story with a lot of indices hidden on their road.</p><p>There is a lot of scenarios : aventure, police investigation, science-fiction, horror, and more.</p>",
+        "francais": "<p>Un escape game, ou jeu d’évasion grandeur nature, est une activité immersive et ludique où les participants doivent résoudre des énigmes et accomplir des missions dans un temps limité, généralement 60 minutes. Ce jeu se joue en équipe (généralement de 2 à 6 joueurs) et repose sur la coopération, la réflexion et l’esprit d’observation.</p><p>Notre particularité ? les escape games en exterieur !</p><p>les participants explorent un lieu réel (ville, parc, forêt) et suivent une intrigue avec des indices disséminés sur leur parcours.</p><p>Ils se déclinent en divers scénarios : aventure, enquête policière, science-fiction, horreur, et bien plus encore.</p>"
+    },
     ".Discover-button": {
         "anglais": "Discover !",
         "francais": "Découvrir !"
+    },
+    ".escape-game-global": {
+        "anglais": "What is an escape game ?",
+        "francais": "C'est quoi, un escape game ?"
     },
     ".socials-media": {
         "anglais": "Our social medias",

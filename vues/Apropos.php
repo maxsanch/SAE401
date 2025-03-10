@@ -10,7 +10,7 @@ $script = "";
 
 <div class="groupementAll">
     <div class="titrePage">
-        <h1>A propos</h1>
+        <h1 class="about">A propos</h1>
         <div class="rectangleTitre">
         </div>
     </div>
@@ -23,11 +23,11 @@ $script = "";
             </div>
             <div class="text">
                 <div class="titre">
-                    <h2>C'est quoi, un escape game ?</h2>
+                    <h2 class="escape-game-global">C'est quoi, un escape game ?</h2>
                     <div class="rectangleTitre">
                     </div>
                 </div>
-                <div class="textreal">
+                <div class="textreal" id="GlobalgamePresentation">
                     <p>Un escape game, ou jeu d’évasion grandeur nature, est une activité immersive et ludique où les
                         participants doivent résoudre des énigmes et accomplir des missions dans un temps limité,
                         généralement 60 minutes. Ce jeu se joue en équipe (généralement de 2 à 6 joueurs) et repose sur
@@ -48,11 +48,11 @@ $script = "";
         <div class="double">
             <div class="text">
                 <div class="titre">
-                    <h2>Qui sommes nous ?</h2>
+                    <h2 id="who-presentation">Qui sommes nous ?</h2>
                     <div class="rectangleTitre">
                     </div>
                 </div>
-                <div class="textreal">
+                <div class="textreal" id="Presentation">
                     <p>chez we-escape, vous pourrez redécouvrir le concept d’escape game. </p>
                     <p>Que vous soyez innexperimenté ou un passionnés, vous ne serez pas au bout de vos surprises avec
                         notre concept d’escape game en plein air.</p>

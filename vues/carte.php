@@ -29,7 +29,7 @@ foreach ($regions as $content) {
     $villesolo = "";
     foreach ($jeux as $valeur) {
         if($content['region'] == $valeur['region']){
-            $villesolo .= '<div class="petiteVille">'.$valeur['ville'].'</div>';
+            $villesolo .= '<div class="petiteVille">'.$valeur['ville'].' '.$valeur['postale'].'</div>';
         }
     }
     $regionstot .= '<div class="DivVilles">

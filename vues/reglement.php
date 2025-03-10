@@ -107,6 +107,15 @@ if (empty($panier) && empty($souvenirs)) {
     </div>
 </div>
 
+<div class="engrenages">
+    <img src="../img/allEngre.png" alt="plein d'engrenages">
+</div>
+<div class="engrenage-single">
+    <img class="small" src="../img/smallEngre.png" alt="petit engrenage">
+    <img class="med1" src="../img/medEngre.png" alt="petit engrenage">
+    <img class="med2" src="../img/medEngre.png" alt="petit engrenage">
+</div>
+
 <div class="all">
     <div class="paniers">
         <div class="titrePage">

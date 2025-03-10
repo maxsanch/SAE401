@@ -7,8 +7,8 @@
         <div class="HeaderBouton"><a href="index.php?page=jeuxAll">Les jeux</a></div>
         <div class="HeaderBouton"><a href="index.php?page=carte">Nous trouver</a></div>
         <div class="HeaderBouton"><a href="index.php?page=Contacts">Contacts</a></div>
-        <div class="HeaderBouton Reservation"><a href="index.php?page=connexion">Se connecter</a></div>
-        <div class="HeaderBouton"><a href="index.php?page=shop"><img src="img/Shopping_cart.png"
+        <div class="autre Reservation"><a href="index.php?page=connexion">Se connecter</a></div>
+        <div class="autre"><a href="index.php?page=shop"><img src="img/Shopping_cart.png"
                     alt="Caddies des réservations"></a></div>
     </div>
 </div>

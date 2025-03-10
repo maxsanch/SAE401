@@ -52,10 +52,10 @@ if ($user['niveau'] == 'admin') {
                         <div class="HeaderBouton"><a href="index.php?page=Contacts">Contacts</a></div>
                         <div class="HeaderBouton"><a href="index.php?page=quitter">Se déconnecter</a></div>
                         <div class="HeaderBouton Reservation"><a href="index.php?page=reglement">Réservation</a></div>
-                        <div class="HeaderBouton" id="panier"><img src="img/Shopping_bag.png" alt="Sac des réservations"></div>
-                        <div class="HeaderBouton"><a href="index.php?page=shop"><img src="img/Shopping_cart.png"
+                        <div class="autre" id="panier"><img src="img/Shopping_bag.png" alt="Sac des réservations"></div>
+                        <div class="autre"><a href="index.php?page=shop"><img src="img/Shopping_cart.png"
                                     alt="Caddies des réservations"></a></div>
-                        <div class="HeaderBouton PhotoDeProfilHeader">
+                        <div class="autre PhotoDeProfilHeader">
                             <a href="index.php?page=informationmyuser">
                                 <img src="' . $phototest . '" alt="Photo de profil">
                             </a>

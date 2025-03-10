@@ -422,9 +422,6 @@ video{
     position: relative;
 }
 
-.pays:nth-child(2){
-}
-
 .point{
     position: absolute;
     width: 30px;

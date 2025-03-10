@@ -1,0 +1,15 @@
+.allemployes {
+    grid-template-columns: 1fr 1fr;
+}
+
+.contacts {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+.mail, .phone {
+    margin-right: auto;
+    margin-left: auto;
+    margin-top: 64px;
+    margin-bottom: 64px;
+}

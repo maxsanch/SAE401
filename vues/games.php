@@ -3,7 +3,7 @@
 $styles = "../styles/style_games.css";
 
 $librairie = '';
-$styles_telephone = "";
+$styles_telephone = "styles/telephone/games_tel.css";
 $script = "<script src='../js/accueil.js'></script>";
 
 $result = "";

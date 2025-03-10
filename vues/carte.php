@@ -3,7 +3,7 @@
 $styles = "../styles/style_carte.css";
 $librairie = "";
 $script = "";
-$styles_telephone = "";
+$styles_telephone = "styles/telephone/carte_tel.css";
 $pointFrancais = "";
 $pointAllemagne = "";
 

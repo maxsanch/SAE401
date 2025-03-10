@@ -68,3 +68,7 @@
 .PresentationImg{
     margin-bottom: 32px;
 }
+
+html{
+    overflow-x: hidden;
+}

@@ -40,6 +40,32 @@ if ($user['niveau'] == 'admin') {
                         </a>
                     </div>
                 </div>
+            </div>
+            
+
+
+            <div class="HeaderMobile">
+                <div class="Conteneur">
+                    <div class="ConteneurHeader">
+                        <a href="index.php" class="TitreHeader">We escape</a>
+                        <div class="tribarres">
+                            <div class="barresingle"></div>
+                            <div class="barresingle"></div>
+                            <div class="barresingle"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="liensdéroulant">
+                    <div class="HeaderBouton"><a href="index.php" class="home">Accueil</a></div>
+                    <div class="HeaderBouton" ><a href="index.php?page=propos" class="about">A propos</a></div>
+                    <div class="HeaderBouton"><a href="index.php?page=jeuxAll" class="games-header">Les jeux</a></div>
+                    <div class="HeaderBouton"><a href="index.php?page=carte" class="find-us">Nous trouver</a></div>
+                    <div class="HeaderBouton"><a href="index.php?page=Contacts" class="contacts-header">Contacts</a></div>
+                    <div class="HeaderBouton"><a href="index.php?page=checkusers" class="users-header">Utilisateurs</a></div>
+                    <div class="HeaderBouton"><a href="index.php?page=PageAjoutJeu" class="add-games">Ajouter un escape game</a></div>
+                    <div class="HeaderBouton"><a href="index.php?page=quitter" class="disconnect">Se déconnecter</a></div>
+                    <div class="HeaderBouton"><a href="index.php?page=reglement" class="book-header">Réservation</a></div>
+                </div>
             </div>';
 } else {
     $header = '<div class="centreHeader">
@@ -61,7 +87,31 @@ if ($user['niveau'] == 'admin') {
                             </a>
                         </div>
                     </div>
-                </div>';
+                </div>
+                
+                
+                
+                <div class="HeaderMobile">
+                <div class="Conteneur">
+                    <div class="ConteneurHeader">
+                        <a href="index.php" class="TitreHeader">We escape</a>
+                        <div class="tribarres">
+                            <div class="barresingle"></div>
+                            <div class="barresingle"></div>
+                            <div class="barresingle"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="liensdéroulant">
+                   <div class="HeaderBouton"><a href="index.php" class="home">Accueil</a></div>
+                        <div class="HeaderBouton"><a href="index.php?page=propos" class="about"> A propos</a></div>
+                        <div class="HeaderBouton"><a href="index.php?page=jeuxAll" class="games">Les jeux</a></div>
+                        <div class="HeaderBouton"><a href="index.php?page=carte" class="find-us">Nous trouver</a></div>
+                        <div class="HeaderBouton"><a href="index.php?page=Contacts" class="contacts-header">Contacts</a></div>
+                        <div class="HeaderBouton"><a href="index.php?page=quitter" class="disconnect">Se déconnecter</a></div>
+                        <div class="HeaderBouton"><a href="index.php?page=reglement" class="book-header">Réservation</a></div>
+                </div>
+            </div>';
 }
 
 

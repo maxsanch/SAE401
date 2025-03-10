@@ -1,0 +1,12 @@
+.double{
+    grid-template-columns: 1fr;
+    gap: 32px;
+}
+
+.image>.img>img{
+    height: 100%;
+}
+
+.image>.img{
+    height: 100%;
+}

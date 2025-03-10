@@ -7,3 +7,47 @@
 .left{
     width: 100%;
 }
+
+.croix{
+    transform: translate(-8px, 8px);
+    right: 0;
+}
+
+.titre, input, button{
+    width: 95%;
+    margin: auto;
+}
+
+.right{
+    border-radius: 0px 0px 20px 20px;
+}
+
+.bouton_inscription{
+    margin-bottom: 8px;
+}
+
+.engrenage{
+    transform: translateY(60%) scale(2);
+    margin: auto;
+}
+
+.total>.ferme{
+    display: none;
+}
+
+.inscription{
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    width: 90%;
+    margin: auto;
+}
+
+.split{
+    width: 95%;
+    margin: auto;
+}
+
+.inscription>.right{
+    width: 100%;
+}

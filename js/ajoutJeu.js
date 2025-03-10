@@ -14,22 +14,22 @@ console.log('eho')
 function updateInputFrance(event) {
     console.log('eho')
     let x = ((event.offsetX*100) / document.querySelector('#France').clientWidth)
-    let y = ((event.offsetY*100) / document.querySelector('#France').clientHeight)
+    let y = ((event.offsetY*100) / (document.querySelector('#France').clientHeight))
 
     paysInput.value = "France";
 
     coox.value = x;
-    cooy.value = y+2;
+    cooy.value = y;
     point.style = "top: " + y + "%; left: " + x + "%; display: block;"
 }
 
 function updateInputAllemagne(event) {
     let x = ((event.offsetX*100) / document.querySelector('#Allemagne').clientWidth)
-    let y = ((event.offsetY*100) / document.querySelector('#Allemagne').clientHeight)
+    let y = ((event.offsetY*100) / (document.querySelector('#Allemagne').clientHeight))
 
     paysInput.value = "Allemagne";
     coox.value = x;
-    cooy.value = y+2;
+    cooy.value = y;
     point2.style = "top: " + y + "%; left: " + x + "%; display: block;"
 }
 

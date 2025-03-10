@@ -78,8 +78,9 @@ label{
     gap: 10px;
 }
 
-.pays{
+.Pays{
     position: relative;
+    object-fit: contain;
 }
 
 .point {
@@ -167,10 +168,6 @@ footer{
 .flag{
     width: 50px;
     cursor: pointer;
-}
-
-#Allemagne{
-    width: 450px;
 }
 
 h2{

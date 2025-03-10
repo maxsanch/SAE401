@@ -4,15 +4,9 @@ $styles = "styles/accueil.css"; // mettre le lien vers le style ici
 $styles_telephone = "styles/telephone/accueil_tel.css";
 
 if (isset($_SESSION['acces'])) {
-    if ($utilisateurStatut[0]['niveau'] == "admin") {
-        $test = "test admin";
-    } else {
-        $test = "test user";
-    }
     $connecteoupas = 'Découvrir !';
     $link = "index.php?page=jeuxAll";
 } else {
-    $test = "test pas co";
     $connecteoupas = 'Se connecter !';
     $link = "index.php?page=connexion";
 }
@@ -36,12 +30,12 @@ foreach ($jeux as $valeur) {
 
     switch ($valeur['pays']) {
         case "France":
-            $pointFrancais .= '<a href="index.php?page=infojeusolo&idjeu='.$valeur['ID_jeu'].'" class="point" style="top: ' . $valeur['coY'] . '%; left: ' . $valeur['coX'] . '%;">
+            $pointFrancais .= '<a href="index.php?page=infojeusolo&idjeu=' . $valeur['ID_jeu'] . '" class="point" style="top: ' . $valeur['coY'] . '%; left: ' . $valeur['coX'] . '%;">
                                     <img src="../img/map.svg" alt="map point">
                                 </a>';
             break;
         case 'Allemagne':
-            $pointAllemagne = '<a href="index.php?page=infojeusolo&idjeu='.$valeur['ID_jeu'].'" class="point" style="top: ' . $valeur['coY'] . '%; left: ' . $valeur['coX'] . '%;">
+            $pointAllemagne = '<a href="index.php?page=infojeusolo&idjeu=' . $valeur['ID_jeu'] . '" class="point" style="top: ' . $valeur['coY'] . '%; left: ' . $valeur['coX'] . '%;">
                                     <img src="../img/map.svg" alt="map point">
                                 </a>';
             break;
@@ -51,9 +45,9 @@ foreach ($jeux as $valeur) {
                 <div class='ImageDeEscapeGame'><img src='" . $phototest . "'
                         alt='Images de présentation des escapes games'></div>
                 <div class='MiseEnPageEG'>
-                    <div class='TitreEscapeGame' id='TitreJeu".$valeur['ID_jeu']."'>" . $valeur['Titre'] . "</div>
+                    <div class='TitreEscapeGame' id='TitreJeu" . $valeur['ID_jeu'] . "'>" . $valeur['Titre'] . "</div>
                     <div class='InformationEscapeGame'>
-                        <div class='InfoRuche'>age : " . $valeur['age'] . " ans</div>
+                        <div class='InfoRuche'>age : " . $valeur['age'] . " <span id='age-games'>ans</span></div>
                         <div class='InformationEscapeGame'>
                             <div class='User'><img src='img/Users.svg' alt='Icon d'utilisateur'></div>
                             <div class='InfoEG'>" . $valeur['nombre_min'] . " - " . $valeur['nombre_max'] . "</div>
@@ -66,8 +60,8 @@ foreach ($jeux as $valeur) {
                     </div>
 
                     <div class='BoutonEscapeGame'>
-                        <a href='index.php?page=infojeusolo&idjeu=".$valeur['ID_jeu']."' class='EscapeGameBouton'>Voir plus</a>
-                        <a class='EscapeGameBouton number' href='index.php?page=infojeusolo&idjeu=".$valeur['ID_jeu']."&nombre=0#calender'>Réserver</a>
+                        <a href='index.php?page=infojeusolo&idjeu=" . $valeur['ID_jeu'] . "' class='EscapeGameBouton' id='see-more'>Voir plus</a>
+                        <a class='EscapeGameBouton number' href='index.php?page=infojeusolo&idjeu=" . $valeur['ID_jeu'] . "&nombre=0#calender' id='reserve'>Réserver</a>
                     </div>
                 </div>
             </div>";
@@ -87,8 +81,8 @@ $script = "<script src='../js/accueil.js'></script>";
 <div class="MiseEnPage">
     <div class="Accueil">
         <div class="AccueilTexte">
-            <h1 class="AccueilTitre">WE ESCAPE</h1>
-            <h2 class="AccueilSousTitre">Escape game en plein air</h2>
+            <h1 class="AccueilTitre">WE-ESCAPE</h1>
+            <h2 class="AccueilSousTitre">Escape games en plein air !</h2>
             <div class="AccueilDescritpion">
                 <div>Découvrez <b>We-Escape</b> et ses escapes games en <b>plein air !</b></div>
                 <div>Plongez dans différentes aventures au coeurs d’enquêtes et d’énigmes <b>en foret ou même en
@@ -112,7 +106,7 @@ $script = "<script src='../js/accueil.js'></script>";
 <div class="EscapeGameDisponible">
     <div class="MiseEnPage">
         <div>
-            <h2 class="TitreEscapeGame">Nos escapes games disponible</h2>
+            <h2 class="TitreEscapeGame" id="available-games">Nos escapes games disponible</h2>
             <div class="RectangleTitre"></div>
         </div>
         <div class="ListeDesEscapeGame">
@@ -122,7 +116,7 @@ $script = "<script src='../js/accueil.js'></script>";
             </div>
         </div>
         <div>
-            <h1 class="TitreEscapeGame">Où sommes nous ?</h1>
+            <h1 class="TitreEscapeGame" id="places">Où sommes nous ?</h1>
             <div class="RectangleTitre"></div>
         </div>
         <div class="Carte">
@@ -138,10 +132,10 @@ $script = "<script src='../js/accueil.js'></script>";
         <div class="PresentationGlobal">
             <div class="PresentationText">
                 <div>
-                    <h2 class="TitreEscapeGame">Qui sommes nous ?</h2>
+                    <h2 class="TitreEscapeGame" id="who-presentation">Qui sommes nous ?</h2>
                     <div class="RectangleTitre"></div>
                 </div>
-                <div class="PresentationPave">
+                <div class="PresentationPave" id="Presentation">
                     <p>chez we escape, vous pourrez redécouvrir le concept d’escape game.
                         Que vous soyez innexperimenté ou un passionnés, vous ne serez pas au bout de vos surprises avec
                         notre concept d’escape game en plein air.</p>

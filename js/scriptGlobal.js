@@ -14,7 +14,7 @@ if (variable) {
     document.querySelector('.cache_fond').addEventListener('click', fermerpanier)
     document.querySelector('.croix').addEventListener('click', fermerpanier)
 
-    function fermerpanier(){
+    function fermerpanier() {
         document.querySelector('.panier-tot').classList.remove('ouvert');
         document.querySelector('.cache_fond').classList.remove('ouvert');
         document.querySelector('main').classList.remove('flou');
@@ -43,6 +43,12 @@ async function fetchObjets() {
     return objets; // Retourner les données après les avoir récupérées.
 }
 
+async function fetchLanguesGlobales() {
+    const response = await fetch('../datas/langues.json'); // Appel à un fichier.
+    const objets = await response.json(); // Prétraitement de la réponse.
+    return objets; // Retourner les données après les avoir récupérées.
+}
+
 
 // utilisation des données et traitement du changement de langue
 
@@ -60,14 +66,16 @@ function changerLangue() {
     setLangueBDD();
 }
 
-let Jeux=[];
+let Jeux = [];
 let employes = [];
 let objets = [];
+let global = [];
 
 async function recupBDD() {
     Jeux = await fetchJeux();
     employes = await fetchEmployés();
-    objets = await fetchObjets()
+    objets = await fetchObjets();
+    global = await fetchLanguesGlobales();
 
     setLangueBDD();
 }
@@ -80,25 +88,25 @@ async function setLangueBDD() {
         let descriptionJeu = document.querySelectorAll('#DescriptionJeu' + e['ID_jeu'])
         if (langue == 'francais') {
             if (titreJeu) {
-                titreJeu.forEach(element =>{
+                titreJeu.forEach(element => {
                     element.innerText = e['Titre'];
                 })
             }
             if (descriptionJeu) {
-                descriptionJeu.forEach(element =>{
+                descriptionJeu.forEach(element => {
                     element.innerText = e['description'];
                 })
             }
         }
         else {
             if (titreJeu) {
-                titreJeu.forEach(element =>{
-                    element.innerText = e['Titre_'+langue];
+                titreJeu.forEach(element => {
+                    element.innerText = e['Titre_' + langue];
                 })
             }
             if (descriptionJeu) {
-                descriptionJeu.forEach(element =>{
-                    element.innerText = e['Description_'+langue];
+                descriptionJeu.forEach(element => {
+                    element.innerText = e['Description_' + langue];
                 })
             }
         }
@@ -109,25 +117,25 @@ async function setLangueBDD() {
         let descobj = document.querySelectorAll('#descriptionObjet' + e['id_objet_shop'])
         if (langue == 'francais') {
             if (Titreobj) {
-                Titreobj.forEach(element =>{
+                Titreobj.forEach(element => {
                     element.innerText = e['nom'];
                 })
             }
             if (descobj) {
-                descobj.forEach(element =>{
+                descobj.forEach(element => {
                     element.innerText = e['description'];
                 })
             }
         }
         else {
             if (Titreobj) {
-                Titreobj.forEach(element =>{
-                    element.innerText = e['nom_'+langue];
+                Titreobj.forEach(element => {
+                    element.innerText = e['nom_' + langue];
                 })
             }
             if (descobj) {
-                descobj.forEach(element =>{
-                    element.innerText = e['description_'+langue];
+                descobj.forEach(element => {
+                    element.innerText = e['description_' + langue];
                 })
             }
         }
@@ -147,4 +155,11 @@ async function setLangueBDD() {
             }
         }
     });
+
+    global.forEach(e => {
+        let change = document.querySelector(e)
+        if (change) {
+            domaine.innerText = e[langue];
+        }
+    })
 }

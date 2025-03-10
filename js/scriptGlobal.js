@@ -12,7 +12,11 @@ if (variable) {
     }
 
     document.querySelector('.cache_fond').addEventListener('click', fermerpanier)
-    document.querySelector('.croix').addEventListener('click', fermerpanier)
+    let croix = document.querySelector('.croix')
+
+    if(croix){
+        croix.addEventListener('click', fermerpanier)
+    }
 
     function fermerpanier() {
         document.querySelector('.panier-tot').classList.remove('ouvert');
@@ -156,10 +160,13 @@ async function setLangueBDD() {
         }
     });
 
-    global.forEach(e => {
-        let change = document.querySelector(e)
-        if (change) {
-            domaine.innerText = e[langue];
+    Object.entries(global).forEach(([key, value]) => {
+        console.log(key);
+        let domaine = document.querySelectorAll(key)
+        if (domaine) {
+            domaine.forEach(element => {
+                element.innerHTML = value[langue];
+            });
         }
-    })
+    });
 }

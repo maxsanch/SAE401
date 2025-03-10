@@ -55,7 +55,7 @@ $script = '<script src="js/ajoutJeu.js"></script>';
         </div>
         <div class="nombre">
             <input type="text" required name="adresse" placeholder="entrez une adresse">
-            <input type="number" required name="postale" placeholder="entrez un code postale">
+            <input type="number" required name="postale" placeholder="entrez un code postal">
         </div>
         <div class="form_elt">
             <!-- Limite la taille maximale de fichier téléchargé (500Ko ici) -->

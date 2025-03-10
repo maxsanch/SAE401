@@ -15,7 +15,7 @@ if ($user['niveau'] == 'admin') {
                     <div class="Logo"><img src="../img/Logo.svg" alt="Logo de we escape"></div>
                     <div class="FooterPartiesGlobal">
                         <div class="MiseEnPageFooter">
-                            <div>
+                            <div class="AccueilDescritpion">
                                 <div>Découvrez we-escape et ses escapes games en plein air !
                                     Plongez dans différentes aventures au coeurs d’enquêtes et d’énigmes en foret ou même en ville.
                                 </div>
@@ -24,7 +24,7 @@ if ($user['niveau'] == 'admin') {
                                     parcors
                                     afin de vous echapper !</div>
                             </div>
-                            <h3>Nos réseaux</h3>
+                            <h3 class="socials-media">Nos réseaux</h3>
                             <div class="ReseauImg">
                                 <div><a href="https://www.facebook.com/weescapegmbh"><img src="../img/facebook.svg" alt="icon de facebook"></a></div>
                                 <div><a href="https://www.instagram.com/we_escape_abenteuer/"><img src="../img/instagram.svg" alt="icon de instagram"></a></div>
@@ -50,35 +50,34 @@ if ($user['niveau'] == 'admin') {
                             </div>
                         </div>
                         <div class="MiseEnPageFooter">
-                            <h3 class="NoMargin">Information</h3>
+                            <h3 class="NoMargin">Informations</h3>
                             <div class="Information InformationAdmin">
-                            <div><a href="index.php?page=PageAjoutJeu">Ajouter un escape game</a></div>
-                                <div><a href="index.php?page=checkusers">Les utilisateurs</a></div>
-                                <div><a href="index.php">Accueil</a></div>
-                                <div><a href="index.php?page=propos">A propos</a></div>
-                                <div><a href="index.php?page=jeuxAll">Nos jeux</a></div>
-                                <div><a href="index.php?page=carte">Nous trouver</a></div>
-                                <div><a href="index.php?page=Contacts">Contacts</a></div>
-                                <div><a href="index.php?page=reglement">Réservation</a></div>
-                                <div><a href="index.php?page=shop">Boutique souvenir</a></div>
-                                <div><a href="index.php?page=informationmyuser">Mon profil</a></div>
-                                <div><a href="index.php?page=quitter">Se déconnecter</a></div>
+                            <div><a href="index.php?page=PageAjoutJeu" class="add-game">Ajouter un escape game</a></div>
+                                <div><a href="index.php?page=checkusers" class="user-header">Les utilisateurs</a></div>
+                                <div><a href="index.php" class="home">Accueil</a></div>
+                                <div><a href="index.php?page=propos" class="about">A propos</a></div>
+                                <div><a href="index.php?page=jeuxAll" class="games-header">Nos jeux</a></div>
+                                <div><a href="index.php?page=carte" class="find-us">Nous trouver</a></div>
+                                <div><a href="index.php?page=Contacts" class="contacts-header">Contacts</a></div>
+                                <div><a href="index.php?page=reglement" class="book-header">Commander</a></div>
+                                <div><a href="index.php?page=shop" class="shop-header">Boutique souvenir</a></div>
+                                <div><a href="index.php?page=informationmyuser" class="my-profil">Mon profil</a></div>
+                                <div><a href="index.php?page=quitter" class="disconnect">Se déconnecter</a></div>
                             </div>
                         </div>
                     </div>
-                    <div class="Realisation">Codé par Noah, Maxence et Alexandre | Hébergé par Infomaniak</div>
+                    <div class="Realisation">Codé par Noah, Maxence et Alexandre | Hébergé à l\'IUT de mulhouse</div>
                 </div>
                 <div class="RoueFooter" style="--X:-40%; --Y:-40%;"><img src="../img/roue_footer.svg" alt="Une roue"></div>
             </div>';
 
 } else {
-
     $footer = '<div class="MiseEnPageRoue">
                 <div class="MisePage">
                     <div class="Logo"><img src="../img/Logo.svg" alt="Logo de we escape"></div>
                     <div class="FooterPartiesGlobal">
                         <div class="MiseEnPageFooter">
-                            <div>
+                            <div class="AccueilDescritpion">
                                 <div>Découvrez we-escape et ses escapes games en plein air !
                                     Plongez dans différentes aventures au coeurs d’enquêtes et d’énigmes en foret ou même en ville.
                                 </div>
@@ -87,7 +86,7 @@ if ($user['niveau'] == 'admin') {
                                     parcors
                                     afin de vous echapper !</div>
                             </div>
-                            <h3>Nos réseaux</h3>
+                            <h3 class="socials-media">Nos réseaux</h3>
                             <div class="ReseauImg">
                                 <div><a href="https://www.facebook.com/weescapegmbh"><img src="../img/facebook.svg" alt="icon de facebook"></a></div>
                                 <div><a href="https://www.instagram.com/we_escape_abenteuer/"><img src="../img/instagram.svg" alt="icon de instagram"></a></div>
@@ -113,21 +112,21 @@ if ($user['niveau'] == 'admin') {
                             </div>
                         </div>
                         <div class="MiseEnPageFooter">
-                            <h3 class="NoMargin">Information</h3>
+                            <h3 class="NoMargin">Informations</h3>
                             <div class="Information InformationAdmin">
                                 <div><a href="index.php">Accueil</a></div>
-                                <div><a href="index.php?page=propos">A propos</a></div>
-                                <div><a href="index.php?page=jeuxAll">Nos jeux</a></div>
-                                <div><a href="index.php?page=carte">Nous trouver</a></div>
-                                <div><a href="index.php?page=Contacts">Contacts</a></div>
-                                <div><a href="index.php?page=reglement">Réservation</a></div>
-                                <div><a href="index.php?page=shop">Boutique souvenir</a></div>
-                                <div><a href="index.php?page=informationmyuser">Mon profil</a></div>
-                                <div><a href="index.php?page=quitter">Se déconnecter</a></div>
+                                <div><a href="index.php?page=propos" class="about">A propos</a></div>
+                                <div><a href="index.php?page=jeuxAll" class="games-header">Nos jeux</a></div>
+                                <div><a href="index.php?page=carte" class="find-us">Nous trouver</a></div>
+                                <div><a href="index.php?page=Contacts" class="contacts-header">Contacts</a></div>
+                                <div><a href="index.php?page=reglement" class="book-header>Réservation</a></div>
+                                <div><a href="index.php?page=shop" class="shop-header">Boutique souvenir</a></div>
+                                <div><a href="index.php?page=informationmyuser" class="my-profil">Mon profil</a></div>
+                                <div><a href="index.php?page=quitter" class="disconnect">Se déconnecter</a></div>
                             </div>
                         </div>
                     </div>
-                    <div class="Realisation">Codé par Noah, Maxence et Alexandre | Hébergé par Infomaniak</div>
+                    <div class="Realisation">Codé par Noah, Maxence et Alexandre | Hébergé à l\'IUT de mulhouse</div>
                 </div>
                 <div class="RoueFooter" style="--X:-40%; --Y:-40%;"><img src="../img/roue_footer.svg" alt="Une roue"></div>
             </div>';

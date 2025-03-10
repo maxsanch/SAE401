@@ -4,10 +4,10 @@ $styles = "styles/accueil.css"; // mettre le lien vers le style ici
 $styles_telephone = "styles/telephone/accueil_tel.css";
 
 if (isset($_SESSION['acces'])) {
-    $connecteoupas = 'Découvrir !';
+    $connecteoupas = '<span class="Discover-button">Découvrir !</span>';
     $link = "index.php?page=jeuxAll";
 } else {
-    $connecteoupas = 'Se connecter !';
+    $connecteoupas = '<span class="connect-header">Se connecter !</span>';
     $link = "index.php?page=connexion";
 }
 
@@ -93,7 +93,7 @@ $script = "<script src='../js/accueil.js'></script>";
             </div>
             <div class="AccueilBoutonsGlobal">
                 <a href="<?= $link ?>" class="AccueilBouton"><?= $connecteoupas ?></a>
-                <a href="index.php?page=propos" class="AccueilBouton">A propos</a>
+                <a href="index.php?page=propos" class="AccueilBouton about">A propos</a>
             </div>
         </div>
         <div class="AccueilCle">

@@ -15,7 +15,7 @@ foreach ($jeux as $valeur) {
                                 </a>';
             break;
         case 'Allemagne':
-            $pointAllemagne = '<a href="index.php?page=infojeusolo&idjeu=' . $valeur['ID_jeu'] . '" class="point" style="top: ' . $valeur['coY'] . '%; left: ' . $valeur['coX'] . '%;">
+            $pointAllemagne .= '<a href="index.php?page=infojeusolo&idjeu=' . $valeur['ID_jeu'] . '" class="point" style="top: ' . $valeur['coY'] . '%; left: ' . $valeur['coX'] . '%;">
                                     <img src="../img/map.svg" alt="map point">
                                 </a>';
             break;

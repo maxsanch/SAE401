@@ -47,7 +47,7 @@ if (empty($panier) && empty($souvenirs)) {
                                     nombre de personnes : ' . $valeurs['nombre_personnes'] . '
                                 </div>
                                 <div class="prix">
-                                    prix total : ' . ($valeurs['nombre_personnes'] * $valeurs['prix']) . '
+                                    prix total : ' . ($valeurs['nombre_personnes'] * $valeurs['prix']) . ' €
                                 </div>
                             </div>
                             <div class="infojour">
@@ -58,7 +58,7 @@ if (empty($panier) && empty($souvenirs)) {
                                     ' . $valeurs['heure_reservation'] . '
                                 </div>
                                 <div class="prixsolo">
-                                    ' . $valeurs['prix'] . '
+                                    ' . $valeurs['prix'] . ' €
                                 </div>
                             </div>
                             <div class="description">
@@ -76,7 +76,7 @@ if (empty($panier) && empty($souvenirs)) {
         $resultpanier .= '<div class="lignepanier">
             <div class="linetop">
                 <div class="nom">' . $ligne['nom'] . '</div>
-                <div class="prixTot">Prix total : ' . ($ligne['prix'] * $ligne['quantitée']) . ' (' . $ligne['prix'] . '
+                <div class="prixTot">Prix total : ' . ($ligne['prix'] * $ligne['quantitée']) . ' € (' . $ligne['prix'] . ' € 
                     x' . $ligne['quantitée'] . ')</div>
             </div>
             <div class="description">' . $ligne['description'] . '</div><a
@@ -128,7 +128,7 @@ if (empty($panier) && empty($souvenirs)) {
             <?= $resultpanier ?>
         </div>
         <div class="total">
-            Total : <?= $total ?>
+            Total : <?= $total ?> €
         </div>
     </div>
     <div class="infoUser">

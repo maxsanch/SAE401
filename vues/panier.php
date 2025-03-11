@@ -75,7 +75,7 @@ if (isset($_SESSION['acces'])) {
                            </div>
                            </div>
                            <div class="total-panier">
-                           Total : ' . $total . '
+                           Total : ' . $total . ' €
                            </div>';
     } else {
         $panierglobal = '<div class="ligne">Votre panier est vide.</div>';

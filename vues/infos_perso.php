@@ -27,7 +27,7 @@ if (!empty($anciensPaniers)) {
                                 nombre de personnes : ' . $ligne['nombre_personnes'] . '
                             </div>
                             <div class="prix">
-                                prix total : ' . ($ligne['nombre_personnes'] * $ligne['prix']) . '
+                                prix total : ' . ($ligne['nombre_personnes'] * $ligne['prix']) . ' €
                             </div>
                         </div>
                         <div class="infojour">
@@ -38,7 +38,7 @@ if (!empty($anciensPaniers)) {
                                 ' . $ligne['heure_reservation'] . '
                             </div>
                             <div class="prixsolo">
-                                ' . $ligne['prix'] . '
+                                ' . $ligne['prix'] . ' €
                             </div>
                         </div>
                         <div class="description" id="DescriptionJeu' . $ligne['ID_jeu'] . '">
@@ -50,7 +50,7 @@ if (!empty($anciensPaniers)) {
             $lignes .= '<div class="lignepanier">
                 <div class="linetop">
                     <div class="nom" id="TitreObjet' . $ligne['id_objet_shop'] . '">' . $ligne['nom'] . '</div>
-                    <div class="prixTot">Prix total : ' . ($ligne['prix'] * $ligne['quantitée']) . ' (' . $ligne['prix'] . '
+                    <div class="prixTot">Prix total : ' . ($ligne['prix'] * $ligne['quantitée']) . ' € (' . $ligne['prix'] . ' €
                             x' . $ligne['quantitée'] . ')</div>
                 </div>
                 <div class="description" id="descriptionObjet' . $ligne['id_objet_shop'] . '">' . $ligne['description'] . '</div>
@@ -123,7 +123,7 @@ if (empty($panier) && empty($souvenirs)) {
         $resultpanier .= '<div class="lignepanier">
             <div class="linetop">
                 <div class="nom">' . $ligne['nom'] . '</div>
-                <div class="prixTot">Prix total : ' . ($ligne['prix'] * $ligne['quantitée']) . ' (' . $ligne['prix'] . '
+                <div class="prixTot">Prix total : ' . ($ligne['prix'] * $ligne['quantitée']) . ' € (' . $ligne['prix'] . ' €
                     x' . $ligne['quantitée'] . ')</div>
             </div>
             <div class="description">' . $ligne['description'] . '</div>

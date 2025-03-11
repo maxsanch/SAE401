@@ -1,0 +1,61 @@
+.gridTop{
+    grid-template-columns: 1fr;
+}
+
+.form_elt{
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.jeux {
+    grid-template-columns: 1fr 1fr;
+    margin-bottom: 64px;
+}
+
+.calendrier {
+    width: 90%;
+    grid-template-columns: repeat(3, 1fr);
+}
+
+#premiere{
+    grid-column: 1 /span 3;
+}
+
+#seconde{
+    grid-column: 1 /span 3;
+    grid-row: 6;
+}
+
+#trois{
+    grid-column: 1 /span 3;
+    grid-row: 10;
+}
+
+#quatre{
+    grid-column: 1 /span 3;
+    grid-row: 13;
+}
+
+.total:nth-of-type(7n) {
+    grid-column: span 3;
+}
+
+.total:nth-of-type(7n) {
+    grid-column-start: 1;
+}
+
+.jeutop{
+    grid-template-columns: 1fr;
+    gap: 32px;
+}
+
+.autre{
+    flex-direction: column;
+}
+
+.video{
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 64px;
+}

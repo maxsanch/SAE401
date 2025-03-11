@@ -1,0 +1,22 @@
+.all {
+    grid-template-columns: 1fr;
+    margin-bottom: 64px;
+    width: 90%;
+}
+
+.engrenage-single,
+.engrenages {
+    display: none;
+}
+
+.puce {
+    display: none;
+}
+
+.carte_flip {
+    height: 250px;
+}
+
+input{
+    border-radius: 8px;
+}

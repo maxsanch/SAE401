@@ -17,7 +17,9 @@ class ctlJeux
     public function ajouterjeu($titre, $ville, $link, $desc, $min, $max, $age, $adresse, $postale, $prix, $pays, $coX, $coY, $region, $titreanglais, $descriptionanglais)
     {
         $this->jeu->ajouterjeuBDD($titre, $ville, $link, $desc, $min, $max, $age, $adresse, $postale, $prix, $pays, $coX, $coY, $region, $titreanglais, $descriptionanglais);
+
         $idjeu = $this->jeu->recupJeu();
+        
         if (isset($_FILES['photoGame'])) {
             // Vérification si le fichier ne contient pas d'erreur
             if ($_FILES['photoGame']["error"] == 0) {

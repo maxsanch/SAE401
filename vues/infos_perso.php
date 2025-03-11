@@ -62,7 +62,7 @@ if (!empty($anciensPaniers)) {
                                     ' . $lignes . '
                                 </div>
                                 <div class="dateValidation">
-                                    Panier validé le : ' . $valeur['derniere_modification'] . '
+                                    Panier validé le : ' . date('d / m / Y à H : i : s', strtotime($valeur['derniere_modification'])) . '
                                 </div>
                            </div> ';
     }
@@ -86,7 +86,7 @@ if (empty($panier) && empty($souvenirs)) {
     $resultpanier = "Vous n'avez aucun article dans votre panier.";
 } else {
     foreach ($panier as $valeurs) {
-        $resultpanier .= '<div class="lignepanier">
+        $resultpanier .= '<div class="lignepanieractu">
                             <div class="linetop">
                                 <div class="titre">
                                     ' . $valeurs['Titre'] . '
@@ -95,8 +95,11 @@ if (empty($panier) && empty($souvenirs)) {
                                     nombre de personnes : ' . $valeurs['nombre_personnes'] . '
                                 </div>
                                 <div class="prix">
-                                    prix total : ' . ($valeurs['nombre_personnes'] * $valeurs['prix']) . '
+                                    prix total : ' . ($valeurs['nombre_personnes'] * $valeurs['prix']) . ' €
                                 </div>
+                            </div>
+                            <div class="description">
+                                ' . $valeurs['description'] . '
                             </div>
                             <div class="infojour">
                                 <div class="jour">
@@ -106,17 +109,14 @@ if (empty($panier) && empty($souvenirs)) {
                                     ' . $valeurs['heure_reservation'] . '
                                 </div>
                                 <div class="prixsolo">
-                                    ' . $valeurs['prix'] . '
+                                    ' . $valeurs['prix'] . ' €
                                 </div>
+                                <a href=index.php?page=suppressionReservation&idJeu=' . $valeurs['ID_jeu'] . '&heure=' . $valeurs['heure_reservation'] . '&jour=' . $valeurs['jour_reservation'] . '>
+                                    <div class="iconepoubelle">
+                                        <img src="../img/trash.svg" alt="une poubelle"/>
+                                    </div>
+                                </a>
                             </div>
-                            <div class="description">
-                                ' . $valeurs['description'] . '
-                            </div>
-                            <a href=index.php?page=suppressionReservation&idJeu=' . $valeurs['ID_jeu'] . '&heure=' . $valeurs['heure_reservation'] . '&jour=' . $valeurs['jour_reservation'] . '>
-                            <div class="iconepoubelle">
-                                <img src="../img/trash.svg" alt="une poubelle"/>
-                            </div>
-                            </a>
                         </div>';
     }
     foreach ($souvenirs as $ligne) {
@@ -127,8 +127,8 @@ if (empty($panier) && empty($souvenirs)) {
                     x' . $ligne['quantitée'] . ')</div>
             </div>
             <div class="description">' . $ligne['description'] . '</div>
-            <form action=index.php?page=suppressionSouvenirs&idobj=' . $ligne['id_objet_shop'] . '&idpanier=' . $ligne['id_panier'] . ' method=post>
-                <input type=number placeholder="entre un nombre à retirer de la commande" min=0 max=' . $ligne['quantitée'] . ' name="nombredelet">
+            <form class="form-panier-obj" action=index.php?page=suppressionSouvenirs&idobj=' . $ligne['id_objet_shop'] . '&idpanier=' . $ligne['id_panier'] . ' method=post>
+                <input type=number placeholder="entre un nombre à retirer de la commande" min=0 max=' . $ligne['quantitée'] . ' name="nombredelet" min=1>
                 <button class="iconepoubelle"><img src="../img/trash.svg" alt="une poubelle"/></button>
             </form>
         </div>';
@@ -181,7 +181,8 @@ if (empty($panier) && empty($souvenirs)) {
                         <div class="infoPerso">
                             <div class="mail">
                                 <label class="inf">
-                                    <p>E-mail</p><input type="mail" name="mail" value="<?= $user['mail'] ?>" class="bloqué" disabled>
+                                    <p>E-mail</p><input type="mail" name="mail" value="<?= $user['mail'] ?>"
+                                        class="bloqué" disabled>
                                 </label>
                             </div>
                             <div class="adresse">
@@ -236,7 +237,9 @@ if (empty($panier) && empty($souvenirs)) {
                     </div>
                 </div>
                 <div class="infoproduits">
-                    <div class="cadreproduit"><?= $resultpanier ?></div>
+                    <div class="cadreproduit">
+                        <?= $resultpanier ?>
+                    </div>
                 </div>
             </div>
         </div>

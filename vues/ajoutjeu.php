@@ -1,7 +1,7 @@
 <?php
 
 $styles = "../styles/style_ajoutJeu.css";
-$styles_telephone = "";
+$styles_telephone = "styles/telephone/ajoutjeu_tel.css";
 $librairie = '';
 
 $result = "";

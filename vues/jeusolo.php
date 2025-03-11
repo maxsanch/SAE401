@@ -71,7 +71,6 @@ $script = "<script src='../js/script_jeusolo.js'></script>";
     </div>
 </div>
 <div class="calendrier" id="calender">
-
 </div>
 <div class="video">
     <?= $video ?>

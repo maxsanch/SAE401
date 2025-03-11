@@ -47,7 +47,7 @@ foreach ($employes as $valeur) {
             <img src="../img/envelope_1.svg" alt="icone de mail">
         </div>
         <div class="info">
-            réservation@we-escape.de
+            booking@we-escape.de
         </div>
     </div>
 </div>

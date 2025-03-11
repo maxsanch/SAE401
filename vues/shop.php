@@ -1,7 +1,7 @@
 <?php
 
 $styles = '../styles/style_souvenirs.css';
-$styles_telephone = "";
+$styles_telephone = "styles/telephone/souvenir_tel.css";
 $result = "";
 
 $script = "";
@@ -29,7 +29,7 @@ foreach ($objets as $valeur) {
 ?>
 
 <div class="titre">
-    <h1 id='keep-souvenirs'>Envie de garder des souvenirs ?</h1>
+    <h1>Envie de garder des souvenirs ?</h1>
     <div class="rectangleTitre">
     </div>
 </div>

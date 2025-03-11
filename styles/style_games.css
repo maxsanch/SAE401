@@ -176,3 +176,9 @@ img {
     border-radius: 20px;
     z-index: 10;
 }
+
+.HeaderBouton:nth-of-type(3)>a {
+    background-image: linear-gradient(-135deg, #E6B856, #806630);
+    color: transparent;
+    background-clip: text;
+}

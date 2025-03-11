@@ -31,15 +31,15 @@ $script = '<script src="js/ajoutJeu.js"></script>';
             <input type="text" required name="Titre_anglais" placeholder="titre du jeu en anglais">
         </div>
 
-        <input type="text" required name="link"
+        <input type="text" name="link"
             placeholder="entrez le lien d'une vidéo youtube (partager, puis enlever : https://youtu.be/)">
         <div class="nombre">
-            <input type="number" required name="min" placeholder="min participants">
-            <input type="number" required name="max" placeholder="max participants">
+            <input type="number" required name="min" min="0" placeholder="min participants">
+            <input type="number" required name="max" min="0" placeholder="max participants">
         </div>
         <div class="nombre">
-            <input type="number" name="age" placeholder="age participants">
-            <input type="number" name="prix" placeholder="prix">
+            <input type="number" name="age" min="0" placeholder="age participants">
+            <input type="number" name="prix" min="0" placeholder="prix">
         </div>
         <div class="nombre">
             <textarea required name="description" id="test" placeholder="Entrez la description du jeu"></textarea>
@@ -55,7 +55,7 @@ $script = '<script src="js/ajoutJeu.js"></script>';
         </div>
         <div class="nombre">
             <input type="text" required name="adresse" placeholder="entrez une adresse">
-            <input type="number" required name="postale" placeholder="entrez un code postal">
+            <input type="number" required name="postale" min="0" placeholder="entrez un code postal">
         </div>
         <div class="form_elt">
             <!-- Limite la taille maximale de fichier téléchargé (500Ko ici) -->

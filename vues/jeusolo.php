@@ -59,7 +59,7 @@ $script = "<script src='../js/script_jeusolo.js'></script>";
         </div>
     </div>
 </div>
-<div class="fleches">
+<div class="fleches" id="calender">
     <div class="gauche">
         <img src="../img/LeftArrow.svg" alt="fleche gauche">
     </div>
@@ -70,8 +70,7 @@ $script = "<script src='../js/script_jeusolo.js'></script>";
         <img src="../img/RightArrow.svg" alt="fleche droite">
     </div>
 </div>
-<div class="calendrier" id="calender">
-
+<div class="calendrier">
 </div>
 <div class="video">
     <?= $video ?>

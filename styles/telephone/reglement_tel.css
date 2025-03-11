@@ -20,3 +20,9 @@
 input{
     border-radius: 8px;
 }
+
+.HeaderBouton:nth-of-type(12)>a {
+    background-image: linear-gradient(-135deg, #E6B856, #806630);
+    color: transparent;
+    background-clip: text;
+}

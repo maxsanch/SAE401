@@ -30,6 +30,8 @@ body {
 
 .dateValidation {
     padding-bottom: 20px;
+    padding-top: 30px;
+    font-family: Montserrat-bold;
 }
 
 .total {
@@ -91,7 +93,7 @@ body {
     gap: 10px;
 }
 
-input{
+input {
     width: 100%;
     box-sizing: border-box;
     padding: 5px;
@@ -101,46 +103,108 @@ input{
     color: white;
 }
 
-input::placeholder{
+input::placeholder {
     color: white;
 }
 
-.mdp{
+.mdp {
     margin-top: 20px;
 }
 
-.grid-mdp{
+.grid-mdp {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 20px;
 }
 
-.bloqué{
+.bloqué {
     background: #E6B856;
     color: rgb(17, 17, 17);
 }
 
-.total-boutons{
+.total-boutons {
     margin-top: 20px;
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 20px;
 }
 
-.modifCompteButton{
+.modifCompteButton {
     padding: 5px;
     font-family: Montserrat-bold;
     background: linear-gradient(135deg, #E6B856, #856b32);
     width: 100%;
     border: none;
     border-radius: 5px;
+    box-sizing: border-box;
 }
 
-.deletaccount{
+.deletaccount {
     width: 100%;
     padding: 5px;
     text-align: center;
+    border: #E6B856 solid 1px;
+    border-radius: 5px;
+    font-size: 12px;
+    box-sizing: border-box;
 }
 
+.deletaccount>a {
+    color: #E6B856;
+}
 
+.infoproduits {
+    height: 800px;
+    overflow-y: scroll;
+    scrollbar-width: thin;
+    scrollbar-color: #E6B856 transparent;
+}
 
+.linetop {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-family: Montserrat-bold;
+}
+
+.infojour {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.lignepanieractu {
+    padding: 5px;
+    padding-bottom: 10px;
+    padding-top: 10px;
+}
+
+.lignepanieractu:nth-child(even) {
+    background: #00000050;
+}
+
+.iconepoubelle {
+    cursor: pointer;
+    width: 30px;
+}
+
+.lignepanier {
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+
+.description {
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+
+.form-panier-obj{
+    display: flex;
+    gap: 50px;
+}
+.form-panier-obj>button{
+    background: none;
+    width: 50px;
+    border: none;
+    cursor: pointer;
+}

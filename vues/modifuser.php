@@ -30,7 +30,7 @@ if (!empty($anciensPaniers)) {
         foreach ($anciennesReservations as $ligne) {
             $lignes .= '<div class="lignepanier">
                         <div class="linetop">
-                            <div class="titre">
+                            <div class="titre" id="TitreJeu' . $ligne['ID_jeu'] . '">
                                 ' . $ligne['Titre'] . '
                             </div>
                             <div class="personnes">
@@ -51,7 +51,7 @@ if (!empty($anciensPaniers)) {
                                 ' . $ligne['prix'] . '
                             </div>
                         </div>
-                        <div class="description">
+                        <div class="description" id="DescriptionJeu' . $ligne['ID_jeu'] . '">
                             ' . $ligne['description'] . '
                         </div>
                     </div>';
@@ -59,26 +59,30 @@ if (!empty($anciensPaniers)) {
         foreach ($anciensSouvenirs as $ligne) {
             $lignes .= '<div class="lignepanier">
                 <div class="linetop">
-                    <div class="nom">' . $ligne['nom'] . '</div>
+                    <div class="nom" id="TitreObjet' . $ligne['id_objet_shop'] . '">' . $ligne['nom'] . '</div>
                     <div class="prixTot">Prix total : ' . ($ligne['prix'] * $ligne['quantitée']) . ' (' . $ligne['prix'] . '
                             x' . $ligne['quantitée'] . ')</div>
                 </div>
-                <div class="description">' . $ligne['description'] . '</div>
+                <div class="description" id="descriptionObjet' . $ligne['id_objet_shop'] . '">' . $ligne['description'] . '</div>
             </div>';
         }
-        $paniervalides .= '<div class="panier">
+        $paniervalides .= '<div class="AciennesCommandes">
                                 <h3>Numéro de commande : ' . $valeur['id_panier'] . '</h3>
                                 <div class="accueilPanier">
                                     ' . $lignes . '
                                 </div>
+                                <div class="dateValidation">
+                                    Panier validé le : ' . date('d / m / Y à H : i : s', strtotime($valeur['derniere_modification'])) . '
+                                </div>
                            </div> ';
     }
 } else {
-    $paniervalides .= "Cet utilisateur n'a passé encore aucune commande.";
+    $paniervalides .= "Cett utilisateur n'a passé aucune commande.";
 }
 
 
 ?>
+
 <div class="MiseEnPage">
     <div class="total">
         <div class="Separation">
@@ -135,9 +139,11 @@ if (!empty($anciensPaniers)) {
 
             <div class="modifiermdp">
                 <form method="post" action="index.php?page=ModifMdpUser&idUser=<?= $_GET['idUser'] ?>">
-                    <input class="modifiermdpInput" type="password" name="mdp" placeholder="entrez le nouveau mot de passe">
+                    <input class="modifiermdpInput" type="password" name="mdp"
+                        placeholder="entrez le nouveau mot de passe">
                     <div>
-                        <input class="modifiermdpInput" type="password" name="confirmation" placeholder="entrez le nouveau mot de passe">
+                        <input class="modifiermdpInput" type="password" name="confirmation"
+                            placeholder="entrez le nouveau mot de passe">
                         <button class="modifiermdpBouton">Modifier</button>
                     </div>
                 </form>
@@ -147,9 +153,12 @@ if (!empty($anciensPaniers)) {
             </div>
         </div>
     </div>
-    <div class="panier">
-        <h2>Commandes effectuées</h2>
-        <?= $paniervalides ?>
+    <div class="ancienspaniers">
+        <div class="titre">
+            <h2 class="anciens-paniers-total">Anciennes commandes</h2>
+            <div class="rectangleTitre">
+            </div>
+        </div>
+        <div class="cadreproduit"><?= $paniervalides ?></div>
     </div>
-</div>
 </div>

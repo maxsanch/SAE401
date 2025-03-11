@@ -1,5 +1,5 @@
 <?php
-$styles_telephone = "";
+$styles_telephone = "styles/telephone/ajoutjeu_tel.css";
 $styles = "../styles/style_ajoutJeu.css";
 
 if (file_exists('img/photojeu/' . $_GET['idJeu']  . '.jpg')) {
@@ -21,9 +21,6 @@ $librairie = "";
 <h2>
     modifier les informations de : <?= $jeu['Titre'] ?>, jeu numéro <?= $jeu['ID_jeu'] ?>
 </h2>
-<div class="back">
-    <a href="index.php?page=PageAjoutJeu">Page précédente.</a>
-</div>
 <div class="gridTop">
     <form action="<?= $_SERVER['PHP_SELF'] . '?page=modifierjeu&idjeu=' . $_GET['idJeu'] . '' ?>" method="post" enctype="multipart/form-data">
         <div class="nombre">

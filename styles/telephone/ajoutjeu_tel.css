@@ -33,7 +33,7 @@
 
 #quatre{
     grid-column: 1 /span 3;
-    grid-row: 13;
+    grid-row: 14;
 }
 
 .total:nth-of-type(7n) {
@@ -58,4 +58,8 @@
     margin-left: auto;
     margin-right: auto;
     margin-bottom: 64px;
+}
+
+.gridTop{
+    margin-top: 32px;
 }

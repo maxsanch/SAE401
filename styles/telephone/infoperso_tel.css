@@ -1,0 +1,21 @@
+.global-page, .grid-mdp{
+    grid-template-columns: 1fr;
+}
+
+.grid-mdp{
+    gap: 8px;
+}
+
+.infoproduits{
+    height: fit-content;
+    padding-top: 8px;
+    padding-bottom: 8px;
+}
+
+.global-page{
+    gap: 16px;
+}
+
+.ancienspaniers{
+    margin-bottom: 64px;
+}

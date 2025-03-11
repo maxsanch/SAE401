@@ -84,9 +84,9 @@ if (!empty($anciensPaniers)) {
 ?>
 
 <div class="MiseEnPage">
+<h1>informations sur : <?= $user['prenom'] ?></h1>
     <div class="total">
         <div class="Separation">
-            <h1>informations sur : <?= $user['prenom'] ?></h1>
             <div class="infosUser">
                 <div class="pic">
                     <img src="<?= $phototest ?>" alt="Photo de l'utilisateur">

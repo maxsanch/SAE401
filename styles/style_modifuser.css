@@ -29,10 +29,12 @@ img {
 }
 
 .pic {
-    width: 250px;
+    margin-bottom: 16px;
+}
+.pic>img {
     height: 250px;
     object-fit: cover;
-    margin-bottom: 16px;
+    border-radius: 10px;
 }
 
 .ChangerPhoto {

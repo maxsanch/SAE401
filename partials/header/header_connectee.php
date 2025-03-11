@@ -63,6 +63,9 @@ if ($user['niveau'] == 'admin') {
                     <div class="HeaderBouton"><a href="index.php?page=Contacts" class="contacts-header">Contacts</a></div>
                     <div class="HeaderBouton"><a href="index.php?page=checkusers" class="users-header">Utilisateurs</a></div>
                     <div class="HeaderBouton"><a href="index.php?page=PageAjoutJeu" class="add-games">Ajouter un escape game</a></div>
+                    <div class="HeaderBouton"><a href="index.php?page=informationmyuser" class="my-profil">Mon compte</a></div>
+                    <div class="HeaderBouton Panier" id="panier">Mon panier</div>
+                    <div class="HeaderBouton"><a href="index.php?page=shop" class="shop-header">Magasin</a></div>
                     <div class="HeaderBouton"><a href="index.php?page=quitter" class="disconnect">Se déconnecter</a></div>
                     <div class="HeaderBouton"><a href="index.php?page=reglement" class="book-header">Réservation</a></div>
                 </div>
@@ -108,6 +111,9 @@ if ($user['niveau'] == 'admin') {
                         <div class="HeaderBouton"><a href="index.php?page=jeuxAll" class="games">Les jeux</a></div>
                         <div class="HeaderBouton"><a href="index.php?page=carte" class="find-us">Nous trouver</a></div>
                         <div class="HeaderBouton"><a href="index.php?page=Contacts" class="contacts-header">Contacts</a></div>
+                        <div class="HeaderBouton"><a href="index.php?page=informationmyuser" class="my-profil">Mon compte</a></div>
+                        <div class="HeaderBouton Panier" id="panier">Mon panier</div>
+                        <div class="HeaderBouton"><a href="index.php?page=shop" class="shop-header">Magasin</a></div>
                         <div class="HeaderBouton"><a href="index.php?page=quitter" class="disconnect">Se déconnecter</a></div>
                         <div class="HeaderBouton"><a href="index.php?page=reglement" class="book-header">Réservation</a></div>
                 </div>

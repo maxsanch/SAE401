@@ -48,13 +48,13 @@ $script = "<script src='../js/script_jeusolo.js'></script>";
         </div>
         <div class="autre">
             <div class="age">
-                <p>Age minimum : <?= $jeu[0]['age'] ?></p>
+                <p><span id='minimum-age'>Age minimum : </span><?= $jeu[0]['age'] ?></p>
             </div>
             <div class="prix">
                 <p>Prix pour 1 personne : <?= $jeu[0]['prix'] ?> €</p>
             </div>
             <div class="nombre">
-                <p>De <?= $jeu[0]['nombre_min'] ?> à <?= $jeu[0]['nombre_max'] ?> participants.es</p>
+                <p><span id='participants-range-1'>De </span><?= $jeu[0]['nombre_min'] ?><span id='participants-range-2'> à </span><?= $jeu[0]['nombre_max'] ?><span id='participants-range-3'> participants.es</span></p>
             </div>
         </div>
     </div>

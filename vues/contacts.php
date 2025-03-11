@@ -24,7 +24,7 @@ foreach ($employes as $valeur) {
 
 ?>
 
-<h1>L'ÉQUIPE</h1>
+<h1 id='team'>L'ÉQUIPE</h1>
 <div class="allemployes">
     <?= $result ?>
 </div>
@@ -37,7 +37,7 @@ foreach ($employes as $valeur) {
             <div class="info1">
                 07668 996660
             </div>
-            <div class="info2">
+            <div class="info2" id='working-hours'>
                 Lun. - Ven. 9h00 - 16h00
             </div>
         </div>

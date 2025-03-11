@@ -124,7 +124,7 @@
         "francais": "Réserver maintenant"
     },
     "#we-escape-france": {
-        "anglais": "We-escape now in France!",
+        "anglais": "We-escape now in France !",
         "francais": "We-escape maintenant en France !"
     },
     "#france-map": {
@@ -136,8 +136,8 @@
         "francais": "Carte de l'Allemagne"
     },
     "#find-us-cities": {
-        "anglais": "Find us in these cities",
-        "francais": "Retrouvez nous dans ces villes"
+        "anglais": "Find us in these cities !",
+        "francais": "Retrouvez nous dans ces villes !"
     },
     "#team": {
         "anglais": "THE TEAM",
@@ -156,11 +156,11 @@
         "francais": "Icône de mail"
     },
     "#description": {
-        "anglais": "Description:",
+        "anglais": "Description :",
         "francais": "Description :"
     },
     "#unavailable": {
-        "anglais": "Unavailable:",
+        "anglais": "Unavailable :",
         "francais": "Indisponible :"
     },
     "#add-to-cart": {
@@ -168,11 +168,11 @@
         "francais": "Ajouter au panier"
     },
     "#available": {
-        "anglais": "Available:",
+        "anglais": "Available :",
         "francais": "Disponible :"
     },
     "#keep-souvenirs": {
-        "anglais": "Want to keep souvenirs?",
+        "anglais": "Want to keep souvenirs ?",
         "francais": "Envie de garder des souvenirs ?"
     },
     "#gear-icon": {
@@ -200,15 +200,15 @@
         "francais": "Me connecter"
     },
     "#welcome-back": {
-        "anglais": "Long time no see!",
+        "anglais": "Long time no see !",
         "francais": "Comme on se retrouve !"
     },
     "#looking-for-game": {
-        "anglais": "Looking for a game?",
+        "anglais": "Looking for a game ?",
         "francais": "Vous cherchez une partie ?"
     },
     "#first-time-here": {
-        "anglais": "First time here?",
+        "anglais": "First time here ?",
         "francais": "C'est votre première fois ?"
     },
     "#sign-up": {
@@ -228,7 +228,7 @@
         "francais": "Adresse"
     },
     "#already-have-account": {
-        "anglais": "Already have an account?",
+        "anglais": "Already have an account ?",
         "francais": "Vous avez déjà un compte ?"
     },
     "#connect-here": {
@@ -252,7 +252,7 @@
         "francais": "Dernière connexion :"
     },
     "#validated-carts": {
-        "anglais": "Validated carts:",
+        "anglais": "Validated carts :",
         "francais": "Paniers validés :"
     },
     "#information": {
@@ -272,15 +272,15 @@
         "francais": "Une icône"
     },
     "#number-of-validated-carts": {
-        "anglais": "Number of validated carts:",
+        "anglais": "Number of validated carts :",
         "francais": "Nombre de paniers validés :"
     },
     "#number-of-registrations": {
-        "anglais": "Number of registrations:",
+        "anglais": "Number of registrations :",
         "francais": "Nombre d'inscriptions :"
     },
     "#favorite-product": {
-        "anglais": "Favorite product:",
+        "anglais": "Favorite product :",
         "francais": "Produit préféré :"
     },
     "#months": {
@@ -296,7 +296,7 @@
         "francais": "Cave"
     },
     "#minimum-age": {
-        "anglais": "Minimum age:",
+        "anglais": "Minimum age :",
         "francais": "Âge minimum :"
     },
     "#participants-range": {
@@ -336,7 +336,7 @@
         "francais": "Titre du jeu en anglais"
     },
     "#enter-youtube-link": {
-        "anglais": "Enter a YouTube link (share, then remove: https://youtu.be/)",
+        "anglais": "Enter a YouTube link (share, then remove : https://youtu.be/)",
         "francais": "Entrez le lien d'une vidéo YouTube (partager, puis enlever : https://youtu.be/)"
     },
     "#min-participants": {
@@ -400,19 +400,19 @@
         "francais": "Drapeau de la France"
     },
     "#number-of-people": {
-        "anglais": "Number of people:",
+        "anglais": "Number of people :",
         "francais": "Nombre de personnes :"
     },
     "#total-price": {
-        "anglais": "Total price:",
+        "anglais": "Total price :",
         "francais": "Prix total :"
     },
     "#order-number": {
-        "anglais": "Order number:",
+        "anglais": "Order number :",
         "francais": "Numéro de commande :"
     },
     "#cart-validated-on": {
-        "anglais": "Cart validated on:",
+        "anglais": "Cart validated on :",
         "francais": "Panier validé le :"
     },
     "#no-old-orders": {
@@ -484,7 +484,7 @@
         "francais": "Anciennes commandes"
     },
     "#cart-total": {
-        "anglais": "Total:",
+        "anglais": "Total :",
         "francais": "Total :"
     },
     "#bank-card": {
@@ -532,7 +532,7 @@
         "francais": "Valider la commande"
     },
     "#an-error-occurred": {
-        "anglais": "An error occurred:",
+        "anglais": "An error occurred :",
         "francais": "Une erreur est survenue :"
     },
     "#close-icon-cross": {
@@ -592,7 +592,7 @@
         "francais": "Cet utilisateur n'a passé encore aucune commande."
     },
     "#information-about": {
-        "anglais": "Information about:",
+        "anglais": "Information about :",
         "francais": "Informations sur :"
     },
     "#change-photo": {

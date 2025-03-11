@@ -154,7 +154,7 @@ input::placeholder {
 }
 
 .infoproduits {
-    height: 800px;
+    max-height: 800px;
     overflow-y: scroll;
     scrollbar-width: thin;
     scrollbar-color: #E6B856 transparent;

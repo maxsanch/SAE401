@@ -299,9 +299,17 @@
         "anglais": "Minimum age :",
         "francais": "Âge minimum :"
     },
-    "#participants-range": {
-        "anglais": "From [] to [] participants",
-        "francais": "De [] à [] participants"
+    "#participants-range-1": {
+        "anglais": "From ",
+        "francais": "De "
+    },
+    "#participants-range-2": {
+        "anglais": " to ",
+        "francais": " à "
+    },
+    "#participants-range-3": {
+        "anglais": " participants",
+        "francais": " participants.es"
     },
     "#left-arrow": {
         "anglais": "Left arrow",

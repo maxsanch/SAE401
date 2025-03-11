@@ -118,3 +118,9 @@ img {
     margin-bottom: 64px;
     justify-content: center;
 }
+
+.HeaderBouton:nth-of-type(6)>a {
+    background-image: linear-gradient(-135deg, #E6B856, #806630);
+    color: transparent;
+    background-clip: text;
+}

@@ -19,3 +19,9 @@
 .ancienspaniers{
     margin-bottom: 64px;
 }
+
+.HeaderBouton:nth-of-type(8)>a {
+    background-image: linear-gradient(-135deg, #E6B856, #806630);
+    color: transparent;
+    background-clip: text;
+}

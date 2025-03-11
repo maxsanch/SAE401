@@ -23,7 +23,7 @@ if ($user['niveau'] == 'admin') {
                 <div><a href="index.php"><img src="img/Logo.png" alt="Logo de we escape"></a></div>
                 <div class="HeaderCoteDroite">
                     <div class="HeaderBouton"><a href="index.php" class="home">Accueil</a></div>
-                    <div class="HeaderBouton" ><a href="index.php?page=propos" class="about">A propos</a></div>
+                    <div class="HeaderBouton"><a href="index.php?page=propos" class="about">A propos</a></div>
                     <div class="HeaderBouton"><a href="index.php?page=jeuxAll" class="games-header">Les jeux</a></div>
                     <div class="HeaderBouton"><a href="index.php?page=carte" class="find-us">Nous trouver</a></div>
                     <div class="HeaderBouton"><a href="index.php?page=Contacts" class="contacts-header">Contacts</a></div>

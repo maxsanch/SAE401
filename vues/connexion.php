@@ -66,12 +66,12 @@ else{
                 <img src="../img/croix.svg" alt="croix de fermeture">
             </a>
             <div class="titre">
-                <h2>Connectez-vous</h2>
+                <h2 id='login'>Connectez-vous</h2>
             </div>
             <form action="<?= $_SERVER['PHP_SELF'] . '?page=login' ?>" method="post">
                 <input type="email" maxlength="50" name="email" required value="<?= $mail ?>" placeholder="Email">
                 <input type="password" maxlength="50" name="MDP" value="<?= $pwd ?>" class="motdepasse" required placeholder="Mot de passe">
-                <button>Me connecter</button>
+                <button id='log-in-button'>Me connecter</button>
             </form>
             <div class="erreur">
                 <?= $erreur ?>
@@ -80,14 +80,14 @@ else{
         <div class="right">
             <div class="title">
                 <h2>
-                    <p>Comme on se retrouve !</p>
-                    <p>Vous cherchez une partie ?</p>
+                    <p id='welcome-back'>Comme on se retrouve !</p>
+                    <p id='looking-for-game'>Vous cherchez une partie ?</p>
                 </h2>
             </div>
             <div class="subtitle">
-                <h3>C'est votre première fois ?</h3>
+                <h3 id='first-time-here'>C'est votre première fois ?</h3>
             </div>
-            <div class="bouton_inscription" id="inscr">
+            <div class="bouton_inscription" id="inscr sign-up">
                 Inscrivez-vous
             </div>
         </div>
@@ -99,7 +99,7 @@ else{
                 <img src="../img/croix.svg" alt="croix de fermeture">
             </a>
             <div class="titre">
-                <h2>Inscrivez-vous</h2>
+                <h2 id='sign-up'>Inscrivez-vous</h2>
             </div>
             <form action="<?= $_SERVER['PHP_SELF'] . '?page=signin' ?>" method="post">
                 <div class="split">
@@ -122,9 +122,9 @@ else{
                 </h2>
             </div>
             <div class="subtitle">
-                <h3>Vous avez déjà un compte ?</h3>
+                <h3 id='already-have-account'>Vous avez déjà un compte ?</h3>
             </div>
-            <div class="bouton_inscription" id="connex">
+            <div class="bouton_inscription" id="connex login">
                 Connectez-vous
             </div>
         </div>

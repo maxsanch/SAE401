@@ -83,8 +83,12 @@ if (!empty($anciensPaniers)) {
 
 ?>
 
+
+<div class="informationPopUp">
+    <?= $message ?>
+</div>
 <div class="MiseEnPage">
-<h1>informations sur : <?= $user['prenom'] ?></h1>
+    <h1>informations sur : <?= $user['prenom'] ?></h1>
     <div class="total">
         <div class="Separation">
             <div class="infosUser">
@@ -109,10 +113,6 @@ if (!empty($anciensPaniers)) {
             </div>
         </div>
         <div class="Separation">
-            <div class="informationPopUp">
-                <?= $message ?>
-            </div>
-
             <div class="informations">
                 <div class="name">
                     <div class="nom">
@@ -128,9 +128,7 @@ if (!empty($anciensPaniers)) {
                 <div class="adresse">
                     <?= $user['adresse'] ?>
                 </div>
-
             </div>
-
 
             <div class="modifmdp">
                 <!-- rendre le bouton clicable pour qu'au clic, la fenetre du formulaire "modifiermdp" s'ouvre. -->
@@ -141,16 +139,18 @@ if (!empty($anciensPaniers)) {
                 <form method="post" action="index.php?page=ModifMdpUser&idUser=<?= $_GET['idUser'] ?>">
                     <input class="modifiermdpInput" type="password" name="mdp"
                         placeholder="entrez le nouveau mot de passe">
-                    <div>
-                        <input class="modifiermdpInput" type="password" name="confirmation"
-                            placeholder="entrez le nouveau mot de passe">
+                    <input class="modifiermdpInput" type="password" name="confirmation"
+                        placeholder="entrez le nouveau mot de passe">
+                    <div class="total-bouton-modif-user">
                         <button class="modifiermdpBouton">Modifier</button>
+                        <div class="deletaccount">
+                            <a href="index.php?page=supprimerCompte&idUser=<?= $_GET['idUser'] ?>">Supprimer le
+                                compte</a>
+                        </div>
                     </div>
                 </form>
             </div>
-            <div class="deletaccount">
-                <a href="index.php?page=supprimerCompte&idUser=<?= $_GET['idUser'] ?>">Supprimer le compte</a>
-            </div>
+
         </div>
     </div>
     <div class="ancienspaniers">

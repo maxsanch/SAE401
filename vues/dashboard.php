@@ -24,7 +24,7 @@ if (count($users)) {
 
         $acces = new ctlpanier;
         $paniervalid = $acces->getValidPaniers($ligne['Id_utilisateur']);
-        $result .= "<div class='PetiteCase'><a class='PhotoDeProfil' href='index.php?page=PhotoUser&idUser=" . $ligne['Id_utilisateur'] . "'><img class='photo' style='height: 250px; object-fit: cover;'' src='../" . $phototest . "' alt='photo'></a><div class='MiseEnPageUser'><div class='MiseEnPageUser2'><div class='Nom'>" . $ligne['prenom'] . "</div><div class='InfoDansCase'>Dernière connexion : " . $ligne['connexion'] . "</div><div class='InfoDansCase'>paniers validés : " . count($paniervalid) . "</div><div class='CadreInfo'><a class='InformationDashbord' href='index.php?page=informationsUser&idUser=" . $ligne['Id_utilisateur'] . "'>Information</a></div></div></div></div>";
+        $result .= "<div class='PetiteCase'><a class='PhotoDeProfil' href='index.php?page=informationsUser&idUser=" . $ligne['Id_utilisateur'] . "'><img class='photo' style='height: 250px; object-fit: cover;'' src='../" . $phototest . "' alt='photo'></a><div class='MiseEnPageUser'><div class='MiseEnPageUser2'><div class='Nom'>" . $ligne['prenom'] . "</div><div class='InfoDansCase'>Dernière connexion : " . $ligne['connexion'] . "</div><div class='InfoDansCase'>paniers validés : " . count($paniervalid) . "</div><div class='CadreInfo'><a class='InformationDashbord' href='index.php?page=informationsUser&idUser=" . $ligne['Id_utilisateur'] . "'>Information</a></div></div></div></div>";
     }
 } else {
     $result .= "<div class='reponse'>Aucun Utilisateur n'est enregistré</div>";

@@ -102,5 +102,541 @@
     ".socials-media": {
         "anglais": "Our social medias",
         "francais": "Nos réseaux"
+    },
+
+
+
+
+    "#presentation-images": {
+    "anglais": "Presentation images of escape games",
+    "francais": "Images de présentation des escapes games"
+    },
+    "#user-icon": {
+        "anglais": "User icon",
+        "francais": "Icon d'utilisateur"
+    },
+    "#view-more": {
+        "anglais": "See more",
+        "francais": "Voir plus"
+    },
+    "#book-now": {
+        "anglais": "Book now",
+        "francais": "Réserver maintenant"
+    },
+    "#we-escape-france": {
+        "anglais": "We-escape now in France!",
+        "francais": "We-escape maintenant en France !"
+    },
+    "#france-map": {
+        "anglais": "France map",
+        "francais": "Carte de la France"
+    },
+    "#germany-map": {
+        "anglais": "Germany map",
+        "francais": "Carte de l'Allemagne"
+    },
+    "#find-us-cities": {
+        "anglais": "Find us in these cities",
+        "francais": "Retrouvez nous dans ces villes"
+    },
+    "#team": {
+        "anglais": "THE TEAM",
+        "francais": "L'ÉQUIPE"
+    },
+    "#phone-icon": {
+        "anglais": "Phone icon",
+        "francais": "Icône de téléphone"
+    },
+    "#working-hours": {
+        "anglais": "Mon. - Fri. 9:00 AM - 4:00 PM",
+        "francais": "Lun. - Ven. 9h00 - 16h00"
+    },
+    "#email-icon": {
+        "anglais": "Email icon",
+        "francais": "Icône de mail"
+    },
+    "#description": {
+        "anglais": "Description:",
+        "francais": "Description :"
+    },
+    "#unavailable": {
+        "anglais": "Unavailable:",
+        "francais": "Indisponible :"
+    },
+    "#add-to-cart": {
+        "anglais": "Add to cart",
+        "francais": "Ajouter au panier"
+    },
+    "#available": {
+        "anglais": "Available:",
+        "francais": "Disponible :"
+    },
+    "#keep-souvenirs": {
+        "anglais": "Want to keep souvenirs?",
+        "francais": "Envie de garder des souvenirs ?"
+    },
+    "#gear-icon": {
+        "anglais": "A gear",
+        "francais": "Un engrenage"
+    },
+    "#close-icon": {
+        "anglais": "Close icon",
+        "francais": "Croix de fermeture"
+    },
+    "#login": {
+        "anglais": "Log in",
+        "francais": "Connectez-vous"
+    },
+    "#email-field": {
+        "anglais": "Email",
+        "francais": "Email"
+    },
+    "#password-field": {
+        "anglais": "Password",
+        "francais": "Mot de passe"
+    },
+    "#log-in-button": {
+        "anglais": "Log in",
+        "francais": "Me connecter"
+    },
+    "#welcome-back": {
+        "anglais": "Long time no see!",
+        "francais": "Comme on se retrouve !"
+    },
+    "#looking-for-game": {
+        "anglais": "Looking for a game?",
+        "francais": "Vous cherchez une partie ?"
+    },
+    "#first-time-here": {
+        "anglais": "First time here?",
+        "francais": "C'est votre première fois ?"
+    },
+    "#sign-up": {
+        "anglais": "Sign up",
+        "francais": "Inscrivez-vous"
+    },
+    "#first-name": {
+        "anglais": "First name",
+        "francais": "Prénom"
+    },
+    "#last-name": {
+        "anglais": "Last name",
+        "francais": "Nom"
+    },
+    "#address-field": {
+        "anglais": "Address",
+        "francais": "Adresse"
+    },
+    "#already-have-account": {
+        "anglais": "Already have an account?",
+        "francais": "Vous avez déjà un compte ?"
+    },
+    "#connect-here": {
+        "anglais": "Log in here",
+        "francais": "Connectez-vous"
+    },
+    "#rectangle-top": {
+        "anglais": "Top rectangle",
+        "francais": "Rectangle haut"
+    },
+    "#rectangle-left": {
+        "anglais": "Left rectangle",
+        "francais": "Rectangle gauche"
+    },
+    "#photo": {
+        "anglais": "Photo",
+        "francais": "Photo"
+    },
+    "#last-login": {
+        "anglais": "Last login:",
+        "francais": "Dernière connexion :"
+    },
+    "#validated-carts": {
+        "anglais": "Validated carts:",
+        "francais": "Paniers validés :"
+    },
+    "#information": {
+        "anglais": "Information",
+        "francais": "Information"
+    },
+    "#no-user-registered": {
+        "anglais": "No user registered",
+        "francais": "Aucun Utilisateur n'est enregistré"
+    },
+    "#no-cart-validated": {
+        "anglais": "No cart has been validated yet, so it is impossible to define a preference.",
+        "francais": "Aucun panier n'a encore été validé, il est alors impossible de définir une préférence."
+    },
+    "#icon": {
+        "anglais": "An icon",
+        "francais": "Une icône"
+    },
+    "#number-of-validated-carts": {
+        "anglais": "Number of validated carts:",
+        "francais": "Nombre de paniers validés :"
+    },
+    "#number-of-registrations": {
+        "anglais": "Number of registrations:",
+        "francais": "Nombre d'inscriptions :"
+    },
+    "#favorite-product": {
+        "anglais": "Favorite product:",
+        "francais": "Produit préféré :"
+    },
+    "#months": {
+        "anglais": ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"],
+        "francais": ["Janvier", "Février", "Mars", "Avril", "Mai", "Juin", "Juillet", "Août", "Septembre", "Octobre", "Novembre", "Décembre"]
+    },
+    "#number-of-logins": {
+        "anglais": "Number of logins",
+        "francais": "Nombre de connexions"
+    },
+    "#cave": {
+        "anglais": "Cave",
+        "francais": "Cave"
+    },
+    "#minimum-age": {
+        "anglais": "Minimum age:",
+        "francais": "Âge minimum :"
+    },
+    "#participants-range": {
+        "anglais": "From [] to [] participants",
+        "francais": "De [] à [] participants"
+    },
+    "#left-arrow": {
+        "anglais": "Left arrow",
+        "francais": "Flèche gauche"
+    },
+    "#right-arrow": {
+        "anglais": "Right arrow",
+        "francais": "Flèche droite"
+    },
+    "#chosen-game": {
+        "anglais": "Chosen game",
+        "francais": "Jeu choisi"
+    },
+    "#view-game": {
+        "anglais": "View game",
+        "francais": "Voir le jeu"
+    },
+    "#edit-game": {
+        "anglais": "Edit",
+        "francais": "Modifier"
+    },
+    "#delete-game": {
+        "anglais": "Delete",
+        "francais": "Supprimer"
+    },
+    "#game-title": {
+        "anglais": "Game title",
+        "francais": "Titre du jeu"
+    },
+    "#game-title-english": {
+        "anglais": "Game title in English",
+        "francais": "Titre du jeu en anglais"
+    },
+    "#enter-youtube-link": {
+        "anglais": "Enter a YouTube link (share, then remove: https://youtu.be/)",
+        "francais": "Entrez le lien d'une vidéo YouTube (partager, puis enlever : https://youtu.be/)"
+    },
+    "#min-participants": {
+        "anglais": "Minimum participants",
+        "francais": "Nombre minimum de participants"
+    },
+    "#max-participants": {
+        "anglais": "Maximum participants",
+        "francais": "Nombre maximum de participants"
+    },
+    "#participant-age": {
+        "anglais": "Participant age",
+        "francais": "Âge des participants"
+    },
+    "#price": {
+        "anglais": "Price",
+        "francais": "Prix"
+    },
+    "#enter-game-description": {
+        "anglais": "Enter the game description",
+        "francais": "Entrez la description du jeu"
+    },
+    "#enter-game-description-english": {
+        "anglais": "Enter the game description in English",
+        "francais": "Entrez la description du jeu en anglais"
+    },
+    "#city-info": {
+        "anglais": "City info: Click on the map to add the location.",
+        "francais": "Infos ville : Cliquez sur la carte pour ajouter l'emplacement."
+    },
+    "#enter-city": {
+        "anglais": "Enter a city",
+        "francais": "Entrez une ville"
+    },
+    "#enter-region": {
+        "anglais": "Enter the region",
+        "francais": "Renseignez la région"
+    },
+    "#enter-address": {
+        "anglais": "Enter an address",
+        "francais": "Entrez une adresse"
+    },
+    "#enter-postal-code": {
+        "anglais": "Enter a postal code",
+        "francais": "Entrez un code postal"
+    },
+    "#add-photo": {
+        "anglais": "Add a photo (max 500KB)",
+        "francais": "Ajoutez une photo (max 500ko)"
+    },
+    "#france-map-escape-games": {
+        "anglais": "France map showing where the escape games are",
+        "francais": "Carte de la France qui montre où sont les escapes games"
+    },
+    "#germany-map-escape-games": {
+        "anglais": "Germany map showing where the escape games are",
+        "francais": "Carte de l'Allemagne qui montre où sont les escapes games"
+    },
+    "#french-flag": {
+        "anglais": "French flag",
+        "francais": "Drapeau de la France"
+    },
+    "#number-of-people": {
+        "anglais": "Number of people:",
+        "francais": "Nombre de personnes :"
+    },
+    "#total-price": {
+        "anglais": "Total price:",
+        "francais": "Prix total :"
+    },
+    "#order-number": {
+        "anglais": "Order number:",
+        "francais": "Numéro de commande :"
+    },
+    "#cart-validated-on": {
+        "anglais": "Cart validated on:",
+        "francais": "Panier validé le :"
+    },
+    "#no-old-orders": {
+        "anglais": "You have no old orders.",
+        "francais": "Vous n'avez aucune ancienne commande."
+    },
+    "#no-items-in-cart": {
+        "anglais": "You have no items in your cart.",
+        "francais": "Vous n'avez aucun article dans votre panier."
+    },
+    "#remove-from-cart": {
+        "anglais": "Remove from cart",
+        "francais": "Retirer du panier"
+    },
+    "#trash-icon": {
+        "anglais": "Trash icon",
+        "francais": "Une poubelle"
+    },
+    "#enter-number-to-remove": {
+        "anglais": "Enter a number to remove from the order",
+        "francais": "Entrez un nombre à retirer de la commande"
+    },
+    "#my-account": {
+        "anglais": "My account",
+        "francais": "Mon compte"
+    },
+    "#user-photo": {
+        "anglais": "User photo",
+        "francais": "Photo de l'utilisateur"
+    },
+    "#click-to-change-photo": {
+        "anglais": "Click here to change the photo (max 500KB)",
+        "francais": "Cliquez ici pour modifier la photo (max 500ko)"
+    },
+    "#save": {
+        "anglais": "Save",
+        "francais": "Enregistrer"
+    },
+    "#change-password": {
+        "anglais": "Change password",
+        "francais": "Changer de mot de passe"
+    },
+    "#new-password": {
+        "anglais": "New password",
+        "francais": "Nouveau mot de passe"
+    },
+    "#confirm-password": {
+        "anglais": "Confirm password",
+        "francais": "Confirmez le mot de passe"
+    },
+    "#enter-current-password": {
+        "anglais": "Enter your current password",
+        "francais": "Entrez votre mot de passe actuel"
+    },
+    "#edit-account": {
+        "anglais": "Edit",
+        "francais": "Modifier"
+    },
+    "#delete-account": {
+        "anglais": "Delete account",
+        "francais": "Supprimer le compte"
+    },
+    "#your-cart": {
+        "anglais": "Your cart",
+        "francais": "Votre panier"
+    },
+    "#old-orders": {
+        "anglais": "Old orders",
+        "francais": "Anciennes commandes"
+    },
+    "#cart-total": {
+        "anglais": "Total:",
+        "francais": "Total :"
+    },
+    "#bank-card": {
+        "anglais": "Bank card",
+        "francais": "Carte bancaire"
+    },
+    "#gold-chip": {
+        "anglais": "Gold chip",
+        "francais": "Puce en or"
+    },
+    "#card-number": {
+        "anglais": "Card number",
+        "francais": "Numéro de carte"
+    },
+    "#expires-end": {
+        "anglais": "Expires end",
+        "francais": "Expire à fin"
+    },
+    "#expiration-date": {
+        "anglais": "Expiration date",
+        "francais": "Date d'expiration"
+    },
+    "#username": {
+        "anglais": "Username",
+        "francais": "Nom d'utilisateur"
+    },
+    "#card-type-logo": {
+        "anglais": "Card type logo",
+        "francais": "Logo type de carte"
+    },
+    "#security-number": {
+        "anglais": "Security number",
+        "francais": "Numéro de sécurité"
+    },
+    "#security-code": {
+        "anglais": "Security code",
+        "francais": "Code de sécurité"
+    },
+    "#turn-card": {
+        "anglais": "Turn card",
+        "francais": "Tourner la carte"
+    },
+    "#validate-order": {
+        "anglais": "Validate order",
+        "francais": "Valider la commande"
+    },
+    "#an-error-occurred": {
+        "anglais": "An error occurred:",
+        "francais": "Une erreur est survenue :"
+    },
+    "#close-icon-cross": {
+        "anglais": "Close icon",
+        "francais": "Croix de fermeture"
+    },
+    "#trash": {
+        "anglais": "Trash",
+        "francais": "Corbeille"
+    },
+    "#no-reservations-made": {
+        "anglais": "You have made no reservations",
+        "francais": "Vous n'avez effectué aucune réservation"
+    },
+    "#enter-number": {
+        "anglais": "Enter a number",
+        "francais": "Entrez un nombre"
+    },
+    "#no-items-purchased": {
+        "anglais": "You have purchased no items.",
+        "francais": "Vous n'avez acheté aucun objet."
+    },
+    "#reserved-games": {
+        "anglais": "Reserved games",
+        "francais": "Jeux réservés"
+    },
+    "#reserved-items": {
+        "anglais": "Reserved items/vouchers",
+        "francais": "Objets/bons réservés"
+    },
+    "#your-cart-is-empty": {
+        "anglais": "Your cart is empty.",
+        "francais": "Votre panier est vide."
+    },
+    "#thank-you": {
+        "anglais": "Thank you",
+        "francais": "Merci"
+    },
+    "#for-your-reservation": {
+        "anglais": "for your reservation",
+        "francais": "pour votre réservation"
+    },
+    "#see-you-soon": {
+        "anglais": "See you soon",
+        "francais": "Et à bientôt"
+    },
+    "#home-icon": {
+        "anglais": "Home icon",
+        "francais": "Icône de la maison"
+    },
+    "#return-to-home": {
+        "anglais": "Return to home",
+        "francais": "Retourner à l'accueil"
+    },
+    "#no-orders-yet": {
+        "anglais": "This user has not placed any orders yet.",
+        "francais": "Cet utilisateur n'a passé encore aucune commande."
+    },
+    "#information-about": {
+        "anglais": "Information about:",
+        "francais": "Informations sur :"
+    },
+    "#change-photo": {
+        "anglais": "Change photo (max 500KB)",
+        "francais": "Modifiez la photo (max 500ko)"
+    },
+    "#change-password-section": {
+        "anglais": "Change password",
+        "francais": "Modifier le mot de passe"
+    },
+    "#enter-new-password": {
+        "anglais": "Enter new password",
+        "francais": "Entrez le nouveau mot de passe"
+    },
+    "#edit-information": {
+        "anglais": "Edit information",
+        "francais": "Modifier les informations"
+    },
+    "#delete-account-section": {
+        "anglais": "Delete account",
+        "francais": "Supprimer le compte"
+    },
+    "#orders-made": {
+        "anglais": "Orders made",
+        "francais": "Commandes effectuées"
+    },
+    "#edit-game-information": {
+        "anglais": "Edit game information",
+        "francais": "Modifier les informations du jeu"
+    },
+    "#game-number": {
+        "anglais": "Game number",
+        "francais": "Jeu numéro"
+    },
+    "#previous-page": {
+        "anglais": "Previous page",
+        "francais": "Page précédente"
+    },
+    "#game-title-placeholder": {
+        "anglais": "A title for the game",
+        "francais": "Un titre pour le jeu"
+    },
+    "#game-image": {
+        "anglais": "Game image",
+        "francais": "Image du jeu"
     }
 }

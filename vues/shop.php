@@ -22,14 +22,14 @@ foreach ($objets as $valeur) {
     if ($valeur['stock'] == 0) {
         $result .= "<div class='case'><img src='" . $phototest . "'><div class='infotop'><div class='titre' id='TitreObjet".$valeur['id_objet_shop']."'>" . $valeur['nom'] . "</div><div class='prix'>" . $valeur['prix'] . " €</div></div><div class='description'>description : <span id='descriptionObjet".$valeur['id_objet_shop']."'>" . $valeur['description'] . "</span></div><div class='infobot'><div class='disponibilite'><div class='stock'>indisponible : " . $valeur['stock'] . "</div></div><form method='post' action='#'><input type='number' name='quantite' value='0' min='0' max='" . $valeur['stock'] . "' placeholder='quantite'></div><button class='add-cart'>Ajouter au panier</button></form></div>";
     } else {
-        $result .= "<div class='case'><img src='" . $phototest . "'><div class='infotop'><div class='titre' id='TitreObjet".$valeur['id_objet_shop']."'>" . $valeur['nom'] . "</div><div class='prix'>" . $valeur['prix'] . " €</div></div><div class='description'>description : <span id='descriptionObjet".$valeur['id_objet_shop']."'>" . $valeur['description'] . "</span></div><div class='infobot'><div class='disponibilite'><div class='stock'>disponible : " . $valeur['stock'] . "</div></div><form method='post' action='index.php?page=ajouterObjPanier&idobj=" . $valeur['id_objet_shop'] . "''><input type='number' name='quantite' value='1' min='0' max='" . $valeur['stock'] . "' placeholder='quantite'></div><button class='add-cart'>Ajouter au panier</button></form></div>";
+        $result .= "<div class='case'><img src='" . $phototest . "'><div class='infotop'><div class='titre' id='TitreObjet".$valeur['id_objet_shop']."'>" . $valeur['nom'] . "</div><div class='prix'>" . $valeur['prix'] . " €</div></div><div class='description'>description : <span id='descriptionObjet".$valeur['id_objet_shop']."'>" . $valeur['description'] . "</span></div><div class='infobot'><div class='disponibilite'><div class='stock'>disponible : " . $valeur['stock'] . "</div></div><form method='post' action='index.php?page=ajouterObjPanier&idobj=" . $valeur['id_objet_shop'] . "''><input type='number' name='quantite' value='1' min='1' max='" . $valeur['stock'] . "' placeholder='quantite'></div><button class='add-cart'>Ajouter au panier</button></form></div>";
     }
 }
 
 ?>
 
 <div class="titre">
-    <h1>Envie de garder des souvenirs ?</h1>
+    <h1 id='keep-souvenirs'>Envie de garder des souvenirs ?</h1>
     <div class="rectangleTitre">
     </div>
 </div>

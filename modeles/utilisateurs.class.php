@@ -44,6 +44,13 @@ class utilisateurs extends database
 
     public function updateUserPhoto($idArt)
     {
+        if (file_exists('img/user/' . $idArt . '.jpg')) {
+            unlink('img/user/' . $idArt . '.jpg');
+        }
+        if (file_exists('img/user/' . $idArt . '.png')) {
+            unlink('img/user/' . $idArt . '.png');
+        }
+
         // Vérification si un fichier photo a été envoyé
         if (isset($_FILES['photoUser'])) {
             // Vérification si le fichier n'a pas d'erreur
@@ -95,11 +102,10 @@ class utilisateurs extends database
                     return $erreur;
                 }
             } else {
-                if($_FILES['photoUser']["size"] <= 500000){
+                if ($_FILES['photoUser']["size"] <= 500000) {
                     $erreur = "Ce fichier est trop volumineux.";
                     return $erreur;
-                }
-                else{
+                } else {
                     $erreur = "Mauvaise extension de fichier.";
                     return $erreur;
                 }

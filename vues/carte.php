@@ -42,7 +42,7 @@ foreach ($regions as $content) {
 ?>
 
 <div class="content">
-    <h1>We-escape maintenant en france !</h1>
+    <h1 id='we-escape-france'>We-escape maintenant en france !</h1>
     <div class="rectangleTitre"></div>
     <div class="lesCartes">
         <div class="lesCartes">
@@ -57,7 +57,7 @@ foreach ($regions as $content) {
         </div>
     </div>
 
-    <h2>Retrouvez nous dans ces villes !</h2>
+    <h2 id='find-us-cities'>Retrouvez nous dans ces villes !</h2>
     <div class="rectangleTitre"></div>
     <div class="lesVilles">
         <?= $regionstot ?>

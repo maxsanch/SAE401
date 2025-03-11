@@ -128,7 +128,7 @@ if (empty($panier) && empty($souvenirs)) {
             </div>
             <div class="description">' . $ligne['description'] . '</div>
             <form class="form-panier-obj" action=index.php?page=suppressionSouvenirs&idobj=' . $ligne['id_objet_shop'] . '&idpanier=' . $ligne['id_panier'] . ' method=post>
-                <input type=number placeholder="entre un nombre à retirer de la commande" min=0 max=' . $ligne['quantitée'] . ' name="nombredelet" min=1>
+                <input required type=number placeholder="entre un nombre à retirer de la commande" min=1 value=1 max=' . $ligne['quantitée'] . ' name="nombredelet" min=1>
                 <button class="iconepoubelle"><img src="../img/trash.svg" alt="une poubelle"/></button>
             </form>
         </div>';

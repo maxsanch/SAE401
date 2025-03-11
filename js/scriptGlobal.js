@@ -161,7 +161,6 @@ async function setLangueBDD() {
     });
 
     Object.entries(global).forEach(([key, value]) => {
-        console.log(key);
         let domaine = document.querySelectorAll(key)
         if (domaine) {
             domaine.forEach(element => {

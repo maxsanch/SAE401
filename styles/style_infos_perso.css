@@ -1,224 +1,210 @@
-header{
+header {
     background: linear-gradient(180deg, rgba(0, 0, 0, 0.705) 0%, rgba(255, 0, 254, 0) 100%);
 }
 
-body{
-    background: rgb(21,20,20);
-    background: linear-gradient(26deg, rgba(21,20,20,1) 0%, rgba(94,87,78,1) 100%);
+body {
+    background: rgb(21, 20, 20);
+    background: linear-gradient(26deg, rgba(21, 20, 20, 1) 0%, rgba(94, 87, 78, 1) 100%);
     font-family: Montserrat;
     color: #ffffff;
 }
 
-
-main{
-    margin-top: 50px;
-    margin-bottom: 100px;
-}
-
-.total{
-    padding-left: 10%;
-    padding-right: 10%;
-    display: grid;
-    grid-template-columns: 40% 60%;
-    grid-template-rows: auto auto;
-}
-
-.infosUser{
-    grid-column: 1;
-    grid-row: 2;
-    background-color: rgba(0, 0, 0, 0.2);
-    padding: 5%;
-    border-radius: 10px;
-}
-
-.pic{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.infosUser img{
-    border-radius: 10px;
-    width: 65%;
-    margin-bottom: 15px;
-}
-
-.orange{
-    color: #E6B856;
-    cursor: pointer;
-    border: 2px solid #E6B856;
-    padding: 5px;
-    border-radius: 5px;
-}
-
-.contrerBoutbout{
-    display: flex;
-    justify-content: space-between;
-    align-items: baseline;
-}
-
-.boutbout{
-    margin-top: 25px;
-    width: 40%;
-    text-align: center;
-    border-radius: 25px;
-    font-weight: bold;
-    border: 2px solid #E6B856;
-    background: none;
-    color: #E6B856;
-    cursor: pointer;
-    padding: 5px;
-    align-items: center;
-}
-
-.name{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-.infoPerso{
-    display : flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-.mdp{
-    margin-top: 10px;
-}
-
-.bottomCompteModif{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-top: 20px;
-}
-
-.modifCompteButton{
-    width: 40%;
-    text-align: center;
-    border-radius: 25px;
-    font-weight: bold;
-    border: 2px solid #E6B856;
-    background: transparent;
-    color: #E6B856;
-    cursor: pointer;
-    padding : 5px;
-    font-size: larger;
-}
-
-.deletaccount>a{
-    text-align: center;
-    border-radius: 25px;
-    font-weight: bold;
-    border: 2px solid #000000;
-    background: #E6B856;
-    color: #000000;
-    cursor: pointer;
-    padding: 5px;
-}
-
-input{
-    background: none;
-    border: 2px solid #E6B856 ;
-    color: #E6B856;
-    border-radius: 8px;
-    padding: 5px;
-}
-
-input[type="mail"]{
-    border: 2px solid #000000;
-    background: #E6B856;
-    color: #000000;
-    border-radius: 8px;
-    padding: 5px;
-}
-
-.allpaniers{
-    grid-column: 2;
-    grid-row: 2;
-    margin-left: 5%;
-}
-
-h2{
-    margin-left: 5%;
-}
-
-.cadreproduit{
-    border-top: #E6B856 1px solid;
-    border-bottom: #E6B856 1px solid;
-}
-
-.rectangleTitre{
-    width: 50px;
-    height: 5px;
-    background: #e6b856;
-    position: relative;
-    left: 5%;
-    bottom: 15px;
-}
-
-.lignepanier{
-    margin-top: 5px;
-}
-
-.lignepanier>form{
-    display: grid;
-    grid-template-columns: auto auto;
-    align-items: center;
-}
-
-input[type="number"]{
-    background: none;
-    border: 2px solid #E6B856 ;
-    color: #E6B856;
-    border-radius: 8px;
-    padding: 5px;
-    min-width: 120px;
-}
-
-input[type="number"]::-webkit-inner-spin-button,
-input[type="number"]::-webkit-outer-spin-button {
-    opacity: 1 !important;
-    filter: invert(62%) sepia(72%) saturate(300%) hue-rotate(5deg);
-}
-
-.iconepoubelle{
-    cursor: pointer;
-    background-color: transparent;
-    border: none;
-    background: transparent;
-}
-
-
-.nom{
-    font-weight: bold;
-}
-
-.erreur{
-    color: red;
-    text-align: center;
-}
-
-.ancienspaniers{
+.ancienspaniers {
     width: 80%;
     margin: auto;
     margin-bottom: 150px;
 }
 
-.AciennesCommandes{
+.AciennesCommandes {
     border-top: #E6B856 1px solid;
     padding: 10px;
 }
 
-.AciennesCommandes:nth-child(even){
+.AciennesCommandes:nth-child(even) {
     background: rgba(0, 0, 0, 0.2);
 }
 
-.AciennesCommandes:nth-child(1){
+.AciennesCommandes:nth-child(1) {
     border: none;
 }
 
-.dateValidation{
+.dateValidation {
     padding-bottom: 20px;
+    padding-top: 30px;
+    font-family: Montserrat-bold;
+}
+
+.total {
+    width: 80%;
+    margin: auto;
+}
+
+.global-page {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 50px;
+}
+
+.infosUser {
+    background: #00000050;
+    border-radius: 10px;
+    padding: 20px;
+}
+
+.pic>img {
+    height: 250px;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+.rectangleTitre {
+    width: 50px;
+    height: 5px;
+    background: #e6b856;
+    position: absolute;
+    bottom: -5px;
+}
+
+.titre {
+    position: relative;
+}
+
+.infoproduits {
+    border-bottom: 1px #E6B856 solid;
+    border-top: 1px solid #E6B856;
+}
+
+.form_elt {
+    padding: 10px;
+    border: solid 1px #E6B856;
+}
+
+.boutbout {
+    background: #E6B856;
+    border: none;
+    padding: 5px;
+    border-radius: 2px;
+    margin-top: 10px;
+}
+
+.name {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+}
+
+input {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 5px;
+    border-radius: 5px;
+    border: #e6b856 1px solid;
+    background-color: transparent;
+    color: white;
+}
+
+input::placeholder {
+    color: white;
+}
+
+.mdp {
+    margin-top: 20px;
+}
+
+.grid-mdp {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+
+.bloqué {
+    background: #E6B856;
+    color: rgb(17, 17, 17);
+}
+
+.total-boutons {
+    margin-top: 20px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+
+.modifCompteButton {
+    padding: 5px;
+    font-family: Montserrat-bold;
+    background: linear-gradient(135deg, #E6B856, #856b32);
+    width: 100%;
+    border: none;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
+.deletaccount {
+    width: 100%;
+    padding: 5px;
+    text-align: center;
+    border: #E6B856 solid 1px;
+    border-radius: 5px;
+    font-size: 12px;
+    box-sizing: border-box;
+}
+
+.deletaccount>a {
+    color: #E6B856;
+}
+
+.infoproduits {
+    height: 800px;
+    overflow-y: scroll;
+    scrollbar-width: thin;
+    scrollbar-color: #E6B856 transparent;
+}
+
+.linetop {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-family: Montserrat-bold;
+}
+
+.infojour {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.lignepanieractu {
+    padding: 5px;
+    padding-bottom: 10px;
+    padding-top: 10px;
+}
+
+.lignepanieractu:nth-child(even) {
+    background: #00000050;
+}
+
+.iconepoubelle {
+    cursor: pointer;
+    width: 30px;
+}
+
+.lignepanier {
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+
+.description {
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+
+.form-panier-obj{
+    display: flex;
+    gap: 50px;
+}
+.form-panier-obj>button{
+    background: none;
+    width: 50px;
+    border: none;
+    cursor: pointer;
 }

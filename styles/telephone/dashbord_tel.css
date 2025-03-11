@@ -1,0 +1,11 @@
+.nombre {
+    gap: 16px;
+}
+
+.MiseEnPage>.dashboard>.MiseEnPage {
+    width: 100%;
+}
+
+.usersAll {
+    flex-wrap: wrap;
+}

@@ -1,7 +1,7 @@
 <?php
 
 $styles = "styles/style_reglement.css";
-$styles_telephone = "";
+$styles_telephone = "styles/telephone/reglement_tel.css";
 $librairie = '';
 
 $script = "<script src='js/reglement.js'></script>";

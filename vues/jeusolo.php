@@ -21,7 +21,7 @@ if ($jeu[0]['lien_video'] == "") {
 } else {
     $video = '<iframe width="1200" height="500" src="https://www.youtube.com/embed/' . $jeu[0]['lien_video'] . '"YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>';
 }
-$styles_telephone = "";
+$styles_telephone = "styles/telephone/ajoutjeu_tel.css";
 $paniers = new panier;
 
 $script = "<script src='../js/script_jeusolo.js'></script>";

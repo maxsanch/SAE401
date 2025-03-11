@@ -155,7 +155,7 @@ if (!empty($anciensPaniers)) {
     </div>
     <div class="ancienspaniers">
         <div class="titre">
-            <h2 class="anciens-paniers-total">Anciennes commandes</h2>
+            <h2 class="anciens-paniers-total">Anciennes commandes de l'utilisateur</h2>
             <div class="rectangleTitre">
             </div>
         </div>

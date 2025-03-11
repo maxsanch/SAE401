@@ -59,7 +59,7 @@ img {
 
 .total {
     display: grid;
-    grid-template-columns: 60% 40%;
+    grid-template-columns: 1fr 1fr;
 }
 
 .Separation {
@@ -114,3 +114,37 @@ img {
     padding: 8px 8px;
 }
 
+.ancienspaniers {
+    margin-bottom: 150px;
+}
+
+.AciennesCommandes {
+    border-top: #E6B856 1px solid;
+    padding: 10px;
+}
+
+.rectangleTitre {
+    width: 50px;
+    height: 5px;
+    background: #e6b856;
+    position: absolute;
+    bottom: -5px;
+}
+
+.titre {
+    position: relative;
+}
+
+.AciennesCommandes:nth-child(even) {
+    background: rgba(0, 0, 0, 0.2);
+}
+
+.AciennesCommandes:nth-child(1) {
+    border: none;
+}
+
+.dateValidation {
+    padding-bottom: 20px;
+    padding-top: 30px;
+    font-family: Montserrat-bold;
+}

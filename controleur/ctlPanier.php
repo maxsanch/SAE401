@@ -43,26 +43,30 @@ class ctlPanier
 
     public function ajouterpanier($idobjet, $qtd)
     {
-        $utilisateur = $this->user->GetUser($_SESSION['acces']);
-
-        $panier = $this->panier->getPanierUser($utilisateur[0]['Id_utilisateur']);
-
-        $try = $this->panier->checkexist($idobjet, $panier);
-        $stock = $this->panier->stockactuel($idobjet);
-        $reduce = $stock[0]['stock'] - $qtd;
-
         $shop = new CtlShop;
-        if (empty($try)) {
-            $this->panier->addLineObj($idobjet, $panier, $qtd);
-        } else {
-            $nombre = $try[0]['quantitée'] + $qtd;
-            $this->panier->addOne($idobjet, $panier, $nombre);
+        if($qtd>0) {
+            $utilisateur = $this->user->GetUser($_SESSION['acces']);
+
+            $panier = $this->panier->getPanierUser($utilisateur[0]['Id_utilisateur']);
+    
+            $try = $this->panier->checkexist($idobjet, $panier);
+            $stock = $this->panier->stockactuel($idobjet);
+            $reduce = $stock[0]['stock'] - $qtd;
+    
+
+            if (empty($try)) {
+                $this->panier->addLineObj($idobjet, $panier, $qtd);
+            } else {
+                $nombre = $try[0]['quantitée'] + $qtd;
+                $this->panier->addOne($idobjet, $panier, $nombre);
+            }
+    
+            $this->panier->reduce($reduce, $idobjet);
+    
+            $heure = $this->date->format('Y-m-d H-i-s');
+            $this->panier->updateHorraire($panier, $heure);
         }
 
-        $this->panier->reduce($reduce, $idobjet);
-
-        $heure = $this->date->format('Y-m-d H-i-s');
-        $this->panier->updateHorraire($panier, $heure);
 
         $shop->objetsshop();
     }

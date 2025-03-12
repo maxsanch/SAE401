@@ -326,7 +326,7 @@ input{
     bottom: 0;
     background: linear-gradient(#151414, #302C27);
     z-index: 100;
-    display: none;
+    /* display: none; */
 }
 
 .engre{
@@ -343,16 +343,16 @@ input{
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    width: 150px;
     animation: infinite linear 2s tourner;
+    width: 150px;
 }
 
 @keyframes tourner{
     from{
-        transform: translate(-50%, -50%) rotate(0);
+        transform: rotate(0) translate(-50%, -50%);
     }
     to{
-        transform: translate(-50%, -50%) rotate(360deg);
+        transform: rotate(360deg) translate(-50%, -50%);
     }
 }
 

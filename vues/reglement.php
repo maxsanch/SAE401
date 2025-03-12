@@ -120,7 +120,6 @@ if (empty($panier) && empty($souvenirs)) {
     <div class="paniers">
         <div class="titrePage">
             <h2 id='your-cart'>Votre panier</h2>
-            <h2>Votre panier</h2>
             <div class="rectangleTitre">
             </div>
         </div>
@@ -135,7 +134,6 @@ if (empty($panier) && empty($souvenirs)) {
     <div class="infoUser">
         <div class="titrePage">
             <h2 id='your-cart'>Votre panier</h2>
-            <h2>Votre panier</h2>
             <div class="rectangleTitre">
             </div>
         </div>
@@ -144,14 +142,12 @@ if (empty($panier) && empty($souvenirs)) {
                 <div class="nom">
                     <div class="inf">
                         <p id='last-name'>Nom</p>
-                        <p>Nom</p>
                         <div class="contour"><?= $user['nom'] ?></div>
                     </div>
                 </div>
                 <div class="prenom">
                     <div class="inf">
                         <p id='first-name'>Prenom</p>
-                        <p>Prenom</p>
                         <div class="contour"><?= $user['prenom'] ?></div>
                     </div>
                 </div>
@@ -165,7 +161,6 @@ if (empty($panier) && empty($souvenirs)) {
             <div class="adresse">
                 <div class="inf">
                     <p id='address-field'>Adresse</p>
-                    <p>Adresse</p>
                     <div class="contour"><?= $user['adresse'] ?></div>
                 </div>
             </div>
@@ -209,7 +204,7 @@ if (empty($panier) && empty($souvenirs)) {
                         </div>
                     </div>
                     <div class="carte_back">
-                        <div class="ligne">
+                        <div class="ligne_reglement">
 
                         </div>
                         <label>

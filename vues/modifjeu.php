@@ -20,6 +20,7 @@ $librairie = "";
 
 <h2>
     modifier les informations de : <?= $jeu['Titre'] ?>, jeu numéro <?= $jeu['ID_jeu'] ?>
+    <span id='modif-information'>modifier les informations de :</span> <?= $jeu['Titre'] ?><span id='game-number'>, jeu numéro </span><?= $jeu['ID_jeu'] ?>
 </h2>
 <div class="gridTop">
     <form action="<?= $_SERVER['PHP_SELF'] . '?page=modifierjeu&idjeu=' . $_GET['idJeu'] . '' ?>" method="post" enctype="multipart/form-data">
@@ -42,6 +43,7 @@ $librairie = "";
             <textarea required name="Description_anglais" id="test"><?= $jeu['Description_anglais'] ?></textarea>
         </div>
         <div class="in">
+        <div class="in" id='city-info'>
             infos ville : Cliquez sur la carte pour ajouter l'emplacement.
         </div>
         <div class="nombre">
@@ -58,6 +60,7 @@ $librairie = "";
             <!-- Label pour l'input de téléchargement de photo -->
             <label>
                 <span class="orange">Modifiez </span> <span> la photo. (max 500ko)</span>
+                <span class="orange" id='edit-game'>Modifiez </span> <span id='change-photo-max'> la photo. (max 500ko)</span>
                 <input type="file" class="texte" name="photoGame" accept="image/jpeg, image/png" hidden>
             </label>
         </div>

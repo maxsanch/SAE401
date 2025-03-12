@@ -44,6 +44,7 @@ class utilisateurs extends database
 
     public function updateUserPhoto($idArt)
     {
+
         if (file_exists('img/user/' . $idArt . '.jpg')) {
             unlink('img/user/' . $idArt . '.jpg');
         }
@@ -51,65 +52,40 @@ class utilisateurs extends database
             unlink('img/user/' . $idArt . '.png');
         }
 
-        // Vérification si un fichier photo a été envoyé
-        if (isset($_FILES['photoUser'])) {
-            // Vérification si le fichier n'a pas d'erreur
-            if ($_FILES['photoUser']["error"] == 0) {
-                // Vérification si la taille du fichier est inférieure à 20 Mo
-                if ($_FILES['photoUser']["size"] <= 500000) {
-                    // Récupération de l'extension du fichier
-                    $infosfichier = new SplFileInfo($_FILES['photoUser']['name']);
-                    $extension_upload = $infosfichier->getExtension();
+        $infosfichier = new SplFileInfo($_FILES['photoUser']['name']);
+        $extension_upload = $infosfichier->getExtension();
 
-                    // Liste des extensions autorisées
-                    $extensions_autorisees = array('jpg', 'png');
+        // Liste des extensions autorisées
+        $extensions_autorisees = array('jpg', 'png');
 
-                    // Vérification si l'extension du fichier est autorisée
-                    if (in_array($extension_upload, $extensions_autorisees)) {
+        // Vérification si l'extension du fichier est autorisée
+        if (in_array($extension_upload, $extensions_autorisees)) {
 
-                        foreach ($extensions_autorisees as $test) {
-                            $exister = 'img/user/' . $idArt . '.' . $test;
+            foreach ($extensions_autorisees as $test) {
+                $exister = 'img/user/' . $idArt . '.' . $test;
 
-                            if (file_exists($test)) {
-                                unlink($test);
-                            }
-                        }
-                        // Vérification si le dossier 'img/user' existe
-                        if (is_dir('img/user')) {
-                            // Déplacement du fichier vers le dossier "img/user" avec un nom basé sur l'ID de l'article
-                            move_uploaded_file(
-                                $_FILES['photoUser']['tmp_name'],
-                                'img/user/' . $idArt . "." . $extension_upload
-                            );
-                            $erreur = "Transfert du fichier : " . ' ' . $_FILES['photoUser']['name'] . ' ' . " effectué !";
-                            return $erreur;
-                        } else {
-                            // Si le dossier n'existe pas, le créer et déplacer le fichier
-                            mkdir('img/user');
-                            move_uploaded_file(
-                                $_FILES['photoUser']['tmp_name'],
-                                'img/user/' . $idArt . "." . $extension_upload
-                            );
-                            $erreur = "Transfert du fichier " . $_FILES['photoUser']['name'] . " effectué !";
-                            return $erreur;
-                        }
-                    } else {
-                        $erreur = "Cette extension n'est pas acceptée.";
-                        return $erreur;
-                    }
-                } else {
-                    $erreur = "Ce fichier est trop volumineux.";
-                    return $erreur;
-                }
-            } else {
-                if ($_FILES['photoUser']["size"] <= 500000) {
-                    $erreur = "Ce fichier est trop volumineux.";
-                    return $erreur;
-                } else {
-                    $erreur = "Mauvaise extension de fichier.";
-                    return $erreur;
+                if (file_exists($test)) {
+                    unlink($test);
                 }
             }
+            // Vérification si le dossier 'img/user' existe
+            if (is_dir('img/user')) {
+                // Déplacement du fichier vers le dossier "img/user" avec un nom basé sur l'ID de l'article
+                move_uploaded_file(
+                    $_FILES['photoUser']['tmp_name'],
+                    'img/user/' . $idArt . "." . $extension_upload
+                );
+            } else {
+                // Si le dossier n'existe pas, le créer et déplacer le fichier
+                mkdir('img/user');
+                move_uploaded_file(
+                    $_FILES['photoUser']['tmp_name'],
+                    'img/user/' . $idArt . "." . $extension_upload
+                );
+            }
+        } else {
+            $erreur = "Cette extension n'est pas acceptée.";
+            return $erreur;
         }
     }
 

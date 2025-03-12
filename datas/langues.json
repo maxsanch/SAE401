@@ -190,6 +190,8 @@
     "#email-field": {
         "anglais": "Email",
         "francais": "Email"
+        "anglais": "E-mail",
+        "francais": "E-mail"
     },
     "#password-field": {
         "anglais": "Password",
@@ -270,6 +272,10 @@
     "#icon": {
         "anglais": "An icon",
         "francais": "Une icône"
+    },
+    "#cart": {
+        "anglais": "My basket",
+        "francais": "Mon panier :"
     },
     "#number-of-validated-carts": {
         "anglais": "Number of validated carts :",
@@ -394,6 +400,12 @@
     "#add-photo": {
         "anglais": "Add a photo (max 500KB)",
         "francais": "Ajoutez une photo (max 500ko)"
+        "anglais": "Add ",
+        "francais": "Ajoutez "
+    },
+    "#add-photo-2": {
+        "anglais": "a photo (max 500KB)",
+        "francais": "une photo (max 500ko)"
     },
     "#france-map-escape-games": {
         "anglais": "France map showing where the escape games are",
@@ -471,6 +483,10 @@
         "anglais": "Confirm password",
         "francais": "Confirmez le mot de passe"
     },
+    "#confirm-with-password": {
+        "anglais": "To save your changes, enter your current password.",
+        "francais": "Pour enregistrer les modifications, vous devez entrer votre mot de passe actuelle"
+    },
     "#enter-current-password": {
         "anglais": "Enter your current password",
         "francais": "Entrez votre mot de passe actuel"
@@ -526,6 +542,8 @@
     "#security-number": {
         "anglais": "Security number",
         "francais": "Numéro de sécurité"
+        "anglais": "Security number :",
+        "francais": "Numéro de sécurité :"
     },
     "#security-code": {
         "anglais": "Security code",
@@ -536,6 +554,7 @@
         "francais": "Tourner la carte"
     },
     "#validate-order": {
+    "#validerCommande": {
         "anglais": "Validate order",
         "francais": "Valider la commande"
     },

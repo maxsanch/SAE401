@@ -17,6 +17,7 @@ foreach ($jeux as $valeur) {
     }
 
     $result .= '<div class="case"><a href="index.php?page=modifjeu&idJeu=' . $valeur['ID_jeu'] . '" class="photo"><img src="' . $phototest . '" alt="Jeu choisi"></a><div class="contTout"><b id="TitreJeu'.$valeur['ID_jeu'].'">' . $valeur['Titre'] . '</b><div class="parentBout"><a class="bout" href="index.php?page=infojeusolo&idjeu=' . $valeur['ID_jeu'] . '">Voir le jeu</a></div><div class="parentBout"><a href="index.php?page=modifjeu&idJeu=' . $valeur['ID_jeu'] . '" class="bout">Modifier</a></div><div class="parentBout"><a href="index.php?page=supprJeu&idJeu=' . $valeur['ID_jeu'] . '" class="bout">Supprimer</a></div></div></div>';
+    $result .= '<div class="case"><a href="index.php?page=modifjeu&idJeu=' . $valeur['ID_jeu'] . '" class="photo"><img src="' . $phototest . '" alt="Jeu choisi"></a><div class="contTout"><b id="TitreJeu'.$valeur['ID_jeu'].'">' . $valeur['Titre'] . '</b><div class="parentBout"><a class="bout" href="index.php?page=infojeusolo&idjeu=' . $valeur['ID_jeu'] . '" id="view-game">Voir le jeu</a></div><div class="parentBout"><a href="index.php?page=modifjeu&idJeu=' . $valeur['ID_jeu'] . '" class="bout" id="edit-account">Modifier</a></div><div class="parentBout"><a href="index.php?page=supprJeu&idJeu=' . $valeur['ID_jeu'] . '" class="bout" id="delete-game">Supprimer</a></div></div></div>';
 }
 
 $script = '<script src="js/ajoutJeu.js"></script>';
@@ -29,21 +30,30 @@ $script = '<script src="js/ajoutJeu.js"></script>';
         <div class="nombre">
             <input type="text" required name="titre" placeholder="titre du jeu">
             <input type="text" required name="Titre_anglais" placeholder="titre du jeu en anglais">
+            <input type="text" required name="titre" placeholder="titre du jeu"> <!-- encore des placeholder à changer -->
+            <input type="text" required name="Titre_anglais" placeholder="titre du jeu en anglais"> <!-- encore des placeholder à changer -->
         </div>
 
         <input type="text" name="link"
             placeholder="entrez le lien d'une vidéo youtube (partager, puis enlever : https://youtu.be/)">
+            placeholder="entrez le lien d'une vidéo youtube (partager, puis enlever : https://youtu.be/)"> <!-- encore des placeholder à changer -->
         <div class="nombre">
             <input type="number" required name="min" min="0" placeholder="min participants">
             <input type="number" required name="max" min="0" placeholder="max participants">
+            <input type="number" required name="min" min="0" placeholder="min participants"> <!-- encore des placeholder à changer -->
+            <input type="number" required name="max" min="0" placeholder="max participants"> <!-- encore des placeholder à changer -->
         </div>
         <div class="nombre">
             <input type="number" name="age" min="0" placeholder="age participants">
             <input type="number" name="prix" min="0" placeholder="prix">
+            <input type="number" name="age" min="0" placeholder="age participants"> <!-- encore des placeholder à changer -->
+            <input type="number" name="prix" min="0" placeholder="prix"> <!-- encore des placeholder à changer -->
         </div>
         <div class="nombre">
             <textarea required name="description" id="test" placeholder="Entrez la description du jeu"></textarea>
             <textarea required name="Description_anglais" id="test" placeholder="Entrez la description du jeu en anglais"></textarea>
+            <textarea required name="description" id="test" placeholder="Entrez la description du jeu"></textarea> <!-- encore des placeholder à changer -->
+            <textarea required name="Description_anglais" id="test" placeholder="Entrez la description du jeu en anglais"></textarea> <!-- encore des placeholder à changer -->
         </div>
 
         <div class="in">
@@ -53,10 +63,14 @@ $script = '<script src="js/ajoutJeu.js"></script>';
         <div class="nombre">
             <input type="text" required name="ville" placeholder="entrez une ville">
             <input type="text" required name="region" placeholder="renseignez la région">
+            <input type="text" required name="ville" placeholder="entrez une ville"> <!-- encore des placeholder à changer -->
+            <input type="text" required name="region" placeholder="renseignez la région"> <!-- encore des placeholder à changer -->
         </div>
         <div class="nombre">
             <input type="text" required name="adresse" placeholder="entrez une adresse">
             <input type="number" required name="postale" min="0" placeholder="entrez un code postal">
+            <input type="text" required name="adresse" placeholder="entrez une adresse"> <!-- encore des placeholder à changer -->
+            <input type="number" required name="postale" min="0" placeholder="entrez un code postal"> <!-- encore des placeholder à changer -->
         </div>
         <div class="form_elt">
             <!-- Limite la taille maximale de fichier téléchargé (500Ko ici) -->
@@ -75,6 +89,7 @@ $script = '<script src="js/ajoutJeu.js"></script>';
 
         <!-- Bouton pour valider le formulaire -->
         <input class="boutbout" type="submit" class="valid" name="ok" value="ajouter">
+        <input class="boutbout" type="submit" class="valid" name="ok" value="ajouter"> <!-- cette fois c'est la value qu'il faut changer -->
         <div class="err">
             <?= $erreur ?>
         </div>

@@ -160,8 +160,8 @@
         "francais": "Description :"
     },
     "#unavailable": {
-        "anglais": "Unavailable :",
-        "francais": "Indisponible :"
+        "anglais": "Unavailable : ",
+        "francais": "Indisponible : "
     },
     "#add-to-cart": {
         "anglais": "Add to cart",
@@ -188,8 +188,6 @@
         "francais": "Connectez-vous"
     },
     "#email-field": {
-        "anglais": "Email",
-        "francais": "Email"
         "anglais": "E-mail",
         "francais": "E-mail"
     },
@@ -353,6 +351,14 @@
         "anglais": "Enter a YouTube link (share, then remove : https://youtu.be/)",
         "francais": "Entrez le lien d'une vidéo YouTube (partager, puis enlever : https://youtu.be/)"
     },
+    "#modif-information": {
+        "anglais": "modify information on :",
+        "francais": "modifier les informations de :"
+    },
+    "#game-number": {
+        "anglais": ", game number",
+        "francais": ", jeu numéro"
+    },
     "#min-participants": {
         "anglais": "Minimum participants",
         "francais": "Nombre minimum de participants"
@@ -398,8 +404,6 @@
         "francais": "Entrez un code postal"
     },
     "#add-photo": {
-        "anglais": "Add a photo (max 500KB)",
-        "francais": "Ajoutez une photo (max 500ko)"
         "anglais": "Add ",
         "francais": "Ajoutez "
     },
@@ -438,6 +442,10 @@
     "#no-old-orders": {
         "anglais": "You have no old orders.",
         "francais": "Vous n'avez aucune ancienne commande."
+    },
+    "#no-basket-validated": {
+        "anglais": "no basket has yet been validated, in which case it is impossible to define a preference.",
+        "francais": "aucun panier n'a encore été validé, il est alors impossible de définir une préférence."
     },
     "#no-items-in-cart": {
         "anglais": "You have no items in your cart.",
@@ -540,8 +548,6 @@
         "francais": "Logo type de carte"
     },
     "#security-number": {
-        "anglais": "Security number",
-        "francais": "Numéro de sécurité"
         "anglais": "Security number :",
         "francais": "Numéro de sécurité :"
     },
@@ -553,7 +559,6 @@
         "anglais": "Turn card",
         "francais": "Tourner la carte"
     },
-    "#validate-order": {
     "#validerCommande": {
         "anglais": "Validate order",
         "francais": "Valider la commande"
@@ -626,6 +631,10 @@
         "anglais": "Change photo (max 500KB)",
         "francais": "Modifiez la photo (max 500ko)"
     },
+    "#change-photo-max": {
+        "anglais": " photo (max 500KB)",
+        "francais": " la photo (max 500ko)"
+    },
     "#change-password-section": {
         "anglais": "Change password",
         "francais": "Modifier le mot de passe"
@@ -649,10 +658,6 @@
     "#edit-game-information": {
         "anglais": "Edit game information",
         "francais": "Modifier les informations du jeu"
-    },
-    "#game-number": {
-        "anglais": "Game number",
-        "francais": "Jeu numéro"
     },
     "#previous-page": {
         "anglais": "Previous page",

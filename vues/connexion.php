@@ -69,8 +69,8 @@ else{
                 <h2 id='login'>Connectez-vous</h2>
             </div>
             <form action="<?= $_SERVER['PHP_SELF'] . '?page=login' ?>" method="post">
-                <input type="email" maxlength="50" name="email" required value="<?= $mail ?>" placeholder="Email">
-                <input type="password" maxlength="50" name="MDP" value="<?= $pwd ?>" class="motdepasse" required placeholder="Mot de passe">
+                <input type="email" maxlength="50" name="email" required value="<?= $mail ?>" placeholder="Email">   <!-- traduire le placeholder -->
+                <input type="password" maxlength="50" name="MDP" value="<?= $pwd ?>" class="motdepasse" required placeholder="Mot de passe"> <!-- traduire le placeholder -->
                 <button id='log-in-button'>Me connecter</button>
             </form>
             <div class="erreur">
@@ -103,12 +103,12 @@ else{
             </div>
             <form action="<?= $_SERVER['PHP_SELF'] . '?page=signin' ?>" method="post">
                 <div class="split">
-                    <input type="text" maxlength="50" value="<?= $prenom ?>" name="prenom" required placeholder="prenom">
-                    <input type="text" maxlength="50" value="<?= $nom ?>" name="nom" required placeholder="nom">
+                    <input type="text" maxlength="50" value="<?= $prenom ?>" name="prenom" required placeholder="prenom"> <!-- traduire le placeholder -->
+                    <input type="text" maxlength="50" value="<?= $nom ?>" name="nom" required placeholder="nom"> <!-- traduire le placeholder -->
                 </div>
-                <input type="email" value="<?= $mail ?>" maxlength="50" name="email" required placeholder="Email">
-                <input type="text" value="<?= $adresse ?>" maxlength="50" name="adresse" required placeholder="adresse">
-                <input type="password" value="<?= $pwd ?>" maxlength="50" name="MDP" class="motdepasse" required placeholder="Mot de passe">
+                <input type="email" value="<?= $mail ?>" maxlength="50" name="email" required placeholder="Email"> <!-- traduire le placeholder -->
+                <input type="text" value="<?= $adresse ?>" maxlength="50" name="adresse" required placeholder="adresse"> <!-- traduire le placeholder -->
+                <input type="password" value="<?= $pwd ?>" maxlength="50" name="MDP" class="motdepasse" required placeholder="Mot de passe"> <!-- traduire le placeholder -->
                 <button>Créer mon compte</button>
             </form>
             <div class="erreur">

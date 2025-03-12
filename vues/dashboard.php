@@ -24,10 +24,10 @@ if (count($users)) {
 
         $acces = new ctlpanier;
         $paniervalid = $acces->getValidPaniers($ligne['Id_utilisateur']);
-        $result .= "<div class='PetiteCase'><a class='PhotoDeProfil' href='index.php?page=informationsUser&idUser=" . $ligne['Id_utilisateur'] . "'><img class='photo' style='height: 250px; object-fit: cover;'' src='../" . $phototest . "' alt='photo'></a><div class='MiseEnPageUser'><div class='MiseEnPageUser2'><div class='Nom'>" . $ligne['prenom'] . "</div><div class='InfoDansCase'>Dernière connexion : " . $ligne['connexion'] . "</div><div class='InfoDansCase'>paniers validés : " . count($paniervalid) . "</div><div class='CadreInfo'><a class='InformationDashbord' href='index.php?page=informationsUser&idUser=" . $ligne['Id_utilisateur'] . "'>Information</a></div></div></div></div>";
+        $result .= "<div class='PetiteCase'><a class='PhotoDeProfil' href='index.php?page=informationsUser&idUser=" . $ligne['Id_utilisateur'] . "'><img class='photo' style='height: 250px; object-fit: cover;'' src='../" . $phototest . "' alt='photo'></a><div class='MiseEnPageUser'><div class='MiseEnPageUser2'><div class='Nom'>" . $ligne['prenom'] . "</div><div class='InfoDansCase' id='last-login'>Dernière connexion : " . $ligne['connexion'] . "</div><div class='InfoDansCase' id='validated-carts'>paniers validés : " . count($paniervalid) . "</div><div class='CadreInfo'><a class='InformationDashbord' href='index.php?page=informationsUser&idUser=" . $ligne['Id_utilisateur'] . "' id='information'>Information</a></div></div></div></div>";
     }
 } else {
-    $result .= "<div class='reponse'>Aucun Utilisateur n'est enregistré</div>";
+    $result .= "<div class='reponse' id='no-user-registered'>Aucun Utilisateur n'est enregistré</div>";
 }
 
 // tableau pour le graphique
@@ -45,7 +45,7 @@ if (!empty($meilleurRes) && !empty($meilleurSouv)) {
         $meilleur = $meilleurSouv[0]['nom'];
     }
 } else {
-    $meilleur = "aucun panier n'a encore été validé, il est alros impossible de définir une préférence.";
+    $meilleur = "<span id='no-basket-validated'>aucun panier n'a encore été validé, il est alors impossible de définir une préférence.</span>";
 }
 
 ?>
@@ -56,7 +56,7 @@ if (!empty($meilleurRes) && !empty($meilleurSouv)) {
             <div class="nombrePanierValide">
                 <img src="../img/Shopping_bag.png" alt="une icone">
                 <div class="stat" id='number-of-validated-carts'>
-                    Nombre de paniers validés : <?= $comptepanier ?>
+                    <span id='number-of-validated-carts'>Nombre de paniers validés :</span> <?= $comptepanier ?>
                 </div>
             </div>
             <div class="nombreInscrit">
@@ -98,6 +98,7 @@ if (!empty($meilleurRes) && !empty($meilleurSouv)) {
     new Chart(ctx, {
         type: 'bar',
         data: {
+            // changer les labels pour les mois et le texte "nombre de connexions" avec la traduction
             labels: ['Janvier', 'Fevrier', 'Mars', 'Avril', 'Mai', 'Juin', 'juillet', 'Août', 'Septembre', 'Octobre', 'Novembre', 'Decembre'],
             datasets: [{
                 label: 'nombre de connexions',

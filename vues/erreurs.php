@@ -9,5 +9,7 @@ $styles_telephone = "";
 ?>
 
 <div class="erreur">
-    <span id='an-error-occurred'>Une erreur est survenue : </span><?= $message ?>
+    <div class="glob">
+        <span id='an-error-occurred'>Une erreur est survenue : </span><?= $message ?>
+    </div>
 </div>

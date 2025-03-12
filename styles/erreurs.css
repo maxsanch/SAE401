@@ -7,6 +7,7 @@ main{
 .erreur{
     display: flex;
     margin: auto;
+    max-width: 80%;
     margin-top: 50px;
     font-family: Montserrat-bold;
     color: #151414;

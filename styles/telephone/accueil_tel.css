@@ -21,10 +21,13 @@
 
 .Accueil {
     grid-template-columns: 1fr;
+    margin-top: 0px;
+    height: 100%;
 }
 
 .AccueilTitre {
     line-height: 100%;
+    margin-top: 16px;
 }
 
 .AccueilSousTitre {
@@ -71,4 +74,10 @@
 
 html{
     overflow-x: hidden;
+}
+
+.CadreDesEngrenages{
+    position: relative;
+    transform: translateY(-20px);
+    height: 100%;
 }

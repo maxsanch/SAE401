@@ -26,11 +26,12 @@ class ctlUser
         return $userget;
     }
 
-    public function RecupererUser() {
+    public function RecupererUser()
+    {
         return $this->users->GetUser($_SESSION['acces'])[0];
     }
 
-    public function checkusers()
+    public function checkusers($erreur = "")
     {
         $Inscr = $this->users->getallUser();
         $compteInscr = count($Inscr);
@@ -44,7 +45,7 @@ class ctlUser
         $meilleurSouv = $this->panierUser->getBestSouv();
 
         $vue = new vue('dashboard');
-        $vue->afficher(array('comptepanier' => $comptepanier, 'compteinscrit' => $compteInscr, 'users' => $Inscr, 'nombreparmois' => $nombreparmois, 'meilleurRes' => $meilleurRes, 'meilleurSouv' => $meilleurSouv));
+        $vue->afficher(array('comptepanier' => $comptepanier, 'compteinscrit' => $compteInscr, 'users' => $Inscr, 'nombreparmois' => $nombreparmois, 'meilleurRes' => $meilleurRes, 'meilleurSouv' => $meilleurSouv, 'erreur' => $erreur));
     }
 
     public function modifuser($id, $message)
@@ -59,14 +60,61 @@ class ctlUser
 
     public function EnregPhotoUser($idUser)
     {
-        $this->users->updateUserPhoto($idUser);
-        $this->checkusers();
+        $erreur = "";
+        if (isset($_FILES['photoUser'])) {
+            // Vérification si le fichier ne contient pas d'erreur
+            if ($_FILES['photoUser']["error"] == 0) {
+                $erreur = $this->users->updateUserPhoto($idUser);
+                if (empty($erreur)) {
+                    $erreur = "photo de profil modifiée.";
+                }
+            } else if ($_FILES['photoUser']["error"] == 4) {
+                // Si le transfert a  réussi sasn image.
+                $erreur = "Aucune image selectionée.";
+            } else {
+                if ($_FILES['photoUser']["size"] <= 500000) {
+                    // Si le transfert a échoué avec un code d'erreur
+                    $erreur = "Fichier trop volumineux pour enregistrer l'image.";
+                } else {
+                    // Si le transfert a échoué avec un code d'erreur
+                    $erreur = "Une erreur est survenue.";
+                }
+            }
+        } else {
+            $erreur = "Aucune image n'a été selectionnée.";
+        }
+
+        $this->checkusers($erreur);
     }
 
     public function changerpdp()
     {
         $user = $this->users->GetUser($_SESSION['acces']);
-        $erreur = $this->users->updateUserPhoto($user[0]['Id_utilisateur']);
+
+        $erreur = "";
+        if (isset($_FILES['photoUser'])) {
+            // Vérification si le fichier ne contient pas d'erreur
+            if ($_FILES['photoUser']["error"] == 0) {
+                $erreur = $this->users->updateUserPhoto($user[0]['Id_utilisateur']);
+                if (empty($erreur)) {
+                    $erreur = "photo de profil modifiée.";
+                }
+            } else if ($_FILES['photoUser']["error"] == 4) {
+                // Si le transfert a  réussi sasn image.
+                $erreur = "Aucune image selectionée.";
+            } else {
+                if ($_FILES['photoUser']["size"] <= 500000) {
+                    // Si le transfert a échoué avec un code d'erreur
+                    $erreur = "Fichier trop volumineux pour enregistrer l'image.";
+                } else {
+                    // Si le transfert a échoué avec un code d'erreur
+                    $erreur = "Une erreur est survenue.";
+                }
+            }
+        } else {
+            $erreur = "Aucune image n'a été selectionnée.";
+        }
+
         $this->infoperso($erreur);
     }
 
@@ -76,7 +124,7 @@ class ctlUser
         $this->users->deletuser($id);
         $panier = $this->panierUser->getPaniers($id);
         // supprimer les liaisons dans les tables contenir et réserver.
-        foreach($panier as $ligne){
+        foreach ($panier as $ligne) {
             $this->panierUser->deletContenir($ligne['id_panier']);
             $this->panierUser->deletReserver($ligne['id_panier']);
         }
@@ -125,7 +173,7 @@ class ctlUser
         $this->users->deletuser($id[0]['Id_utilisateur']);
         $panier = $this->panierUser->getPaniers($id[0]['Id_utilisateur']);
         // supprimer les liaisons dans les tables contenir et réserver.
-        foreach($panier as $ligne){
+        foreach ($panier as $ligne) {
             $this->panierUser->deletContenir($ligne['id_panier']);
             $this->panierUser->deletReserver($ligne['id_panier']);
         }
@@ -141,7 +189,7 @@ class ctlUser
     public function editprofil($nom, $prenom, $adresse, $newpassword, $confirm, $ancienpdw)
     {
         $user = $this->users->GetUser($_SESSION['acces']);
-    
+
         if (!empty($user)) {
             // regarder si le password est juste pour changer les infos
             if (password_verify($ancienpdw, $user[0]['mdp'])) {
@@ -165,7 +213,7 @@ class ctlUser
                         $this->infoperso($erreur);
                     }
                 } else {
-    
+
                     if (!empty($nom) && !empty($prenom)) {
                         // changer le mot de passe
                         $mdpgood = password_hash($newpassword, PASSWORD_DEFAULT);

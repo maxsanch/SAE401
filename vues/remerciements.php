@@ -26,7 +26,8 @@ $script = "";
 
 <div class="rect">
     <img src="../img/top.svg" alt="rectangle_haut">
-</div>  
+</div>
+
 <div class="rect2">
     <img src="../img/left.svg"  alt="rectangle_gauche">
 </div>

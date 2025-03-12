@@ -94,7 +94,7 @@ class ctlPanier
     {
         // prendre le stock et re remplir le stock faire également en sorte que si on supprime pas toute la quantitée, ca supprime pas tout ?
         $panierContent = $this->panier->getstockContIDobj($idobj, $idpanier);
-
+        $user = new ctlUser;
         if (!empty($panierContent)) {
             $stock = $this->panier->stockactuel($idobj);
             if ($panierContent[0]['quantitée'] > $nombredelet) {
@@ -113,29 +113,28 @@ class ctlPanier
 
             $heure = $this->date->format('Y-m-d H-i-s');
             $this->panier->updateHorraire($idpanier, $heure);
+
+            $user->infoperso("<div class='err'>L'élément a été supprimé du panier.</div>");
         } else {
-            $user = new ctlUser;
-            $user->infoperso("Vous n'avez pas cet objet dans votre panier.");
+            $user->infoperso("<div class='err'>Vous n'avez pas cet objet dans votre panier.</div>");
         }
-        header('Location: index.php?page=informationmyuser');
     }
 
     public function supprimerReservation($idobj, $heure, $jour)
     {
         // reset tu timer panier lors de l'action utilisateur
-
+        $user = new ctlUser;
         $panier = $this->panier->GetPanierParRes($idobj, $heure, $jour);
 
         if (!empty($panier)) {
             $this->panier->supprimerres($idobj, $heure, $jour);
             $heure = $this->date->format('Y-m-d H-i-s');
             $this->panier->updateHorraire($panier[0]['id_panier'], $heure);
+            $user->infoperso("<div class='err'>la réservation a été supprimée du panier.</div>");
         } else {
-            $user = new ctlUser;
-            $user->infoperso("Vous n'avez pas cette réservation dans votre panier.");
-        }
 
-        header('Location: index.php?page=informationmyuser');
+            $user->infoperso("<div class='err'>Vous n'avez pas cette réservation dans votre panier.</div>");
+        }
     }
 
     public function reglement($erreur)
@@ -158,8 +157,7 @@ class ctlPanier
         $SouvenirsUtilisateur = $this->panier->MesSouvenirs($infouser[0]['Id_utilisateur']);
 
         $nombre_num = strlen($numéro_carte);
-
-        if ($nombre_num <= 20 && $nombre_num >= 19 && preg_match("/^(0[1-9]|1[0-2])\/\d{2}$/", $expiration) && !empty($nomUser) && $numéro_de_sécurité >= 111 && $numéro_de_sécurité <= 999) {
+        if ($nombre_num <= 20 && $nombre_num >= 19 && preg_match("/^(0[1-9]|1[0-2])\/\d{2}$/", $expiration) && !empty($nomUser) && preg_match("/^\d{3}$/", $numéro_de_sécurité)) {
 
             $random = random_int(1, 100);
 

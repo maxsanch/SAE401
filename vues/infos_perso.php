@@ -6,7 +6,7 @@ $librairie = '';
 $styles_telephone = "styles/telephone/infoperso_tel.css";
 $styles = "../styles/style_infos_perso.css";
 
-$script = "";
+$script = "<script src='js/fermer.js'></script>";
 
 $panierClass = new panier;
 
@@ -137,7 +137,7 @@ if (empty($panier) && empty($souvenirs)) {
 
 ?>
 
-
+<?= $erreur ?>
 <div class="total">
     <h1 id='my-account'>Mon compte</h1>
     <div class="global-page">
@@ -159,7 +159,6 @@ if (empty($panier) && empty($souvenirs)) {
                 <!-- Bouton pour valider le formulaire -->
                 <div class="contrerBoutbout">
                     <input class="boutbout" type="submit" class="valid" name="ok" value="enregistrer">
-                    <div class="erreur"><?= $erreur ?></div>
                 </div>
             </form>
             <div class="informations">
@@ -227,7 +226,6 @@ if (empty($panier) && empty($souvenirs)) {
                     </div>
                 </form>
             </div>
-            <div class="erreur"><?= $erreur ?></div>
         </div>
         <div class="allpaniers">
             <div class="Lastpaniers">
@@ -240,9 +238,9 @@ if (empty($panier) && empty($souvenirs)) {
                     <div class="cadreproduit">
                         <?= $resultpanier ?>
                     </div>
-                    <div class="total">
-                        Total : <?= $total ?> €
-                    </div>
+                </div>
+                <div class="total-panier-tgm">
+                    Total : <?= $total ?> €
                 </div>
             </div>
         </div>

@@ -16,7 +16,7 @@ if (file_exists('img/user/' . $_GET['idUser'] . '.jpg')) {
 }
 
 
-$script = "";
+$script = "<script src='js/fermer.js'></script>";
 
 $panierClass = new panier;
 

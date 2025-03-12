@@ -7,7 +7,7 @@ $librairie = '';
 
 $result = "";
 
-$script = "";
+$script = "<script src='js/fermer.js'></script>";
 
 if (count($users)) {
     // Affichage des lignes du tableau
@@ -50,6 +50,7 @@ if (!empty($meilleurRes) && !empty($meilleurSouv)) {
 
 ?>
 
+<?= $erreur ?>
 <div class="MiseEnPage">
     <div class="dashboard">
         <div class="nombre">

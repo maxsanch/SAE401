@@ -7,8 +7,8 @@ $librairie = '';
 $script = "<script src='js/reglement.js'></script>";
 
 $resultpanier = "";
-$total = 0;
 
+$total = 0;
 
 if (isset($_POST['numéro_carte'])) {
     $carte = $_POST['numéro_carte'];
@@ -128,7 +128,6 @@ if (empty($panier) && empty($souvenirs)) {
         <div class="infoproduits">
             <?= $resultpanier ?>
         </div>
-        <div class="total" id='cart-total'>
         <div class="total">
             Total : <?= $total ?> €
         </div>
@@ -177,7 +176,6 @@ if (empty($panier) && empty($souvenirs)) {
                     <div class="carte_front">
                         <div class="top">
                             <div class="titrecb" id='bank-card'>
-                            <div class="titrecb">
                                 Carte bancaire
                             </div>
                             <div class="logo_cb">
@@ -197,7 +195,6 @@ if (empty($panier) && empty($souvenirs)) {
                             <div class="inputs">
                                 <label>
                                     <div class="expire" id='expires-end'>
-                                    <div class="expire">
                                         EXPIRE A FIN
                                     </div>
                                     <input type="text" required name="expiration" value="<?= $exp ?>" id="expiration"
@@ -216,16 +213,13 @@ if (empty($panier) && empty($souvenirs)) {
 
                         </div>
                         <label>
-                            <span id='security-number'>Numéro de sécurité : </span><input type="number" value="<?= $secure ?>" max=999 required
-                            Numéro de sécurité : <input type="number" value="<?= $secure ?>" max=999 required
-                                id="securite" name="numéro_de_sécurité" placeholder="Code de securité">
+                            <span id='security-number'>Numéro de sécurité : </span><input type="number" value="<?= $secure ?>" max=999 required id="securite" name="numéro_de_sécurité" placeholder="Code de securité">
                         </label>
                     </div>
                 </div>
             </div>
             <div class="flibandvalid">
                 <div class="flipcard" id='turn-card'>
-                <div class="flipcard">
                     Tourner la carte
                 </div>
                 <button type="submit" id="validerCommande">Valider la commande</button>

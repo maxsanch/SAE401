@@ -240,6 +240,9 @@ if (empty($panier) && empty($souvenirs)) {
                     <div class="cadreproduit">
                         <?= $resultpanier ?>
                     </div>
+                    <div class="total">
+                        Total : <?= $total ?> €
+                    </div>
                 </div>
             </div>
         </div>

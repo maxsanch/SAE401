@@ -35,8 +35,6 @@ class ctlJeux
                                 else{
                                     $this->ajoutjeux($erreur);
                                 }
-                
-                                $this->ajoutjeux("le jeu à bien été ajouté.");
                             } else if ($_FILES['photoGame']["error"] == 4) {
                                 // Si le transfert a  réussi sasn image.
                                 $this->ajoutjeux("le jeu à bien été ajouté, sans image d'illustration.");

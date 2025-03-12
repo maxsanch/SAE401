@@ -59,8 +59,24 @@ class ctlUser
 
     public function EnregPhotoUser($idUser)
     {
-        $this->users->updateUserPhoto($idUser);
-        $this->checkusers();
+        $erreur = "";
+        if (isset($_FILES['photoGame'])) {
+            // Vérification si le fichier ne contient pas d'erreur
+            if ($_FILES['photoGame']["error"] == 0) {
+                $erreur = $this->users->updateUserPhoto($idUser);
+                if(empty($erreur)){
+                    $erreur = "photo de profil modifiée.";
+                }
+            }
+            else{
+
+            }
+        }
+        else{
+            $erreur= "Aucune image n'a été selectionnée.";
+        }
+
+        $this->checkusers($erreur);
     }
 
     public function changerpdp()

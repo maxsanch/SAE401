@@ -139,11 +139,11 @@ if (empty($panier) && empty($souvenirs)) {
 
 
 <div class='fixeddanslefixed'>
-    <p>Voulez vous vraiment supprimer votre compte ?</p>
+    <p id="asking-delet-account">Voulez vous vraiment supprimer votre compte ?</p>
     <div class='ledarondufixe'>
-        <div class='nonjesuppr2'>Non</div>
+        <div class='nonjesuppr2' id="no-ofc">Non</div>
         <a href='index.php?page=deletMyAccount'>
-            <div class='ouijesuppr2'>Oui</div>
+            <div class='ouijesuppr2' id="yes-ofc">Oui</div>
         </a>
     </div>
 </div>

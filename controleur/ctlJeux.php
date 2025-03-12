@@ -30,45 +30,44 @@ class ctlJeux
                                 // Si le transfert a réussi avec une image transférée
                                 $erreur = $this->jeu->enregjeuphoto($idjeu);
                                 if(empty($erreur)){
-                                    $this->ajoutjeux('<div class="err">le jeu a bien été ajouté.</div>');
+                                    $this->ajoutjeux('<div class="err" id="game-added-succes">Le jeu a bien été ajouté.</div>');
                                 }
                                 else{
                                     $this->ajoutjeux($erreur);
                                 }
                             } else if ($_FILES['photoGame']["error"] == 4) {
                                 // Si le transfert a  réussi sasn image.
-                                $this->ajoutjeux("<div class='err'>le jeu à bien été ajouté, sans image d'illustration.</div>");
+                                $this->ajoutjeux("<div class='err' id='game-added-no-pics'>Le jeu à bien été ajouté, sans image d'illustration.</div>");
                             } else {
                                 if ($_FILES['photoGame']["size"] <= 500000) {
                                     // Si le transfert a échoué avec un code d'erreur
-                                    $erreur1 = "<div class='err'>Fichier trop volumineux pour enregistrer l'image, jeu ajouté.</div>";
+                                    $erreur1 = "<div class='err' id='large-file-game-create'>Fichier trop volumineux pour enregistrer l'image, jeu ajouté.</div>";
                                     $this->ajoutjeux($erreur1);
                                 } else {
                                     // Si le transfert a échoué avec un code d'erreur
-                                    $erreur1 = "<div class='err'>Une erreur est survenue pour l'image, jeu ajouté.</div>";
+                                    $erreur1 = "<div class='err' id='error-image-game-create'>Une erreur est survenue pour l'image, jeu ajouté.</div>";
                                     $this->ajoutjeux($erreur1);
                                 }
                             }
                         } else {
-                            $this->ajoutjeux("<div class='err'>le jeu à bien été ajouté, sans image d'illustration.</div>");
+                            $this->ajoutjeux("<div class='err' id='game-added-no-pics'>le jeu à bien été ajouté, sans image d'illustration.</div>");
                         }
                     }
                     else{
-                        $this->ajoutjeux("<div class='err'>Vous ne pouvez pas mettre un minimum plus petit ou égal à un maximum.</div>");
+                        $this->ajoutjeux("<div class='err' id='dumb-error'>Vous ne pouvez pas mettre un minimum plus petit ou égal à un maximum.</div>");
                     }   
                 }
                 else{
-                    $this->ajoutjeux("<div class='err'>Le code postal ne peut pas être négatif.</div>");
+                    $this->ajoutjeux("<div class='err' id='code-postal-wrong'>Le code postal ne peut pas être négatif.</div>");
                 }         
             }
             else{
-                $this->ajoutjeux("<div class='err'>Le minimum ne peut pas être négatif.</div>");
+                $this->ajoutjeux("<div class='err' id='wrong-minimum'>Le minimum ne peut pas être négatif.</div>");
             }
         }
         else{
-            $this->ajoutjeux("<div class='err'>Vous ne pouvez pas entrer une valeur négative pour l'age.</div>");
+            $this->ajoutjeux("<div class='err' id='wrong-age'>Vous ne pouvez pas entrer une valeur négative pour l'age.</div>");
         }
-        
     }
 
     public function alljeux($erreur = ""): void

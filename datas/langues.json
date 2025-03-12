@@ -680,5 +680,53 @@
     "#game-image": {
         "anglais": "Game image",
         "francais": "Image du jeu"
+    },
+    "#game-added-succes": {
+        "anglais": "The game is created",
+        "francais": "Le jeu a bien été ajouté."
+    },
+    "#error-image-game-create": {
+        "anglais": "game added but the image can't be upload, an error stopped the process.",
+        "francais": "Une erreur est survenue pour l'image, jeu ajouté."
+    },
+    "#dumb-errors": {
+        "anglais": "You can't have a minimum value lower or equal to the maximum value.",
+        "francais": "Vous ne pouvez pas mettre un minimum plus petit ou égal à un maximum."
+    },
+    "#code-postal-wrong": {
+        "anglais": "The postcode cannot be negative.",
+        "francais": "Le code postal ne peut pas être négatif."
+    },
+    "#wrong-minimum": {
+        "anglais": "The game was added succesfully, without illustration image.",
+        "francais": "Le minimum ne peut pas être négatif."
+    },
+    "#wrong-age": {
+        "anglais": "you can't aenter a negative value for the age.",
+        "francais": "Vous ne pouvez pas entrer une valeur négative pour l'age."
+    },
+    "#game-added-no-pics": {
+        "anglais": "The game was added succesfully, without illustration image.",
+        "francais": "Le jeu à bien été ajouté, sans image d'illustration."
+    },
+    "#asking-delet-account": {
+        "anglais": "Do you really want to delet your account ?",
+        "francais": "Voulez vous vraiment supprimer votre compte ?"
+    },
+    "#asking-delet-this-account": {
+        "anglais": "Do you really want to delet this user ?",
+        "francais": "Voulez vous vraiment supprimer cet utilisateur ?"
+    },
+    "#no-ofc": {
+        "anglais": "No",
+        "francais": "Non"
+    },
+    "#yes-ofc": {
+        "anglais": "Yes",
+        "francais": "Oui"
+    },
+    "#large-file-game-create": {
+        "anglais": "Too large file, game added.",
+        "francais": "Fichier trop volumineux pour enregistrer l'image, jeu ajouté."
     }
 }

@@ -85,12 +85,12 @@ if (!empty($anciensPaniers)) {
 
 
 <div class='fixeddanslefixed'>
-    <p>Voulez vous vraiment supprimer cet utilisateur ?</p>
+    <p id="asking-delet-this-account">Voulez vous vraiment supprimer cet utilisateur ?</p>
     <div class='ledarondufixe'>
         <a>
-            <div class='nonjesuppr2'>Non</div>
+            <div class='nonjesuppr2' id="no-ofc">Non</div>
         </a><a href="index.php?page=supprimerCompte&idUser=<?= $_GET['idUser'] ?>">
-            <div class='ouijesuppr2'>Oui</div>
+            <div class='ouijesuppr2' id="yes-ofc">Oui</div>
         </a>
     </div>
 </div>
@@ -155,8 +155,7 @@ if (!empty($anciensPaniers)) {
                     <div class="total-bouton-modif-user">
                         <button class="modifiermdpBouton" id='edit-game'>Modifier</button>
                         <div class="deletaccount supprcompte">
-                            <a href="#"><span
-                                    id='delete-account'>Supprimer le compte</span></a>
+                            <a href="#"><span id='delete-account'>Supprimer le compte</span></a>
                         </div>
                     </div>
                 </form>

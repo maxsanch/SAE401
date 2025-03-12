@@ -16,9 +16,9 @@ $script = "";
     <div class="subTitreRes">
         <h2>Et à bientôt</h2>
     </div>
-    <div class="home">
+    <a href="index.php" class="maison-home">
         <img src="../img/union.svg" alt="icone_de_la_maison">
-    </div>
+    </a>
     <div class="link">
         <a href="index.php?page=accueil">Retourner à l'accueil</a>
     </div>

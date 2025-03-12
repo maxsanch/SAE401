@@ -8,7 +8,7 @@
         "francais": "<div>Découvrez <b>We-Escape</b> et ses escapes games en <b>plein air !</b></div><div>Plongez dans différentes aventures au coeurs d’enquêtes et d’énigmes <b>en foret ou même en ville.</b></div><div><b>En équipe</b>, vous devrez trouver les indices pour <b>résoudre les mystères</b> que vous rencontrerez sur votre parcours afin de <b>vous échapper !</b></div>"
     },
     "#available-games": {
-        "anglais": "Our aivailable games",
+        "anglais": "Our available games",
         "francais": "Nos escapes games disponible"
     },
     "#age-games": {
@@ -84,7 +84,7 @@
         "francais": "Se connecter"
     },
     ".Realisation": {
-        "anglais": "Coded by par Noah, Maxence et Alexandre | Hosted at the IUT of mulhouse",
+        "anglais": "Coded by Noah, Maxence et Alexandre | Hosted at the IUT of mulhouse",
         "francais": "Codé par Noah, Maxence et Alexandre | Hébergé à l'IUT de mulhouse"
     },
     "#GlobalgamePresentation": {
@@ -103,13 +103,9 @@
         "anglais": "Our social medias",
         "francais": "Nos réseaux"
     },
-
-
-
-
     "#presentation-images": {
-    "anglais": "Presentation images of escape games",
-    "francais": "Images de présentation des escapes games"
+        "anglais": "Presentation images of escape games",
+        "francais": "Images de présentation des escapes games"
     },
     "#user-icon": {
         "anglais": "User icon",
@@ -190,8 +186,6 @@
     "#email-field": {
         "anglais": "Email",
         "francais": "Email"
-        "anglais": "E-mail",
-        "francais": "E-mail"
     },
     "#password-field": {
         "anglais": "Password",
@@ -290,8 +284,34 @@
         "francais": "Produit préféré :"
     },
     "#months": {
-        "anglais": ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"],
-        "francais": ["Janvier", "Février", "Mars", "Avril", "Mai", "Juin", "Juillet", "Août", "Septembre", "Octobre", "Novembre", "Décembre"]
+        "anglais": [
+            "January",
+            "February",
+            "March",
+            "April",
+            "May",
+            "June",
+            "July",
+            "August",
+            "September",
+            "October",
+            "November",
+            "December"
+        ],
+        "francais": [
+            "Janvier",
+            "Février",
+            "Mars",
+            "Avril",
+            "Mai",
+            "Juin",
+            "Juillet",
+            "Août",
+            "Septembre",
+            "Octobre",
+            "Novembre",
+            "Décembre"
+        ]
     },
     "#number-of-logins": {
         "anglais": "Number of logins",
@@ -400,8 +420,6 @@
     "#add-photo": {
         "anglais": "Add a photo (max 500KB)",
         "francais": "Ajoutez une photo (max 500ko)"
-        "anglais": "Add ",
-        "francais": "Ajoutez "
     },
     "#add-photo-2": {
         "anglais": "a photo (max 500KB)",
@@ -542,8 +560,6 @@
     "#security-number": {
         "anglais": "Security number",
         "francais": "Numéro de sécurité"
-        "anglais": "Security number :",
-        "francais": "Numéro de sécurité :"
     },
     "#security-code": {
         "anglais": "Security code",
@@ -553,7 +569,6 @@
         "anglais": "Turn card",
         "francais": "Tourner la carte"
     },
-    "#validate-order": {
     "#validerCommande": {
         "anglais": "Validate order",
         "francais": "Valider la commande"

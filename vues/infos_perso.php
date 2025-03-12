@@ -140,6 +140,7 @@ if (empty($panier) && empty($souvenirs)) {
 
 <div class="total">
     <h1>Mon compte</h1>
+    <h1 id='my-account'>Mon compte</h1>
     <div class="global-page">
         <div class="infosUser">
             <div class="pic">
@@ -152,6 +153,7 @@ if (empty($panier) && empty($souvenirs)) {
                     <!-- Label pour l'input de téléchargement de photo -->
                     <label>
                         <span class="orange">Cliquez ici pour modifiez la photo. (max 500ko)</span>
+                        <span class="orange" id='click-to-change-photo'>Cliquez ici pour modifiez la photo. (max 500ko)</span>
                         <!-- Champ pour sélectionner le fichier image (acceptant JPEG et PNG uniquement) -->
                         <input type="file" class="texte" name="photoUser" accept="image/jpeg, image/png" hidden>
                     </label>
@@ -169,11 +171,13 @@ if (empty($panier) && empty($souvenirs)) {
                             <div class="nom">
                                 <label class="inf">
                                     <p>Nom</p><input type="text" name="nom" value="<?= $user['nom'] ?>" required>
+                                    <p id="last-name">Nom</p><input type="text" name="nom" value="<?= $user['nom'] ?>" required>
                                 </label>
                             </div>
                             <div class="prenom">
                                 <label class="inf">
                                     <p>Prenom</p><input type="text" name="prenom" value="<?= $user['prenom'] ?>"
+                                    <p id='first-name'>Prenom</p><input type="text" name="prenom" value="<?= $user['prenom'] ?>"
                                         required>
                                 </label>
                             </div>
@@ -182,12 +186,14 @@ if (empty($panier) && empty($souvenirs)) {
                             <div class="mail">
                                 <label class="inf">
                                     <p>E-mail</p><input type="mail" name="mail" value="<?= $user['mail'] ?>"
+                                    <p id='email-field'>E-mail</p><input type="mail" name="mail" value="<?= $user['mail'] ?>"
                                         class="bloqué" disabled>
                                 </label>
                             </div>
                             <div class="adresse">
                                 <label class="inf">
                                     <p>Adresse</p><input type="text" name="adresse" value="<?= $user['adresse'] ?>"
+                                    <p id='address-field'>Adresse</p><input type="text" name="adresse" value="<?= $user['adresse'] ?>"
                                         required>
                                 </label>
                             </div>
@@ -196,14 +202,17 @@ if (empty($panier) && empty($souvenirs)) {
                     <div class="mdp">
                         <!-- pour changer le mot de passe de l'utilisteur -->
                         <div><b>Changer de mot de passe</b></div>
+                        <div><b id="change-password">Changer de mot de passe</b></div>
                         <div class="grid-mdp">
                             <label>
                                 <p>Nouveau mot de passe</p> <input type="password" class="motdepasse" name="NewPassword"
+                                <p id='new-password'>Nouveau mot de passe</p> <input type="password" class="motdepasse" name="NewPassword"
                                     placeholder="entrez votre nouveau mot de passe">
                             </label>
 
                             <label>
                                 <p>Confirmez le mot de passe</p><input type="password" class="motdepasse"
+                                <p id="confirm-password">Confirmez le mot de passe</p><input type="password" class="motdepasse"
                                     name="ConfirmationNewPassword" placeholder="confirmez votre mot de passe">
                             </label>
                         </div>
@@ -211,6 +220,7 @@ if (empty($panier) && empty($souvenirs)) {
                     <div class="validation">
                         <label>
                             <p>Pour enregistrer les modifications, vous devez entrer votre mot de passe actuelle</p>
+                            <p id='confirm-with-password'>Pour enregistrer les modifications, vous devez entrer votre mot de passe actuelle</p>
                             <input type="password" name="ancienmdp" class="motdepasse" required
                                 placeholder="entrez votre mot de passe">
                         </label>
@@ -218,9 +228,11 @@ if (empty($panier) && empty($souvenirs)) {
                     <div class="total-boutons">
                         <div class="bottomCompteModif">
                             <button class="modifCompteButton">Modifier</button>
+                            <button class="modifCompteButton" id='edit-account'>Modifier</button>
                         </div>
                         <div class="deletaccount">
                             <a href="index.php?page=deletMyAccount">
+                            <a href="index.php?page=deletMyAccount" id='delete-account-section'>
                                 Supprimer le compte
                             </a>
                         </div>
@@ -233,6 +245,7 @@ if (empty($panier) && empty($souvenirs)) {
             <div class="Lastpaniers">
                 <div class="titre">
                     <h2 class="panier-total">Mon panier</h2>
+                    <h2 class="panier-total id='cart'">Mon panier</h2>
                     <div class="rectangleTitre">
                     </div>
                 </div>
@@ -248,6 +261,7 @@ if (empty($panier) && empty($souvenirs)) {
 <div class="ancienspaniers">
     <div class="titre">
         <h2 class="anciens-paniers-total">Anciennes commandes</h2>
+        <h2 class="anciens-paniers-total" id='old-orders'>Anciennes commandes</h2>
         <div class="rectangleTitre">
         </div>
     </div>

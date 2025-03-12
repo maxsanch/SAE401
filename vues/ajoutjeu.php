@@ -47,6 +47,7 @@ $script = '<script src="js/ajoutJeu.js"></script>';
         </div>
 
         <div class="in">
+        <div class="in" id='city-info'>
             infos ville : Cliquez sur la carte pour ajouter l'emplacement.
         </div>
         <div class="nombre">
@@ -63,6 +64,7 @@ $script = '<script src="js/ajoutJeu.js"></script>';
             <!-- Label pour l'input de téléchargement de photo -->
             <label>
                 <span class="orange">Ajoutez </span> <span> Une photo. (max 500ko)</span>
+                <span class="orange" id='add-photo'>Ajoutez </span> <span id='add-photo-2'> Une photo. (max 500ko)</span>
                 <!-- Champ pour sélectionner le fichier image (acceptant JPEG et PNG uniquement) -->
                 <input type="file" class="texte" name="photoGame" accept="image/jpeg, image/png" hidden>
             </label>

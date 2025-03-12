@@ -30,9 +30,13 @@ $script = '<script src="js/ajoutJeu.js"></script>';
             <input type="text" required name="titre" placeholder="titre du jeu"> <!-- encore des placeholder à changer -->
             <input type="text" required name="Titre_anglais" placeholder="titre du jeu en anglais"> <!-- encore des placeholder à changer -->
         </div>
+<<<<<<< HEAD
 
         <input type="text" name="link"
             placeholder="entrez le lien d'une vidéo youtube (partager, puis enlever : https://youtu.be/)"> <!-- encore des placeholder à changer -->
+=======
+        <input type="text" name="link" placeholder="entrez le lien d'une vidéo youtube (partager, puis enlever : https://youtu.be/)">
+>>>>>>> e1cde781107861a07e3f1d818465c52419c0c6ae
         <div class="nombre">
             <input type="number" required name="min" min="0" placeholder="min participants"> <!-- encore des placeholder à changer -->
             <input type="number" required name="max" min="0" placeholder="max participants"> <!-- encore des placeholder à changer -->
@@ -45,7 +49,10 @@ $script = '<script src="js/ajoutJeu.js"></script>';
             <textarea required name="description" id="test" placeholder="Entrez la description du jeu"></textarea> <!-- encore des placeholder à changer -->
             <textarea required name="Description_anglais" id="test" placeholder="Entrez la description du jeu en anglais"></textarea> <!-- encore des placeholder à changer -->
         </div>
+<<<<<<< HEAD
 
+=======
+>>>>>>> e1cde781107861a07e3f1d818465c52419c0c6ae
         <div class="in" id='city-info'>
             infos ville : Cliquez sur la carte pour ajouter l'emplacement.
         </div>

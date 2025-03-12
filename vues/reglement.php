@@ -119,7 +119,11 @@ if (empty($panier) && empty($souvenirs)) {
 <div class="all">
     <div class="paniers">
         <div class="titrePage">
+<<<<<<< HEAD
             <h2 id='your-cart'>Votre panier</h2>
+=======
+            <h2>Votre panier</h2>
+>>>>>>> e1cde781107861a07e3f1d818465c52419c0c6ae
             <div class="rectangleTitre">
             </div>
         </div>
@@ -127,13 +131,21 @@ if (empty($panier) && empty($souvenirs)) {
         <div class="infoproduits">
             <?= $resultpanier ?>
         </div>
+<<<<<<< HEAD
         <div class="total" id='cart-total'>
+=======
+        <div class="total">
+>>>>>>> e1cde781107861a07e3f1d818465c52419c0c6ae
             Total : <?= $total ?> €
         </div>
     </div>
     <div class="infoUser">
         <div class="titrePage">
+<<<<<<< HEAD
             <h2 id='your-cart'>Votre panier</h2>
+=======
+            <h2>Votre panier</h2>
+>>>>>>> e1cde781107861a07e3f1d818465c52419c0c6ae
             <div class="rectangleTitre">
             </div>
         </div>
@@ -141,13 +153,21 @@ if (empty($panier) && empty($souvenirs)) {
             <div class="name">
                 <div class="nom">
                     <div class="inf">
+<<<<<<< HEAD
                         <p id='last-name'>Nom</p>
+=======
+                        <p>Nom</p>
+>>>>>>> e1cde781107861a07e3f1d818465c52419c0c6ae
                         <div class="contour"><?= $user['nom'] ?></div>
                     </div>
                 </div>
                 <div class="prenom">
                     <div class="inf">
+<<<<<<< HEAD
                         <p id='first-name'>Prenom</p>
+=======
+                        <p>Prenom</p>
+>>>>>>> e1cde781107861a07e3f1d818465c52419c0c6ae
                         <div class="contour"><?= $user['prenom'] ?></div>
                     </div>
                 </div>
@@ -160,7 +180,11 @@ if (empty($panier) && empty($souvenirs)) {
             </div>
             <div class="adresse">
                 <div class="inf">
+<<<<<<< HEAD
                     <p id='address-field'>Adresse</p>
+=======
+                    <p>Adresse</p>
+>>>>>>> e1cde781107861a07e3f1d818465c52419c0c6ae
                     <div class="contour"><?= $user['adresse'] ?></div>
                 </div>
             </div>
@@ -170,7 +194,11 @@ if (empty($panier) && empty($souvenirs)) {
                 <div class="in">
                     <div class="carte_front">
                         <div class="top">
+<<<<<<< HEAD
                             <div class="titrecb" id='bank-card'>
+=======
+                            <div class="titrecb">
+>>>>>>> e1cde781107861a07e3f1d818465c52419c0c6ae
                                 Carte bancaire
                             </div>
                             <div class="logo_cb">
@@ -189,7 +217,11 @@ if (empty($panier) && empty($souvenirs)) {
                         <div class="gridbottom">
                             <div class="inputs">
                                 <label>
+<<<<<<< HEAD
                                     <div class="expire" id='expires-end'>
+=======
+                                    <div class="expire">
+>>>>>>> e1cde781107861a07e3f1d818465c52419c0c6ae
                                         EXPIRE A FIN
                                     </div>
                                     <input type="text" required name="expiration" value="<?= $exp ?>" id="expiration"
@@ -208,14 +240,22 @@ if (empty($panier) && empty($souvenirs)) {
 
                         </div>
                         <label>
+<<<<<<< HEAD
                             <span id='security-number'>Numéro de sécurité : </span><input type="number" value="<?= $secure ?>" max=999 required
+=======
+                            Numéro de sécurité : <input type="number" value="<?= $secure ?>" max=999 required
+>>>>>>> e1cde781107861a07e3f1d818465c52419c0c6ae
                                 id="securite" name="numéro_de_sécurité" placeholder="Code de securité">
                         </label>
                     </div>
                 </div>
             </div>
             <div class="flibandvalid">
+<<<<<<< HEAD
                 <div class="flipcard" id='turn-card'>
+=======
+                <div class="flipcard">
+>>>>>>> e1cde781107861a07e3f1d818465c52419c0c6ae
                     Tourner la carte
                 </div>
                 <button type="submit" id="validerCommande">Valider la commande</button>

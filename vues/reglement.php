@@ -119,6 +119,7 @@ if (empty($panier) && empty($souvenirs)) {
 <div class="all">
     <div class="paniers">
         <div class="titrePage">
+            <h2 id='your-cart'>Votre panier</h2>
             <h2>Votre panier</h2>
             <div class="rectangleTitre">
             </div>
@@ -127,12 +128,14 @@ if (empty($panier) && empty($souvenirs)) {
         <div class="infoproduits">
             <?= $resultpanier ?>
         </div>
+        <div class="total" id='cart-total'>
         <div class="total">
             Total : <?= $total ?> €
         </div>
     </div>
     <div class="infoUser">
         <div class="titrePage">
+            <h2 id='your-cart'>Votre panier</h2>
             <h2>Votre panier</h2>
             <div class="rectangleTitre">
             </div>
@@ -141,12 +144,14 @@ if (empty($panier) && empty($souvenirs)) {
             <div class="name">
                 <div class="nom">
                     <div class="inf">
+                        <p id='last-name'>Nom</p>
                         <p>Nom</p>
                         <div class="contour"><?= $user['nom'] ?></div>
                     </div>
                 </div>
                 <div class="prenom">
                     <div class="inf">
+                        <p id='first-name'>Prenom</p>
                         <p>Prenom</p>
                         <div class="contour"><?= $user['prenom'] ?></div>
                     </div>
@@ -160,6 +165,7 @@ if (empty($panier) && empty($souvenirs)) {
             </div>
             <div class="adresse">
                 <div class="inf">
+                    <p id='address-field'>Adresse</p>
                     <p>Adresse</p>
                     <div class="contour"><?= $user['adresse'] ?></div>
                 </div>
@@ -170,6 +176,7 @@ if (empty($panier) && empty($souvenirs)) {
                 <div class="in">
                     <div class="carte_front">
                         <div class="top">
+                            <div class="titrecb" id='bank-card'>
                             <div class="titrecb">
                                 Carte bancaire
                             </div>
@@ -189,6 +196,7 @@ if (empty($panier) && empty($souvenirs)) {
                         <div class="gridbottom">
                             <div class="inputs">
                                 <label>
+                                    <div class="expire" id='expires-end'>
                                     <div class="expire">
                                         EXPIRE A FIN
                                     </div>
@@ -208,6 +216,7 @@ if (empty($panier) && empty($souvenirs)) {
 
                         </div>
                         <label>
+                            <span id='security-number'>Numéro de sécurité : </span><input type="number" value="<?= $secure ?>" max=999 required
                             Numéro de sécurité : <input type="number" value="<?= $secure ?>" max=999 required
                                 id="securite" name="numéro_de_sécurité" placeholder="Code de securité">
                         </label>
@@ -215,6 +224,7 @@ if (empty($panier) && empty($souvenirs)) {
                 </div>
             </div>
             <div class="flibandvalid">
+                <div class="flipcard" id='turn-card'>
                 <div class="flipcard">
                     Tourner la carte
                 </div>

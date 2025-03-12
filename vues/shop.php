@@ -23,7 +23,7 @@ foreach ($objets as $valeur) {
         $result .= "<div class='case'><div class='ImageDesProduits'><img src='" . $phototest . "'></div><div class='infotop'><div class='titre' id='TitreObjet".$valeur['id_objet_shop']."'>" . $valeur['nom'] . "</div><div class='prix'>" . $valeur['prix'] . " €</div></div><div class='description'>description : <span id='descriptionObjet".$valeur['id_objet_shop']."'>" . $valeur['description'] . "</span></div><div class='infobot'><div class='disponibilite'><div class='stock'>indisponible : " . $valeur['stock'] . "</div></div><form method='post' action='#'><input type='number' name='quantite' value='0' min='0' max='" . $valeur['stock'] . "' placeholder='quantite'></div><button class='add-cart'>Ajouter au panier</button></form></div>";
     } else {
         $result .= "<div class='case'><div class='ImageDesProduits'><img src='" . $phototest . "'></div><div class='infotop'><div class='titre' id='TitreObjet".$valeur['id_objet_shop']."'>" . $valeur['nom'] . "</div><div class='prix'>" . $valeur['prix'] . " €</div></div><div class='description'>description : <span id='descriptionObjet".$valeur['id_objet_shop']."'>" . $valeur['description'] . "</span></div><div class='infobot'><div class='disponibilite'><div class='stock'>disponible : " . $valeur['stock'] . "</div></div><form method='post' action='index.php?page=ajouterObjPanier&idobj=" . $valeur['id_objet_shop'] . "''><input type='number' name='quantite' value='1' min='1' max='" . $valeur['stock'] . "' placeholder='quantite'></div><button class='add-cart'>Ajouter au panier</button></form></div>";
-    }
+}
 }
 
 ?>

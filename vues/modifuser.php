@@ -88,7 +88,6 @@ if (!empty($anciensPaniers)) {
     <?= $message ?>
 </div>
 <div class="MiseEnPage">
-    <h1>informations sur : <?= $user['prenom'] ?></h1>
     <h1><span id='information-about'>informations sur : </span><?= $user['prenom'] ?></h1>
     <div class="total">
         <div class="Separation">
@@ -103,7 +102,6 @@ if (!empty($anciensPaniers)) {
                         <input type="hidden" name="MAX_FILE_SIZE" value="500000">
                         <!-- Label pour l'input de téléchargement de photo -->
                         <label>
-                            <span class="orange">Modifiez </span> <span> la photo. (max 500ko)</span>
                             <span class="orange" id='edit-game'>Modifiez </span> <span id='change-photo-max'> la photo. (max 500ko)</span>
                             <!-- Champ pour sélectionner le fichier image (acceptant JPEG et PNG uniquement) -->
                             <input type="file" class="texte" name="photoUser" accept="image/jpeg, image/png" hidden>

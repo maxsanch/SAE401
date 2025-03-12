@@ -334,7 +334,6 @@ input{
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    width: 150px;
     z-index: 101;
 }
 
@@ -343,15 +342,16 @@ input{
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    width: 150px;
     animation: infinite linear 2s tourner;
+    width: 150px;
+
 }
 
 @keyframes tourner{
-    from{
-        transform: translate(-50%, -50%) rotate(0);
+    from {
+        transform: translate(-50%, -50%) rotate(0deg);
     }
-    to{
+    to {
         transform: translate(-50%, -50%) rotate(360deg);
     }
 }
@@ -405,10 +405,10 @@ input{
     left: 0;
     width: 300px;
     transform: translate(-50%, 50%);
-    animation: tourner 7s linear infinite;
+    animation: tourner2 7s linear infinite;
 }
 
-@keyframes tourner{
+@keyframes tourner2{
     from{
         transform: translate(-50%, 50%) rotate(0);
     }

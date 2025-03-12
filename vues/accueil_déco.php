@@ -70,14 +70,7 @@ foreach ($jeux as $valeur) {
 $script = "<script src='../js/accueil.js'></script>";
 ?>
 
-<div class="CadreDesEngrenages">
-    <div class="engrenage" style="--X:50%; --Y:50%; --Xtel:50%; --Ytel:85%;">
-        <img src="img/roue.svg" alt="un engrenage">
-    </div>
-    <div class="engrenage" style="--X:-50%; --Y:60%; --Xtel:-50%; --Ytel:150%">
-        <img src="img/roue.svg" alt="un engrenage">
-    </div>
-</div>
+
 <div class="MiseEnPage">
     <div class="Accueil">
         <div class="AccueilTexte">
@@ -101,6 +94,14 @@ $script = "<script src='../js/accueil.js'></script>";
                     <source src="../img/cle_qui_tourne.webm" alt="Une clé en 3D qui tourne">
                 </video></div>
         </div>
+    </div>
+</div>
+<div class="CadreDesEngrenages">
+    <div class="engrenage" style="--X:50%; --Y:50%; --Xtel:50%; --Ytel:85%;">
+        <img src="img/roue.svg" alt="un engrenage">
+    </div>
+    <div class="engrenage" style="--X:-50%; --Y:60%; --Xtel:-50%; --Ytel:150%">
+        <img src="img/roue.svg" alt="un engrenage">
     </div>
 </div>
 <div class="EscapeGameDisponible">

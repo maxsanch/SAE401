@@ -12,11 +12,11 @@ img {
     width: 100%;
 }
 
-.flou{
+.flou {
     filter: blur(5px);
 }
 
-.croix{
+.croix {
     width: 30px;
     cursor: pointer;
 }
@@ -80,7 +80,7 @@ a {
     color: black;
 }
 
-#panier{
+#panier {
     cursor: pointer;
 }
 
@@ -338,8 +338,36 @@ footer {
     font-family: Montserrat-bold;
 }
 
-.top-panier{
+.top-panier {
     display: flex;
     justify-content: space-between;
     align-items: center;
+}
+
+@media (width <= 640px){
+
+    .lepaniercomplet {
+        top: 25%;
+        transform: translate(0% -50%);
+        width: 90%;
+        padding: 12px;
+    }
+
+    .ligne-panier {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .titreetnombre {
+        grid-column: 1 / span 2;
+    }
+
+    .ligne-panier>form>input {
+        width: 80%;
+    }
+
+    .titreetnombre {
+        font-family: Montserrat-bold;
+    }
+
 }

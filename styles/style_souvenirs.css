@@ -43,11 +43,11 @@ h1{
 }
 
 .case img {
-    border-radius: 10px;
     width: 100%;
 }
 
 .infotop{
+    margin-top: 8px;
     display: flex;
     justify-content: space-between;
     font-weight: bold;
@@ -98,4 +98,14 @@ input[type="number"]::-webkit-inner-spin-button,
 input[type="number"]::-webkit-outer-spin-button {
     opacity: 1 !important;
     filter: invert(62%) sepia(72%) saturate(300%) hue-rotate(5deg);
+}
+
+.ImageDesProduits>img{
+    border-radius: 10px;
+    object-fit: cover;
+    height: 100%;
+}
+
+.ImageDesProduits{
+    height: 200px;
 }

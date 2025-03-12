@@ -137,6 +137,17 @@ if (empty($panier) && empty($souvenirs)) {
 
 ?>
 
+
+<div class='fixeddanslefixed'>
+    <p>Voulez vous vraiment supprimer votre compte ?</p>
+    <div class='ledarondufixe'>
+        <div class='nonjesuppr2'>Non</div>
+        <a href='index.php?page=deletMyAccount'>
+            <div class='ouijesuppr2'>Oui</div>
+        </a>
+    </div>
+</div>
+
 <?= $erreur ?>
 <div class="total">
     <h1 id='my-account'>Mon compte</h1>
@@ -151,7 +162,8 @@ if (empty($panier) && empty($souvenirs)) {
                     <input type="hidden" name="MAX_FILE_SIZE" value="500000">
                     <!-- Label pour l'input de téléchargement de photo -->
                     <label>
-                        <span class="orange" id='click-to-change-photo'>Cliquez ici pour modifiez la photo. (max 500ko)</span>
+                        <span class="orange" id='click-to-change-photo'>Cliquez ici pour modifiez la photo. (max
+                            500ko)</span>
                         <!-- Champ pour sélectionner le fichier image (acceptant JPEG et PNG uniquement) -->
                         <input type="file" class="texte" name="photoUser" accept="image/jpeg, image/png" hidden>
                     </label>
@@ -167,27 +179,28 @@ if (empty($panier) && empty($souvenirs)) {
                         <div class="name">
                             <div class="nom">
                                 <label class="inf">
-                                    <p id="last-name">Nom</p><input type="text" name="nom" value="<?= $user['nom'] ?>" required>
+                                    <p id="last-name">Nom</p><input type="text" name="nom" value="<?= $user['nom'] ?>"
+                                        required>
                                 </label>
                             </div>
                             <div class="prenom">
                                 <label class="inf">
-                                    <p id='first-name'>Prenom</p><input type="text" name="prenom" value="<?= $user['prenom'] ?>"
-                                        required>
+                                    <p id='first-name'>Prenom</p><input type="text" name="prenom"
+                                        value="<?= $user['prenom'] ?>" required>
                                 </label>
                             </div>
                         </div>
                         <div class="infoPerso">
                             <div class="mail">
                                 <label class="inf">
-                                    <p id='email-field'>E-mail</p><input type="mail" name="mail" value="<?= $user['mail'] ?>"
-                                        class="bloqué" disabled>
+                                    <p id='email-field'>E-mail</p><input type="mail" name="mail"
+                                        value="<?= $user['mail'] ?>" class="bloqué" disabled>
                                 </label>
                             </div>
                             <div class="adresse">
                                 <label class="inf">
-                                    <p id='address-field'>Adresse</p><input type="text" name="adresse" value="<?= $user['adresse'] ?>"
-                                        required>
+                                    <p id='address-field'>Adresse</p><input type="text" name="adresse"
+                                        value="<?= $user['adresse'] ?>" required>
                                 </label>
                             </div>
                         </div>
@@ -197,19 +210,21 @@ if (empty($panier) && empty($souvenirs)) {
                         <div><b id="change-password">Changer de mot de passe</b></div>
                         <div class="grid-mdp">
                             <label>
-                                <p id='new-password'>Nouveau mot de passe</p> <input type="password" class="motdepasse" name="NewPassword"
-                                    placeholder="entrez votre nouveau mot de passe">
+                                <p id='new-password'>Nouveau mot de passe</p> <input type="password" class="motdepasse"
+                                    name="NewPassword" placeholder="entrez votre nouveau mot de passe">
                             </label>
 
                             <label>
-                                <p id="confirm-password">Confirmez le mot de passe</p><input type="password" class="motdepasse"
-                                    name="ConfirmationNewPassword" placeholder="confirmez votre mot de passe">
+                                <p id="confirm-password">Confirmez le mot de passe</p><input type="password"
+                                    class="motdepasse" name="ConfirmationNewPassword"
+                                    placeholder="confirmez votre mot de passe">
                             </label>
                         </div>
                     </div>
                     <div class="validation">
                         <label>
-                            <p id='confirm-with-password'>Pour enregistrer les modifications, vous devez entrer votre mot de passe actuelle</p>
+                            <p id='confirm-with-password'>Pour enregistrer les modifications, vous devez entrer votre
+                                mot de passe actuelle</p>
                             <input type="password" name="ancienmdp" class="motdepasse" required
                                 placeholder="entrez votre mot de passe">
                         </label>
@@ -219,7 +234,7 @@ if (empty($panier) && empty($souvenirs)) {
                             <button class="modifCompteButton" id='edit-account'>Modifier</button>
                         </div>
                         <div class="deletaccount">
-                            <a href="index.php?page=deletMyAccount" id='delete-account-section'>
+                            <a href="#" class="supprcompte" id='delete-account-section'>
                                 Supprimer le compte
                             </a>
                         </div>

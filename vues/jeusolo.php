@@ -44,11 +44,11 @@ $script = "<script src='../js/script_jeusolo.js'></script>";
             <?= $jeu[0]['description'] ?>
         </div>
         <div class="adresse">
-            Adresse : <?= $jeu[0]['adresse'] ?>
+            Adresse : <?= $jeu[0]['adresse']. " ". $jeu[0]['ville'] . " ".$jeu[0]['postale'] ?>
         </div>
         <div class="autre">
             <div class="age">
-                <p><span id='minimum-age'>Age minimum : </span><?= $jeu[0]['age'] ?></p>
+                <p><span id='minimum-age'>Age minimum : </span><?= $jeu[0]['age'] ?> ans</p>
             </div>
             <div class="prix">
                 <p>Prix pour 1 personne : <?= $jeu[0]['prix'] ?> €</p>

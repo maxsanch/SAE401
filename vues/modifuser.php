@@ -84,6 +84,16 @@ if (!empty($anciensPaniers)) {
 ?>
 
 
+<div class='fixeddanslefixed'>
+    <p>Voulez vous vraiment supprimer cet utilisateur ?</p>
+    <div class='ledarondufixe'>
+        <a>
+            <div class='nonjesuppr2'>Non</div>
+        </a><a href="index.php?page=supprimerCompte&idUser=<?= $_GET['idUser'] ?>">
+            <div class='ouijesuppr2'>Oui</div>
+        </a>
+    </div>
+</div>
 <div class="informationPopUp">
     <?= $message ?>
 </div>
@@ -102,7 +112,8 @@ if (!empty($anciensPaniers)) {
                         <input type="hidden" name="MAX_FILE_SIZE" value="500000">
                         <!-- Label pour l'input de téléchargement de photo -->
                         <label>
-                            <span class="orange" id='edit-game'>Modifiez </span> <span id='change-photo-max'> la photo. (max 500ko)</span>
+                            <span class="orange" id='edit-game'>Modifiez </span> <span id='change-photo-max'> la photo.
+                                (max 500ko)</span>
                             <!-- Champ pour sélectionner le fichier image (acceptant JPEG et PNG uniquement) -->
                             <input type="file" class="texte" name="photoUser" accept="image/jpeg, image/png" hidden>
                         </label>
@@ -143,8 +154,9 @@ if (!empty($anciensPaniers)) {
                         placeholder="entrez le nouveau mot de passe">
                     <div class="total-bouton-modif-user">
                         <button class="modifiermdpBouton" id='edit-game'>Modifier</button>
-                        <div class="deletaccount">
-                            <a href="index.php?page=supprimerCompte&idUser=<?= $_GET['idUser'] ?>"><span id='delete-account'>Supprimer le compte</span></a>
+                        <div class="deletaccount supprcompte">
+                            <a href="#"><span
+                                    id='delete-account'>Supprimer le compte</span></a>
                         </div>
                     </div>
                 </form>

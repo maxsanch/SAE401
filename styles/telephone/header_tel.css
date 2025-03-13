@@ -6,7 +6,7 @@
     font-size: 16px;
 }
 
-.ConteneurHeader{
+.ConteneurHeader {
     display: flex;
     justify-content: space-between;
     gap: 4px;
@@ -54,34 +54,79 @@
     margin: auto;
 }
 
-.TitreHeader{
+.TitreHeader {
     font-family: Montserrat-black;
     font-size: 22px;
 }
 
-.HeaderMobile{
+.HeaderMobile {
     display: block;
 }
 
-.MiseEnPageFooter:first-of-type>div:first-child{
+.MiseEnPageFooter:first-of-type>div:first-child {
     display: none;
 }
 
-.FooterPartiesGlobal{
+.FooterPartiesGlobal {
     grid-template-columns: 2fr;
     gap: 32px;
 }
 
-.Information{
+.Information {
     display: grid;
     grid-template-columns: 1fr 1fr;
 }
 
-.MiseEnPageFooter{
+.MiseEnPageFooter {
     margin: auto;
 }
 
-.Panier{
+.Panier {
     color: white;
     padding: 4px 8px;
+}
+
+.LangueActuelle {
+    display: block;
+    display: flex;
+    gap: 20px;
+    align-items: end;
+    z-index: 101;
+    width: 40px;
+    height: 40px;
+}
+
+.boutonlangues{
+    position: relative;
+    bottom: 0;
+    right: 0;
+}
+
+.LangueActuelle>img{
+    border-radius: 100%;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.boutonlangues{
+    flex-direction: column;
+    transition: 0.4s;
+    transform: scaleY(1);
+    transform-origin: bottom;
+}
+
+.boutonlanguesglobal{
+    display: flex;
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    flex-direction: column-reverse;
+    align-items: center;
+    gap: 16px;
+    z-index: 1000;
+}
+
+.ChangerLangueFermer{
+    transform: scaleY(0);
 }

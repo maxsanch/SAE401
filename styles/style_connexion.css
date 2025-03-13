@@ -31,6 +31,7 @@ body {
     background-image: linear-gradient(-135deg, #151414, #302c27);
 }
 
+/* Les barres jaunes qui sont là pour la déco */
 .rect {
     width: 30px;
     position: fixed;

@@ -9,6 +9,7 @@ body{
     color: #ffffff;
 }
 
+/* Mise en page du texte en bas de la page */
 .lesVilles{
     margin-left: 10%;
     margin-right: 10%;
@@ -30,6 +31,7 @@ h2{
     margin-left: 5%;
 }
 
+/* Titre de la page */
 .rectangleTitre{
     width: 50px;
     height: 10px;
@@ -45,6 +47,7 @@ h2{
     background: #e6b856;
 }
 
+/* Mise en page des cartes de la page */
 .lesCartes{
     display: flex;
     justify-content: space-around;
@@ -60,12 +63,14 @@ h2{
     position: relative;
 }
 
+/* Point sur la carte */
 .point{
     position: absolute;
     width: 30px;
     transform: translate(-50%, -100%);
 }
 
+/* On met le bon bouton du header en couleur */
 .HeaderBouton:nth-of-type(4)>a {
     background-image: linear-gradient(-135deg, #E6B856, #806630);
     color: transparent;

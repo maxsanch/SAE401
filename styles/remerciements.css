@@ -1,3 +1,4 @@
+/* Ne pas afficher le header et le footer */
 header {
     display: none !important;
 }
@@ -10,11 +11,13 @@ img{
     width: 100%;
 }
 
+/* Bouton pour revenir à l'accueil */
 .maison-home{
     width: 70px;
     cursor: pointer;
 }
 
+/* AJout des polices */
 @font-face {
     font-family: Montserrat-regular;
     src: url(../font/Montserrat-Regular.ttf);
@@ -46,15 +49,14 @@ span{
     background-clip: text;
 }
 
-/* 151414 302c27*/
-
+/* Mise en page du contenu */
 .remerciements{
     display: flex;
     align-items: center;
-    
     flex-direction: column;
 }
 
+/* Des éléments de la page */
 .link{
     margin-top: 20px;
 }

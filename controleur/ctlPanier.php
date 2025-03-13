@@ -82,10 +82,10 @@ class ctlPanier
             $this->panier->Reserver($idjeu, $jour, $nombre, $heure, $getPanier);
             $heure = $this->date->format('Y-m-d H-i-s');
             $this->panier->updateHorraire($getPanier, $heure);
-            $this->jeux->alljeux('La réservation a été ajoutée à votre panier.');
+            $this->jeux->alljeux('<span id="reservation-added">La réservation a été ajoutée à votre panier.</span>');
         } else {
             $erreur = new ctlPage;
-            $erreur->erreur("Ce jeu à déjà été réservé.");
+            $erreur->erreur("<span id='game-already-added'>Ce jeu à déjà été réservé.<span>");
         }
 
     }
@@ -114,9 +114,9 @@ class ctlPanier
             $heure = $this->date->format('Y-m-d H-i-s');
             $this->panier->updateHorraire($idpanier, $heure);
 
-            $user->infoperso("<div class='err'>L'élément a été supprimé du panier.</div>");
+            $user->infoperso("<div class='err' id='deleted-cart-element'>L'élément a été supprimé du panier.</div>");
         } else {
-            $user->infoperso("<div class='err'>Vous n'avez pas cet objet dans votre panier.</div>");
+            $user->infoperso("<div class='err' id='nothing-in-cart'>Vous n'avez pas cet objet dans votre panier.</div>");
         }
     }
 
@@ -130,10 +130,10 @@ class ctlPanier
             $this->panier->supprimerres($idobj, $heure, $jour);
             $heure = $this->date->format('Y-m-d H-i-s');
             $this->panier->updateHorraire($panier[0]['id_panier'], $heure);
-            $user->infoperso("<div class='err'>la réservation a été supprimée du panier.</div>");
+            $user->infoperso("<div class='err' id='reservation-deleted-cart'>La réservation a été supprimée du panier.</div>");
         } else {
 
-            $user->infoperso("<div class='err'>Vous n'avez pas cette réservation dans votre panier.</div>");
+            $user->infoperso("<div class='err' id='no-reservation-in-cart'>Vous n'avez pas cette réservation dans votre panier.</div>");
         }
     }
 
@@ -167,15 +167,16 @@ class ctlPanier
                     $date = new DateTime();
                     $heure = $date->format('Y-m-d H-i-s');
                     $this->panier->creerNewPanier($infouser[0]['Id_utilisateur'], $heure);
-                    $this->reglement('<div class="fixedError">Ca marche.</div>');
+                    $this->reglement('<div class="fixedError" id="it-work">Validation prise en compte.</div>');
                 } else {
-                    $this->reglement('<div class="fixedError">Une erreur est survenue.</div>');
+                    $this->reglement('<div class="fixedError" id="an-error-occurred">Une erreur est survenue.</div>');
                 }
             } else {
-                $this->reglement('<div class="fixedError">Votre panier est vide.</div>');
+                $this->reglement('<div class="fixedError" id="your-cart-is-empty">Votre panier est vide.</div>');
             }
-        } else {
-            $this->reglement('<div class="fixedError">Vos informations ne sont pas correctes.</div>');
+        }
+        else {
+            $this->reglement('<div class="fixedError" id="wrong-informations-payement">Vos informations ne sont pas correctes.</div>');
         }
     }
 }

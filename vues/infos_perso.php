@@ -233,11 +233,9 @@ if (empty($panier) && empty($souvenirs)) {
                         <div class="bottomCompteModif">
                             <button class="modifCompteButton" id='edit-account'>Modifier</button>
                         </div>
-                        <div class="deletaccount">
-                            <a href="#" class="supprcompte" id='delete-account-section'>
-                                Supprimer le compte
-                            </a>
-                        </div>
+                        <a href="#" class="supprcompte" id='delete-account-section'>
+                            Supprimer le compte
+                        </a>
                     </div>
                 </form>
             </div>

@@ -244,7 +244,7 @@
         "francais": "Photo"
     },
     "#last-login": {
-        "anglais": "Last login:",
+        "anglais": "Last login :",
         "francais": "Dernière connexion :"
     },
     "#validated-carts": {
@@ -272,12 +272,12 @@
         "francais": "Mon panier :"
     },
     "#number-of-validated-carts": {
-        "anglais": "Number of validated carts :",
-        "francais": "Nombre de paniers validés :"
+        "anglais": "Number of validated carts : ",
+        "francais": "Nombre de paniers validés : "
     },
     "#number-of-registrations": {
-        "anglais": "Number of registrations :",
-        "francais": "Nombre d'inscriptions :"
+        "anglais": "Number of registrations : ",
+        "francais": "Nombre d'inscriptions : "
     },
     "#favorite-product": {
         "anglais": "Favorite product :",
@@ -631,7 +631,7 @@
     },
     "#no-orders-yet": {
         "anglais": "This user has not placed any orders yet.",
-        "francais": "Cet utilisateur n'a passé encore aucune commande."
+        "francais": "Cet utilisateur n'a passé aucune commande."
     },
     "#information-about": {
         "anglais": "Information about :",
@@ -720,6 +720,34 @@
     "#no-ofc": {
         "anglais": "No",
         "francais": "Non"
+    },
+    ".user-no-commandsc": {
+        "anglais": "This user never ordered a command.",
+        "francais": "Cet utilisateur n'a passé aucune commande."
+    },
+    "#yes-ofc": {
+        "anglais": "Yes",
+        "francais": "Oui"
+    },
+    ".no-command-yet": {
+        "anglais": "you do not have ancient commands.",
+        "francais": "Vous n'avez aucune ancienne commande."
+    },
+    "#no-basket-validated": {
+        "anglais": " No carts has yet been validated, so it is impossible to define a preference.",
+        "francais": " Aucun panier n'a encore été validé, il est alors impossible de définir une préférence."
+    },
+    ".no-articles-current-cart": {
+        "anglais": "You don't have articles in your cart.",
+        "francais": "Vous n'avez aucun article dans votre panier."
+    },
+    "#yes-ofc": {
+        "anglais": "Yes",
+        "francais": "Oui"
+    },
+    "#yes-ofc": {
+        "anglais": "Yes",
+        "francais": "Oui"
     },
     "#yes-ofc": {
         "anglais": "Yes",

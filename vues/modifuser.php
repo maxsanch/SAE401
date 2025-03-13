@@ -34,10 +34,10 @@ if (!empty($anciensPaniers)) {
                                 ' . $ligne['Titre'] . '
                             </div>
                             <div class="personnes">
-                                nombre de personnes : ' . $ligne['nombre_personnes'] . '
+                                <span id="number-of-people">nombre de personnes :</span> ' . $ligne['nombre_personnes'] . '
                             </div>
                             <div class="prix">
-                                prix total : ' . ($ligne['nombre_personnes'] * $ligne['prix']) . ' €
+                               <span id="total-price"> prix total : ' . ($ligne['nombre_personnes'] * $ligne['prix']) . ' €
                             </div>
                         </div>
                         <div class="infojour">
@@ -60,8 +60,7 @@ if (!empty($anciensPaniers)) {
             $lignes .= '<div class="lignepanier">
                 <div class="linetop">
                     <div class="nom" id="TitreObjet' . $ligne['id_objet_shop'] . '">' . $ligne['nom'] . '</div>
-                    <div class="prixTot">Prix total : ' . ($ligne['prix'] * $ligne['quantitée']) . ' € (' . $ligne['prix'] . ' €
-                            x' . $ligne['quantitée'] . ')</div>
+                    <div class="prixTot"><span id="total-price">Prix total :</span> ' . ($ligne['prix'] * $ligne['quantitée']) . ' € (' . $ligne['prix'] . ' € x' . $ligne['quantitée'] . ')</div>
                 </div>
                 <div class="description" id="descriptionObjet' . $ligne['id_objet_shop'] . '">' . $ligne['description'] . '</div>
             </div>';
@@ -77,7 +76,7 @@ if (!empty($anciensPaniers)) {
                            </div> ';
     }
 } else {
-    $paniervalides .= "Cett utilisateur n'a passé aucune commande.";
+    $paniervalides .= "<div class='user-no-commands' id='no-orders-yet'>Cet utilisateur n'a passé aucune commande.</div>";
 }
 
 
@@ -98,7 +97,7 @@ if (!empty($anciensPaniers)) {
     <?= $message ?>
 </div>
 <div class="MiseEnPage">
-    <h1><span id='information-about'>informations sur : </span><?= $user['prenom'] ?></h1>
+    <h1><span id='information-about'>informations sur : </span> <?= $user['prenom'] ?></h1>
     <div class="total">
         <div class="Separation">
             <div class="infosUser">
@@ -165,7 +164,7 @@ if (!empty($anciensPaniers)) {
     </div>
     <div class="ancienspaniers">
         <div class="titre">
-            <h2 class="anciens-paniers-total">Anciennes commandes de l'utilisateur</h2>
+            <h2 class="anciens-paniers-total" id="old-orders">Anciennes commandes de l'utilisateur</h2>
             <div class="rectangleTitre">
             </div>
         </div>

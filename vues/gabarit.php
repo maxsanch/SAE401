@@ -24,12 +24,15 @@
   </div>
   <main>
     <?= $contenu ?>
-    <div class="boutonlangues">
-      <div class="languechoose" id="francais">
-        <img src="../img/france.png" alt="francais">
-      </div>
-      <div class="languechoose" id="anglais">
-      <img src="../img/angleterre.png" alt="Anglais">
+    <div class="boutonlanguesglobal">
+      <div class="LangueActuelle"></div>
+      <div class="boutonlangues ChangerLangueFermer">
+        <div class="languechoose" id="francais">
+          <img src="../img/francais.png" alt="francais">
+        </div>
+        <div class="languechoose" id="anglais">
+          <img src="../img/anglais.png" alt="Anglais">
+        </div>
       </div>
     </div>
   </main>

@@ -408,3 +408,7 @@ footer {
     text-align: center;
     cursor: pointer;
 }
+
+.LangueActuelle{
+    display: none;
+}

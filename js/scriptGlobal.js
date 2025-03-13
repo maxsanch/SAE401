@@ -1,7 +1,9 @@
-const variable = document.querySelector('#panier')
+const variable = document.querySelectorAll('#panier')
 
 if (variable) {
-    variable.addEventListener('click', ouvrirPanier)
+    variable.forEach(PanierDispo => {
+        PanierDispo.addEventListener('click', ouvrirPanier)
+    });
 
     function ouvrirPanier() {
         document.querySelector('.panier-tot').classList.add('ouvert');
@@ -87,6 +89,9 @@ async function recupBDD() {
 recupBDD();
 
 async function setLangueBDD() {
+
+    document.querySelector(".LangueActuelle").innerHTML = "<img src='../img/" + langue + ".png' alt='" + langue + "'>"
+
     Jeux.forEach(e => {
         let titreJeu = document.querySelectorAll('#TitreJeu' + e['ID_jeu'])
         let descriptionJeu = document.querySelectorAll('#DescriptionJeu' + e['ID_jeu'])
@@ -168,4 +173,15 @@ async function setLangueBDD() {
             });
         }
     });
+}
+
+document.querySelector(".LangueActuelle").addEventListener('click', OuvertureMenuChoixDeLangue);
+
+document.querySelectorAll('.languechoose').forEach(LangueProposee => {
+    LangueProposee.addEventListener('click', OuvertureMenuChoixDeLangue)
+});
+
+
+function OuvertureMenuChoixDeLangue() {
+    document.querySelector(".boutonlangues").classList.toggle("ChangerLangueFermer");
 }

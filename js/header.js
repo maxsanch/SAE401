@@ -9,3 +9,7 @@ if(barres){
 function openmenu() {
     document.querySelector('.liensdéroulant').classList.toggle('ouvertmenu')
 }
+
+document.querySelectorAll('#panier').forEach(PanierDispo => {
+    PanierDispo.addEventListener('click', openmenu)
+});

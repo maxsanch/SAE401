@@ -207,9 +207,21 @@
         "anglais": "First time here ?",
         "francais": "C'est votre première fois ?"
     },
+    "#notfirst-time-here": {
+        "anglais": "Create an account to book a game !",
+        "francais": "Créez un compte pour pouvoir réserver un jeu ! "
+    },
     "#sign-up": {
         "anglais": "Sign up",
         "francais": "Inscrivez-vous"
+    },
+    "#inscr": {
+        "anglais": "Sign up",
+        "francais": "Inscrivez-vous"
+    },
+    "#create-account": {
+        "anglais": "Create my account",
+        "francais": "Créer mon compte"
     },
     "#first-name": {
         "anglais": "First name",
@@ -228,6 +240,10 @@
         "francais": "Vous avez déjà un compte ?"
     },
     "#connect-here": {
+        "anglais": "Log in here",
+        "francais": "Connectez-vous"
+    },
+    "#connex": {
         "anglais": "Log in here",
         "francais": "Connectez-vous"
     },
@@ -268,8 +284,8 @@
         "francais": "Une icône"
     },
     "#cart": {
-        "anglais": "My basket",
-        "francais": "Mon panier :"
+        "anglais": "My cart",
+        "francais": "Mon panier"
     },
     "#number-of-validated-carts": {
         "anglais": "Number of validated carts : ",
@@ -689,7 +705,7 @@
         "anglais": "game added but the image can't be upload, an error stopped the process.",
         "francais": "Une erreur est survenue pour l'image, jeu ajouté."
     },
-    "#dumb-errors": {
+    "#dumb-error": {
         "anglais": "You can't have a minimum value lower or equal to the maximum value.",
         "francais": "Vous ne pouvez pas mettre un minimum plus petit ou égal à un maximum."
     },
@@ -896,6 +912,38 @@
     "#error-only-image": {
         "anglais": "An error as occured for the image, game has been edited.",
         "francais": "Une erreur est survenue pour l'image, jeu modifié."
+    },
+    "#edit-game-single": {
+        "anglais": "Edit game.",
+        "francais": "Modifier le jeu"
+    },
+    "#price-game": {
+        "anglais": "Enter a price.",
+        "francais": "Entrez un prix."
+    },
+    "#qtd-in": {
+        "anglais": "Quantity.",
+        "francais": "Quantitée."
+    },
+    "#num": {
+        "anglais": "Card number.",
+        "francais": "Numéro de carte"
+    },
+    "#expiration": {
+        "anglais": "Expiration date.",
+        "francais": "date d'expiration"
+    },
+    "#nomuser": {
+        "anglais": "Owner's name.",
+        "francais": "Nom du proprietaire"
+    },
+    "#enter-number-delet": {
+        "anglais": "enter a number.",
+        "francais": "entrer un nombre"
+    },
+    "#securite": {
+        "anglais": "Security number.",
+        "francais": "Code de securité"
     },
     "#large-file-game-create": {
         "anglais": "Too large file, game added.",

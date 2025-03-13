@@ -29,43 +29,42 @@ $script = '<script src="js/ajoutJeu.js"></script><script src="js/fermer.js"></sc
     <form action="<?= $_SERVER['PHP_SELF'] . '?page=AjoutJeu' ?>" method="post" enctype="multipart/form-data">
         <div class="nombre">
             <input type="text" id="input-title-add-game" required name="titre" placeholder="Titre du jeu (en francais)">
-            <!-- encore des placeholder à changer -->
+
             <input type="text" id="input-title-add-game-english" required name="Titre_anglais" placeholder="Titre du jeu (en anglais)">
-            <!-- encore des placeholder à changer -->
+
         </div>
 
         <input type="text" name="link" id="link-video-placeholder" placeholder="Entrez le lien d'une vidéo youtube (partager, puis enlever : https://youtu.be/)">
         <div class="nombre">
             <input type="number" required name="min" min="0" id="min-value" placeholder="Min joueurs">
-            <!-- encore des placeholder à changer -->
+
             <input type="number" required name="max" min="0" id="max-value" placeholder="max participants">
-            <!-- encore des placeholder à changer -->
+
         </div>
         <div class="nombre">
             <input type="number" name="age" min="0" id="age-player" placeholder="age recommandé participants">
-            <!-- encore des placeholder à changer -->
-            <input type="number" name="prix" min="0" placeholder="prix"> <!-- encore des placeholder à changer -->
+
+            <input type="number" name="prix" id="price-game" min="0" placeholder="Entrez un prix"> <!-- encore des placeholder à changer -->
         </div>
         <div class="nombre">
             <textarea required name="description" id="french-description" placeholder="Entrez la description du jeu (en francais)"></textarea>
-            <!-- encore des placeholder à changer -->
-            <textarea required name="Description_anglais" id="french-description"  placeholder="Entrez la description du jeu (en anglais)"></textarea>
-            <!-- encore des placeholder à changer -->
+
+            <textarea required name="Description_anglais" id="english-description"  placeholder="Entrez la description du jeu (en anglais)"></textarea>
+
         </div>
         <div class="in" id='city-info'>
             infos ville : Cliquez sur la carte pour ajouter l'emplacement.
         </div>
         <div class="nombre">
             <input type="text" id="city" required name="ville" placeholder="Entrez une ville">
-            <!-- encore des placeholder à changer -->
             <input type="text" id="region-input" required name="region" placeholder="Renseignez la région">
-            <!-- encore des placeholder à changer -->
+
         </div>
         <div class="nombre">
             <input type="text" id="adresse-input" required name="adresse" placeholder="Entrez une adresse">
-            <!-- encore des placeholder à changer -->
+
             <input type="number" id="postal" required name="postale" min="0" placeholder="ntrez un code postal">
-            <!-- encore des placeholder à changer -->
+
         </div>
         <div class="form_elt">
             <!-- Limite la taille maximale de fichier téléchargé (500Ko ici) -->

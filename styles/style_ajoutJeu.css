@@ -44,6 +44,18 @@ input{
     border-radius: 10px;
 }
 
+button{
+    margin-top: 10px;
+    background: none;
+    border: solid 1px #E6B856;
+    color: white;
+    padding: 10px;
+    width: 100%;
+    box-sizing: border-box;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
 input::placeholder{
     color: #E6B856;
 }

@@ -147,10 +147,10 @@ if (!empty($anciensPaniers)) {
 
             <div class="modifiermdp">
                 <form method="post" action="index.php?page=ModifMdpUser&idUser=<?= $_GET['idUser'] ?>">
-                    <input class="modifiermdpInput" type="password" name="mdp"
-                        placeholder="entrez le nouveau mot de passe">
-                    <input class="modifiermdpInput" type="password" name="confirmation"
-                        placeholder="entrez le nouveau mot de passe">
+                    <input class="modifiermdpInput" id="change-password" type="password" name="mdp" 
+                        placeholder="nouveau mot de passe">
+                    <input class="modifiermdpInput" id="confirm-password" type="password" name="confirmation"
+                        placeholder="confirmez le mot de passe">
                     <div class="total-bouton-modif-user">
                         <button class="modifiermdpBouton" id='edit-game'>Modifier</button>
                         <div class="deletaccount supprcompte">

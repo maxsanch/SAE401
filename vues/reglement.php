@@ -196,7 +196,7 @@ if (empty($panier) && empty($souvenirs)) {
                                         placeholder="date d'expiration">
                                 </label>
                                 <input type="text" required name="nomUser" id="nomuser" value="<?= $username ?>"
-                                    placeholder="Nom d'utilisateur">
+                                    placeholder="Nom du proprietaire">
                             </div>
                             <div class="logo_cb">
                                 <img src="../img/cb.jpg" id="logo" alt="logo_type_carte">

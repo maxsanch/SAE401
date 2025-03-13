@@ -38,14 +38,14 @@ foreach ($nombreparmois as $cle) {
 $final = join(',', $tableau);
 
 
-if (!empty($meilleurRes) && !empty($meilleurSouv)) {
+if (!empty($meilleurRes) || !empty($meilleurSouv)) {
     if ($meilleurRes[0]['total'] >= $meilleurSouv[0]['total']) {
         $meilleur = $meilleurRes[0]['Titre'];
     } else {
         $meilleur = $meilleurSouv[0]['nom'];
     }
 } else {
-    $meilleur = "<span id='no-basket-validated'> aucun panier n'a encore été validé, il est alors impossible de définir une préférence.</span>";
+    $meilleur = " <span id='no-basket-validated'> aucun panier n'a encore été validé, il est alors impossible de définir une préférence.</span>";
 }
 
 ?>

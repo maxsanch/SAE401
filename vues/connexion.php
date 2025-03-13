@@ -70,7 +70,7 @@ else{
             </div>
             <form action="<?= $_SERVER['PHP_SELF'] . '?page=login' ?>" method="post">
                 <input type="email" maxlength="50" name="email" required value="<?= $mail ?>" placeholder="Email">   <!-- traduire le placeholder -->
-                <input type="password" maxlength="50" name="MDP" value="<?= $pwd ?>" class="motdepasse" required placeholder="Mot de passe"> <!-- traduire le placeholder -->
+                <input type="password" maxlength="50" name="MDP" value="<?= $pwd ?>" class="motdepasse" required id="password-field" placeholder="Mot de passe"> <!-- traduire le placeholder -->
                 <button id='log-in-button'>Me connecter</button>
             </form>
             <div class="erreur">
@@ -87,7 +87,7 @@ else{
             <div class="subtitle">
                 <h3 id='first-time-here'>C'est votre première fois ?</h3>
             </div>
-            <div class="bouton_inscription" id="inscr sign-up">
+            <div class="bouton_inscription" id="inscr">
                 Inscrivez-vous
             </div>
         </div>
@@ -103,13 +103,13 @@ else{
             </div>
             <form action="<?= $_SERVER['PHP_SELF'] . '?page=signin' ?>" method="post">
                 <div class="split">
-                    <input type="text" maxlength="50" value="<?= $prenom ?>" name="prenom" required placeholder="prenom"> <!-- traduire le placeholder -->
-                    <input type="text" maxlength="50" value="<?= $nom ?>" name="nom" required placeholder="nom"> <!-- traduire le placeholder -->
+                    <input type="text" maxlength="50" value="<?= $prenom ?>" id="first-name" name="prenom" required placeholder="prenom"> <!-- traduire le placeholder -->
+                    <input type="text" maxlength="50" value="<?= $nom ?>" id="last-name" name="nom" required placeholder="nom"> <!-- traduire le placeholder -->
                 </div>
                 <input type="email" value="<?= $mail ?>" maxlength="50" name="email" required placeholder="Email"> <!-- traduire le placeholder -->
-                <input type="text" value="<?= $adresse ?>" maxlength="50" name="adresse" required placeholder="adresse"> <!-- traduire le placeholder -->
-                <input type="password" value="<?= $pwd ?>" maxlength="50" name="MDP" class="motdepasse" required placeholder="Mot de passe"> <!-- traduire le placeholder -->
-                <button>Créer mon compte</button>
+                <input type="text" value="<?= $adresse ?>" id="address-field" maxlength="50" name="adresse" required placeholder="adresse"> <!-- traduire le placeholder -->
+                <input type="password" id="password-field" value="<?= $pwd ?>" maxlength="50" name="MDP" class="motdepasse" required placeholder="Mot de passe"> <!-- traduire le placeholder -->
+                <button id="create-account">Créer mon compte</button>
             </form>
             <div class="erreur">
                 <?= $erreur ?>
@@ -117,14 +117,14 @@ else{
         </div>
         <div class="right">
             <div class="title">
-                <h2>
+                <h2 id="notfirst-time-here">
                     Créez un compte pour pouvoir réserver un jeu !
                 </h2>
             </div>
             <div class="subtitle">
                 <h3 id='already-have-account'>Vous avez déjà un compte ?</h3>
             </div>
-            <div class="bouton_inscription" id="connex login">
+            <div class="bouton_inscription" id="connex">
                 Connectez-vous
             </div>
         </div>

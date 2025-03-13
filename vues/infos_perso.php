@@ -128,7 +128,7 @@ if (empty($panier) && empty($souvenirs)) {
             </div>
             <div class="description">' . $ligne['description'] . '</div>
             <form class="form-panier-obj" action=index.php?page=suppressionSouvenirs&idobj=' . $ligne['id_objet_shop'] . '&idpanier=' . $ligne['id_panier'] . ' method=post>
-                <input required type=number placeholder="entre un nombre à retirer de la commande" min=1 value=1 max=' . $ligne['quantitée'] . ' name="nombredelet" min=1>
+                <input required type=number id="enter-number-delet" placeholder="entrer un nombre" min=1 value=1 max=' . $ligne['quantitée'] . ' name="nombredelet" min=1>
                 <button class="iconepoubelle"><img src="../img/trash.svg" alt="une poubelle"/></button>
             </form>
         </div>';
@@ -211,12 +211,12 @@ if (empty($panier) && empty($souvenirs)) {
                         <div class="grid-mdp">
                             <label>
                                 <p id='new-password'>Nouveau mot de passe</p> <input type="password" class="motdepasse"
-                                    name="NewPassword" placeholder="entrez votre nouveau mot de passe">
+                                    name="NewPassword" id="change-password" placeholder="nouveau mot de passe">
                             </label>
 
                             <label>
                                 <p id="confirm-password">Confirmez le mot de passe</p><input type="password"
-                                    class="motdepasse" name="ConfirmationNewPassword"
+                                    class="motdepasse" id="confirm-password" name="ConfirmationNewPassword"
                                     placeholder="confirmez votre mot de passe">
                             </label>
                         </div>
@@ -225,7 +225,7 @@ if (empty($panier) && empty($souvenirs)) {
                         <label>
                             <p id='confirm-with-password'>Pour enregistrer les modifications, vous devez entrer votre
                                 mot de passe actuelle</p>
-                            <input type="password" name="ancienmdp" class="motdepasse" required
+                            <input type="password" id="password-field" name="ancienmdp" class="motdepasse" required
                                 placeholder="entrez votre mot de passe">
                         </label>
                     </div>
@@ -245,7 +245,7 @@ if (empty($panier) && empty($souvenirs)) {
         <div class="allpaniers">
             <div class="Lastpaniers">
                 <div class="titre">
-                    <h2 class="panier-total id='cart'">Mon panier</h2>
+                    <h2 class="panier-total" id='cart'>Mon panier</h2>
                     <div class="rectangleTitre">
                     </div>
                 </div>

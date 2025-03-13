@@ -590,8 +590,8 @@
         "francais": "Valider la commande"
     },
     "#an-error-occurred": {
-        "anglais": "An error occurred :",
-        "francais": "Une erreur est survenue :"
+        "anglais": "An error occurred",
+        "francais": "Une erreur est survenue"
     },
     "#close-icon-cross": {
         "anglais": "Close icon",
@@ -806,11 +806,11 @@
         "francais": "La réservation a été ajoutée à votre panier."
     },
     "#game-already-added": {
-        "anglais": "the game is already booked.",
+        "anglais": " the game is already booked.",
         "francais": "Le jeu à été réservé."
     },
     "#deleted-cart-element": {
-        "anglais": "The object has been added to your cart.",
+        "anglais": " The object has been deleted from your cart.",
         "francais": "La réservation a été ajoutée à votre panier."
     },
     "#nothing-in-cart": {
@@ -944,6 +944,14 @@
     "#securite": {
         "anglais": "Security number.",
         "francais": "Code de securité"
+    },
+    "#price-single-game": {
+        "anglais": "Price for 1 person : ",
+        "francais": "Prix pour une personne : "
+    },
+    ".reserved-panier": {
+        "anglais": "Unavailable",
+        "francais": "Indisponible"
     },
     "#large-file-game-create": {
         "anglais": "Too large file, game added.",

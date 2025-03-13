@@ -24,7 +24,7 @@ if (count($users)) {
 
         $acces = new ctlpanier;
         $paniervalid = $acces->getValidPaniers($ligne['Id_utilisateur']);
-        $result .= "<div class='PetiteCase'><a class='PhotoDeProfil' href='index.php?page=informationsUser&idUser=" . $ligne['Id_utilisateur'] . "'><img class='photo' style='height: 250px; object-fit: cover;'' src='../" . $phototest . "' alt='photo'></a><div class='MiseEnPageUser'><div class='MiseEnPageUser2'><div class='Nom'>" . $ligne['prenom'] . "</div><div class='InfoDansCase'><span id='last-login'>Dernière connexion : </span> " . $ligne['connexion'] . "</div><div class='InfoDansCase'><span id='validated-carts'>paniers validés : </span> " . count($paniervalid) . "</div><div class='CadreInfo'><a class='InformationDashbord' href='index.php?page=informationsUser&idUser=" . $ligne['Id_utilisateur'] . "'>Informations</a></div></div></div></div>";
+        $result .= "<div class='PetiteCase'><a class='PhotoDeProfil' href='index.php?page=informationsUser&idUser=" . $ligne['Id_utilisateur'] . "'><img class='photo' style='height: 250px; object-fit: cover;'' src='../" . $phototest . "' alt='photo'></a><div class='MiseEnPageUser'><div class='MiseEnPageUser2'><div class='Nom'>" . $ligne['prenom'] . "</div><div class='InfoDansCase'><span id='last-login'>Dernière connexion : </span> ". date('d / m / Y', strtotime($ligne['connexion']))."</div><div class='InfoDansCase'><span id='validated-carts'>paniers validés : </span> " . count($paniervalid) . "</div><div class='CadreInfo'><a class='InformationDashbord' href='index.php?page=informationsUser&idUser=" . $ligne['Id_utilisateur'] . "'>Informations</a></div></div></div></div>";
     }
 } else {
     $result .= "<div class='reponse' id='no-user-registered'>Aucun Utilisateur n'est enregistré</div>";
@@ -40,9 +40,9 @@ $final = join(',', $tableau);
 
 if (!empty($meilleurRes) || !empty($meilleurSouv)) {
     if ($meilleurRes[0]['total'] >= $meilleurSouv[0]['total']) {
-        $meilleur = $meilleurRes[0]['Titre'];
+        $meilleur = '<span> '.$meilleurRes[0]['Titre'].'</span>';
     } else {
-        $meilleur = $meilleurSouv[0]['nom'];
+        $meilleur = '<span> '.$meilleurSouv[0]['nom'];
     }
 } else {
     $meilleur = " <span id='no-basket-validated'> aucun panier n'a encore été validé, il est alors impossible de définir une préférence.</span>";

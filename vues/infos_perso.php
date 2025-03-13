@@ -24,10 +24,10 @@ if (!empty($anciensPaniers)) {
                                 ' . $ligne['Titre'] . '
                             </div>
                             <div class="personnes">
-                                nombre de personnes : ' . $ligne['nombre_personnes'] . '
+                                <span id="number-of-people">nombre de personnes :</span> ' . $ligne['nombre_personnes'] . '
                             </div>
                             <div class="prix">
-                                prix total : ' . ($ligne['nombre_personnes'] * $ligne['prix']) . ' €
+                                <span id="total-price">prix total :</span> ' . ($ligne['nombre_personnes'] * $ligne['prix']) . ' €
                             </div>
                         </div>
                         <div class="infojour">
@@ -50,7 +50,7 @@ if (!empty($anciensPaniers)) {
             $lignes .= '<div class="lignepanier">
                 <div class="linetop">
                     <div class="nom" id="TitreObjet' . $ligne['id_objet_shop'] . '">' . $ligne['nom'] . '</div>
-                    <div class="prixTot">Prix total : ' . ($ligne['prix'] * $ligne['quantitée']) . ' € (' . $ligne['prix'] . ' €
+                    <div class="prixTot"><span id="total-price">Prix total :</span> ' . ($ligne['prix'] * $ligne['quantitée']) . ' € (' . $ligne['prix'] . ' €
                             x' . $ligne['quantitée'] . ')</div>
                 </div>
                 <div class="description" id="descriptionObjet' . $ligne['id_objet_shop'] . '">' . $ligne['description'] . '</div>
@@ -62,7 +62,7 @@ if (!empty($anciensPaniers)) {
                                     ' . $lignes . '
                                 </div>
                                 <div class="dateValidation">
-                                    Panier validé le : ' . date('d / m / Y à H : i : s', strtotime($valeur['derniere_modification'])) . '
+                                    <span id="cart-validated-on">Panier validé le :</span> ' . date('d / m / Y, H : i : s', strtotime($valeur['derniere_modification'])) . '
                                 </div>
                            </div> ';
     }
@@ -95,7 +95,7 @@ if (empty($panier) && empty($souvenirs)) {
                                     <span id="number-of-people">nombre de personnes : </span>' . $valeurs['nombre_personnes'] . '
                                 </div>
                                 <div class="prix" id="total-price">
-                                    prix total : ' . ($valeurs['nombre_personnes'] * $valeurs['prix']) . ' €
+                                    <span id="total-price">prix total :</span> ' . ($valeurs['nombre_personnes'] * $valeurs['prix']) . ' €
                                 </div>
                             </div>
                             <div class="description">
@@ -123,7 +123,7 @@ if (empty($panier) && empty($souvenirs)) {
         $resultpanier .= '<div class="lignepanier">
             <div class="linetop">
                 <div class="nom">' . $ligne['nom'] . '</div>
-                <div class="prixTot">Prix total : ' . ($ligne['prix'] * $ligne['quantitée']) . ' € (' . $ligne['prix'] . ' €
+                <div class="prixTot"><span id="total-price">Prix total : </span>' . ($ligne['prix'] * $ligne['quantitée']) . ' € (' . $ligne['prix'] . ' €
                     x' . $ligne['quantitée'] . ')</div>
             </div>
             <div class="description">' . $ligne['description'] . '</div>

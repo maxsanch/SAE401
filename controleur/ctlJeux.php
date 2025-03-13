@@ -87,7 +87,7 @@ class ctlJeux
     public function supprimerjeu($jeu)
     {
         $this->jeu->supprjeu($jeu);
-        $this->ajoutjeux("<span id='deleted-game'>Le jeu a bien été supprimé.<span>");
+        $this->ajoutjeux("<div class='err' id='deleted-game'>Le jeu a bien été supprimé.</div>");
     }
 
     public function modifjeu($idjeu)

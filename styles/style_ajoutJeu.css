@@ -228,13 +228,3 @@ h2{
     transform: translate(-50%, -50%);
     display: block;
 }
-
-/* Mise en page du texte pour dire que le jeu a été supprimé */
-#deleted-game{
-    display: flex;
-    height: 70vh;
-    text-align: center;
-    justify-content: center;
-    align-items: center;
-    font-family: Montserrat-bold;
-}

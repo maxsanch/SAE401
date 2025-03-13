@@ -40,14 +40,14 @@ if (empty($panier) && empty($souvenirs)) {
     foreach ($panier as $valeurs) {
         $resultpanier .= '<div class="lignepanier">
                             <div class="linetop">
-                                <div class="titre">
+                                <div class="titre" id="TitreJeu'.$valeurs['ID_jeu'].'">
                                     ' . $valeurs['Titre'] . '
                                 </div>
-                                <div class="personnes">
-                                    nombre de personnes : ' . $valeurs['nombre_personnes'] . '
+                                <div class="personnes" >
+                                    <span id="number-of-people">nombre de personnes : </span> ' . $valeurs['nombre_personnes'] . '
                                 </div>
                                 <div class="prix">
-                                    prix total : ' . ($valeurs['nombre_personnes'] * $valeurs['prix']) . ' €
+                                    <span id="total-price">prix total : </span> ' . ($valeurs['nombre_personnes'] * $valeurs['prix']) . ' €
                                 </div>
                             </div>
                             <div class="infojour">
@@ -61,28 +61,20 @@ if (empty($panier) && empty($souvenirs)) {
                                     ' . $valeurs['prix'] . ' €
                                 </div>
                             </div>
-                            <div class="description">
+                            <div class="description" id="DescriptionJeu'.$valeurs['ID_jeu'].'">
                                 ' . $valeurs['description'] . '
                             </div>
-                            <a href=index.php?page=suppressionReservation&idJeu=' . $valeurs['ID_jeu'] . '&heure=' . $valeurs['heure_reservation'] . '&jour=' . $valeurs['jour_reservation'] . '>
-                            <div class="iconepoubelle">
-                                Retirer du panier (mettre une icone de poubelle)
-                            </div>
-                            </a>
                         </div>';
         $total = ($total + ($valeurs['nombre_personnes'] * $valeurs['prix']));
     }
     foreach ($souvenirs as $ligne) {
         $resultpanier .= '<div class="lignepanier">
             <div class="linetop">
-                <div class="nom">' . $ligne['nom'] . '</div>
-                <div class="prixTot">Prix total : ' . ($ligne['prix'] * $ligne['quantitée']) . ' € (' . $ligne['prix'] . ' € 
+                <div class="nom" id="TitreObjet'.$ligne['id_objet_shop'].'">' . $ligne['nom'] . '</div>
+                <div class="prixTot"><span id="total-price">Prix total : </span> ' . ($ligne['prix'] * $ligne['quantitée']) . ' € (' . $ligne['prix'] . ' € 
                     x' . $ligne['quantitée'] . ')</div>
-            </div>
-            <div class="description">' . $ligne['description'] . '</div><a
-                href=index.php?page=suppressionSouvenirs&idobj=' . $ligne['id_objet_shop'] . '&idpanier=' . $ligne['id_panier'] . '>
-                <div class="iconepoubelle">Retirer du panier (mettre une icone de poubelle)</div>
-            </a>
+                </div>
+                <div id="descriptionObjet'.$ligne['id_objet_shop'].'">' . $ligne['description'] . '</div>
         </div>';
         $total = ($total + ($ligne['prix'] * $ligne['quantitée']));
     }

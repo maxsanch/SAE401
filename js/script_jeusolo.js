@@ -57,7 +57,7 @@ async function calendrier() {
                     }
                 }
                 else {
-                    heures += "<label style='background: linear-gradient(-135deg, #3F2C05, #745619); color: white;'><input class='radio' disabled required type='radio' name='heure' value='" + j + "-" + (j + 2) + "h'>Indisponible.</label>";
+                    heures += "<label class='reserved-panier' style='background: linear-gradient(-135deg, #3F2C05, #745619); color: white;'>Indisponible.</label>";
                 }
             }
             else {
@@ -65,7 +65,7 @@ async function calendrier() {
                     heures += "<label><input class='radio' required type='radio' name='heure' value='" + j + "-" + (j + 2) + "h'>" + j + " - " + (j + 2) + "h</label>";
                 }
                 else {
-                    heures += "<label style='background: linear-gradient(-135deg, #3F2C05, #745619); color: white;'><input class='radio' disabled required type='radio' name='heure' value='" + j + "-" + (j + 2) + "h'>Indisponible.</label>";
+                    heures += "<label style='background: linear-gradient(-135deg, #3F2C05, #745619); color: white;'>Indisponible.</label>";
                 }
             }
         }
@@ -80,7 +80,8 @@ async function calendrier() {
     }
 
     document.querySelector('.calendrier').innerHTML =  "<div class='barres' id='premiere'></div><div id='seconde' class='barres'></div><div  id='trois' class='barres'></div><div  id='quatre' class='barres'></div>"+affichage
-    document.querySelector('.moisActuel>h2').innerHTML = moisActuel
+    document.querySelector('.moisActuel>h2').innerHTML = moisActuel;
+    
 }
 calendrier();
 

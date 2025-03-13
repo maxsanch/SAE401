@@ -1,9 +1,9 @@
 main{
-
     display: flex;
     min-height: 90vh;
 }
 
+/* Message d'erreur */
 .erreur{
     display: flex;
     margin: auto;
@@ -16,6 +16,7 @@ main{
     border-radius: 5px;
 }
 
+/* Style global */
 body{
     font-family: Montserrat;
     color: white;

@@ -49,7 +49,7 @@ if (isset($_SESSION['acces'])) {
                                                     ' . ($valeurs['quantitée'] * $valeurs['prix']) . ' €
                                                 </div>
                                                 <form action=index.php?page=suppressionSouvenirs&idobj=' . $valeurs['id_objet_shop'] . '&idpanier=' . $valeurs['id_panier'] . ' method=post>
-                                                    <input type=number id="enter-number-delet" placeholder="entrer un nombre" max=' . $valeurs['quantitée'] . ' name="nombredelet">
+                                                    <input type=number id="enter-number-delet" placeholder="entrer un nombre" min=1 max=' . $valeurs['quantitée'] . ' name="nombredelet">
                                                     <button class="icone-poubelle-panier"><img src="../img/trash.svg" alt="corbeille"></button>
                                                 </form>
                                             </div>';

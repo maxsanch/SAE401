@@ -44,15 +44,15 @@ class ctlPanier
     public function ajouterpanier($idobjet, $qtd)
     {
         $shop = new CtlShop;
-        if($qtd>0) {
+        if ($qtd > 0) {
             $utilisateur = $this->user->GetUser($_SESSION['acces']);
 
             $panier = $this->panier->getPanierUser($utilisateur[0]['Id_utilisateur']);
-    
+
             $try = $this->panier->checkexist($idobjet, $panier);
             $stock = $this->panier->stockactuel($idobjet);
             $reduce = $stock[0]['stock'] - $qtd;
-    
+
 
             if (empty($try)) {
                 $this->panier->addLineObj($idobjet, $panier, $qtd);
@@ -60,9 +60,9 @@ class ctlPanier
                 $nombre = $try[0]['quantitée'] + $qtd;
                 $this->panier->addOne($idobjet, $panier, $nombre);
             }
-    
+
             $this->panier->reduce($reduce, $idobjet);
-    
+
             $heure = $this->date->format('Y-m-d H-i-s');
             $this->panier->updateHorraire($panier, $heure);
         }
@@ -97,26 +97,31 @@ class ctlPanier
         $user = new ctlUser;
         if (!empty($panierContent)) {
             $stock = $this->panier->stockactuel($idobj);
-            if ($panierContent[0]['quantitée'] > $nombredelet) {
-                $newstock = $stock[0]['stock'] + $nombredelet;
-                $nombreadelet = $panierContent[0]['quantitée'] - $nombredelet;
-                $this->panier->reduce($newstock, $idobj);
-                var_dump($nombreadelet);
-                $this->panier->editersouv($idobj, $idpanier, $nombreadelet);
-            } else {
-                $newstock = $panierContent[0]['quantitée'] + $stock[0]['stock'];
-                $this->panier->reduce($newstock, $idobj);
-                $this->panier->supprimersouv($idobj, $idpanier);
+
+            if ($nombredelet != '') {
+                if ($panierContent[0]['quantitée'] > $nombredelet) {
+                    $newstock = $stock[0]['stock'] + $nombredelet;
+                    $nombreadelet = $panierContent[0]['quantitée'] - $nombredelet;
+                    $this->panier->reduce($newstock, $idobj);
+                    $this->panier->editersouv($idobj, $idpanier, $nombreadelet);
+                } else {
+                    $newstock = $panierContent[0]['quantitée'] + $stock[0]['stock'];
+                    $this->panier->reduce($newstock, $idobj);
+                    $this->panier->supprimersouv($idobj, $idpanier);
+                }
+                // reset tu timer panier lors de l'action utilisateur
+
+                $heure = $this->date->format('Y-m-d H-i-s');
+                $this->panier->updateHorraire($idpanier, $heure);
+
+                $user->infoperso("<div class='err' id='deleted-cart-element'>L'élément a été supprimé du panier.</div>");
             }
-
-            // reset tu timer panier lors de l'action utilisateur
-
-            $heure = $this->date->format('Y-m-d H-i-s');
-            $this->panier->updateHorraire($idpanier, $heure);
-
-            $user->infoperso("<div class='err' id='deleted-cart-element'>L'élément a été supprimé du panier.</div>");
-        } else {
-            $user->infoperso("<div class='err' id='nothing-in-cart'>Vous n'avez pas cet objet dans votre panier.</div>");
+            else {
+                $user->infoperso("<div class='err' id='an-error-occurred'>une erreur est survenue.</div>");
+            }
+        }
+        else {
+            $user->infoperso("<div class='err' id='an-error-occurred'>une erreur est survenue.</div>");
         }
     }
 
@@ -132,7 +137,6 @@ class ctlPanier
             $this->panier->updateHorraire($panier[0]['id_panier'], $heure);
             $user->infoperso("<div class='err' id='reservation-deleted-cart'>La réservation a été supprimée du panier.</div>");
         } else {
-
             $user->infoperso("<div class='err' id='no-reservation-in-cart'>Vous n'avez pas cette réservation dans votre panier.</div>");
         }
     }
@@ -174,8 +178,7 @@ class ctlPanier
             } else {
                 $this->reglement('<div class="fixedError" id="your-cart-is-empty">Votre panier est vide.</div>');
             }
-        }
-        else {
+        } else {
             $this->reglement('<div class="fixedError" id="wrong-informations-payement">Vos informations ne sont pas correctes.</div>');
         }
     }

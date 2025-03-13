@@ -811,7 +811,7 @@
     },
     "#deleted-cart-element": {
         "anglais": " The object has been deleted from your cart.",
-        "francais": "La réservation a été ajoutée à votre panier."
+        "francais": "La réservation a été supprimée de votre panier."
     },
     "#nothing-in-cart": {
         "anglais": "You doesn't have this object in your cart.",

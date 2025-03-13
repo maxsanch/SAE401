@@ -153,9 +153,9 @@ if (!empty($anciensPaniers)) {
                         placeholder="confirmez le mot de passe">
                     <div class="total-bouton-modif-user">
                         <button class="modifiermdpBouton" id='edit-game'>Modifier</button>
-                        <div class="deletaccount supprcompte">
-                            <a href="#"><span id='delete-account'>Supprimer le compte</span></a>
-                        </div>
+                        <a href="#" class="deletaccount supprcompte">
+                            <span id='delete-account'>Supprimer le compte</span>
+                        </a>
                     </div>
                 </form>
             </div>

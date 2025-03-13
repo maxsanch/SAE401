@@ -13,6 +13,7 @@ header {
     background: linear-gradient(180deg, rgba(0, 0, 0, 0.705) 0%, rgba(255, 0, 254, 0) 100%);
 }
 
+/* Mise en page du haut de la page */
 .jeutop {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -51,6 +52,8 @@ h1 {
     justify-content: space-between;
 }
 
+
+/* Le calendrier pour choisir quel jour et a quelle heure on passe */
 .calendrier {
     margin-bottom: 200px;
     width: 80%;

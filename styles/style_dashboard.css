@@ -22,6 +22,7 @@ body {
     font-family: Montserrat;
 }
 
+/* Mise en page des informations en haut de page */
 .nombre>div {
     display: flex;
     gap: 8px;
@@ -53,6 +54,7 @@ body {
     margin: auto;
 }
 
+/* Le produit préféré prend toute la ligne */
 .nombre>div:nth-child(3) {
     grid-column: 1 / span 2;
 }
@@ -61,6 +63,7 @@ img {
     width: 100%;
 }
 
+/* Photo de profil des utilisateurs */
 .PhotoDeProfil {
     width: 250px;
     display: flex;
@@ -70,6 +73,7 @@ img {
     border-radius: 8px 8px 0px 0px;
 }
 
+/* Conteneur d'un utilisateur */
 .PetiteCase {
     width: fit-content;
     border: 2px #E6B856 solid;

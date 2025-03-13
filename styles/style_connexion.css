@@ -46,6 +46,7 @@ body {
     left: 0;
 }
 
+/* On met les mêmes propriété à l'inscription et à la connexion */
 .connexion,
 .inscription {
     display: grid;
@@ -60,6 +61,7 @@ body {
     height: 550px;
 }
 
+/* Mise en page de la partie de gauche de l'inscription */
 .left {
     display: flex;
     flex-direction: column;
@@ -68,6 +70,7 @@ body {
     position: relative;
 }
 
+/* Mise en page de la partie de droite de l'inscription */
 .right {
     background: url(../img/fondConnexion.png);
     background-size: cover;
@@ -79,6 +82,7 @@ body {
     justify-content: center;
 }
 
+/* Pour que la partie sur laquelle on ne se trouve pas n'apparaisse pas */
 .ferme {
     display: none;
 }
@@ -103,6 +107,7 @@ form {
     margin-bottom: 20px;
 }
 
+/* Pour rentrer les informations dans l'inscription */
 .split {
     display: flex;
     gap: 25px;
@@ -151,12 +156,14 @@ button {
     justify-content: center;
 }
 
+/* La croix pour fermer la page */
 .croix {
     width: 30px;
     transform: translate(-200%, -100%);
     position: absolute;
 }
 
+/* Bouton pour s'inscrire */
 .bouton_inscription {
     padding: 10px;
     background: linear-gradient(-135deg, #e6b856, #806630);
@@ -168,6 +175,7 @@ button {
     border-radius: 150px;
 }
 
+/* Cadre de l'engrenage en arrière plan */
 .CadreDesEngrenages {
     width: 100%;
     position: fixed;
@@ -178,8 +186,8 @@ button {
     z-index: -1;
 }
 
+/* L'engrenage */
 .engrenage {
-    /* position: absolute; */
     right: 0;
     bottom: 0;
     top: 0;

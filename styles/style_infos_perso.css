@@ -9,6 +9,7 @@ body {
     color: #ffffff;
 }
 
+/* On voit les anciens paniers qu'on a commandé en bas de la page */
 .ancienspaniers {
     width: 80%;
     margin: auto;
@@ -34,6 +35,7 @@ body {
     font-family: Montserrat-bold;
 }
 
+/* La partie du haut avec les informations de notre compte et notre panier */
 .total {
     width: 80%;
     margin: auto;
@@ -45,12 +47,14 @@ body {
     gap: 50px;
 }
 
+/* Nos informations de compte */
 .infosUser {
     background: #00000050;
     border-radius: 10px;
     padding: 20px;
 }
 
+/* Notre photo de profil */
 .pic>img {
     height: 250px;
     object-fit: cover;
@@ -117,6 +121,7 @@ input::placeholder {
     gap: 20px;
 }
 
+/* Votre mail mais vous pouvez pas le modifier */
 .bloqué {
     background: #E6B856;
     color: rgb(17, 17, 17);
@@ -139,6 +144,7 @@ input::placeholder {
     box-sizing: border-box;
 }
 
+/* Supprimer son compte */
 .deletaccount {
     width: 100%;
     padding: 5px;
@@ -153,6 +159,7 @@ input::placeholder {
     color: #E6B856;
 }
 
+/* Information du panier */
 .infoproduits {
     max-height: 800px;
     overflow-y: scroll;

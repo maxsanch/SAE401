@@ -13,6 +13,7 @@ img {
     width: 100%;
 }
 
+/* Div contenant un escape game */
 .PropositionEscapeGame {
     border: solid 1px #DCAD57;
     border-radius: 8px;
@@ -136,6 +137,7 @@ img {
     mask-composite: exclude;
 }
 
+/* Affichage des escapes games les uns à la suite des autres */
 .global {
     display: flex;
     gap: 32px;
@@ -152,6 +154,7 @@ img {
     flex-wrap: wrap;
 }
 
+/* Le rectangle sous le titre */
 .RectangleTitre {
     width: 50px;
     height: 5px;
@@ -163,6 +166,7 @@ img {
     margin-top: 32px;
 }
 
+/* Des pop-up qui apparaissent */
 .error {
     position: fixed;
     background: linear-gradient(145deg, #151414, #46413A);
@@ -177,6 +181,7 @@ img {
     z-index: 10;
 }
 
+/* On met le bon boutons du header en couleur */
 .HeaderBouton:nth-of-type(3)>a {
     background-image: linear-gradient(-135deg, #E6B856, #806630);
     color: transparent;

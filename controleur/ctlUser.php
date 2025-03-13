@@ -66,22 +66,22 @@ class ctlUser
             if ($_FILES['photoUser']["error"] == 0) {
                 $erreur = $this->users->updateUserPhoto($idUser);
                 if (empty($erreur)) {
-                    $erreur = "<div class='err'>Photo de profil modifiée.</div>";
+                    $erreur = "<div class='err' id='modified-profil-picture'>Photo de profil modifiée.</div>";
                 }
             } else if ($_FILES['photoUser']["error"] == 4) {
                 // Si le transfert a  réussi sasn image.
-                $erreur = "<div class='err'>Aucune image selectionée.</div>";
+                $erreur = "<div class='err' id='no-images-selected-profil'>Aucune image selectionée.</div>";
             } else {
                 if ($_FILES['photoUser']["size"] <= 500000) {
                     // Si le transfert a échoué avec un code d'erreur
-                    $erreur = "<div class='err'>Fichier trop volumineux pour enregistrer l'image.</div>";
+                    $erreur = "<div class='err' id='File-to-large-profil'>Fichier trop volumineux pour enregistrer l'image.</div>";
                 } else {
                     // Si le transfert a échoué avec un code d'erreur
-                    $erreur = "<div class='err'>Une erreur est survenue.</div>";
+                    $erreur = "<div class='err' id='an-error-occurred'>Une erreur est survenue.</div>";
                 }
             }
         } else {
-            $erreur = "<div class='err'>Aucune image n'a été selectionnée.</div>";
+            $erreur = "<div class='err' id='no-images-selected-profil'>Aucune image n'a été selectionnée.</div>";
         }
 
         $this->checkusers($erreur);
@@ -97,22 +97,22 @@ class ctlUser
             if ($_FILES['photoUser']["error"] == 0) {
                 $erreur = $this->users->updateUserPhoto($user[0]['Id_utilisateur']);
                 if (empty($erreur)) {
-                    $erreur = "<div class='err'>photo de profil modifiée.</div>";
+                    $erreur = "<div class='err' id='modified-profil-picture'>photo de profil modifiée.</div>";
                 }
             } else if ($_FILES['photoUser']["error"] == 4) {
                 // Si le transfert a  réussi sasn image.
-                $erreur = "<div class='err'>Aucune image selectionée.</div>";
+                $erreur = "<div class='err' id='no-images-selected-profil'>Aucune image selectionée.</div>";
             } else {
                 if ($_FILES['photoUser']["size"] <= 500000) {
                     // Si le transfert a échoué avec un code d'erreur
-                    $erreur = "<div class='err'>Fichier trop volumineux pour enregistrer l'image.</div>";
+                    $erreur = "<div class='err' id='File-to-large-profil'>Fichier trop volumineux pour enregistrer l'image.</div>";
                 } else {
                     // Si le transfert a échoué avec un code d'erreur
-                    $erreur = "<div class='err'>Une erreur est survenue.</div>";
+                    $erreur = "<div class='err' id='an-error-occurred'>Une erreur est survenue.</div>";
                 }
             }
         } else {
-            $erreur = "<div class='err'>Aucune image n'a été selectionnée.</div>";
+            $erreur = "<div class='err' id='no-images-selected-profil'>Aucune image n'a été selectionnée.</div>";
         }
 
         $this->infoperso($erreur);
@@ -131,7 +131,7 @@ class ctlUser
 
         $this->users->deletpanier($id);
 
-        $this->checkusers("<div class='err'>L'utilisateur à bien été supprimé.</div>");
+        $this->checkusers("<div class='err' id='deleted-user-success'>L'utilisateur à bien été supprimé.</div>");
     }
 
     public function modifiermdp($id, $mdp1, $mdp2)
@@ -142,15 +142,15 @@ class ctlUser
                 $mdphash = password_hash($mdp1, PASSWORD_DEFAULT);
                 // edit password de l'utilisateur
                 $this->users->changepasswordadmin($id, $mdphash);
-                $message = "<div class='err'>Le mot de passe à bien été modifié.</div>";
+                $message = "<div class='err' id='success-edited-pwd'>Le mot de passe à bien été modifié.</div>";
             } else {
                 // erreur si les deux mots de passe (les nouveaux) ne sont pas les mêmes
-                $message = "<div class='err'>Les mots de passes ne correspondent pas.</div>";
+                $message = "<div class='err' id='doesnt-match-pwd'>Les mots de passes ne correspondent pas.</div>";
             }
 
         } else {
             // erreur
-            $message = "<div class='err'>Le mot de passe entré est vide.</div>";
+            $message = "<div class='err' id='null-pwd'>Le mot de passe entré est vide.</div>";
         }
 
         $this->modifuser($id, $message);
@@ -200,16 +200,16 @@ class ctlUser
                             $mdpgood = password_hash($newpassword, PASSWORD_DEFAULT);
                             // changer le nom de l'utilisateur 
                             $this->users->edituserwithpdw($nom, $prenom, $adresse, $mdpgood, $user[0]['Id_utilisateur']);
-                            $erreur = "<div class='err'>vos informations ont été mises à jour.</div>";
+                            $erreur = "<div class='err' id='edited-info-user'>Vos informations ont été mises à jour.</div>";
                             $this->infoperso($erreur);
                         } else {
                             // erreur
-                            $erreur = '<div class="err">veuillez remplir tout les champs pour modifier.</div>';
+                            $erreur = '<div class="err" id="empty-inputs">Veuillez remplir tout les champs pour modifier.</div>';
                             $this->infoperso($erreur);
                         }
                     } else {
                         // erreur
-                        $erreur = "<div class='err'>les mots de passes ne correspondent pas.</div>";
+                        $erreur = "<div class='err' id='doesnt-match-pwd'>les mots de passes ne correspondent pas.</div>";
                         $this->infoperso($erreur);
                     }
                 } else {
@@ -218,19 +218,19 @@ class ctlUser
                         // changer le mot de passe
                         $mdpgood = password_hash($newpassword, PASSWORD_DEFAULT);
                         $this->users->editusernopdw($nom, $prenom, $adresse, $user[0]['Id_utilisateur']);
-                        $erreur = "<div class='err'>vos informations ont été mises à jour.</div>";
+                        $erreur = "<div class='err' id='edited-info-user'>vos informations ont été mises à jour.</div>";
                         $this->infoperso($erreur);
                     } else {
-                        $erreur = '<div class="err">veuillez remplir tout les champs pour modifier.</div>';
+                        $erreur = '<div class="err" id="empty-inputs">veuillez remplir tout les champs pour modifier.</div>';
                         $this->infoperso($erreur);
                     }
                 }
             } else {
-                $erreur = '<div class="err">mot de passe incorrecte.</div>';
+                $erreur = '<div class="err" id="wrong-pwd">Mot de passe incorrecte.</div>';
                 $this->infoperso($erreur);
             }
         } else {
-            $erreur = '<div class="err">impossible de trouver cet utilisateur.</div>';
+            $erreur = '<div class="err" id="user-cant-be-found">Impossible de trouver cet utilisateur.</div>';
             $this->infoperso($erreur);
         }
     }

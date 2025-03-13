@@ -741,17 +741,105 @@
         "anglais": "You don't have articles in your cart.",
         "francais": "Vous n'avez aucun article dans votre panier."
     },
-    "#yes-ofc": {
+    "#modified-profil-picture": {
+        "anglais": "Your profil picture has been modified.",
+        "francais": "Photo de profil modifiée."
+    },
+    "#no-images-selected-profil": {
         "anglais": "Yes",
         "francais": "Oui"
     },
-    "#yes-ofc": {
-        "anglais": "Yes",
-        "francais": "Oui"
+    "#File-to-large-profil": {
+        "anglais": "The file is too large to upload the image.",
+        "francais": "Fichier trop volumineux pour enregistrer l'image."
     },
-    "#yes-ofc": {
-        "anglais": "Yes",
-        "francais": "Oui"
+    "#deleted-user-success": {
+        "anglais": "This user has been deleted.",
+        "francais": "L'utilisateur à bien été supprimé."
+    },
+    "#success-edited-pwd": {
+        "anglais": "The password has been changed.",
+        "francais": "Le mot de passe à bien été modifié."
+    },
+    "#doesnt-match-pwd": {
+        "anglais": "The passwords doesn't match.",
+        "francais": "Les mots de passes ne correspondent pas."
+    },
+    "#null-pwd": {
+        "anglais": "Password can't be empty.",
+        "francais": "Le mot de passe entré est vide."
+    },
+    "#edited-info-user": {
+        "anglais": "You informations has been edited.",
+        "francais": "vos informations ont été mises à jour."
+    },
+    "#empty-inputs": {
+        "anglais": "Please fill in all fields to modify.",
+        "francais": "Veuillez remplir tout les champs pour modifier."
+    },
+    "#wrong-pwd": {
+        "anglais": "Wrong password.",
+        "francais": "Mot de passe incorrect."
+    },
+    "#user-cant-be-found": {
+        "anglais": "This user can't be found.",
+        "francais": "Impossible de trouver cet utilisateur."
+    },
+    "#reservation-added": {
+        "anglais": "The booking has been added to your cart.",
+        "francais": "La réservation a été ajoutée à votre panier."
+    },
+    "#game-already-added": {
+        "anglais": "the game is already booked.",
+        "francais": "Le jeu à été réservé."
+    },
+    "#deleted-cart-element": {
+        "anglais": "The object has been added to your cart.",
+        "francais": "La réservation a été ajoutée à votre panier."
+    },
+    "#nothing-in-cart": {
+        "anglais": "You doesn't have this object in your cart.",
+        "francais": "Vous n'avez pas cet objet dans votre panier."
+    },
+    "#reservation-deleted-cart": {
+        "anglais": "This book has been deleted from your cart.",
+        "francais": "La réservation a été supprimée de votre panier."
+    },
+    "#no-reservation-in-cart": {
+        "anglais": "You do not have this booking in your cart.",
+        "francais": "Vous n'avez pas cette réservation dans votre panier."
+    },
+    "#it-work": {
+        "anglais": "The booking has been added to your cart.",
+        "francais": "Validation prise en compte."
+    },
+    "#wrong-informations-payement": {
+        "anglais": "bank informations are wrong.",
+        "francais": "Vos informations ne sont pas correctes."
+    },
+    "#invalid-id": {
+        "anglais": "User not found.",
+        "francais": "Impossible de trouver le compte"
+    },
+    "#mail-already-taken": {
+        "anglais": "This email is already used.",
+        "francais": "Cet email es déjà utilisée."
+    },
+    "#deleted-game": {
+        "anglais": "The booking has been added to your cart.",
+        "francais": "Le jeu a bien été supprimé."
+    },
+    "#edited-game": {
+        "anglais": "The game has been edited.",
+        "francais": "Le jeu à bien été modifié."
+    },
+    "#file-to-large-game-edited": {
+        "anglais": "File too large to upload the image, game has been edited.",
+        "francais": "Fichier trop volumineux pour enregistrer l'image, jeu modifié."
+    },
+    "#error-only-image": {
+        "anglais": "An error as occured for the image, game has been edited.",
+        "francais": "Une erreur est survenue pour l'image, jeu modifié."
     },
     "#large-file-game-create": {
         "anglais": "Too large file, game added.",

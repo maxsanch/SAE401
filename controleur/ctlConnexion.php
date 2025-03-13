@@ -38,7 +38,6 @@ class ctlConnexion
             $date = new DateTime();
             if($ligne['statut'] == "valide"){
                 if($date->format('Y-m-d') >= $dateLimite->format('Y-m-d')){
-                    var_dump("celui la, on le suppr");
                     $this->panier->supprimerPanierValide($ligne['id_panier']);
                     $this->panier->supprimerReservationValide($ligne['id_panier']);
                     $this->panier->supprimerSouvenirValide($ligne['id_panier']);
@@ -78,12 +77,12 @@ class ctlConnexion
 
             } else {
                 // Si le mot de passe est incorrect, afficher un message d'erreur.
-                $erreur = '<b>mot de passe incorrecte.</b>';
+                $erreur = '<b id="wrong-pwd">mot de passe incorrecte.</b>';
                 $this->connexion($erreur);
             }
         } else {
             // Si aucun utilisateur ne correspond au mail, afficher un message d'erreur.
-            $erreur = '<b>Identifiant invalide</b>';
+            $erreur = '<b id="invalid-id">Impossible de trouver le compte</b>';
             $this->connexion($erreur);
         }
     }
@@ -116,12 +115,12 @@ class ctlConnexion
                 $this->routeur->accueil();
             } else {
                 // Si aucun utilisateur ne correspond au mail, afficher un message d'erreur.
-                $erreur = '<b>Identifiant invalide</b>';
+                $erreur = '<b id="invalid-id">Impossible de trouver le compte</b>';
                 $this->connexion($erreur);
             }
         } else {
             // Si aucun utilisateur ne correspond au mail, afficher un message d'erreur.
-            $erreur = '<b>cet email existe déjà</b>';
+            $erreur = '<b id="mail-already-taken">Cet email es déjà utilisée</b>';
             $this->connexion($erreur);
         }
     }

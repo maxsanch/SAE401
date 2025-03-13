@@ -87,7 +87,7 @@ class ctlJeux
     public function supprimerjeu($jeu)
     {
         $this->jeu->supprjeu($jeu);
-        $this->ajoutjeux("le jeu à bien été supprimé");
+        $this->ajoutjeux("<span id='deleted-game'>Le jeu a bien été supprimé.<span>");
     }
 
     public function modifjeu($idjeu)
@@ -112,23 +112,23 @@ class ctlJeux
                     $this->ajoutjeux($erreur);
                 }
 
-                $this->ajoutjeux("le jeu à bien été ajouté.");
+                $this->ajoutjeux("<span id='edited-game'>Le jeu à bien été modifié.</span>");
             } else if ($_FILES['photoGame']["error"] == 4) {
-                // Si le transfert a  réussi sasn image.
-                $this->ajoutjeux("le jeu à bien été modifié.");
+                // Si le transfert a  réussi sans image.
+                $this->ajoutjeux("<span id='edited-game'>le jeu à bien été modifié.</span>");
             } else {
                 if ($_FILES['photoGame']["size"] <= 500000) {
                     // Si le transfert a échoué avec un code d'erreur
-                    $erreur1 = "Fichier trop volumineux pour enregistrer l'image, jeu modifié.";
+                    $erreur1 = "<span id='file-to-large-game-edited'>Fichier trop volumineux pour enregistrer l'image, jeu modifié.</span>";
                     $this->ajoutjeux($erreur1);
                 } else {
                     // Si le transfert a échoué avec un code d'erreur
-                    $erreur1 = "Une erreur est survenue pour l'image, jeu modifié.";
+                    $erreur1 = "<span id='error-only-image'>Une erreur est survenue pour l'image, jeu modifié.</span>";
                     $this->ajoutjeux($erreur1);
                 }
             }
         } else {
-            $this->ajoutjeux("le jeu à bien été modifié.");
+            $this->ajoutjeux("<span id='edited-game'>le jeu à bien été modifié.</span>");
         }
     }
 

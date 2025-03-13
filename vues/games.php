@@ -24,7 +24,7 @@ foreach ($jeux as $valeur) {
     <div class='MiseEnPageEG'>
         <div class='TitreEscapeGame' id='TitreJeu".$valeur['ID_jeu']."'>" . $valeur['Titre'] . "</div>
         <div class='InformationEscapeGame'>
-            <div class='InfoRuche'>age : " . $valeur['age'] . " ans</div>
+            <div class='InfoRuche'>age : " . $valeur['age'] . " <span id='age-games'>ans</span></div>
             <div class='InformationEscapeGame'>
                 <div class='User'><img src='img/Users.svg' alt='Icon d'utilisateur'></div>
                 <div class='InfoEG'>" . $valeur['nombre_min'] . " - " . $valeur['nombre_max'] . "</div>

@@ -610,8 +610,8 @@
         "francais": "Votre panier est vide."
     },
     "#thank-you": {
-        "anglais": "Thank you",
-        "francais": "Merci"
+        "anglais": "Thank you ",
+        "francais": "Merci "
     },
     "#for-your-reservation": {
         "anglais": "for your reservation",
@@ -826,7 +826,7 @@
         "francais": "Cet email es déjà utilisée."
     },
     "#deleted-game": {
-        "anglais": "The booking has been added to your cart.",
+        "anglais": "the game has been deleted.",
         "francais": "Le jeu a bien été supprimé."
     },
     "#edited-game": {
@@ -836,6 +836,62 @@
     "#file-to-large-game-edited": {
         "anglais": "File too large to upload the image, game has been edited.",
         "francais": "Fichier trop volumineux pour enregistrer l'image, jeu modifié."
+    },
+    "#files-dont-allowed": {
+        "anglais": "An error as occured for the image, game has been edited.",
+        "francais": "Fichier non autorisé."
+    },
+    "#not-allowed-extension": {
+        "anglais": "This extension isn't supported.",
+        "francais": "Cette extension n'est pas acceptée."
+    },
+    "#input-title-add-game": {
+        "anglais": "Title of the game (in french).",
+        "francais": "Titre du jeu (en francais)."
+    },
+    "#input-title-add-game-english": {
+        "anglais": "Title of the game (in English).",
+        "francais": "Titre du jeu (en anglais)."
+    },
+    "#link-video-placeholder": {
+        "anglais": "Enter a youtube video link (share then remove : https://youtu.be/)",
+        "francais": "Entrez le lien d'une vidéo youtube (partager, puis enlever : https://youtu.be/)"
+    },
+    "#min-value": {
+        "anglais": "Min players",
+        "francais": "Min joueurs"
+    },
+    "#max-value": {
+        "anglais": "Max players",
+        "francais": "Max joueurs"
+    },
+    "#age-player": {
+        "anglais": "Player's recommanded age",
+        "francais": "age recommandé participants"
+    },
+    "#french-description": {
+        "anglais": "Enter the game's description (in French)",
+        "francais": "Entrez la description du jeu (en Francais)"
+    },
+    "#english-description": {
+        "anglais": "Enter the game's description (in English)",
+        "francais": "Entrez la description du jeu (en anglais)"
+    },
+    "#city": {
+        "anglais": "Enter a city",
+        "francais": "Entrez une ville"
+    },
+    "#region-input": {
+        "anglais": "Enter region.",
+        "francais": "Renseignez la région."
+    },
+    "#adresse-input": {
+        "anglais": "Enter an adresse.",
+        "francais": "Entrez une adresse."
+    },
+    "#postal": {
+        "anglais": "Enter a postal code",
+        "francais": "Entrez un code postal"
     },
     "#error-only-image": {
         "anglais": "An error as occured for the image, game has been edited.",

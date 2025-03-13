@@ -28,48 +28,43 @@ $script = '<script src="js/ajoutJeu.js"></script><script src="js/fermer.js"></sc
 <div class="gridTop">
     <form action="<?= $_SERVER['PHP_SELF'] . '?page=AjoutJeu' ?>" method="post" enctype="multipart/form-data">
         <div class="nombre">
-            <input type="text" required name="titre" placeholder="titre du jeu">
+            <input type="text" id="input-title-add-game" required name="titre" placeholder="Titre du jeu (en francais)">
             <!-- encore des placeholder à changer -->
-            <input type="text" required name="Titre_anglais" placeholder="titre du jeu en anglais">
+            <input type="text" id="input-title-add-game-english" required name="Titre_anglais" placeholder="Titre du jeu (en anglais)">
             <!-- encore des placeholder à changer -->
         </div>
 
-        <input type="text" name="link"
-            placeholder="entrez le lien d'une vidéo youtube (partager, puis enlever : https://youtu.be/)">
-        <!-- encore des placeholder à changer -->
-        <input type="text" name="link"
-            placeholder="entrez le lien d'une vidéo youtube (partager, puis enlever : https://youtu.be/)">
+        <input type="text" name="link" id="link-video-placeholder" placeholder="Entrez le lien d'une vidéo youtube (partager, puis enlever : https://youtu.be/)">
         <div class="nombre">
-            <input type="number" required name="min" min="0" placeholder="min participants">
+            <input type="number" required name="min" min="0" id="min-value" placeholder="Min joueurs">
             <!-- encore des placeholder à changer -->
-            <input type="number" required name="max" min="0" placeholder="max participants">
+            <input type="number" required name="max" min="0" id="max-value" placeholder="max participants">
             <!-- encore des placeholder à changer -->
         </div>
         <div class="nombre">
-            <input type="number" name="age" min="0" placeholder="age participants">
+            <input type="number" name="age" min="0" id="age-player" placeholder="age recommandé participants">
             <!-- encore des placeholder à changer -->
             <input type="number" name="prix" min="0" placeholder="prix"> <!-- encore des placeholder à changer -->
         </div>
         <div class="nombre">
-            <textarea required name="description" id="test" placeholder="Entrez la description du jeu"></textarea>
+            <textarea required name="description" id="french-description" placeholder="Entrez la description du jeu (en francais)"></textarea>
             <!-- encore des placeholder à changer -->
-            <textarea required name="Description_anglais" id="test"
-                placeholder="Entrez la description du jeu en anglais"></textarea>
+            <textarea required name="Description_anglais" id="french-description"  placeholder="Entrez la description du jeu (en anglais)"></textarea>
             <!-- encore des placeholder à changer -->
         </div>
         <div class="in" id='city-info'>
             infos ville : Cliquez sur la carte pour ajouter l'emplacement.
         </div>
         <div class="nombre">
-            <input type="text" required name="ville" placeholder="entrez une ville">
+            <input type="text" id="city" required name="ville" placeholder="Entrez une ville">
             <!-- encore des placeholder à changer -->
-            <input type="text" required name="region" placeholder="renseignez la région">
+            <input type="text" id="region-input" required name="region" placeholder="Renseignez la région">
             <!-- encore des placeholder à changer -->
         </div>
         <div class="nombre">
-            <input type="text" required name="adresse" placeholder="entrez une adresse">
+            <input type="text" id="adresse-input" required name="adresse" placeholder="Entrez une adresse">
             <!-- encore des placeholder à changer -->
-            <input type="number" required name="postale" min="0" placeholder="entrez un code postal">
+            <input type="number" id="postal" required name="postale" min="0" placeholder="ntrez un code postal">
             <!-- encore des placeholder à changer -->
         </div>
         <div class="form_elt">
@@ -88,7 +83,7 @@ $script = '<script src="js/ajoutJeu.js"></script><script src="js/fermer.js"></sc
         <input class="yInput" required type="hidden" name="coordonneesY">
 
         <!-- Bouton pour valider le formulaire -->
-        <input class="boutbout" type="submit" class="valid" name="ok" value="ajouter">
+        <button class="boutbout add-game">Ajouter un escape game</button>
         <!-- cette fois c'est la value qu'il faut changer -->
     </form>
     <div class="conteneur">

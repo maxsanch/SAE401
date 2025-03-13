@@ -84,7 +84,7 @@ class utilisateurs extends database
                 );
             }
         } else {
-            $erreur = "Cette extension n'est pas acceptée.";
+            $erreur = "<div class='err' id='not-allowed-extension'>Cette extension n'est pas acceptée.</div>";
             return $erreur;
         }
     }

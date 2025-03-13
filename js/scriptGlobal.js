@@ -66,9 +66,7 @@ document.querySelectorAll('.languechoose').forEach(element => {
 
 function changerLangue() {
     langue = this.id;
-
     localStorage.setItem('langue', langue)
-
     setLangueBDD();
 }
 
@@ -169,7 +167,13 @@ async function setLangueBDD() {
         let domaine = document.querySelectorAll(key)
         if (domaine) {
             domaine.forEach(element => {
-                element.innerHTML = value[langue];
+                console.log(element.localName)
+                if((element.localName == 'input' || element.localName == 'textarea') && element.placeholder){
+                    element.placeholder = value[langue]
+                }
+                else{
+                    element.innerHTML = value[langue];
+                }
             });
         }
     });

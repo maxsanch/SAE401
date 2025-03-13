@@ -78,7 +78,7 @@ class jeux extends database
         }
         else {
             // Si l'extension du fichier n'est pas autorisée
-            return "Fichier non autorisé";
+            return "<div class='err' id='files-dont-allowed'>Fichier non autorisé.</div>";
         }
     }
     public function getjeux()

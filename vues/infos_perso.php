@@ -67,7 +67,7 @@ if (!empty($anciensPaniers)) {
                            </div> ';
     }
 } else {
-    $paniervalides .= "Vous n'avez aucune ancienne commande.";
+    $paniervalides .= "<div class='no-command-yet'>Vous n'avez aucune ancienne commande.</div>";
 }
 
 
@@ -83,7 +83,7 @@ if (file_exists('img/user/' . $user['Id_utilisateur'] . '.jpg')) {
 
 $resultpanier = "";
 if (empty($panier) && empty($souvenirs)) {
-    $resultpanier = "Vous n'avez aucun article dans votre panier.";
+    $resultpanier = "<div class='no-articles-current-cart'>Vous n'avez aucun article dans votre panier.</div>";
 } else {
     foreach ($panier as $valeurs) {
         $resultpanier .= '<div class="lignepanieractu">
@@ -92,9 +92,9 @@ if (empty($panier) && empty($souvenirs)) {
                                     ' . $valeurs['Titre'] . '
                                 </div>
                                 <div class="personnes">
-                                    nombre de personnes : ' . $valeurs['nombre_personnes'] . '
+                                    <span id="number-of-people">nombre de personnes : </span>' . $valeurs['nombre_personnes'] . '
                                 </div>
-                                <div class="prix">
+                                <div class="prix" id="total-price">
                                     prix total : ' . ($valeurs['nombre_personnes'] * $valeurs['prix']) . ' €
                                 </div>
                             </div>

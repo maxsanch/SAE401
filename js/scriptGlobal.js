@@ -29,7 +29,7 @@ if (variable) {
 
 
 
-// récuperer les datas depuis la BDD
+// récuperer les datas depuis la BDD ou le json
 
 async function fetchJeux() {
     const response = await fetch('../datas/fetchJeux.php'); // Appel à un fichier.

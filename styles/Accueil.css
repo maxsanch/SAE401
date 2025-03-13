@@ -1,3 +1,4 @@
+/* Ajout des différentes font qui seront utilsée dans le site */
 @font-face {
     font-family: Montserrat;
     src: url(../font/Montserrat-Regular.ttf);
@@ -13,6 +14,7 @@
     src: url(../font/Montserrat-Bold.ttf);
 }
 
+/* Mise en place de l'arrière plan du site */
 body {
     min-height: 100vh;
     margin: 0;
@@ -33,10 +35,10 @@ body::before {
     right: 0;
     left: 0;
     opacity: 20%;
-    /* transform: translateY(-15px); */
     z-index: -1;
 }
 
+/* La classe sera utilisée a plein d'endroit différent pour faire qu'un élément ne prenne pas toute la place possible et soit centré */
 .MiseEnPage {
     width: 80%;
     margin: auto;
@@ -46,6 +48,7 @@ img {
     width: 100%;
 }
 
+/* Disposition d'où seront les engrnages qui tournent sur le haut de la page */
 .CadreDesEngrenages {
     width: 100%;
     height: 100vh;
@@ -54,6 +57,7 @@ img {
     z-index: -1;
 }
 
+/* On donne arbitrairement des tailles pour que ça rendent bien visuellement */
 header{
     height: 10vh;
 }
@@ -66,6 +70,7 @@ header{
     position: relative;
 }
 
+/* Mise en page du texte de la page dans l'accueil */
 .AccueilTexte {
     width: 80%;
     margin: auto;
@@ -83,6 +88,7 @@ header{
     line-height: 70%;
 }
 
+/* Mise en place des boutons */
 .AccueilBoutonsGlobal {
     display: flex;
     gap: 32px;
@@ -96,17 +102,18 @@ header{
     cursor: pointer;
 }
 
+/* On met la couleur du premier bouton */
 .AccueilBouton:first-of-type {
     background-image: linear-gradient(45deg, #E6B856, #806630);
     color: black;
 }
 
+/* Couleur du deuxième bouton */
 /* Aide de chatgpt pour faire le dégradé en même temps sur le texte et la bordure car j'arrivais à le faire que sur un en même temps sinon */
 .AccueilBouton:nth-of-type(2) {
     position: relative;
     text-align: center;
     border-radius: 8px;
-    /* Arrondi OK */
 
     /* Dégradé pour le texte */
     background: linear-gradient(45deg, #E6B856, #806630);
@@ -119,9 +126,7 @@ header{
     position: absolute;
     inset: 0;
     border-radius: 8px;
-    /* Appliquer le border-radius */
-    padding: 1px;
-    /* Épaisseur de la bordure */
+    padding: 1px;       /* Épaisseur de la bordure */
     background: linear-gradient(to left, #E6B856, #806630);
 
     /* Masquer l'intérieur pour que seul le contour soit visible */
@@ -129,6 +134,8 @@ header{
     mask-composite: exclude;
 }
 
+
+/* Mise en page de la clé */
 .AccueilCle {
     margin: auto;
 }
@@ -137,6 +144,7 @@ video{
     width: 100%;
 }
 
+/* Titre des différentes parties de la page */
 .EscapeGameTitrePartie {
     width: fit-content;
     transform: translateY(50%);
@@ -153,6 +161,8 @@ video{
     width: 25%;
 }
 
+
+/* Mise en page de l'affichage des différents escapes games présents sur la page d'accueil */
 .EscapeGameDisponible{
     background-color: #151414;
 }
@@ -232,7 +242,6 @@ video{
     position: relative;
     text-align: center;
     border-radius: 8px;
-    /* Arrondi OK */
 
     /* Dégradé pour le texte */
     background: linear-gradient(45deg, #E6B856, #806630);
@@ -247,9 +256,7 @@ video{
     position: absolute;
     inset: 0;
     border-radius: 8px;
-    /* Appliquer le border-radius */
-    padding: 1px;
-    /* Épaisseur de la bordure */
+    padding: 1px;       /* Épaisseur de la bordure */
     background: linear-gradient(to left, #E6B856, #806630);
 
     /* Masquer l'intérieur pour que seul le contour soit visible */
@@ -285,21 +292,6 @@ video{
     box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
 }
 
-.SelecteurBarre{
-    height: 16px;
-    background-color: #323232;
-    border-radius: 16px;
-}
-
-.SelecteurBoule{
-    width: 24px;
-    height: 24px;
-    background-image: linear-gradient(#E6B856, #806630);
-    border-radius: 100%;
-    transform: translateY(-4px);
-    position: absolute;
-}
-
 .MiseEnPageEG{
     width: 90%;
     margin: auto;
@@ -308,14 +300,7 @@ video{
     flex-direction: column;
 }
 
-
-
-
-
-
-
-
-
+/* Les engrenages qui tournent sont dans des divs qui sont en positions absolutes car sinon ça faisait recharger la page en permanence et ça ralentissait trop le site */
 .engrenage:first-of-type {
     width: 30%;
     position: absolute;
@@ -334,6 +319,7 @@ video{
     overflow: hidden;
 }
 
+/* Les engrenages tournent */
 .engrenage>img{
     animation: Tourner 15s linear infinite;
 }
@@ -348,6 +334,7 @@ video{
     }
 }
 
+/* Les escapes games sont mis en page ici */
 .ListeDesEscapeGame>div{
     display: flex;
     flex-wrap: wrap;
@@ -383,6 +370,7 @@ video{
     margin-bottom: 32px;
 }
 
+/* Les cartes de la page */
 .Carte{
     display: flex;
     justify-content: space-between;
@@ -390,6 +378,7 @@ video{
     margin: auto;
 }
 
+/* La dernière partie du site avec le texte et l'image des gens qui bossent pour we escape */
 .PresentationGlobal{
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -397,10 +386,12 @@ video{
     padding: 64px 0px;
 }
 
+/* Texte de la partie */
 .PresentationText{
     margin: auto;
 }
 
+/* Image de la partie */
 .PresentationImg{
     display: flex;
     justify-content: center;
@@ -413,21 +404,25 @@ video{
     object-fit: cover;
 }
 
+/* Je met le texte avec un index plus haut pour que l'engrenage passe derrière au lieu de cacher le texte */
 .PresentationPave{
     z-index: 2;
     position: relative;
 }
 
+/* Les cartes des pays */
 .pays{
     position: relative;
 }
 
+/* Les points présents sur les maps pour qu'on puisse se rendre direct sur la page des escapes games en cliquant dessus */
 .point{
     position: absolute;
     width: 30px;
     transform: translate(-50%, -100%);
 }
 
+/* Je met le bon endroit du header en surbrillance */
 .HeaderBouton:first-of-type>a {
     background-image: linear-gradient(-135deg, #E6B856, #806630);
     color: transparent;

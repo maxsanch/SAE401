@@ -117,7 +117,7 @@ $script = "<script src='../js/accueil.js'></script>";
             </div>
         </div>
         <div>
-            <h1 class="TitreEscapeGame" id="places">Où sommes nous ?</h1>
+            <h2 class="TitreEscapeGame" id="places">Où sommes nous ?</h2>
             <div class="RectangleTitre"></div>
         </div>
         <div class="Carte">

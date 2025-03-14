@@ -59,6 +59,7 @@ if (!empty($meilleurRes) || !empty($meilleurSouv)) {
             <div class="nombrePanierValide">
                 <img src="../img/Shopping_bag.png" alt="une icone">
                 <div class="stat">
+                    <!-- Des infos sur le site -->
                     <span id='number-of-validated-carts'>Nombre de paniers validés : </span> <?= $comptepanier ?>
                 </div>
             </div>
@@ -68,12 +69,6 @@ if (!empty($meilleurRes) || !empty($meilleurSouv)) {
                     <span id='number-of-registrations'>Nombre d'inscriptions : </span><?= $compteinscrit ?>
                 </div>
             </div>
-            <!-- <div class="nombreConnexion">
-            <img src="" alt="une icone">
-            <div class="stat"> -->
-
-            <!-- </div>
-        </div> -->
             <div class="nombrePanierValide">
                 <img src="../img/Shopping_cart.png" alt="une icone">
                 <div class="stat">

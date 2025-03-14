@@ -166,6 +166,7 @@ if (empty($panier) && empty($souvenirs)) {
                 <div class="in">
                     <div class="carte_front">
                         <div class="top">
+                            <!-- La carte bancaire -->
                             <div class="titrecb" id='bank-card'>
                                 Carte bancaire
                             </div>
@@ -213,6 +214,7 @@ if (empty($panier) && empty($souvenirs)) {
                 <div class="flipcard" id='turn-card'>
                     Tourner la carte
                 </div>
+                <!-- Valider la commande -->
                 <button type="submit" id="validerCommande">Valider la commande</button>
             </div>
         </form>

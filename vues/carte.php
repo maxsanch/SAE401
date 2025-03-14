@@ -50,6 +50,7 @@ foreach ($regions as $content) {
     <div class="rectangleTitre"></div>
     <div class="lesCartes">
         <div class="lesCartes">
+            <!-- Les deux cartes -->
             <div class="france">
                 <img src="../img/france.svg" alt="Carte de la France">
                 <?= $pointFrancais ?>

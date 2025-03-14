@@ -12,6 +12,7 @@ $script = "";
 
 <div class="remerciements">
     <div class="titreRes">
+        <!-- Page de remerciements d'avoir payé -->
         <h1><span id='thank-you'>Merci </span><span id='for-your-reservation'> pour votre réservation</span></h1>
     </div>
     <div class="subTitreRes">

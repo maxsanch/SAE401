@@ -84,6 +84,7 @@ $script = "<script src='../js/accueil.js'></script>";
 <div class="MiseEnPage">
     <div class="Accueil">
         <div class="AccueilTexte">
+            <!-- L'accueil du site -->
             <h1 class="AccueilTitre">WE-ESCAPE</h1>
             <h2 class="AccueilSousTitre">Escape games en plein air !</h2>
             <div class="AccueilDescritpion">
@@ -106,6 +107,7 @@ $script = "<script src='../js/accueil.js'></script>";
         </div>
     </div>
 </div>
+<!-- Les engrenages qui tournent -->
 <div class="CadreDesEngrenages">
     <div class="engrenage" style="--X:50%; --Y:50%; --Xtel:50%; --Ytel:85%;">
         <img src="img/roue.svg" alt="un engrenage">
@@ -146,6 +148,7 @@ $script = "<script src='../js/accueil.js'></script>";
                     <h2 class="TitreEscapeGame" id="who-presentation">Qui sommes nous ?</h2>
                     <div class="RectangleTitre"></div>
                 </div>
+                <!-- La présentation -->
                 <div class="PresentationPave" id="Presentation">
                     <p>chez we escape, vous pourrez redécouvrir le concept d’escape game.
                         Que vous soyez innexperimenté ou un passionnés, vous ne serez pas au bout de vos surprises avec

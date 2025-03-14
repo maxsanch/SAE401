@@ -26,6 +26,7 @@
     margin-bottom: 8px;
 }
 
+/* Changement de style de l'enrgenage qui tourne en fond */
 .engrenage{
     transform: translateY(60%) scale(2);
     margin: auto;

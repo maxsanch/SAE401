@@ -26,6 +26,7 @@ foreach ($employes as $valeur) {
 
 ?>
 
+<!-- Nos contacts -->
 <h1 id='team'>L'ÉQUIPE</h1>
 <div class="allemployes">
     <?= $result ?>

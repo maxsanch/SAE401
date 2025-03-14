@@ -1,3 +1,4 @@
+/* On le met sur une seule colonne */
 .gridTop{
     grid-template-columns: 1fr;
 }
@@ -17,6 +18,7 @@
     grid-template-columns: repeat(2, 1fr);
 }
 
+/* On refait les barres entre les semaines sur le calendrier */
 #premiere{
     grid-column: 1 /span 2;
 }

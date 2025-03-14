@@ -30,6 +30,7 @@ $script = "";
                     <div class="rectangleTitre">
                     </div>
                 </div>
+                <!-- Premier paragraphe -->
                 <div class="textreal" id="GlobalgamePresentation">
                     <p>Un escape game, ou jeu d’évasion grandeur nature, est une activité immersive et ludique où les
                         participants doivent résoudre des énigmes et accomplir des missions dans un temps limité,
@@ -55,6 +56,7 @@ $script = "";
                     <div class="rectangleTitre">
                     </div>
                 </div>
+                <!-- Deuxième paragraphe -->
                 <div class="textreal" id="Presentation">
                     <p>chez we-escape, vous pourrez redécouvrir le concept d’escape game. </p>
                     <p>Que vous soyez innexperimenté ou un passionnés, vous ne serez pas au bout de vos surprises avec

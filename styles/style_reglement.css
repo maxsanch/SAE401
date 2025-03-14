@@ -9,6 +9,7 @@ img {
     width: 100%;
 }
 
+/* Modif la couleur en fonction de ce qu'on met comme numéro de carte */
 .visa {
     background: linear-gradient(rgb(13, 13, 59), rgb(17, 16, 36)) !important;
     color: white !important;
@@ -56,6 +57,7 @@ label {
     margin-bottom: 30px;
 }
 
+/* Titre de la page */
 .titrePage {
     position: relative;
 }
@@ -68,6 +70,7 @@ label {
     bottom: -5px;
 }
 
+/* Le panier */
 .paniers {
     padding: 20px;
 }
@@ -106,6 +109,7 @@ label {
     font-family: Montserrat-bold;
 }
 
+/* Information sur notre compte */
 .infoUser {
     background: #0000001f;
     padding: 20px;
@@ -131,6 +135,7 @@ label {
     width: 100%;
 }
 
+/* Valider la commande */
 .flibandvalid {
     margin-top: 20px;
     display: flex;
@@ -159,7 +164,6 @@ button {
 }
 
 /* utiliser pour la carte qui tourne  */
-
 .carte_flip {
     background-color: transparent;
     height: 300px;
@@ -222,6 +226,7 @@ button {
     gap: 20px;
 }
 
+/* Style de la carte */
 .numbers>input{
     width: 100%;
     box-sizing: border-box;
@@ -256,7 +261,6 @@ input{
     border: white solid 1px;
     color: white;
 }
-
 
 .mastercard>.numbers>input{
     border: white solid 1px;
@@ -299,8 +303,6 @@ input{
     margin-top: 150px;
 }
 
-
-
 /* confirmation : */
 
 .fixedError{
@@ -316,7 +318,6 @@ input{
     transform: translate(-50%, -50%);
     display: block;
 }
-
 
 .loader{
     position: fixed;
@@ -347,6 +348,7 @@ input{
 
 }
 
+/* Le chargement quand on commande quelque chose */
 @keyframes tourner{
     from {
         transform: translate(-50%, -50%) rotate(0deg);
@@ -372,6 +374,7 @@ input{
     right: 0;
     opacity: 0.3;
 }
+
 .background{
     position: absolute;
     top: 0;

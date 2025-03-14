@@ -23,6 +23,8 @@ main{
     width: 80%;
     margin: auto;
 }
+
+/* On voit les anciennes commandes de l'utilisateur */
 .linetop {
     display: flex;
     justify-content: space-between;
@@ -30,15 +32,18 @@ main{
     margin-top: 10px;
     font-family: Montserrat-bold;
 }
+
 .infojour {
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
+
 img {
     width: 100%;
 }
 
+/* Sa photo de profile */
 .pic {
     margin-bottom: 16px;
 }
@@ -70,12 +75,12 @@ img {
     border-radius: 8px;
 }
 
+/* Les informations sur l'utilisateur */
 .total {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 50px;
 }
-
 
 .modifmdp{
     font-family: Montserrat-bold;
@@ -88,7 +93,7 @@ img {
     gap: 8px;
 }
 
-
+/* Les anciennes commandes de l'utilisateur */
 .ancienspaniers {
     margin-bottom: 150px;
 }
@@ -124,6 +129,7 @@ img {
     font-family: Montserrat-bold;
 }
 
+/* Info sur le compte */
 .name{
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -163,7 +169,7 @@ img {
     color: white;
 }
 
-
+/* Supprimer un compte */
 .deletaccount{
     background-image: linear-gradient(-90deg, #e65656, #803030);
     color: transparent;
@@ -195,13 +201,14 @@ img {
     cursor: pointer;
 }
 
+/* On met le bon bouteau du header en couleur */
 .HeaderBouton:nth-of-type(6)>a {
     background-image: linear-gradient(-135deg, #E6B856, #806630);
     color: transparent;
     background-clip: text;
 }
 
-
+/* Classe qui affiche les erreurs */
 .err{
     position: fixed;
     top: 50%;

@@ -1,5 +1,4 @@
 /* Style du header */
-
 .panier-tot {
     display: none;
 }
@@ -12,6 +11,7 @@ img {
     width: 100%;
 }
 
+/* On rend flou le fond quand on ouvre le panier */
 .flou {
     filter: blur(5px);
 }
@@ -36,6 +36,7 @@ img {
     display: block !important;
 }
 
+/* On importe les polices du jeu */
 @font-face {
     font-family: Montserrat;
     src: url(../font/Montserrat-Regular.ttf);

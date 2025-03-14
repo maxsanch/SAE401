@@ -16,11 +16,7 @@ class ctlPage
     $this->user = new utilisateurs;
   }
   /*******************************************************
-  Affichage de la page d'accueil du site
-    Entrée : 
-
-    Retour : 
-      
+  Affichage de la page d'accueil du site      
   *******************************************************/
   public function accueil()
   {

@@ -8,6 +8,8 @@ require_once "vues/vue.class.php";
 class ctlConnexion
 {
 
+    // clés privées
+
     private $user;
     private $inscription;
     private $panier;
@@ -15,6 +17,7 @@ class ctlConnexion
 
     public function __construct()
     {
+        // initialisation des clés privés
         $this->user = new utilisateurs;
         $this->inscription = new inscription;
         $this->routeur = new ctlPage;
@@ -22,22 +25,28 @@ class ctlConnexion
     }
 
 
+    // fonction pour ammener sur la page de connexion
     public function connexion($erreur)
     {
         $vue = new vue("connexion"); // Instancie la vue appropriée
         $vue->afficher(array("erreur" => $erreur)); // Affiche la liste des clients dans la vue, c'est ca qui est passé en paramètres au niveau de data dans la classe vue
     }
 
+    // fonction pour se log au site
     public function login($nom, $mdp)
     {
+        // récupérer les paneirs des utilisateurs et les réinitialiser si ils ne sont pas dans les temps impartis
         $paniersHeures = $this->panier->getheureJourPanier();
 
         foreach($paniersHeures as $ligne){
+            // les paniers sont pas traités pareils en fonction de si ils sont validés ou non
             $dateLimite = (new DateTime($ligne['derniere_modification']))->modify('+1 year');
             $heureLimite = (new DateTime($ligne['derniere_modification']))->modify('+3 hour');
+            // date time permettant de mettre a jour le panier qui vient d'être supprimé
             $date = new DateTime();
             if($ligne['statut'] == "valide"){
                 if($date->format('Y-m-d') >= $dateLimite->format('Y-m-d')){
+                    // suppression des paniers valides, objets + reservations
                     $this->panier->supprimerPanierValide($ligne['id_panier']);
                     $this->panier->supprimerReservationValide($ligne['id_panier']);
                     $this->panier->supprimerSouvenirValide($ligne['id_panier']);
@@ -45,13 +54,15 @@ class ctlConnexion
             }
             else{
                 if($heureLimite->format('Y-m-d-H-i-s') <= $date->format('Y-m-d-H-i-s')){
+                    // pour les paniers non valides, faire en sorte de remettre en stock les objets commandés
                     $stock = $this->panier->getstockCont($ligne['id_panier']);
                     if(!empty($stock)){
+                        // si  il y avait des choses dans le panier, mettre a jour le stock
                         $stockActuel = $this->panier->stockactuel($stock[0]['id_objet_shop']);
                         $newNumber = ($stock[0]['quantitée']+$stockActuel[0]['stock']);
                         $this->panier->reduce($newNumber, $stock[0]['id_objet_shop']);
                     }
-                    // metter a jour l'horraire
+                    // mettre a jour l'horraire
                     $heure = $date->format('Y-m-d H-i-s');
                     $this->panier->updateHorraire($ligne['id_panier'], $heure);
                     $this->panier->supprimerReservationValide($ligne['id_panier']);

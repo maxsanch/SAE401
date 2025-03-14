@@ -4,6 +4,7 @@ require_once "modeles/database.class.php";
 
 
 class inscription extends database {
+    // inscrir un utilisateur
     public function inscrire($prenom, $nom, $email, $adresse, $mdpgood)
     {
         $data = array($nom, $prenom, $email, $mdpgood, $adresse);
@@ -13,6 +14,7 @@ class inscription extends database {
         $this->execReqPrep($req, $data);
     }
 
+    // update une date
     public function updatedate($id)
     {
         $data = array($id);
@@ -22,6 +24,8 @@ class inscription extends database {
         // Exécution de la requête
         $this->execReqPrep($req, $data);
     }
+
+    // créer un panier
 
     public function créerPanier($id, $heure){
         $data = array($id, $heure);

@@ -49,22 +49,29 @@ class routeur
                     $user = $this->ctlUser->users();
 
                     switch ($_GET['page']) {
+                        // différentes actions disponibles
                         case "remerciements":
+                            // remerciements
                             $this->ctlPage->remerciements();
                             break;
                         case 'valide':
+                            // valide
                             $this->ctlPanier->validerpanierall();
                             break;
                         case "quitter":
+                            // quitter
                             $this->ctlConnexion->quitter();
                             break;
                         case 'reglement':
+                            // reglements
                             $this->ctlPanier->reglement("");
                             break;
                         case "propos":
+                            // a propos
                             $this->ctlPage->propos();
                             break;
                         case "infojeusolo":
+                            // info sur les jeux
                             if (isset($_GET['idjeu'])) {
                                 $this->ctlJeux->Jeuxsingle($_GET['idjeu']);
                             } else {
@@ -72,30 +79,39 @@ class routeur
                             }
                             break;
                         case "carte":
+                            // carte du jeu
                             $this->ctlJeux->spots();
                             break;
                         case "jeuxAll":
+                            // jeux all
                             $this->ctlJeux->alljeux();
                             break;
                         case "Contacts":
+                            // contacts
                             $this->ctlEmployes->allemployes();
                             break;
                         case "shop":
+                            // shop
                             $this->ctlShop->objetsshop();
                             break;
                         case "informationmyuser":
+                            // info perso
                             $this->ctlUser->infoperso("");
                             break;
                         case "changerpdp":
+                            // changer de mot de passe
                             $this->ctlUser->changerpdp();
                             break;
                         case "deletMyAccount":
+                            // suppriemr mon compte
                             $this->ctlUser->deletMyAccount();
                             break;
                         case "modifprofil":
+                            // modifier mon profil 
                             $this->ctlUser->editprofil($_POST['nom'], $_POST['prenom'], $_POST['adresse'], $_POST['NewPassword'], $_POST['ConfirmationNewPassword'], $_POST['ancienmdp']);
                             break;
                         case "suppressionSouvenirs":
+                            // suppriemr souvenirs
                             if (isset($_GET['idobj']) && isset($_GET['idpanier']) && isset($_POST['nombredelet'])) {
                                 $this->ctlPanier->supprimerSouvenir($_GET['idobj'], $_GET['idpanier'], $_POST['nombredelet']);
                             } else {
@@ -103,6 +119,7 @@ class routeur
                             }
                             break;
                         case "suppressionReservation":
+                            // supprimer les reservations
                             if (isset($_GET['idJeu']) && isset($_GET['heure']) && isset($_GET['jour'])) {
                                 $this->ctlPanier->supprimerReservation($_GET['idJeu'], $_GET['heure'], $_GET['jour']);
                             } else {
@@ -110,6 +127,7 @@ class routeur
                             }
                             break;
                         case "réserverJeu":
+                            // réserver un jeu
                             if (isset($_GET['idjeu']) && isset($_GET['jour']) && isset($_POST['heure']) && isset($_POST['nombre'])) {
 
                                 $this->ctlPanier->EnregReservation($_GET['idjeu'], $_GET['jour'], $_POST['nombre'], $_POST['heure']);
@@ -118,6 +136,7 @@ class routeur
                             }
                             break;
                         case 'ajouterObjPanier':
+                            // ajouter un objet au panier
                             if (isset($_GET['idobj'])) {
                                 $this->ctlPanier->ajouterpanier($_GET['idobj'], $_POST['quantite']);
                             } else {
@@ -125,6 +144,7 @@ class routeur
                             }
                             break;
                         case "checkusers":
+                            // dashboard admin
                             if ($user[0]['niveau'] == 'admin') {
                                 $this->ctlUser->checkusers();
                             } else {
@@ -132,6 +152,7 @@ class routeur
                             }
                             break;
                         case "AjoutJeu":
+                            // ajouter un jeu
                             if ($user[0]['niveau'] == 'admin') {
                                 if (isset($_POST['titre']) && isset($_POST['ville']) && isset($_POST['link']) && isset($_POST['description']) && isset($_POST['min']) && isset($_POST['max']) && isset($_POST['age']) && isset($_POST['adresse']) && isset($_POST['postale']) && isset($_POST['prix']) && isset($_POST['region']) && isset($_POST['Titre_anglais']) && isset($_POST['Description_anglais'])) {
                                     if (empty($_POST['Pays'])) {
@@ -158,6 +179,7 @@ class routeur
                             }
                             break;
                         case "PageAjoutJeu":
+                            // page ajout du jeu
                             if ($user[0]['niveau'] == 'admin') {
                                 $this->ctlJeux->ajoutjeux("");
                             } else {
@@ -165,6 +187,7 @@ class routeur
                             }
                             break;
                         case "modifjeu":
+                            // modifier un jeu
                             if ($user[0]['niveau'] == 'admin') {
                                 if (isset($_GET['idJeu'])) {
                                     $this->ctlJeux->modifjeu($_GET['idJeu']);
@@ -176,6 +199,7 @@ class routeur
                             }
                             break;
                         case "modifierjeu":
+                            // modifier le jeu vraiment
                             if ($user[0]['niveau'] == 'admin') {
                                 if (isset($_GET['idjeu'])) {
                                     $this->ctlJeux->enregistrerModif($_GET['idjeu'], $_POST['titre'], $_POST['link'], $_POST['min'], $_POST['max'], $_POST['age'], $_POST['prix'], $_POST['description'], $_POST['ville'], $_POST['region'], $_POST['adresse'], $_POST['postale'], $_POST['Pays'], $_POST['coordonneesX'], $_POST['coordonneesY'], $_POST['Titre_anglais'], $_POST['Description_anglais']);
@@ -187,6 +211,7 @@ class routeur
                             }
                             break;
                         case "supprJeu":
+                            // supprimer un jeu
                             if ($user[0]['niveau'] == 'admin') {
                                 if (isset($_GET['idJeu'])) {
                                     $this->ctlJeux->supprimerjeu($_GET['idJeu']);
@@ -198,6 +223,7 @@ class routeur
                             }
                             break;
                         case "supprimerCompte":
+                            // suppriemr un compte
                             if ($user[0]['niveau'] == 'admin') {
                                 if (isset($_GET['idUser'])) {
                                     $this->ctlUser->supprimerCompte($_GET['idUser']);
@@ -209,6 +235,7 @@ class routeur
                             }
                             break;
                         case "ModifMdpUser":
+                            // modifier un mot de passe en tant qu'admin
                             if ($user[0]['niveau'] == 'admin') {
                                 if (isset($_GET['idUser'])) {
                                     $this->ctlUser->modifiermdp($_GET['idUser'], $_POST['mdp'], $_POST['confirmation']);
@@ -220,6 +247,7 @@ class routeur
                             }
                             break;
                         case "informationsUser":
+                            // voir les informations d'un utilisateur
                             if ($user[0]['niveau'] == 'admin') {
                                 if (isset($_GET['idUser'])) {
                                     $this->ctlUser->modifUser($_GET['idUser'], "");
@@ -231,6 +259,7 @@ class routeur
                             }
                             break;
                         case "enregUserPhoto":
+                            // enregistrer la photo d'un utilisateurs
                             if ($user[0]['niveau'] == 'admin') {
                                 if (isset($_GET['idUser'])) {
                                     $this->ctlUser->EnregPhotoUser($_GET['idUser']);
@@ -246,21 +275,26 @@ class routeur
                     }
                 } else {
                     switch ($_GET['page']) {
+                        // les actions sont globalement les memes
                         case "connexion":
+                            // page de connexion
                             $erreur = "";
                             $this->ctlConnexion->connexion($erreur);
                             break;
                         case "réserverJeu":
+                            // réserver un jeu
                             $this->ctlConnexion->connexion("Vous devez être connecté pour commander.");
                             break;
                         case 'ajouterObjPanier':
                             $this->ctlConnexion->connexion("Vous devez être connecté pour commander.");
                             break;
                         case "login":
+                            // connexion littérale
                             $this->ctlConnexion->login($_POST['email'], $_POST['MDP']);
                             break;
 
                         case "signin":
+                            // inscription
                             $this->ctlConnexion->signin($_POST['prenom'], $_POST['nom'], $_POST['email'], $_POST['adresse'], $_POST['MDP']);
                             break;
                         case "propos":
@@ -294,6 +328,6 @@ class routeur
             }
         } catch (Exception $e) {  // Page d'erreur
             $this->ctlPage->erreur($e->getMessage());
-        }   // Balise PHP non fermée pour éviter de retourner des caractères "parasites" en fin de traitement
+        }
     }
 }

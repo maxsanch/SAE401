@@ -1,5 +1,7 @@
 <?php
 
+// récupérer les jeux 
+
 require_once $_SERVER['DOCUMENT_ROOT']."/config/config.class.php";
 
 $conf = new Config();

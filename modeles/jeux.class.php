@@ -5,6 +5,7 @@ require_once $_SERVER['DOCUMENT_ROOT'] . "/controleur/ctlJeux.php";
 
 class jeux extends database
 {
+    // ajouter un jeu a la bdd avec les parametres qui sont les éléments a ajouter
     public function ajouterjeuBDD($titre, $lieu, $link, $desc, $min, $max, $age, $adresse, $postale, $prix, $pays, $coX, $coY, $region, $titreanglais, $descriptionanglais)
     {
         // Création d'un tableau de données avec l'ID de l'utilisateur
@@ -16,6 +17,7 @@ class jeux extends database
         $this->execReqPrep($req, $data);
     }
 
+    // modification d'un jeu
     public function enregModifJeu($id, $titre, $link, $min, $max, $age, $prix, $description, $ville, $region, $adresse, $postale, $pays, $coX, $coy, $titreanglais, $descriptionanglais)
     {
         $data = array($titre, $link, $min, $max, $age, $prix, $description, $ville, $region, $adresse, $postale, $pays, $coX, $coy, $titreanglais, $descriptionanglais, $id);
@@ -25,6 +27,8 @@ class jeux extends database
         // Exécution de la requête préparée
         $this->execReqPrep($req, $data);
     }
+
+    // récupérer un jeu pour modifier la photo du dernier ajouté
     public function recupJeu()
     {
         $req = 'SELECT ID_jeu FROM `jeux` ORDER BY ID_jeu DESC LIMIT 1';
@@ -33,6 +37,8 @@ class jeux extends database
 
         return $result[0]['ID_jeu'];
     }
+
+    // changer la photo d'un jeu
     public function enregjeuphoto($idJeu)
     {
         $page = new ctlJeux();
@@ -81,12 +87,17 @@ class jeux extends database
             return "<div class='err' id='files-dont-allowed'>Fichier non autorisé.</div>";
         }
     }
+
+    // récupérer les jeux
+
     public function getjeux()
     {
         $req = "SELECT * FROM jeux";
         $jeux = $this->execReq($req);
         return $jeux;
     }
+
+    // suppriemr un jeu
     public function supprjeu($jeu)
     {
         $data = array($jeu);
@@ -96,6 +107,7 @@ class jeux extends database
         $this->execReqPrep($req, $data);
     }
 
+    // récupérer les jeux individuellement
     public function getJeuSingle($idjeu)
     {
         $data = array($idjeu);
@@ -107,6 +119,7 @@ class jeux extends database
         return $jeusolo[0];
     }
 
+    // récupérer un jeu particulier
 
     public function getjeu($id)
     {
@@ -117,6 +130,7 @@ class jeux extends database
         return $this->execReqPrep($req, $data);
     }
 
+    // récupérer les réservations
 
     public function getReservation()
     {
@@ -124,6 +138,8 @@ class jeux extends database
 
         return $this->execReq($req);
     }
+
+    // récupérer les régions pour trier les villes par régions après
 
     public function getVilles(){
         $req = "SELECT region FROM `jeux` GROUP BY region";

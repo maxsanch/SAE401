@@ -20,19 +20,23 @@ class ctlUser
         $this->inscription = new inscription;
     }
 
+    // récupérer un utilisateur
     public function users()
     {
         $userget = $this->users->GetUser($_SESSION['acces']);
         return $userget;
     }
 
+    // récupérer l'utilisateur, fonction a supprimer ?
     public function RecupererUser()
     {
         return $this->users->GetUser($_SESSION['acces'])[0];
     }
 
+    // récupérer les utilisateurs pour les afficher sur la page d'admin
     public function checkusers($erreur = "")
     {
+        // récupérer les utilisateurs
         $Inscr = $this->users->getallUser();
         $compteInscr = count($Inscr);
 
@@ -41,8 +45,12 @@ class ctlUser
         $comptepanier = count($paniers);
         $nombreparmois = $this->inscription->getallmois();
 
+        // récuper l'objet et la réservation la plsu commandée et afficher ainsi le bon
+
         $meilleurRes = $this->panierUser->getBestRes();
         $meilleurSouv = $this->panierUser->getBestSouv();
+
+        // afficher la bonne vue
 
         $vue = new vue('dashboard');
         $vue->afficher(array('comptepanier' => $comptepanier, 'compteinscrit' => $compteInscr, 'users' => $Inscr, 'nombreparmois' => $nombreparmois, 'meilleurRes' => $meilleurRes, 'meilleurSouv' => $meilleurSouv, 'erreur' => $erreur));
@@ -50,8 +58,11 @@ class ctlUser
 
     public function modifuser($id, $message)
     {
+        // récupérer le bon utilisateur
         $userchoose = $this->users->GetUserbyID($id);
         $anciensPaniers = $this->panierUser->getValidPanierUser($id);
+
+        // afficher la bonne vue
 
         $vue = new vue('modifuser');
         $vue->afficher(array('user' => $userchoose, 'message' => $message, 'anciensPaniers' => $anciensPaniers));
@@ -81,6 +92,7 @@ class ctlUser
                 }
             }
         } else {
+            // aucune image selectionnée
             $erreur = "<div class='err' id='no-images-selected-profil'>Aucune image n'a été selectionnée.</div>";
         }
 
@@ -89,6 +101,7 @@ class ctlUser
 
     public function changerpdp()
     {
+        // récupérer l'utilisateur pour changer la pp
         $user = $this->users->GetUser($_SESSION['acces']);
 
         $erreur = "";
@@ -156,24 +169,29 @@ class ctlUser
         $this->modifuser($id, $message);
     }
 
+    // récupérer ses informations personelles
     public function infoperso($e)
     {
+        // récupérer l'utilisateur, ses souvenirs
         $infouser = $this->users->GetUser($_SESSION['acces']);
         $panierUtilisateur = $this->panierUser->MesRéservations($infouser[0]['Id_utilisateur']);
         $SouvenirsUtilisateur = $this->panierUser->MesSouvenirs($infouser[0]['Id_utilisateur']);
         $anciensPaniers = $this->panierUser->getValidPanierUser($infouser[0]['Id_utilisateur']);
 
+        // informations personelles
         $vue = new vue('infos_perso');
         $vue->afficher(array('user' => $infouser[0], 'panier' => $panierUtilisateur, 'souvenirs' => $SouvenirsUtilisateur, 'erreur' => $e, 'anciensPaniers' => $anciensPaniers));
     }
 
     public function deletMyAccount()
     {
+
         $id = $this->users->GetUser($_SESSION['acces']);
         $this->users->deletuser($id[0]['Id_utilisateur']);
         $panier = $this->panierUser->getPaniers($id[0]['Id_utilisateur']);
         // supprimer les liaisons dans les tables contenir et réserver.
         foreach ($panier as $ligne) {
+            // suprimer les éléments du panier
             $this->panierUser->deletContenir($ligne['id_panier']);
             $this->panierUser->deletReserver($ligne['id_panier']);
         }
@@ -190,6 +208,7 @@ class ctlUser
     {
         $user = $this->users->GetUser($_SESSION['acces']);
 
+        // si l'utilisateur st bien la, modifier son profil
         if (!empty($user)) {
             // regarder si le password est juste pour changer les infos
             if (password_verify($ancienpdw, $user[0]['mdp'])) {
@@ -226,10 +245,12 @@ class ctlUser
                     }
                 }
             } else {
+                // mot de passe incorrect
                 $erreur = '<div class="err" id="wrong-pwd">Mot de passe incorrecte.</div>';
                 $this->infoperso($erreur);
             }
         } else {
+            // utilisateur introuvable
             $erreur = '<div class="err" id="user-cant-be-found">Impossible de trouver cet utilisateur.</div>';
             $this->infoperso($erreur);
         }

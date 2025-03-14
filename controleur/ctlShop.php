@@ -13,6 +13,7 @@ class CtlShop
         $this->ctlshop = new shop;
     }
 
+    // récupérer tout les objets du shop
     public function objetsshop()
     {
         $objets = $this->ctlshop->récupérerobj();

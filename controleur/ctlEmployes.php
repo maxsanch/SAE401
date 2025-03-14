@@ -11,6 +11,7 @@ class ctlEmploye{
         $this->employes = new employes;
     }
 
+    // récupérer tout les employés
     public function allemployes(){
         $employes = $this->employes->getEmployes();
 

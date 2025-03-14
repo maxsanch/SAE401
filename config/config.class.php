@@ -1,5 +1,7 @@
 <?php
 
+// configuration a changer poru l'instalation de la bdd
+
 class Config{
      public $DBHOST = "localhost";
      public $DBNAME = "weescape";

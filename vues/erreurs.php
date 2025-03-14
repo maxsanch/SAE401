@@ -1,5 +1,7 @@
 <?php
 
+// liens styles et scripts
+
 $styles = "../styles/erreurs.css";
 
 $librairie = '';

@@ -1,5 +1,7 @@
 <?php
 
+// liens styles et link
+
 $styles = '../styles/style_souvenirs.css';
 $styles_telephone = "styles/telephone/souvenir_tel.css";
 $result = "";
@@ -7,6 +9,8 @@ $result = "";
 $script = "";
 
 $librairie = '';
+
+// boucle des objets du shop
 
 foreach ($objets as $valeur) {
     if (file_exists('img/objets/' . $valeur['id_objet_shop'] . '.jpg')) {

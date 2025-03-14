@@ -34,6 +34,8 @@ class utilisateurs extends database
         return $user[0];
     }
 
+    // obtenir toute les informations sur les utilisateurs
+
     public function getallUser()
     {
         $req = "SELECT * FROM utilisateurs";
@@ -41,9 +43,12 @@ class utilisateurs extends database
         return $this->execReq($req);
     }
 
+    // update la photo d'un utilisateur
 
     public function updateUserPhoto($idArt)
     {
+
+        // si l'image existe, on la supprime
 
         if (file_exists('img/user/' . $idArt . '.jpg')) {
             unlink('img/user/' . $idArt . '.jpg');
@@ -84,10 +89,13 @@ class utilisateurs extends database
                 );
             }
         } else {
+            // l'extension est pas acceptée
             $erreur = "<div class='err' id='not-allowed-extension'>Cette extension n'est pas acceptée.</div>";
             return $erreur;
         }
     }
+
+    // supprimer un utilisateur
 
     public function deletuser($id)
     {
@@ -98,6 +106,8 @@ class utilisateurs extends database
         $this->execReqPrep($req, $data);
     }
 
+    // suppriemr un panier
+
     public function deletpanier($id)
     {
         $data = array($id);
@@ -107,6 +117,7 @@ class utilisateurs extends database
         $this->execReqPrep($req, $data);
     }
 
+    // chanegr le password admin
     public function changepasswordadmin($id, $mdphash)
     {
         $data = array($mdphash, $id);

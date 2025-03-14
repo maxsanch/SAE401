@@ -1,5 +1,7 @@
 <?php
 
+// liens styles et scripts
+
 $styles = "../styles/style_games.css";
 
 $librairie = '';
@@ -7,7 +9,11 @@ $styles_telephone = "styles/telephone/games_tel.css";
 $script = "<script src='../js/accueil.js'></script>";
 
 $result = "";
+
+
 foreach ($jeux as $valeur) {
+
+    // verification de l'exitence de la photo
     if (file_exists('img/photojeu/' . $valeur['ID_jeu'] . '.jpg')) {
         $phototest = 'img/photojeu/' . $valeur['ID_jeu'] . '.jpg';
         // Si l'image existe, l'affiche
@@ -17,6 +23,8 @@ foreach ($jeux as $valeur) {
         // Sinon, affiche une image par défaut
         $phototest = 'img/photojeu/no_image.jpg';
     }
+
+    // resultat avec les escape games
 
     $result .= "<div class='PropositionEscapeGame'>
     <div class='ImageDeEscapeGame'><img src='" . $phototest . "'
@@ -43,6 +51,8 @@ foreach ($jeux as $valeur) {
     </div>
 </div>";
 }
+
+// affichage du message si présent
 
 $erreurAffiche = "";
 if(!empty($erreur)){

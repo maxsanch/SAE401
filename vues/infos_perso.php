@@ -13,11 +13,15 @@ $panierClass = new panier;
 $paniervalides = '';
 if (!empty($anciensPaniers)) {
     foreach ($anciensPaniers as $valeur) {
+
+        // informations sur les anciens paniers
         $anciennesReservations = $panierClass->LastReservations($valeur['id_panier']);
         $anciensSouvenirs = $panierClass->LastSouvenirs($valeur['id_panier']);
 
         $lignes = "";
+        // lignes du panier
         foreach ($anciennesReservations as $ligne) {
+            // anciennes réservations 
             $lignes .= '<div class="lignepanier">
                         <div class="linetop">
                             <div class="titre" id="TitreJeu' . $ligne['ID_jeu'] . '">
@@ -47,6 +51,7 @@ if (!empty($anciensPaniers)) {
                     </div>';
         }
         foreach ($anciensSouvenirs as $ligne) {
+            // anciens objets achetés lignes
             $lignes .= '<div class="lignepanier">
                 <div class="linetop">
                     <div class="nom" id="TitreObjet' . $ligne['id_objet_shop'] . '">' . $ligne['nom'] . '</div>
@@ -56,6 +61,7 @@ if (!empty($anciensPaniers)) {
                 <div class="description" id="descriptionObjet' . $ligne['id_objet_shop'] . '">' . $ligne['description'] . '</div>
             </div>';
         }
+        // anviens paniers lignes
         $paniervalides .= '<div class="AciennesCommandes">
                                 <h3>Numéro de commande : ' . $valeur['id_panier'] . '</h3>
                                 <div class="accueilPanier">
@@ -70,6 +76,7 @@ if (!empty($anciensPaniers)) {
     $paniervalides .= "<div class='no-command-yet'>Vous n'avez aucune ancienne commande.</div>";
 }
 
+// existence de la photo de profil
 
 if (file_exists('img/user/' . $user['Id_utilisateur'] . '.jpg')) {
 
@@ -80,6 +87,7 @@ if (file_exists('img/user/' . $user['Id_utilisateur'] . '.jpg')) {
     $phototest = 'img/user/no-user-image.jpg';
 }
 
+// panier actuel
 
 $resultpanier = "";
 if (empty($panier) && empty($souvenirs)) {

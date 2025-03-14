@@ -1,7 +1,11 @@
 <?php
 
+// appel des fichiers style
+
 $styles = "styles/accueil.css"; // mettre le lien vers le style ici
 $styles_telephone = "styles/telephone/accueil_tel.css";
+
+// varification du niveau de connexion
 
 if (isset($_SESSION['acces'])) {
     $connecteoupas = '<span class="Discover-button">Découvrir !</span>';
@@ -28,6 +32,8 @@ foreach ($jeux as $valeur) {
         $phototest = 'img/photojeu/no_image.jpg';
     }
 
+    // points points la carte
+
     switch ($valeur['pays']) {
         case "France":
             $pointFrancais .= '<a href="index.php?page=infojeusolo&idjeu=' . $valeur['ID_jeu'] . '" class="point" style="top: ' . $valeur['coY'] . '%; left: ' . $valeur['coX'] . '%;">
@@ -40,6 +46,8 @@ foreach ($jeux as $valeur) {
                                 </a>';
             break;
     }
+
+    // escape game disponibles 
 
     $result .= "<div class='PropositionEscapeGame'>
                 <div class='ImageDeEscapeGame'><img src='" . $phototest . "'
@@ -66,6 +74,8 @@ foreach ($jeux as $valeur) {
                 </div>
             </div>";
 }
+
+// script lié
 
 $script = "<script src='../js/accueil.js'></script>";
 ?>

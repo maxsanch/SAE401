@@ -1,5 +1,6 @@
 <?php
 
+// liens styles et links
 $styles = "styles/remerciements.css";
 $styles_telephone = "";
 $librairie = '';

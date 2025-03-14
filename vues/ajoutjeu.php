@@ -1,5 +1,7 @@
 <?php
 
+// liens styles
+
 $styles = "../styles/style_ajoutJeu.css";
 $styles_telephone = "styles/telephone/ajoutjeu_tel.css";
 $librairie = '';
@@ -18,6 +20,8 @@ foreach ($jeux as $valeur) {
 
     $result .= '<div class="case"><a href="index.php?page=modifjeu&idJeu=' . $valeur['ID_jeu'] . '" class="photo"><img src="' . $phototest . '" alt="Jeu choisi"></a><div class="contTout"><b id="TitreJeu' . $valeur['ID_jeu'] . '">' . $valeur['Titre'] . '</b><div class="parentBout"><a class="bout" href="index.php?page=infojeusolo&idjeu=' . $valeur['ID_jeu'] . '" id="view-game">Voir le jeu</a></div><div class="parentBout"><a href="index.php?page=modifjeu&idJeu=' . $valeur['ID_jeu'] . '" class="bout" id="edit-account">Modifier</a></div><div class="parentBout"><a href="index.php?page=supprJeu&idJeu=' . $valeur['ID_jeu'] . '" class="bout" id="delete-game">Supprimer</a></div></div></div>';
 }
+
+// script lié
 
 $script = '<script src="js/ajoutJeu.js"></script><script src="js/fermer.js"></script>';
 

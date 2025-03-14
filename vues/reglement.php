@@ -1,5 +1,6 @@
 <?php
 
+// liens styles et scripts
 $styles = "styles/style_reglement.css";
 $styles_telephone = "styles/telephone/reglement_tel.css";
 $librairie = '';
@@ -10,6 +11,8 @@ $resultpanier = "";
 
 $total = 0;
 
+
+// regarder si les informatiosn avaient déja ete entrées et les réafficher
 if (isset($_POST['numéro_carte'])) {
     $carte = $_POST['numéro_carte'];
 } else {
@@ -33,6 +36,7 @@ if (isset($_POST['numéro_de_sécurité'])) {
     $secure = "";
 }
 
+// articles dans le panier
 
 if (empty($panier) && empty($souvenirs)) {
     $resultpanier = "Vous n'avez aucun article dans votre panier.";

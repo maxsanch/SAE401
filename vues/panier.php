@@ -4,6 +4,8 @@ require_once "controleur/ctlPanier.php";
 
 $total = 0;
 
+// boucle du panier en fonction de l'utilisateur
+
 if (isset($_SESSION['acces'])) {
     $pan = new ctlPanier;
     $global = $pan->getGlobalPanier();

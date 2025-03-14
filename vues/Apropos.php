@@ -1,8 +1,11 @@
 <?php
 
+// liens styles
 $styles = "../styles/style_apropos.css";
 $styles_telephone = "styles/telephone/apropos_tel.css";
 $librairie = '';
+
+// liens scripts
 
 $script = "";
 

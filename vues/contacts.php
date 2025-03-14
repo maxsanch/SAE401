@@ -1,5 +1,7 @@
 <?php
 
+// styles et scripts 
+
 $styles = '../styles/style_contacts.css';
 
 $librairie = '';
@@ -18,7 +20,7 @@ foreach ($employes as $valeur) {
         // Sinon, affiche une image par défaut
         $phototest = 'img/objets/no_image.jpg';
     }
-
+    // boucle employés
     $result .= "<div class='case'><img src='" . $phototest . "'><div class='nom'>" . $valeur['prenom'] . "</div><div class='statut' id='metier".$valeur['ID_employé']."'>" . $valeur['metier'] . "</div></div>";
 }
 

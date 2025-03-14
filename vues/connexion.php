@@ -1,4 +1,7 @@
 <?php
+
+// scripts et styles 
+
 $styles = "styles/style_connexion.css";
 
 $librairie = '';
@@ -15,6 +18,8 @@ $script = "<script>
         document.querySelector('.connexion').classList.toggle('ferme')
     }
 </script>";
+
+// affichage des éléments déjà saisis (garder en mémoire et afficher après dans le formulaire)
 
 if(isset($_POST['email'])){
     $mail = $_POST['email'];

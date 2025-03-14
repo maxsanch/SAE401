@@ -6,6 +6,8 @@ $styles = "../styles/style_jeusolo.css";
 
 $librairie = '';
 
+// existence de la photo du jeu et affichage des infos
+
 if (file_exists('img/photojeu/' . $_GET['idjeu'] . '.jpg')) {
     $phototest = 'img/photojeu/' . $_GET['idjeu'] . '.jpg';
     // Si l'image existe, l'affiche
@@ -15,6 +17,8 @@ if (file_exists('img/photojeu/' . $_GET['idjeu'] . '.jpg')) {
     // Sinon, affiche une image par défaut
     $phototest = 'img/objets/no_image.jpg';
 }
+
+// lien vidéo si il existe 
 
 if ($jeu[0]['lien_video'] == "") {
     $video = "";

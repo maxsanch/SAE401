@@ -1,6 +1,7 @@
 <?php
 require_once "modeles/panier.class.php";
 
+// liens styles
 $styles = "../styles/style_modifuser.css";
 $styles_telephone = "styles/telephone/modifperso_tel.css";
 $librairie = '';
@@ -15,6 +16,7 @@ if (file_exists('img/user/' . $_GET['idUser'] . '.jpg')) {
     $phototest = 'img/user/no-user-image.jpg';
 }
 
+// liens scripts
 
 $script = "<script src='js/fermer.js'></script>";
 

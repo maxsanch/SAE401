@@ -1,4 +1,6 @@
 <?php
+
+// liens phone
 $styles_telephone = "styles/telephone/ajoutjeu_tel.css";
 $styles = "../styles/style_ajoutJeu.css";
 
@@ -12,6 +14,7 @@ if (file_exists('img/photojeu/' . $_GET['idJeu'] . '.jpg')) {
     $phototest = 'img/photojeu/no_image.jpg';
 }
 
+// liens scripts
 $script = '<script src="js/ajoutJeu.js"></script>';
 
 $librairie = "";

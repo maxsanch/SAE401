@@ -1,6 +1,8 @@
 <?php
 require_once "controleur/ctlPanier.php";
 
+// liens styles et scripts
+
 $styles = "../styles/style_dashboard.css";
 $styles_telephone = "styles/telephone/dashbord_tel.css";
 $librairie = '';

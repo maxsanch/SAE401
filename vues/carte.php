@@ -1,11 +1,15 @@
 <?php
 
+// liens scripts et styles
+
 $styles = "../styles/style_carte.css";
 $librairie = "";
 $script = "";
 $styles_telephone = "styles/telephone/carte_tel.css";
 $pointFrancais = "";
 $pointAllemagne = "";
+
+// affichage des points
 
 foreach ($jeux as $valeur) {
     switch ($valeur['pays']) {

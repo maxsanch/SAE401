@@ -124,28 +124,26 @@ class ctlJeux
                                 // Si le transfert a réussi avec une image transférée
                                 $erreur = $this->jeu->enregjeuphoto($id);
                                 if (empty($erreur)) {
-                                    $this->ajoutjeux('le jeu a bien été modifié');
+                                    $this->ajoutjeux("<div class='err'><span id='edited-game'>Le jeu à bien été modifié.</span></div>");
                                 } else {
                                     $this->ajoutjeux($erreur);
                                 }
-
-                                $this->ajoutjeux("<span id='edited-game'>Le jeu à bien été modifié.</span>");
                             } else if ($_FILES['photoGame']["error"] == 4) {
                                 // Si le transfert a  réussi sans image.
-                                $this->ajoutjeux("<span id='edited-game'>le jeu à bien été modifié.</span>");
+                                $this->ajoutjeux("<div class='err'><span id='edited-game'>le jeu à bien été modifié.</span></div>");
                             } else {
                                 if ($_FILES['photoGame']["size"] <= 500000) {
                                     // Si le transfert a échoué avec un code d'erreur
-                                    $erreur1 = "<span id='file-to-large-game-edited'>Fichier trop volumineux pour enregistrer l'image, jeu modifié.</span>";
+                                    $erreur1 = "<div class='err'><span id='file-to-large-game-edited'>Fichier trop volumineux pour enregistrer l'image, jeu modifié.</span></div>";
                                     $this->ajoutjeux($erreur1);
                                 } else {
                                     // Si le transfert a échoué avec un code d'erreur
-                                    $erreur1 = "<span id='error-only-image'>Une erreur est survenue pour l'image, jeu modifié.</span>";
+                                    $erreur1 = "<div class='err'><span id='error-only-image'>Une erreur est survenue pour l'image, jeu modifié.</span></div>";
                                     $this->ajoutjeux($erreur1);
                                 }
                             }
                         } else {
-                            $this->ajoutjeux("<span id='edited-game'>le jeu à bien été modifié.</span>");
+                            $this->ajoutjeux("<div class='err'><span id='edited-game'>le jeu à bien été modifié.</span></div>");
                         }
                     } else {
                         // pas de minimum plsu petit que le max, ou égal

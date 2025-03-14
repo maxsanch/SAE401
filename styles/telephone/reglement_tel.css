@@ -4,11 +4,13 @@
     width: 90%;
 }
 
+/* On enlève des engrenages sur tel */
 .engrenage-single,
 .engrenages {
     display: none;
 }
 
+/* Changement de design de la carte */
 .puce {
     display: none;
 }

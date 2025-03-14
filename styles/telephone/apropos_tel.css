@@ -1,3 +1,4 @@
+/* On le met sur une seule colonne */
 .double{
     grid-template-columns: 1fr;
     gap: 32px;

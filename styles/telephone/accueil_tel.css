@@ -19,6 +19,7 @@
     /* La taille est divisée par 1.5 pour l'allemagne aussi */
 }
 
+/* On le met sur une seule colonne */
 .Accueil {
     grid-template-columns: 1fr;
     margin-top: 0px;
@@ -30,6 +31,7 @@
     margin-top: 16px;
 }
 
+/* On donne plus de place pour les titres */
 .AccueilSousTitre {
     line-height: 100%;
 }
@@ -52,6 +54,7 @@
     padding-top: 8px;
 }
 
+/* On le met sur une seule colonne */
 .PresentationGlobal {
     grid-template-columns: 1fr;
 }
@@ -60,6 +63,7 @@
     padding: 0px;
 }
 
+/* On prend d'autes valeurs pour les engrenages qui tournent */
 .engrenage:first-of-type {
     transform: translate(var(--Xtel), var(--Ytel));
 }

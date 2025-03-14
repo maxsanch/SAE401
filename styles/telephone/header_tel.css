@@ -1,7 +1,9 @@
+/* On enlève le header de la version PC */
 .centreHeader {
     display: none;
 }
 
+/* Nouveau header pour tel */
 .TitreHeader {
     font-size: 16px;
 }
@@ -67,6 +69,7 @@
     display: none;
 }
 
+/* On change la mise en page du footer */
 .FooterPartiesGlobal {
     grid-template-columns: 2fr;
     gap: 32px;
@@ -86,6 +89,7 @@
     padding: 4px 8px;
 }
 
+/* Changement d'affichage du changement de langue pour la version téléphone */
 .LangueActuelle {
     display: block;
     display: flex;

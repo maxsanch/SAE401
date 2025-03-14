@@ -1,3 +1,4 @@
+/* On le met sur une seule colonne */
 .total{
     grid-template-columns: 1fr;
 }

@@ -1,7 +1,9 @@
+/* On le met sur une seule colonne */
 .global-page, .grid-mdp{
     grid-template-columns: 1fr;
 }
 
+/* Réduction des espaces */
 .grid-mdp{
     gap: 8px;
 }

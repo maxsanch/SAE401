@@ -122,6 +122,7 @@ else{
         </div>
         <div class="right">
             <div class="title">
+                <!-- Créer un compte -->
                 <h2 id="notfirst-time-here">
                     Créez un compte pour pouvoir réserver un jeu !
                 </h2>

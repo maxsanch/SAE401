@@ -1,3 +1,4 @@
+/* On met les objets les uns sous les autres */
 .cellulAllobjets{
     grid-template-columns: 1fr;
     margin-bottom: 16px;

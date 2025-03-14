@@ -10,6 +10,7 @@ if (isset($_SESSION['acces'])) {
     $pan = new ctlPanier;
     $global = $pan->getGlobalPanier();
 
+    // Voir son panire
     $panierglobal = '<div class="top-panier">
                         <h2>Mon panier</h2>
                         <div class="croix">

@@ -20,7 +20,6 @@ abstract class database {
     $resultat = $reponse->fetchAll(PDO::FETCH_ASSOC);
     return $resultat;
   }
-
   /*******************************************************
   Execution d'une requête préparée 
     Entrée : 

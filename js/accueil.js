@@ -21,7 +21,6 @@ function Lecture_De_La_Value_De_LInput_Range(EscapeGame) {
 
     Ecrire_ici.innerHTML = valeur;
 }
-
 document.querySelectorAll("#volume").forEach (ChangementDeValeur =>{
     ChangementDeValeur.addEventListener("change", lancement);
 });

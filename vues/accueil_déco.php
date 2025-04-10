@@ -14,9 +14,7 @@ if (isset($_SESSION['acces'])) {
     $connecteoupas = '<span class="connect-header">Se connecter !</span>';
     $link = "index.php?page=connexion";
 }
-
 $librairie = "";
-
 $result = "";
 $pointFrancais = "";
 $pointAllemagne = "";

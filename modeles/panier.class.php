@@ -188,9 +188,7 @@ class panier extends database
     public function supprimersouv($idobj, $idpanier)
     {
         $data = array($idobj, $idpanier);
-
         $req = "DELETE FROM contenir WHERE `contenir`.`id_objet_shop` = ? AND `contenir`.`id_panier` = ?;";
-
         return $this->execReqPrep($req, $data);
     }
 

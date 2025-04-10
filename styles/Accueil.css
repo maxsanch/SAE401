@@ -39,6 +39,7 @@ body::before {
 }
 
 /* La classe sera utilisée a plein d'endroit différent pour faire qu'un élément ne prenne pas toute la place possible et soit centré */
+
 .MiseEnPage {
     width: 80%;
     margin: auto;

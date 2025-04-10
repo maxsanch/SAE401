@@ -14,7 +14,6 @@ if (file_exists('img/user/' . $user['Id_utilisateur'] . '.jpg')) {
 } else { // Sinon, affiche une image par défaut
     $phototest = 'img/user/no-user-image.jpg';
 }
-
 $header = 'test';
 
 if ($user['niveau'] == 'admin') {

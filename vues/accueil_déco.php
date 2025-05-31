@@ -108,7 +108,7 @@ $script = "<script src='../js/accueil.js'></script>";
 <!-- Les engrenages qui tournent -->
 <div class="CadreDesEngrenages">
     <div class="engrenage" style="--X:50%; --Y:50%; --Xtel:50%; --Ytel:85%;">
-        <img src="img/roue.svg" alt="un engrenage">
+        <img loading="lazy" height="1080" width="1920" src="img/roue.svg" alt="un engrenage">
     </div>
     <div class="engrenage" style="--X:-50%; --Y:60%; --Xtel:-50%; --Ytel:150%">
         <img src="img/roue.svg" alt="un engrenage">
